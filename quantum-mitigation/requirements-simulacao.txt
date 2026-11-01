@@ -1,0 +1,4 @@
+# Ambiente local de validação, sem dependência de qiskit-ibm-runtime.
+numpy==2.5.4
+qiskit==2.6.0
+qiskit-aer==0.17.2

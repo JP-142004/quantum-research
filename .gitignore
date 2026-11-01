@@ -14,3 +14,4 @@ qiskit-ibm.json
 Thumbs.db
 .DS_Store
 .venv-analise/
+.venv-simulacao/
