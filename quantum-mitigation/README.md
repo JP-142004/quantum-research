@@ -29,3 +29,20 @@ Os scripts em `experimentos/` enviam circuitos ao hardware quando executados. An
 As versões usadas nas rodadas históricas não estavam registradas. As dependências estão listadas sem fixar versões; o código conserva `SamplerV2`, que apresentou aviso de descontinuação nas execuções anteriores. Esta organização não representa uma atualização da API.
 
 Não coloque tokens no código ou no Git. Novas saídas dos scripts de mitigação e GHZ conectado de 50 qubits são gravadas em suas respectivas pastas de dados brutos.
+
+## Novas rodadas de mitigação
+
+O script `experimentos/04_mitigacao_leitura/repetir_mitigacao.py` separa envio e coleta. A rodada 3 continua as duas rodadas históricas, mantendo Fez, qubits físicos 0 a 4, 1.000 shots e 34 circuitos por rodada. O objetivo é avaliar a repetibilidade da melhora nos indicadores Z e X.
+
+```powershell
+# Verificação ideal local, sem acesso à IBM:
+python quantum-mitigation/experimentos/04_mitigacao_leitura/repetir_mitigacao.py --verificar
+# Envia uma única rodada nova:
+python quantum-mitigation/experimentos/04_mitigacao_leitura/repetir_mitigacao.py --rodada 3 --enviar
+# Consulta o mesmo job e salva o resultado quando concluído:
+python quantum-mitigation/experimentos/04_mitigacao_leitura/repetir_mitigacao.py --rodada 3 --coletar
+```
+
+Os IDs, versões, circuitos compilados em QPY, contagens e análise ficam em `dados/brutos/04_mitigacao_leitura/repeticoes/`. A análise calcula os mesmos indicadores e seus erros de amostragem por bootstrap. O embaralhamento usa uma semente diferente em cada rodada; isso não garante a ordem física das execuções. As opções de DD e twirling permanecem desativadas. Há um limite de execução de 120 segundos por job; esse limite não é uma estimativa do tempo de fila.
+
+O envio recusa sobrescrever uma rodada registrada. A coleta consulta o estado e retorna sem bloquear enquanto o job não terminou. Cada rodada adicional deve usar outro número. O resumo histórico em CSV continua restrito aos dois JSONs originais.

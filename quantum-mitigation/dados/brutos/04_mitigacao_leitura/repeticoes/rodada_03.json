@@ -1,0 +1,309 @@
+{
+  "rodada": 3,
+  "backend": "ibm_fez",
+  "qubits": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "shots_por_circuito": 1000,
+  "job_id": "dbjnndgnceqs73akbkh0",
+  "ordem_circuitos": [
+    "cal_00010",
+    "GHZ_Z",
+    "cal_11111",
+    "cal_11010",
+    "cal_01101",
+    "cal_00110",
+    "cal_01011",
+    "cal_01010",
+    "cal_11011",
+    "cal_10101",
+    "cal_11101",
+    "cal_01111",
+    "cal_00100",
+    "cal_01110",
+    "cal_10111",
+    "cal_00001",
+    "cal_10000",
+    "cal_01000",
+    "cal_11110",
+    "cal_01100",
+    "cal_01001",
+    "cal_10010",
+    "GHZ_X",
+    "cal_00011",
+    "cal_10110",
+    "cal_00111",
+    "cal_00000",
+    "cal_11001",
+    "cal_00101",
+    "cal_10100",
+    "cal_11000",
+    "cal_10001",
+    "cal_10011",
+    "cal_11100"
+  ],
+  "enviado_utc": "2026-11-01T17:49:41.552115+00:00",
+  "versoes": {
+    "qiskit": "2.6.0",
+    "qiskit-ibm-runtime": "0.50.0",
+    "numpy": "2.5.4"
+  },
+  "circuitos": {
+    "cal_00010": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 1
+      }
+    },
+    "GHZ_Z": {
+      "profundidade": 13,
+      "operacoes": {
+        "rz": 18,
+        "sx": 9,
+        "measure": 5,
+        "cz": 4,
+        "barrier": 1
+      }
+    },
+    "cal_11111": {
+      "profundidade": 2,
+      "operacoes": {
+        "x": 5,
+        "measure": 5
+      }
+    },
+    "cal_11010": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_01101": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_00110": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_01011": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_01010": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_11011": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 4
+      }
+    },
+    "cal_10101": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_11101": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 4
+      }
+    },
+    "cal_01111": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 4
+      }
+    },
+    "cal_00100": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 1
+      }
+    },
+    "cal_01110": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_10111": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 4
+      }
+    },
+    "cal_00001": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 1
+      }
+    },
+    "cal_10000": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 1
+      }
+    },
+    "cal_01000": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 1
+      }
+    },
+    "cal_11110": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 4
+      }
+    },
+    "cal_01100": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_01001": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_10010": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "GHZ_X": {
+      "profundidade": 16,
+      "operacoes": {
+        "rz": 28,
+        "sx": 14,
+        "measure": 5,
+        "cz": 4,
+        "barrier": 1
+      }
+    },
+    "cal_00011": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_10110": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_00111": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_00000": {
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 5
+      }
+    },
+    "cal_11001": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_00101": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_10100": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_11000": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_10001": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 2
+      }
+    },
+    "cal_10011": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    },
+    "cal_11100": {
+      "profundidade": 2,
+      "operacoes": {
+        "measure": 5,
+        "x": 3
+      }
+    }
+  },
+  "seed_ordem": 45,
+  "seed_transpiler": 42,
+  "opcoes": {
+    "dd": false,
+    "twirling_gates": false,
+    "twirling_measure": false,
+    "init_qubits": true,
+    "max_execution_time": 120
+  }
+}
