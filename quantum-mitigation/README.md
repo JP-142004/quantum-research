@@ -46,3 +46,15 @@ python quantum-mitigation/experimentos/04_mitigacao_leitura/repetir_mitigacao.py
 Os IDs, versões, circuitos compilados em QPY, contagens e análise ficam em `dados/brutos/04_mitigacao_leitura/repeticoes/`. A análise calcula os mesmos indicadores e seus erros de amostragem por bootstrap. O embaralhamento usa uma semente diferente em cada rodada; isso não garante a ordem física das execuções. As opções de DD e twirling permanecem desativadas. Há um limite de execução de 120 segundos por job; esse limite não é uma estimativa do tempo de fila.
 
 O envio recusa sobrescrever uma rodada registrada. A coleta consulta o estado e retorna sem bloquear enquanto o job não terminou. Cada rodada adicional deve usar outro número. O resumo histórico em CSV continua restrito aos dois JSONs originais.
+
+## Comparação consolidada das três rodadas
+
+A análise offline das três execuções concluídas está disponível em:
+
+- [Comparação, incertezas e diagnósticos](docs/comparacao_rodadas.md).
+- [Resumo para o orientador](docs/resumo_orientador.md).
+- [Plano dos próximos experimentos](docs/plano_experimentos.md).
+- [Resultados processados e hashes de origem](dados/processados/comparacao_rodadas.json).
+- Gráficos em `figuras/`, nos formatos PNG e SVG.
+
+O script `scripts/comparar_rodadas.py` usa apenas dados locais e 5.000 réplicas bootstrap por rodada. As instruções para reproduzir a análise em ambiente separado estão no relatório. O CSV histórico de duas rodadas foi preservado; a comparação completa está no novo JSON e nas tabelas do relatório. Nenhum experimento novo foi enviado para produzir esses arquivos.

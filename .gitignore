@@ -13,3 +13,4 @@ qiskit-ibm.json
 *.key
 Thumbs.db
 .DS_Store
+.venv-analise/

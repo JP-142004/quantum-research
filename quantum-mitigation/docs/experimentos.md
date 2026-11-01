@@ -65,3 +65,7 @@ Esses números podem ser recalculados dos dois JSONs importados. O script origin
 Valores negativos pequenos após o ajuste são quasiprobabilidades produzidas pela inversão; não são frequências negativas observadas. A análise desta etapa continua em desenvolvimento. Ainda não concluímos quanto da melhora permanece em outras rodadas, tamanhos ou calibrações.
 
 Não foi encontrado código ou resultado de ZNE na pasta importada. Essa técnica permanece como possível próximo experimento.
+
+## 6. Comparação consolidada de três execuções
+
+A terceira rodada foi concluída no job `dbjnndgnceqs73akbkh0`. A [comparação das três rodadas](comparacao_rodadas.md) recalcula os indicadores e suas incertezas com 5.000 réplicas bootstrap. Consulte também o [resumo para o orientador](resumo_orientador.md) e o [plano de próximos experimentos](plano_experimentos.md). A tabela da seção 5 permanece como registro das duas execuções históricas; não representa a totalidade dos resultados disponíveis.

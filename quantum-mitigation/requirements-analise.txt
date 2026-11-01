@@ -1,0 +1,3 @@
+# Dependências da análise offline. Instalar em ambiente virtual separado.
+numpy==2.5.4
+matplotlib==3.11.2
