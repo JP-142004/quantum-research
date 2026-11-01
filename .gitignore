@@ -2,3 +2,14 @@
 *.token
 __pycache__/
 *.ipynb_checkpoints/
+
+# Ambiente local e credenciais
+.venv/
+.env
+.env.*
+.qiskit/
+qiskit-ibm.json
+*.pem
+*.key
+Thumbs.db
+.DS_Store
