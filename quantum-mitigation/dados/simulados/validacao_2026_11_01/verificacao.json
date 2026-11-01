@@ -1,0 +1,10 @@
+{
+  "resultado": "aprovado",
+  "arquivos_hash_verificados": 26,
+  "qpy_verificados": 2,
+  "blocos": 12,
+  "shots_simulados": 486000,
+  "maior_desvio_bruto_em_ep": 2.1382502940292714,
+  "maior_desvio_ajustado_em_ep": 3.22072209466672,
+  "criterio": "Sanidade ampla: até 6 EP do modelo exato; não é teste de cobertura ou evidência de validade do hardware."
+}

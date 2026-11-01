@@ -58,3 +58,14 @@ A análise offline das três execuções concluídas está disponível em:
 - Gráficos em `figuras/`, nos formatos PNG e SVG.
 
 O script `scripts/comparar_rodadas.py` usa apenas dados locais e 5.000 réplicas bootstrap por rodada. As instruções para reproduzir a análise em ambiente separado estão no relatório. O CSV histórico de duas rodadas foi preservado; a comparação completa está no novo JSON e nas tabelas do relatório. Nenhum experimento novo foi enviado para produzir esses arquivos.
+
+## Validação local concluída
+
+O protocolo de comparação e o piloto de ZNE foram validados no PC, com modelos sintéticos de leitura e de ruído nas portas. Foram simulados 12 blocos, totalizando 486.000 shots; nenhum job novo foi enviado à IBM.
+
+- [Registro de trabalho e commits locais](docs/registro_trabalho.md).
+- [Relatório completo da simulação](dados/simulados/validacao_2026_11_01/relatorio.md).
+- [Manifesto, sementes, versões e referências exatas](dados/simulados/validacao_2026_11_01/manifesto.json).
+- [Auditoria dos dados e circuitos](dados/simulados/validacao_2026_11_01/verificacao.json).
+
+Os scripts `scripts/protocolo_local.py`, `scripts/validar_protocolo_local.py` e `scripts/verificar_registro_local.py` são exclusivamente locais. As dependências estão em `requirements-simulacao.txt`, e os testes em `tests/`. O relatório contém os comandos de reprodução. Resultados sintéticos ficam em `dados/simulados/`, separados dos resultados reais em `dados/brutos/`.
