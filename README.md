@@ -4,10 +4,10 @@ Pesquisa em circuitos GHZ, ruído e mitigação. O repositório reúne código, 
 
 ## Comece por aqui
 
-- [Livro da frente de mitigação](quantum-mitigation/README.md): 12 capítulos, dos fundamentos ao código e à reprodução.
+- [Frente de mitigação](quantum-mitigation/README.md): introdução, fundamentos, um relatório por experimento, dados e scripts.
 - [Frente de modelagem](quantum-modeling/README.md): comparação histórica entre hardware e modelos ruidosos.
-- [Resumo para o orientador](quantum-mitigation/docs/resumo_orientador.md): síntese dos três registros reais de mitigação.
-- [Histórico e limites](quantum-mitigation/docs/livro/11-historico-limites/README.md): trabalho concluído e próximos passos.
+- [Relatório da mitigação](quantum-mitigation/docs/relatorio.md): a pesquisa em formato de artigo.
+- [Planejamento](quantum-mitigation/docs/planejamento.md): próximos passos propostos.
 
 ## As duas frentes
 
@@ -22,6 +22,6 @@ A modelagem já tinha código e resultados de linha de base; várias de suas pas
 
 ## Estado da branch e reprodução
 
-O trabalho documentado foi publicado na branch `mitigation`, sem merge em `main`. Esta revisão documental é de 2 de novembro de 2026. O [guia de reprodução](quantum-mitigation/docs/livro/09-reproducao/README.md) contém os comandos de análise, testes e simulação local.
+O trabalho documentado foi publicado na branch `mitigation`, sem merge em `main`. Esta revisão documental é de 2 de novembro de 2026. O [README dos scripts](quantum-mitigation/scripts/README.md) contém os comandos de análise, testes e simulação local.
 
 Scripts históricos podem acessar a IBM e enviar jobs; a documentação de cada pasta informa esse comportamento. O job `dbjnndgnceqs73akbkh0` já está concluído. Não é necessário reenviá-lo para estudar ou recalcular os resultados.
