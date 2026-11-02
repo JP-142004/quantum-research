@@ -83,6 +83,6 @@ Com 1.000 shots por circuito:
 
 **Execução:** locais, sem acesso à IBM.
 
-**Próxima pergunta:** a ZNE se comporta assim no hardware? Esse é um dos [próximos passos](../../README.md#5-conclusão-e-trabalhos-futuros).
+**Próxima pergunta:** a ZNE se comporta assim no hardware? Esse é um dos [próximos passos](../../README.md#o-que-vem-a-seguir).
 
 [Experimentos](../README.md)

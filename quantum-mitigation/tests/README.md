@@ -1,6 +1,6 @@
 # Testes da implementação local
 
-[Artigo](../README.md) · [Scripts](../scripts/README.md)
+[Visão geral](../README.md) · [Scripts](../scripts/README.md)
 
 O arquivo [test_protocolo_local.py](test_protocolo_local.py) usa `unittest`, Qiskit e Aer. Os testes são locais e não requerem conta IBM. O arquivo [test_documentacao.py](test_documentacao.py) não usa Qiskit: confere se as tabelas dos READMEs estão atualizadas em relação aos dados, se os links relativos existem e se alguns números citados no artigo coincidem com os dados.
 

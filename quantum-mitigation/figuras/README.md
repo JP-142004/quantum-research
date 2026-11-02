@@ -1,6 +1,6 @@
 # Figuras das três rodadas reais
 
-[Artigo](../README.md) · [Relatório comparativo](../docs/comparacao_rodadas.md)
+[Visão geral](../README.md) · [Relatório comparativo](../docs/comparacao_rodadas.md)
 
 | Figura | O que mostra |
 | --- | --- |

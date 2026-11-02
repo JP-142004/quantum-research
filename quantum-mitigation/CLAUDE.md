@@ -1,6 +1,6 @@
 # Instruções para o Claude Code neste projeto
 
-Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de ruído em circuitos quânticos**, começando pelo estado GHZ. O texto principal é o `README.md` desta pasta, escrito como artigo, em português. Leia-o primeiro, depois `experimentos/README.md`.
+Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de ruído em circuitos quânticos**, começando pelo estado GHZ. Este repositório é a **referência** do artigo, não o artigo. O `README.md` desta pasta é a visão geral do que foi feito e do que vem a seguir. O texto do artigo, em português, está em `docs/rascunho_artigo.md`. Leia o README primeiro, depois `experimentos/README.md`.
 
 ## Responsabilidades e escopo
 
@@ -51,7 +51,7 @@ Copie `experimentos/_modelo`, defina pergunta, indicador, controle e critério d
 
 ## Estado em 2 de novembro de 2026
 
-- Artigo reescrito e simplificado. Falta preencher **autoria, orientação e instituição** no cabeçalho.
+- README da pasta reescrito como visão geral (feito, a fazer, mapa de pastas). O artigo continua em `docs/rascunho_artigo.md`; falta preencher **autoria, orientação e instituição** no cabeçalho dele.
 - Experimentos 1 a 4 medidos na IBM. Experimentos 5 e 6 simulados no PC.
 - A proposta de 120.000 medidas na IBM (`docs/plano_experimentos.md`) **aguarda decisão do Luiz**. Nada dela foi executado.
 - Ainda falta um leitor que não conhece o trabalho ler só o artigo e dizer o que não entendeu.

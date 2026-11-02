@@ -11,4 +11,4 @@ Esta pasta reúne o que é preciso saber para ler os experimentos. Cada arquivo 
 
 **Para expandir.** Uma técnica nova entra como uma linha em [tecnicas.md](tecnicas.md) e, quando for testada, ganha uma pasta em [experimentos](../experimentos/README.md). Um circuito novo entra em [indicadores.md](indicadores.md), com seu resultado ideal e seu indicador.
 
-[Voltar ao artigo](../README.md)
+[Voltar à visão geral](../README.md)

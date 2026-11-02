@@ -25,4 +25,4 @@ Os programas Python das pastas 1 a 4 **enviam jobs à IBM** quando executados. P
 4. Para tabelas, use os marcadores de [gerar_tabelas.py](../scripts/gerar_tabelas.py). Assim o número do texto sempre vem do dado.
 5. Acrescente uma linha na tabela acima e em [tecnicas.md](../fundamentos/tecnicas.md), e uma linha em [dados/README.md](../dados/README.md) se houver um novo tipo de dado.
 
-[Artigo](../README.md)
+[Visão geral](../README.md)

@@ -1,6 +1,6 @@
 # Arquivo de documentos anteriores
 
-Estes documentos foram escritos antes da reorganização em formato de artigo, de 2 de novembro de 2026. Ficam aqui para consulta do histórico e **não são atualizados**. Podem conter afirmações antigas, por exemplo sobre arquivos que depois foram recuperados da IBM. Em caso de divergência, vale o [artigo](../../README.md) e os [experimentos](../../experimentos/README.md).
+Estes documentos foram escritos antes da reorganização em formato de artigo, de 2 de novembro de 2026. Ficam aqui para consulta do histórico e **não são atualizados**. Podem conter afirmações antigas, por exemplo sobre arquivos que depois foram recuperados da IBM. Em caso de divergência, vale a [visão geral](../../README.md) e os [experimentos](../../experimentos/README.md).
 
 | Arquivo | Conteúdo |
 | --- | --- |

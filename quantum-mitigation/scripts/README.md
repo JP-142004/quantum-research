@@ -1,6 +1,6 @@
 # Scripts de análise e validação
 
-[Artigo](../README.md) · [Experimentos](../experimentos/README.md) · [Dados](../dados/README.md)
+[Visão geral](../README.md) · [Experimentos](../experimentos/README.md) · [Dados](../dados/README.md)
 
 | Arquivo | Entrada | Saída/efeito | Acesso IBM |
 | --- | --- | --- | --- |

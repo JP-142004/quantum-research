@@ -8,6 +8,6 @@
 | [inventario_importacao.json](inventario_importacao.json) | Inventário dos arquivos importados na organização inicial. |
 | [arquivo](arquivo/README.md) | Documentos anteriores (livro de 12 capítulos, resumos e registros). |
 
-O texto principal da pesquisa é o [artigo](../README.md). Os documentos de `arquivo/` não são atualizados.
+A visão geral da pesquisa está no [README principal](../README.md); o texto do artigo está em [rascunho_artigo.md](rascunho_artigo.md). Os documentos de `arquivo/` não são atualizados.
 
-[Artigo](../README.md)
+[Visão geral](../README.md)
