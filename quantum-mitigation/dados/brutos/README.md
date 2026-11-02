@@ -1,7 +1,11 @@
 # Brutos · medidas da IBM
 
-Na [terceira rodada](04_mitigacao_leitura/repeticoes/rodada_03.json), o aparelho registrou 454 vezes `00000` e 441 vezes `11111`. Juntas, essas sequências representam **895 das 1.000 medidas** em Z.
+Cada rodada teve 1.000 medidas do GHZ em Z e outras 1.000 em X, além das 32.000 medidas de calibração. Clique no número da rodada para abrir o arquivo original.
 
-![454 medidas deram 00000, 441 deram 11111 e 105 deram outros resultados](../imagens/contagens_rodada3.png)
+| Rodada | Z: 00000 | Z: 11111 | Z: outros | X: par | X: ímpar |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| [1](04_mitigacao_leitura/GHZ_leitura_dbccq67i0auc73dumdk0.json) | 439 | 434 | 127 | 898 | 102 |
+| [2](04_mitigacao_leitura/GHZ_leitura_dbccri9gv2cc73ea3630.json) | 445 | 419 | 136 | 898 | 102 |
+| [3](04_mitigacao_leitura/repeticoes/rodada_03.json) | 454 | 441 | 105 | 903 | 97 |
 
-[Contagens das três rodadas](04_mitigacao_leitura/) · [Série de 5 a 50 qubits](01_ghz_escala/ghz_05_a_50.txt) · [Ver o resultado após o ajuste](../processados/README.md)
+Em X, par e ímpar indicam a quantidade de bits 1 na sequência medida. [Valores após o ajuste](../processados/README.md) · [Série de 5 a 50 qubits](01_ghz_escala/ghz_05_a_50.txt)

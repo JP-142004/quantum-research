@@ -1,6 +1,10 @@
 # Processados · resultados da análise
 
-Na terceira rodada, **89,5%** das medidas em Z deram `00000` ou `11111`. Aplicando a calibração às mesmas contagens, a estimativa passou a **96,48%**.
+| Rodada | PZ medido | PZ ajustado | Correlação X medida | Correlação X ajustada |
+| --- | ---: | ---: | ---: | ---: |
+| 1 | 87,30% | 94,36% | 0,7960 | 0,9440 |
+| 2 | 86,40% | 93,60% | 0,7960 | 0,9481 |
+| 3 | 89,50% | 96,48% | 0,8060 | 0,9702 |
 
 ![Valores medidos e ajustados nas três rodadas de mitigação](../../figuras/comparacao_rodadas.png)
 
