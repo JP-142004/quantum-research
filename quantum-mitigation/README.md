@@ -1,34 +1,53 @@
-# Como estudamos a mitigação de ruído
+# Avaliação de técnicas de mitigação de ruído em circuitos quânticos
 
-Quando um computador quântico dá um resultado inesperado, em que momento surgiu o erro? Ele pode ter ocorrido **durante o circuito**, enquanto as operações transformavam os qubits, ou **na leitura**, quando o aparelho registrou a resposta. Mitigar ruído significa tentar diminuir o efeito desses erros sobre o resultado que queremos medir.
+## Resumo
 
-Começamos com um circuito chamado GHZ porque sabemos o que esperar dele. Na primeira medida, os cinco bits deveriam aparecer todos iguais: `00000` ou `11111`. Se aparecer `00001`, temos um desvio. Só olhando esses cinco bits, não sabemos onde ele surgiu. Foi essa dúvida que orientou a pesquisa.
+Estudamos quanto diferentes técnicas de mitigação aproximam os resultados de um circuito quântico dos valores esperados. A primeira etapa usa o estado GHZ como referência experimental. Em três execuções no IBM Fez, a calibração de leitura aumentou a população nos estados esperados em cerca de sete pontos percentuais por execução. Em simulação, avaliamos também o efeito da construção do circuito e da extrapolação a ruído zero. Esses ensaios estabelecem um protocolo para testar outras técnicas no GHZ antes de estender a comparação a outros circuitos.
 
-## A história dos experimentos
+## 1. Introdução e objetivo
 
-**1. Observamos o problema.** Com cinco qubits, 922 de 1.000 medidas deram todos zeros ou todos uns. Com cinquenta, apenas 109 de 1.000 deram esses resultados. Isso mostrou o tamanho do desvio naquela série. Para investigar sua origem, o projeto incluiu testes mais simples, como preparar apenas zeros. O código desses controles foi preservado, mas faltam as contagens para dizer o que cada teste encontrou. [Medidas de 5 a 50 qubits](experimentos/01_ghz_escala/README.md) · [Controles](experimentos/02_controles/README.md)
+Um circuito pode produzir resultados diferentes dos ideais porque as operações físicas são imperfeitas ou porque o equipamento registra incorretamente o resultado da medição. Essas duas fontes de desvio pedem intervenções diferentes. Por exemplo, encurtar o circuito pode reduzir sua exposição a erros de portas. Já calibrar a leitura permite ajustar a estimativa calculada a partir das medidas.
 
-**2. Mudamos o caminho do circuito.** Duas construções podiam preparar o mesmo estado ideal. Uma delas seguia as conexões físicas do aparelho. A comparação histórica relata que isso reduziu de 13 para 4 as operações de dois qubits após a compilação. Cada operação a menos elimina uma oportunidade de introduzir erro. Para essa comparação, temos o relato, mas não as contagens originais. [Ver os dois desenhos](experimentos/03_ghz_conectado/README.md)
+Nosso objetivo é avaliar, para um mesmo circuito de referência, quanto cada intervenção muda os indicadores medidos e qual incerteza acompanha essa mudança. Escolhemos o GHZ porque conhecemos sua resposta ideal em duas bases de medição. Isso permite avaliar cada técnica com uma referência comum.
 
-**3. Calibramos a leitura na IBM.** Preparamos respostas conhecidas e contamos como o aparelho as registrava. Depois usamos essas contagens para ajustar a estimativa do GHZ. Na terceira rodada, **895 de 1.000 medidas** deram todos zeros ou todos uns. Isso é **89,5% observado**. Com a calibração, a estimativa passou a **96,48%**. A diferença veio de um cálculo sobre as mesmas medidas. Nas três rodadas reais, o ajuste aproximou os dois indicadores analisados dos valores ideais. [Acompanhar a conta a partir das contagens](experimentos/04_mitigacao_leitura/README.md)
+## 2. Método
 
-**4. No PC, separamos as causas.** No simulador, conseguimos escolher onde introduzir o erro. Quando havia apenas erro de leitura, a calibração exata recuperava o valor anterior à leitura. Quando acrescentamos erros nas operações, esse segundo efeito permanecia. Assim conseguimos testar o que cada intervenção fazia em condições conhecidas. [Comparar os cenários simulados](dados/simulados/README.md)
+**Circuito e indicadores.** Para cinco qubits, o GHZ ideal produz apenas `00000` ou `11111` na base Z. Calculamos **PZ** somando as contagens dessas duas sequências e dividindo pelo total. Como essa medida sozinha também seria compatível com uma mistura clássica de zeros e uns, medimos uma segunda propriedade na base X. A **correlação em X** é a fração de resultados com número par de bits 1 menos a fração com número ímpar. Os dois indicadores valem 1 para o GHZ positivo ideal.
 
-**5. Experimentamos outra técnica no simulador.** Executamos três versões do circuito com quantidades crescentes de operações sujeitas a erro. Usamos a tendência dos três resultados para estimar o que aconteceria se o ruído fosse reduzido a zero. Essa técnica se chama **ZNE**. Ela já foi testada no PC. A comparação com controles no equipamento real é uma próxima etapa planejada. [Ver o gráfico de ZNE](dados/simulados/zne/README.md) · [Plano experimental](docs/plano_experimentos.md)
+**Intervenções.** Mantivemos o estado ideal como alvo e avaliamos três mudanças, cada uma com sua própria referência experimental.
 
-## Para aprofundar
+| Intervenção | Comparação |
+| --- | --- |
+| Construção do circuito | Comparamos o GHZ original, que exige interações a partir de um único qubit, com uma construção que segue as conexões físicas. [Circuitos](experimentos/03_ghz_conectado/README.md) |
+| Mitigação de leitura | Em cada rodada no Fez, preparamos os 32 estados conhecidos de cinco qubits e medimos como foram registrados. Usamos essa matriz de calibração para ajustar as medidas do GHZ em Z e X. Foram 34 circuitos e 1.000 medidas por circuito. [Protocolo e contas](experimentos/04_mitigacao_leitura/README.md) |
+| Extrapolação a ruído zero (ZNE) | No simulador, aumentamos o número de operações da preparação sem mudar seu resultado ideal. Ajustamos uma reta aos indicadores de três versões e estimamos o valor no fator de ruído zero. [Protocolo e gráfico](dados/simulados/zne/README.md) |
 
-Os guias de cada etapa acima contêm os dados, as contas e os limites de interpretação. Para consultar um conceito específico ou reproduzir o código, use o [índice dos 12 capítulos](docs/livro/README.md). Para uma reunião, comece pelo [resumo das três rodadas reais](docs/resumo_orientador.md).
+**Incerteza.** Para as três rodadas reais, sorteamos 5.000 novas amostras de contagens por rodada a partir das frequências observadas (*bootstrap*). Em cada amostra, recalculamos a calibração e o indicador. Assim estimamos a incerteza da diferença entre o resultado bruto e o ajustado, que usam as mesmas medidas.
 
-## Continuidade da pesquisa
+## 3. Resultados
 
-Para cada novo circuito ou técnica, crie uma pasta com README e acrescente uma linha ao percurso. Registre a **pergunta**, o **circuito de teste** e seu resultado ideal, o **tipo de ruído** investigado, o **controle**, a **origem dos dados**, o **cálculo**, o **resultado com incerteza** e as **limitações**. Uma comparação com outro circuito pode ser acrescentada mesmo que seu indicador de interesse seja diferente de PZ ou CX.
+**Hardware.** Uma série inicial de 5 a 50 qubits mostrou queda de PZ de 0,922 para 0,109. Isso motivou investigar os desvios em um circuito menor. Na comparação histórica de cinco qubits, a construção conectada reduziu a contagem relatada de portas de dois qubits de 13 para 4. Os arquivos brutos dessa comparação de construções não foram recuperados. [Série de escala](experimentos/01_ghz_escala/README.md)
 
-| Técnica | O que investigar | Situação nesta pesquisa |
-| --- | --- | --- |
-| Extrapolação a ruído zero (ZNE) | Variar a exposição ao ruído e estimar o indicador no limite de ruído zero. A escolha do ajuste altera o resultado. | Piloto simulado concluído. [Método de dobramento](https://arxiv.org/abs/2005.10921) |
-| Pauli twirling | Sortear operações de Pauli compensadas que preservam o circuito ideal e mudam como erros coerentes se acumulam na média. Requer várias versões do circuito. | Possibilidade futura. |
-| Desacoplamento dinâmico | Inserir pulsos durante esperas para reduzir efeitos de certas perturbações. A duração das esperas e os erros dos pulsos influenciam o benefício. | Possibilidade futura. |
-| Cancelamento probabilístico de erros (PEC) | Combinar amostras com pesos positivos e negativos com base em um modelo de ruído. A variância pode exigir muitos shots. | Possibilidade futura. |
+A comparação de leitura dispõe das contagens das três rodadas no Fez, totalizando 102.000 medidas. A tabela mostra os indicadores antes e depois do ajuste.
 
-Para comparar os mecanismos dessas técnicas, veja o [guia da IBM](https://quantum.cloud.ibm.com/docs/en/guides/error-mitigation-and-suppression-techniques) e o [trabalho de Temme e colaboradores](https://arxiv.org/abs/1612.02058). A escolha do próximo circuito e da próxima técnica permanece aberta.
+| Rodada | PZ bruto → ajustado | Correlação em X bruta → ajustada |
+| --- | ---: | ---: |
+| 1 | 0,8730 → 0,9436 | 0,7960 → 0,9440 |
+| 2 | 0,8640 → 0,9360 | 0,7960 → 0,9481 |
+| 3 | 0,8950 → 0,9648 | 0,8060 → 0,9702 |
+
+Na terceira rodada, 454 medidas deram todos zeros e 441 deram todos uns. Logo, PZ bruto foi (454 + 441)/1.000 = 0,895. O valor 0,9648 é a estimativa obtida após aplicar a calibração às mesmas contagens. O ganho foi 0,0698, com intervalo bootstrap de 95% de aproximadamente 0,0580 a 0,0828. [Resultados e incertezas das três rodadas](docs/comparacao_rodadas.md)
+
+**Simulação.** Com ruído de portas conhecido, o PZ antes da leitura foi 0,8409 na construção original e 0,9463 na conectada, pelas referências exatas do modelo. No piloto de ZNE com a construção conectada, os circuitos com 4, 12 e 20 portas CX produziram referências de PZ de 0,9463, 0,8490 e 0,7637. A extrapolação desses valores resultou em 0,9899. [Resultados simulados e controles](dados/simulados/validacao_2026_11_01/relatorio.md)
+
+## 4. Discussão
+
+A mitigação de leitura aproximou os dois indicadores do ideal nas três rodadas reais. A calibração, porém, depende de preparar estados conhecidos e pode incorporar erros de preparação. O intervalo calculado representa a variação de amostragem dentro de uma rodada. A estabilidade em outras condições de hardware continua em aberto.
+
+No modelo simulado, a construção conectada reduziu a exposição a portas ruidosas, enquanto a calibração compensou os desvios introduzidos na leitura. O piloto de ZNE aproximou o PZ de 1, com resultado dependente da reta usada e maior incerteza nas estimativas amostradas. Como as técnicas foram avaliadas em condições diferentes, os números atuais não sustentam uma classificação geral entre elas.
+
+## 5. Conclusão e continuidade
+
+O próximo passo é **manter o GHZ como circuito de teste**. Para cada nova técnica, compararemos uma execução de referência com a intervenção, usando os mesmos indicadores, registrando as condições, o custo em medidas e as incertezas. A proposta imediata é comparar as duas construções com calibração e controles independentes no hardware. Depois de caracterizar as técnicas no GHZ, repetiremos as comparações selecionadas em outros circuitos, definindo para cada um seu resultado ideal e seu indicador de desempenho. [Plano experimental](docs/plano_experimentos.md)
+
+[Dados do projeto](dados/README.md) · [Reprodução local](docs/livro/09-reproducao/README.md) · [Teoria e referências complementares](docs/livro/README.md)
