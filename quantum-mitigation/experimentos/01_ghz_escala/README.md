@@ -22,3 +22,7 @@ As contagens estão em [ghz_05_a_50.txt](../../dados/brutos/01_ghz_escala/ghz_05
 PZ cai de 0,922 em cinco qubits para 0,109 em cinquenta nessa série. A interpretação precisa considerar compilação, quantidade de portas, diferenças de execução e ausência de metadados completos. O experimento não separa essas causas.
 
 **Execução:** esses programas submetem novos circuitos reais quando executados. Para recalcular a tabela, execute apenas `scripts/resumir_resultados.py` conforme o guia local; isso não usa a IBM.
+
+## Refazendo a primeira comparação
+
+Na seção de cinco qubits do [texto de contagens](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt), some as frequências dos dois resultados esperados: 477 + 445 = 922. Divida pelos 1.000 shots: PZ = 0,922. Restaram 78 resultados intermediários. Para cinquenta qubits, a mesma conta dá (106 + 3)/1.000 = 0,109, com 891 resultados intermediários. O [programa de resumo](../../scripts/resumir_resultados.py) aplica essa operação a cada tamanho. Aqui observamos o desvio antes de aplicar uma técnica. A pergunta seguinte é se parte dele já aparece ao preparar um estado simples.

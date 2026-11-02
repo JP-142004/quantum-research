@@ -22,3 +22,35 @@ O [guia histórico](../../docs/experimentos.md) registra a comparação relatada
 O protocolo novo local usa uma árvore fixa de cinco qubits e dados próprios de simulação; não transforma os relatos históricos em medidas rastreáveis. Veja a [validação local](../../docs/livro/07-simulacao-local/README.md).
 
 **Execução:** estes arquivos consultam o backend e submetem jobs; não são comandos necessários para ler os resultados existentes.
+
+## Duas maneiras de espalhar a mesma correlação
+
+Cada seta abaixo representa uma porta controlada, da origem para o alvo. H prepara a superposição na raiz. Leia as setas da esquerda para a direita na ordem indicada.
+
+| Construção original | Construção conectada de cinco qubits |
+| --- | --- |
+| H em 0 | H em 2 |
+| 0 → 1 | 2 → 1 |
+| 0 → 2 | 2 → 3 |
+| 0 → 3 | 1 → 0 |
+| 0 → 4 | 3 → 4 |
+
+Ambas usam quatro portas controladas no desenho lógico. A diferença aparece **após compilar**: quando o par pedido não é vizinho, operações adicionais podem ser necessárias para aproximá-lo. No registro histórico, o original passou a ter 13 portas de dois qubits e o conectado ficou com 4. Isso corresponde a nove operações a menos. Essa redução pode diminuir a exposição a erros nas portas. O número veio do [relato histórico](../../docs/experimentos.md); as contagens simuladas preservadas estão em um [experimento separado](../../dados/simulados/README.md).
+
+```mermaid
+flowchart LR
+  subgraph Original
+    A["0 · H"] --> B["1"]
+    A --> C["2"]
+    A --> D["3"]
+    A --> E["4"]
+  end
+  subgraph Conectado
+    F["2 · H"] --> G["1"]
+    F --> H["3"]
+    G --> I["0"]
+    H --> J["4"]
+  end
+```
+
+Cada seta mostra a direção controle → alvo. O desenho representa as interações lógicas; a tabela acima dá a ordem de aplicação.
