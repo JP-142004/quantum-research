@@ -1,35 +1,25 @@
-# Simulações locais
+# 5. O que a calibração consegue corrigir?
 
-[Dados](../README.md) · [Método de simulação](../../docs/livro/07-simulacao-local/README.md) · [ZNE](../../docs/livro/08-zne/README.md)
+Na IBM, vemos os bits registrados ao fim de cada medida. No PC podemos escolher o erro e calcular quanto o indicador valia **antes** da leitura. Isso permite saber se o ajuste recuperou aquilo que pretendíamos recuperar.
 
-## Execução disponível
+## O mesmo teste, com três condições
 
-[validacao_2026_11_01](validacao_2026_11_01/relatorio.md) contém nove blocos de comparação de construções e três blocos de ZNE. Total: 486.000 shots simulados. Nenhum deles foi executado na QPU da IBM.
+Preparamos o GHZ original e o conectado. Os dois devem produzir o mesmo estado ideal, embora o circuito original possa precisar de mais operações ao ser adaptado às conexões disponíveis.
 
-| Arquivos | Papel |
+| O que introduzimos no simulador | O que vimos |
 | --- | --- |
-| [manifesto.json](validacao_2026_11_01/manifesto.json) | Parâmetros, versões, referências exatas, sementes e hashes |
-| [comparacao.qpy](validacao_2026_11_01/comparacao.qpy) | 40 circuitos compilados da comparação |
-| [zne.qpy](validacao_2026_11_01/zne.qpy) | 42 circuitos compilados do piloto |
-| `*_contagens.json` | Contagens de cada protocolo/cenário/bloco |
-| `*_analise.json` | Estimativas, erros, intervalos e contrastes por bloco |
-| [relatorio.md](validacao_2026_11_01/relatorio.md) | Apresentação dos resultados e limites |
-| [verificacao.json](validacao_2026_11_01/verificacao.json) | Resultado da auditoria |
+| Nenhum erro | Os dois circuitos atingiram 1 em PZ e na correlação X. Os controles também deram os sinais esperados. |
+| Somente erro de leitura | Na referência calculada sem sorteio de shots, PZ valia 1 antes da leitura e 0,8366 depois. Ao inverter o canal conhecido, recuperamos 1. |
+| Erro nas operações e na leitura | Antes mesmo de medir, PZ já era 0,8409 no circuito original e 0,9463 no conectado. A inversão exata da leitura recuperou esses valores. |
 
-Cada nome como `comparacao_leitura_bloco_01_contagens.json` informa protocolo, cenário, bloco e tipo de conteúdo. A ordenação embaralhada é registrada em cada arquivo de contagens; os QPY seguem a ordem do catálogo do manifesto.
+A última linha explica por que usamos duas técnicas. Construir um caminho mais curto diminui a exposição a portas ruidosas. Calibrar o leitor permite ajustar o que ele registrou. Se o circuito chegou à leitura com PZ de 0,8409, corrigir perfeitamente o leitor recupera **0,8409**.
 
-Os erros do modelo são escolhidos, não extraídos de uma calibração atual da IBM. Os blocos variam a amostragem com modelo fixo. Para reproduzir, use outro nome em `--execucao`; o executor não sobrescreve um diretório existente.
+## Como fizemos a comparação com shots
 
-O manifesto cobre por hash 24 JSONs e dois QPY, não todos os documentos da pasta. A auditoria verifica essa lista e a coerência numérica. Veja o [dicionário de dados](../../docs/livro/10-codigo-dados/README.md) para os limites desse mecanismo.
+Em cada bloco, executamos 32 calibrações, quatro circuitos GHZ (duas construções em duas bases) e quatro controles com respostas conhecidas. Os controles receberam amostras próprias. Foram 40 circuitos × 1.000 shots × 3 blocos × 3 condições = **360.000 shots simulados**.
 
-## O teste de recuperação de um erro conhecido
+Uma referência exata e uma estimativa com shots são coisas diferentes. Por exemplo, no primeiro bloco com erros nas portas e na leitura, PZ ajustado foi 0,8408 ± 0,0195 no original e 0,9290 ± 0,0190 no conectado. Compare esses números com a última linha da tabela. A diferença é esperada quando estimamos tanto a calibração quanto o GHZ com amostras finitas.
 
-Em cada bloco executamos 32 calibrações, o GHZ original e o conectado em duas bases, e quatro controles independentes. Cada circuito recebeu 1.000 shots. A comparação teve três blocos em cada um dos três cenários: 40 × 1.000 × 3 × 3 = **360.000 shots simulados**.
+O [protocolo](../../scripts/protocolo_local.py) define circuitos e ruídos; o [executor](../../scripts/validar_protocolo_local.py) produz os blocos. Em cada par de JSONs, `_contagens` contém as frequências e `_analise` contém os cálculos. O [manifesto](validacao_2026_11_01/manifesto.json) guarda sementes, versões e referências exatas. Consulte o [relatório](validacao_2026_11_01/relatorio.md) para ver todos os blocos e a [verificação](validacao_2026_11_01/verificacao.json) para conferir a auditoria. Esses erros foram escolhidos para testar o método no PC.
 
-| Cenário | O que pudemos verificar |
-| --- | --- |
-| Ideal | As duas construções têm PZ e correlação X iguais a 1. Os controles de paridade dão os sinais esperados, inclusive −1 para o controle negativo. |
-| Apenas leitura | Antes da leitura os indicadores valem 1. Depois do canal conhecido, as referências exatas são PZ = 0,836604 e correlação X = 0,695688. A inversão da matriz exata recupera o valor anterior à leitura. Com shots finitos há dispersão. |
-| Leitura e portas | O modelo acrescenta despolarização após cada porta CX. Antes da leitura, o original já tem PZ = 0,840887 e correlação X = 0,769022. No conectado são 0,946261 e 0,922368. Corrigir a leitura recupera essas distribuições de referência no cálculo exato; os desvios produzidos pelas portas permanecem. |
-
-O [protocolo](../../scripts/protocolo_local.py) associa a calibração aos bits físicos realmente medidos após o roteamento. O [executor](../../scripts/validar_protocolo_local.py) guarda contagens sorteadas e referências sem flutuação de shots. Isso permite conferir cada estimativa do [relatório](validacao_2026_11_01/relatorio.md) contra um alvo conhecido. As sementes variam entre blocos, enquanto o modelo permanece fixo. A etapa seguinte usou outros 126.000 shots no [piloto de ZNE](zne/README.md).
+**Próxima pergunta:** o que podemos tentar quando o erro das operações permanece? O [passo 6, piloto de ZNE](zne/README.md), acrescentou 126.000 shots, totalizando **486.000 shots locais**.

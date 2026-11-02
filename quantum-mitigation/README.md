@@ -4,6 +4,8 @@
 
 Estudamos quanto diferentes técnicas de mitigação aproximam os resultados de um circuito quântico dos valores esperados. A primeira etapa usa o estado GHZ como referência experimental. Em três execuções no IBM Fez, a calibração de leitura aumentou a população nos estados esperados em cerca de sete pontos percentuais por execução. Em simulação, avaliamos também o efeito da construção do circuito e da extrapolação a ruído zero. Esses ensaios estabelecem um protocolo para testar outras técnicas no GHZ antes de estender a comparação a outros circuitos.
 
+**Para acompanhar uma medida do começo ao fim:** [1. Escala](experimentos/01_ghz_escala/README.md) → [2. Controles](experimentos/02_controles/README.md) → [3. Reconstrução](experimentos/03_ghz_conectado/README.md) → [4. Calibração na IBM](experimentos/04_mitigacao_leitura/README.md) → [5. Teste no PC](dados/simulados/README.md) → [6. ZNE no PC](dados/simulados/zne/README.md).
+
 ## 1. Introdução e objetivo
 
 Um circuito pode produzir resultados diferentes dos ideais porque as operações físicas são imperfeitas ou porque o equipamento registra incorretamente o resultado da medição. Essas duas fontes de desvio pedem intervenções diferentes. Por exemplo, encurtar o circuito pode reduzir sua exposição a erros de portas. Já calibrar a leitura permite ajustar a estimativa calculada a partir das medidas.

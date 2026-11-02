@@ -1,4 +1,10 @@
-# 02 — Controles com estados conhecidos
+# 2. O que acontece quando a resposta já é conhecida?
+
+## Como interpretar uma contagem de controle
+
+No teste de zeros, o alvo ideal é `00000`. Para medir o desvio do conjunto, conte tudo que difere de `00000` e divida pelo número de shots. Para medir o desvio do bit 0, some apenas as contagens com o bit da direita igual a 1. Um mesmo shot pode contribuir para o desvio de mais de um bit. O [código da comparação](comparar_zeros.py) faz essa distinção ao medir qubits separados e juntos.
+
+O teste de uns troca o alvo para `11111` e exige aplicar portas X. Uma diferença entre os testes pode refletir tanto a preparação quanto uma assimetria da leitura. Para investigar a leitura de forma sistemática, a etapa de calibração mede todas as 32 preparações. Estes controles históricos orientam a pergunta; sem as contagens originais, seus desvios numéricos permanecem desconhecidos.
 
 [Experimentos](../README.md) · [Circuitos e medidas](../../docs/livro/03-circuitos-medidas/README.md)
 
@@ -18,9 +24,3 @@ Cada circuito usa 1.000 shots. Os scripts mostram contagens e frações que dife
 Os programas foram preservados, mas não havia arquivos separados de contagens desses controles na pasta importada. Não reconstruímos resultados ausentes. Os controles do protocolo local novo possuem seus próprios dados em `dados/simulados`; eles não substituem essas medições históricas.
 
 **Execução:** os quatro arquivos acessam a IBM e submetem circuitos. Para conhecer os controles novos sem hardware, leia o [capítulo de simulação](../../docs/livro/07-simulacao-local/README.md).
-
-## Como interpretar uma contagem de controle
-
-No teste de zeros, o alvo ideal é `00000`. Para medir o desvio do conjunto, conte tudo que difere de `00000` e divida pelo número de shots. Para medir o desvio do bit 0, some apenas as contagens com o bit da direita igual a 1. Um mesmo shot pode contribuir para o desvio de mais de um bit. O [código da comparação](comparar_zeros.py) faz essa distinção ao medir qubits separados e juntos.
-
-O teste de uns troca o alvo para `11111` e exige aplicar portas X. Uma diferença entre os testes pode refletir tanto a preparação quanto uma assimetria da leitura. Para investigar a leitura de forma sistemática, a etapa de calibração mede todas as 32 preparações. Estes controles históricos orientam a pergunta; sem as contagens originais, seus desvios numéricos permanecem desconhecidos.

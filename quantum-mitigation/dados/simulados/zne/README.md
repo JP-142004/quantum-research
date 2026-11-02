@@ -1,13 +1,21 @@
-# Piloto local de extrapolação a ruído zero
+# 6. Por que colocar mais operações em um circuito com ruído?
 
-[Percurso da pesquisa](../../../README.md) · [Dados da execução](../validacao_2026_11_01/relatorio.md)
+Queríamos investigar o erro que permanece após ajustar a leitura. Para isso criamos três versões do GHZ conectado. As versões maiores têm operações extras que, em condições ideais, se desfazem entre si. Todas deveriam dar a mesma resposta. No modelo escolhido, porém, cada porta CX acrescenta ruído. Podemos então observar quanto o resultado muda quando aumentamos deliberadamente essa exposição.
 
-Depois de ajustar a leitura, ainda vemos o efeito das portas. Neste piloto ampliamos a preparação com pares de operações inversas. Em condições ideais, cada par se cancela. No simulador ruidoso, as portas extras aumentam a exposição ao canal despolarizante escolhido. Os fatores 1, 3 e 5 correspondem a 4, 12 e 20 portas CX após compilação. A mudança de base e a medição ficam fora do dobramento.
+| Versão | Portas CX | PZ na referência do modelo após descontar a leitura |
+| --- | ---: | ---: |
+| Fator 1 | 4 | 0,946261 |
+| Fator 3 | 12 | 0,848950 |
+| Fator 5 | 20 | 0,763687 |
 
-![Referências do simulador em três fatores e interceptos lineares](../../../figuras/zne_fatores.png)
+Ajustamos uma reta a esses três pontos e a prolongamos até o fator zero. O intercepto vale (13 × 0,946261 + 4 × 0,848950 − 5 × 0,763687)/12 ≈ **0,9899**. Esse ponto zero é uma previsão baseada nas três versões. É daí que vem o nome **extrapolação a ruído zero (ZNE)**.
 
-Os pontos dos fatores 1, 3 e 5 são referências sem flutuação de shots, após descontar a leitura. A linha é a reta ajustada aos três pontos. O símbolo no fator zero representa o valor previsto por essa reta. Para PZ, o intercepto é (13 × 0,946261 + 4 × 0,848950 − 5 × 0,763687)/12 ≈ **0,9899**. Para a correlação X, a mesma conta com 0,922368, 0,784717 e 0,667608 dá **0,9826**. Ambos ficam mais próximos do ideal, 1. A diferença que resta mostra a limitação de aproximar a resposta por uma reta.
+![Indicadores simulados nos três fatores e previsão no fator zero](../../../figuras/zne_fatores.png)
 
-Com 1.000 shots por circuito, há flutuação adicional. Por exemplo, no primeiro bloco o PZ estimado no fator 1 foi 0,9639 ± 0,0188, e a extrapolação deu 1,0072 ± 0,0226. O ajuste estatístico pode ultrapassar 1. Os 42 circuitos por bloco incluem calibração, seis circuitos GHZ e quatro controles. Em três blocos, são **126.000 shots locais**. Os fatores indicam quantas operações inserimos; sua relação com o ruído em um equipamento físico ainda precisaria ser medida.
+As linhas representam as retas ajustadas, e os losangos no fator zero são previsões. Para a correlação X, a mesma conta dá **0,9826**. Mesmo conhecendo os valores sem flutuação de shots, a reta deixa uma diferença em relação ao ideal 1. A curva verdadeira do modelo não é exatamente uma reta.
 
-[Implementação do dobramento e do intercepto](../../../scripts/protocolo_local.py) · [Referências numéricas e sementes](../validacao_2026_11_01/manifesto.json) · [Resultados do primeiro bloco](../validacao_2026_11_01/zne_leitura_e_portas_bloco_01_analise.json)
+## E quando usamos apenas mil medidas?
+
+Em cada bloco, foram 32 calibrações, seis circuitos GHZ (três fatores medidos em Z e X) e quatro controles. Com três blocos, são 42 × 1.000 × 3 = **126.000 shots simulados**. No primeiro bloco, o PZ ajustado do fator 1 foi 0,9639 ± 0,0188. A extrapolação deu 1,0072 ± 0,0226. A estimativa pode ultrapassar 1 porque vem de uma reta ajustada a dados com incerteza. Conservamos esse valor para que o efeito da extrapolação seja visível.
+
+O piloto foi realizado no PC. Seu resultado descreve o modelo testado. Uma execução em hardware faz parte das possibilidades futuras. [Código do dobramento e do ajuste](../../../scripts/protocolo_local.py) · [Dados do primeiro bloco](../validacao_2026_11_01/zne_leitura_e_portas_bloco_01_analise.json) · [Relatório completo](../validacao_2026_11_01/relatorio.md)
