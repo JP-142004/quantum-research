@@ -1,8 +1,37 @@
-# Mitigação de ruído em circuitos GHZ
+# Mitigação de ruído em circuitos quânticos
 
-Este é o ponto de entrada para entender a frente de mitigação do PIBIC. O projeto compara construções de circuitos GHZ, calibra a leitura e avalia os indicadores com incertezas. O livro abaixo parte dos conceitos básicos e chega ao código, aos resultados e à reprodução.
+Esta pesquisa investiga como identificar os efeitos do ruído em circuitos quânticos e avaliar técnicas para reduzi-los. Começamos com circuitos GHZ porque conhecemos os resultados esperados em condições ideais. Isso nos permitiu observar desvios, mudar a construção dos circuitos e testar a calibração da leitura. A pesquisa será ampliada para outros circuitos e técnicas. Cada nova etapa será documentada junto de seus dados, resultados e limitações.
 
-**Estado documentado em 2 de novembro de 2026:** três rodadas reais de mitigação no IBM Fez (102.000 shots), análise consolidada e validação local com piloto ZNE (486.000 shots simulados). O protocolo novo ainda não foi executado no hardware. Os resultados até `8ff5086` foram publicados na branch `mitigation`.
+## O que chamamos de ruído?
+
+Imagine preparar cinco qubits em zero e ler `00001`. A preparação pode ter deixado um qubit em um estado diferente do previsto. Uma porta, a operação que transforma os qubits, pode ter aplicado uma rotação ligeiramente errada. Durante uma espera, um qubit excitado pode perder energia, ou uma superposição pode perder a relação de fase entre suas componentes. Por fim, o detector pode registrar um bit incorretamente. Uma única leitura mostra o resultado final. Para distinguir as causas, precisamos de controles com respostas conhecidas e de comparações em que mudamos uma condição por vez.
+
+Mesmo um circuito ideal pode dar resultados diferentes a cada repetição, chamada *shot*. No GHZ ideal, todos zeros e todos uns têm a mesma probabilidade na base Z. Obter 493 de um tipo e 507 do outro em mil tentativas é compatível com esse sorteio. Já obter sequências intermediárias nessa base é um desvio em relação ao alvo ideal. Mitigar significa reduzir o efeito desses desvios sobre o resultado que queremos estimar. Neste projeto, mudamos tanto o circuito que o equipamento executa quanto o cálculo feito a partir das contagens.
+
+## Percurso experimental
+
+| Pergunta | Registro disponível |
+| --- | --- |
+| [1. O que muda com o tamanho?](experimentos/01_ghz_escala/README.md) | Série histórica de hardware, com contagens de 5 a 50 qubits. |
+| [2. O que acontece com estados simples?](experimentos/02_controles/README.md) | Programas históricos preservados; faltam as contagens separadas desses controles. |
+| [3. Podemos usar menos portas?](experimentos/03_ghz_conectado/README.md) | Comparação histórica relatada no Fez; a comparação local também tem dados simulados. |
+| [4. Quanto muda o indicador após calibrar a leitura?](experimentos/04_mitigacao_leitura/README.md) | Três rodadas concluídas no Fez, com 102.000 shots reais e resultados recalculáveis. |
+| [5. O que a técnica recupera quando conhecemos o erro?](dados/simulados/README.md) | Comparação local em três cenários, 360.000 shots simulados. |
+| [6. O que acontece ao extrapolar para ruído zero?](dados/simulados/zne/README.md) | Piloto local, 126.000 shots simulados. |
+| [Próxima etapa em hardware](docs/plano_experimentos.md) | Comparação planejada com controles independentes, 120.000 medidas propostas. |
+
+## Continuidade da pesquisa
+
+Para cada novo circuito ou técnica, crie uma pasta com README e acrescente uma linha ao percurso. Registre a **pergunta**, o **circuito de teste** e seu resultado ideal, o **tipo de ruído** investigado, o **controle**, a **origem dos dados**, o **cálculo**, o **resultado com incerteza** e as **limitações**. Uma comparação com outro circuito pode ser acrescentada mesmo que seu indicador de interesse seja diferente de PZ ou CX.
+
+| Técnica | O que investigar | Situação nesta pesquisa |
+| --- | --- | --- |
+| Extrapolação a ruído zero (ZNE) | Variar a exposição ao ruído e estimar o indicador no limite de ruído zero. A escolha do ajuste altera o resultado. | Piloto simulado concluído. [Método de dobramento](https://arxiv.org/abs/2005.10921) |
+| Pauli twirling | Sortear operações de Pauli compensadas que preservam o circuito ideal e mudam como erros coerentes se acumulam na média. Requer várias versões do circuito. | Possibilidade futura. |
+| Desacoplamento dinâmico | Inserir pulsos durante esperas para reduzir efeitos de certas perturbações. A duração das esperas e os erros dos pulsos influenciam o benefício. | Possibilidade futura. |
+| Cancelamento probabilístico de erros (PEC) | Combinar amostras com pesos positivos e negativos com base em um modelo de ruído. A variância pode exigir muitos shots. | Possibilidade futura. |
+
+Para comparar os mecanismos dessas técnicas, veja o [guia da IBM](https://quantum.cloud.ibm.com/docs/en/guides/error-mitigation-and-suppression-techniques) e o [trabalho de Temme e colaboradores](https://arxiv.org/abs/1612.02058). A escolha do próximo circuito e da próxima técnica permanece aberta.
 
 ## Livro do projeto
 
