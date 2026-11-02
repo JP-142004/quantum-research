@@ -60,7 +60,9 @@ Um circuito novo precisa declarar `EXEMPLOS` (lista de `(n, variante)`) no módu
 
 ## Estado em 2 de novembro de 2026
 
-- **Fases 1 e 2 prontas:** esqueleto, `fundamentos/`, plano dos experimentos, e o código em `mitigacao/` com `rodar.py` e 52 testes. Ainda não há dados nem análise (`analisar`), que entram na Fase 3 junto com os experimentos 5 e 6.
+- **Fases 1 e 2 prontas, e as receitas dos 6 experimentos também:** `fundamentos/`, o código em `mitigacao/` com `rodar.py` e os testes, e `experimentos/01_escala` a `06_zne_simulado`, cada um com `experimento.py` e um README de pré-registro (pergunta, método, custo e critérios). O roteiro para rodar está em `experimentos/README.md`.
+- **Ainda não existe:** nenhum dado e a **análise** (`analisar`: indicadores brutos e ajustados, bootstrap, ZNE, tabelas e figuras). Ela é escrita depois que houver dados, validada primeiro com os experimentos 5 e 6.
+- O envio real à IBM **nunca foi testado contra o serviço**, só com computadores falsos. O primeiro `--verificar --online` e o primeiro `--enviar` são o teste de verdade.
 - Plano combinado: experimentos 1 a 4 em **3 sessões na IBM, em 3 dias**, no mesmo computador; experimentos 5 e 6 no simulador. O experimento 3 compara original e conectado em 5, 10 e 20 qubits.
 - Fases seguintes, cada uma com aprovação do Luiz: 3) análise e experimentos 5 e 6 no simulador; 4) sessão 1 na IBM; 5) sessões 2 e 3; 6) relatórios finais.
 - Os critérios de sucesso de `experimentos/README.md` são uma proposta e precisam ser confirmados antes da primeira sessão.

@@ -70,7 +70,30 @@ class RodarTest(unittest.TestCase):
         self.receita(3, 'simulador', 'simulador', opcoes="dict(cenario='ideal')")
         self.rodar('03', '--enviar', '--sessao', 's')
         codigo, _ = self.rodar('03', '--enviar', '--sessao', 's')
-        self.assertIn('já existe', str(codigo))
+        self.assertIn('Nada foi enviado', str(codigo))
+
+    def test_todas_as_sessoes_do_simulador(self):
+        pasta = self.receita(6, 'simulador', 'simulador')
+        with (pasta / 'experimento.py').open('a', encoding='utf-8') as f:
+            f.write("\nsessoes = [dict(nome='a', semente=1, opcoes_envio=dict(cenario='ideal')),\n"
+                    "           dict(nome='b', semente=2, opcoes_envio=dict(cenario='leitura'))]\n")
+        (pasta / 'dados' / 'b').mkdir(parents=True)   # uma delas já existe: nada deve ser gravado
+        codigo, _ = self.rodar('06', '--enviar', '--todas')
+        self.assertIn('Já existem as sessões b', str(codigo))
+        self.assertFalse((pasta / 'dados' / 'a').exists())
+        (pasta / 'dados' / 'b').rmdir()
+        codigo, _ = self.rodar('06', '--enviar', '--todas')
+        self.assertEqual(codigo, 0)
+        sessoes = sorted(p.name for p in (pasta / 'dados').iterdir())
+        self.assertEqual(sessoes, ['a', 'b'])
+        a = (pasta / 'dados' / 'a' / 'contagens.json').read_text(encoding='utf-8')
+        b = (pasta / 'dados' / 'b' / 'contagens.json').read_text(encoding='utf-8')
+        self.assertNotEqual(a, b)   # cenários e sementes diferentes dão contagens diferentes
+
+    def test_todas_nao_vale_para_a_ibm(self):
+        self.receita(7, 'ibm', 'ibm_teste')
+        codigo, _ = self.rodar('07', '--enviar', '--todas')
+        self.assertIn('--todas só vale', str(codigo))
 
     def test_ibm_sem_confirmacao_nao_envia(self):
         pasta = self.receita(4, 'ibm', 'ibm_teste')

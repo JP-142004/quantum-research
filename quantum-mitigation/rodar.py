@@ -2,7 +2,10 @@
 """Comando único do projeto. O argumento é o número do experimento.
 
   python rodar.py 03 --verificar                     mostra o que seria enviado; não envia nada
+  python rodar.py 03 --verificar --online            idem, mas consulta o computador real da IBM
+                                                     e compila os circuitos nele (também não envia)
   python rodar.py 03 --enviar --computador ibm_fez   envia (pede confirmação) e grava a sessão
+  python rodar.py 05 --enviar --todas                roda todas as sessões do simulador da receita
   python rodar.py 03 --coletar --sessao 2026-11-10_ibm_fez
   python rodar.py 03 --listar                        lista as sessões do experimento
 
@@ -10,18 +13,14 @@ Uma sessão já registrada nunca é sobrescrita nem reenviada.
 """
 import argparse
 import importlib.util
-import platform
 import sys
-from datetime import date
 from pathlib import Path
 
-from mitigacao import registro
-from mitigacao.execucao import ibm, simulador
-from mitigacao.montagem import montar, verificar_ideal
-from mitigacao.topologia import vizinhos_linha
+from mitigacao import registro, sessao
+from mitigacao.execucao import ibm, simulador  # noqa: F401  (os testes trocam estes módulos)
+from mitigacao.montagem import verificar_ideal
 
 RAIZ = Path(__file__).resolve().parent
-MODULOS = {'ibm': ibm, 'simulador': simulador}
 
 
 def achar_experimento(numero):
@@ -41,66 +40,67 @@ def carregar_receita(pasta):
     return receita
 
 
-def resumir(montados, shots, sessoes):
-    print(f'{"item":42} {"n":>3}  qubits físicos             ideal')
+def resumir(montados, shots, sessoes, compilados=None):
+    cabecalho = f'{"item":44} {"n":>3}  {"qubits físicos":28} {"ideal":6}'
+    print(cabecalho + ('  portas2q prof' if compilados else ''))
     for m in montados:
         ok = verificar_ideal(m)
-        estado = 'pulado (n grande)' if ok is None else 'ok' if ok else 'FALHOU'
-        print(f'{m["nome"]:42} {m["item"]["n"]:>3}  {str(m["qubits_fisicos"]):25} {estado}')
+        estado = '-' if ok is None else 'ok' if ok else 'FALHOU'
+        qubits = str(m['qubits_fisicos']) if len(m['qubits_fisicos']) <= 6 else f'{len(m["qubits_fisicos"])} qubits'
+        linha = f'{m["nome"]:44} {m["item"]["n"]:>3}  {qubits:28} {estado:6}'
+        if compilados:
+            info = ibm_info(compilados[m['nome']])
+            linha += f'  {info["portas_2q"]:>8} {info["profundidade"]:>4}'
+        print(linha)
     medidas = len(montados) * shots
     print(f'\n{len(montados)} circuitos x {shots} shots = {medidas:,} medidas por sessão'.replace(',', '.'))
     print(f'{sessoes} sessões previstas = {medidas * sessoes:,} medidas no total'.replace(',', '.'))
 
 
-def montar_da_receita(receita, computador, online):
-    modulo = MODULOS[receita.execucao]
-    if receita.execucao == 'ibm' and online:
-        vizinhos = modulo.vizinhos(computador)
-    elif receita.execucao == 'ibm':
-        vizinhos = vizinhos_linha  # verificação local: computador sintético em linha
-    else:
-        vizinhos = lambda n: modulo.vizinhos(computador, n)  # noqa: E731
-    return montar(receita.itens, vizinhos, getattr(receita, 'raiz', 2))
+def ibm_info(qc):
+    from mitigacao.execucao import info_compilado
+    return info_compilado(qc)
 
 
 def verificar(receita, args):
     print(f'Pergunta: {receita.pergunta}')
+    online = args.online and receita.execucao == 'ibm'
     if receita.execucao == 'ibm':
-        print('Verificação local, com um computador sintético em linha. Os qubits reais são escolhidos no envio.\n')
-    montados = montar_da_receita(receita, args.computador, online=False)
-    resumir(montados, getattr(receita, 'shots', 1000), getattr(receita, 'repeticoes', 1))
+        print('Consulta o computador real e compila nele; não envia nada.\n' if online else
+              'Verificação local, com um computador sintético em linha. Os qubits reais são escolhidos no envio.\n')
+    montados = sessao.montar_receita(receita, args.computador, online=online)
+    compilados = ibm.compilar(montados, ibm.backend(args.computador)) if online else None
+    resumir(montados, getattr(receita, 'shots', 1000), getattr(receita, 'repeticoes', 1), compilados)
     return 0 if all(verificar_ideal(m) is not False for m in montados) else 1
 
 
 def enviar(pasta_exp, receita, args):
-    modulo = MODULOS[receita.execucao]
+    padrao = getattr(receita, 'opcoes_envio', {})
+    if args.todas:
+        if receita.execucao != 'simulador' or not hasattr(receita, 'sessoes'):
+            sys.exit('--todas só vale para receitas do simulador que declaram `sessoes`')
+        lista = [{**dict(opcoes_envio=padrao, semente=args.semente), **s} for s in receita.sessoes]
+    else:
+        lista = [dict(nome=args.sessao or sessao.nome_padrao(args.computador), semente=args.semente,
+                      opcoes_envio=padrao)]
+    existentes = [s['nome'] for s in lista if (pasta_exp / 'dados' / s['nome']).exists()]
+    if existentes:
+        sys.exit(f'Já existem as sessões {", ".join(existentes)}. Nada foi enviado.')
     shots = getattr(receita, 'shots', 1000)
-    nome = args.sessao or f'{date.today():%Y-%m-%d}_{args.computador}'
-    pasta = pasta_exp / 'dados' / nome
-    if pasta.exists():
-        sys.exit(f'A sessão {nome} já existe. Nada foi enviado.')
-    montados = montar_da_receita(receita, args.computador, online=True)
-    if any(verificar_ideal(m) is False for m in montados):
-        sys.exit('Algum circuito não bate com o resultado ideal. Nada foi enviado.')
-    resumir(montados, shots, 1)
-    if receita.execucao == 'ibm':
-        pedido = input(f'\nIsto envia {len(montados)} circuitos ({len(montados) * shots} medidas) a {args.computador}. '
-                       'Digite ENVIAR para confirmar: ')
-        if pedido != 'ENVIAR':
-            sys.exit('Cancelado. Nada foi enviado.')
-    job = modulo.enviar(montados, shots, args.semente, args.computador, **getattr(receita, 'opcoes_envio', {}))
-    print(f'Job: {job["job_id"]}', flush=True)  # antes de gravar: se algo falhar, o id não se perde
-    ficha = dict(experimento=pasta_exp.name, pergunta=receita.pergunta, computador=args.computador,
-                 tipo=receita.execucao, data=f'{date.today():%Y-%m-%d}', enviado_utc=registro.agora(),
-                 job_id=job['job_id'], shots=shots, semente=args.semente, opcoes=job['opcoes'],
-                 versoes=registro.versoes(), python=platform.python_version(), ordem=job['ordem'],
-                 itens=[dict(nome=m['nome'], item=m['item'], qubits_fisicos=m['qubits_fisicos'],
-                             arestas=m['arestas'], roteamento=m['roteamento'], compilado=job['info'][m['nome']])
-                        for m in montados])
-    registro.registrar_envio(pasta, ficha, [job['compilados'][n] for n in job['ordem']])
-    if modulo.INSTANTANEO:
-        registro.registrar_coleta(pasta, modulo.coletar(job), shots)
-    print(f'Sessão gravada em {pasta}')
+    for s in lista:
+        try:
+            pasta, montados = sessao.preparar(pasta_exp, receita, args.computador, s['nome'])
+        except RuntimeError as erro:
+            sys.exit(str(erro))
+        if not args.todas:
+            resumir(montados, shots, 1)
+        if receita.execucao == 'ibm':
+            pedido = input(f'\nIsto envia {len(montados)} circuitos ({len(montados) * shots} medidas) a '
+                           f'{args.computador}. Digite ENVIAR para confirmar: ')
+            if pedido != 'ENVIAR':
+                sys.exit('Cancelado. Nada foi enviado.')
+        sessao.enviar_e_gravar(pasta, pasta_exp, receita, montados, args.computador, s['semente'], s['opcoes_envio'])
+        print(f'Sessão {s["nome"]} gravada em {pasta}')
     return 0
 
 
@@ -111,7 +111,7 @@ def coletar(pasta_exp, args):
     ficha, contagens = registro.ler_sessao(pasta)
     if contagens is not None:
         sys.exit('Esta sessão já foi coletada.')
-    resultado = MODULOS[ficha['tipo']].coletar(dict(job_id=ficha['job_id'], ordem=ficha['ordem']))
+    resultado = sessao.MODULOS[ficha['tipo']].coletar(dict(job_id=ficha['job_id'], ordem=ficha['ordem']))
     if resultado is None:
         print('O job ainda não terminou.')
         return 0
@@ -129,6 +129,8 @@ def main():
     p.add_argument('--computador')
     p.add_argument('--sessao')
     p.add_argument('--semente', type=int, default=42)
+    p.add_argument('--online', action='store_true')
+    p.add_argument('--todas', action='store_true')
     args = p.parse_args()
     pasta_exp = achar_experimento(args.experimento)
     if args.listar:

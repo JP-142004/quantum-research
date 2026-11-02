@@ -2,6 +2,7 @@
 código e os testes funcionarem sem ele. As credenciais ficam salvas no computador de quem
 envia; este código nunca as lê nem as grava."""
 from qiskit import transpile
+from qiskit.transpiler.exceptions import TranspilerError
 
 from mitigacao.execucao import conferir_sem_troca, embaralhar, info_compilado
 from mitigacao.topologia import vizinhos_de
@@ -17,28 +18,39 @@ def _servico():
     return QiskitRuntimeService(channel='ibm_quantum_platform')
 
 
+def backend(computador):
+    return _servico().backend(computador)
+
+
 def vizinhos(computador, n=None):
-    return vizinhos_de(_servico().backend(computador).coupling_map.get_edges())
+    return vizinhos_de(backend(computador).coupling_map.get_edges())
+
+
+def compilar(montados, backend_):
+    """Compila cada circuito para o computador, nos qubits escolhidos. Não envia nada."""
+    compilados = {}
+    for m in montados:
+        try:
+            qc = transpile(m['circuito'], backend=backend_, initial_layout=list(m['qubits_fisicos']),
+                           routing_method=m['roteamento'], optimization_level=1, seed_transpiler=SEMENTE_COMPILADOR)
+        except TranspilerError as erro:
+            raise RuntimeError(f'{m["nome"]} não cabe nas ligações do computador sem trocar qubits: {erro}') from erro
+        if m['roteamento'] == 'none':
+            conferir_sem_troca(qc, m['qubits_fisicos'], m['nome'])
+        compilados[m['nome']] = qc
+    return compilados
 
 
 def enviar(montados, shots, semente, computador, limite_segundos=None):
     """Compila e envia todos os circuitos em um único job. Devolve o job_id e o que foi enviado."""
     from qiskit_ibm_runtime import SamplerV2
-    backend = _servico().backend(computador)
-    estado = backend.status()
-    if not estado.operational:
+    backend_ = backend(computador)
+    if not backend_.status().operational:
         raise RuntimeError(f'{computador} está indisponível. Nada foi enviado.')
     por_nome = {m['nome']: m for m in montados}
     ordem = embaralhar(list(por_nome), semente)
-    compilados = {}
-    for nome in ordem:
-        m = por_nome[nome]
-        compilados[nome] = transpile(m['circuito'], backend=backend, initial_layout=list(m['qubits_fisicos']),
-                                     routing_method=m['roteamento'], optimization_level=1,
-                                     seed_transpiler=SEMENTE_COMPILADOR)
-        if m['roteamento'] == 'none':
-            conferir_sem_troca(compilados[nome], m['qubits_fisicos'], nome)
-    sampler = SamplerV2(mode=backend)
+    compilados = compilar([por_nome[nome] for nome in ordem], backend_)
+    sampler = SamplerV2(mode=backend_)
     sampler.options.dynamical_decoupling.enable = OPCOES['dd']
     sampler.options.twirling.enable_gates = OPCOES['twirling_gates']
     sampler.options.twirling.enable_measure = OPCOES['twirling_measure']

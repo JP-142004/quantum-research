@@ -32,6 +32,27 @@ Definidos antes de rodar, para não escolher o resultado depois:
 - Antes de cada envio, o autor aprova o que vai sair (circuitos, medidas, computador) e confere o saldo de tempo do seu plano.
 - Credenciais ficam só no computador do autor.
 
+## Roteiro para rodar
+
+Os comandos partem da pasta `quantum-mitigation`, com o ambiente da raiz do repositório (`..\venv`).
+
+**No simulador** (não gasta IBM, leva segundos). Cada comando grava todas as sessões do experimento:
+
+```powershell
+..\venv\Scripts\python rodar.py 05 --enviar --todas
+..\venv\Scripts\python rodar.py 06 --enviar --todas
+```
+
+**Na IBM**, no dia de uma sessão. Os experimentos 1 a 4 rodam no **mesmo dia**, no mesmo computador:
+
+1. Teste o código: `..\venv\Scripts\python -m unittest discover -s tests`.
+2. Ensaio com o computador real, **sem enviar nada** (consulta as ligações e compila os circuitos nele): `..\venv\Scripts\python rodar.py 04 --verificar --online`, e o mesmo para 03, 02 e 01. Confira a coluna de portas de dois qubits e se nenhum circuito acusa `FALHOU`.
+3. Confira quanto tempo ainda resta no seu plano da IBM.
+4. Envie um experimento por vez: `..\venv\Scripts\python rodar.py 04 --enviar --computador ibm_fez`. O programa mostra o que vai sair e só envia depois de você digitar `ENVIAR`.
+5. Quando o job terminar: `..\venv\Scripts\python rodar.py 04 --coletar --sessao AAAA-MM-DD_ibm_fez`. Para ver as sessões: `--listar`.
+
+Uma sessão gravada não é reenviada nem sobrescrita. A análise dos dados e os relatórios de resultado vêm depois.
+
 ## Como acrescentar um experimento
 
 1. Copie a pasta [_molde](_molde/README.md) para a próxima numeração, por exemplo `07_nome_curto`.

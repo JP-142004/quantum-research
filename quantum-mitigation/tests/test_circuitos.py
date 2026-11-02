@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from mitigacao import circuitos
 from mitigacao.montagem import montar, verificar_ideal
-from mitigacao.topologia import vizinhos_linha
+from mitigacao.topologia import vizinhos_de, vizinhos_linha
 
 
 class CircuitosTest(unittest.TestCase):
@@ -74,6 +74,22 @@ class CircuitosTest(unittest.TestCase):
         self.assertEqual(simples.prob_ideal('00001', 5, 'Z', '00001'), 1.0)
         self.assertEqual(simples.prob_ideal('00001', 5, 'X', '++++-'), 1.0)
         self.assertEqual(simples.prob_ideal('00000', 5, 'X', '++++-'), 0.0)
+
+    def test_regiao_restringe_a_escolha_de_qubits(self):
+        # o qubit 2 tem um vizinho fora da região (17): sem região, a busca o escolheria
+        mapa = vizinhos_de([(0, 1), (1, 2), (2, 3), (3, 4), (2, 17)])
+        sem = montar([dict(circuito='ghz', n=5, variante='conectado')], mapa)[0]
+        com = montar([dict(circuito='ghz', n=5, variante='conectado', regiao=[0, 1, 2, 3, 4])], mapa)[0]
+        self.assertIn(17, sem['qubits_fisicos'])
+        self.assertEqual(com['qubits_fisicos'], [0, 1, 2, 3, 4])
+        self.assertEqual(com['arestas'], [(2, 1), (2, 3), (1, 0), (3, 4)])
+
+    def test_rotulo_distingue_controle_de_calibracao(self):
+        base = dict(circuito='simples', n=5, variante='00000', qubits=[0, 1, 2, 3, 4])
+        montados_ = montar([base, dict(base, rotulo='controle')], vizinhos_linha)
+        self.assertEqual(len({m['nome'] for m in montados_}), 2)
+        with self.assertRaises(ValueError):
+            montar([base, dict(base)], vizinhos_linha)
 
     def test_itens_invalidos(self):
         for ruim in (dict(circuito='ghz', n=5, base='Y'), dict(circuito='ghz', n=5, fator=2)):

@@ -29,6 +29,9 @@ def montar(itens, vizinhos, raiz=2):
                 raise ValueError(f'{nome}: precisa de {n} qubits explícitos')
         else:
             mapa = vizinhos(n) if callable(vizinhos) else vizinhos
+            if item['regiao'] is not None:
+                permitidos = set(item['regiao'])
+                mapa = {q: {v for v in vs if v in permitidos} for q, vs in mapa.items() if q in permitidos}
             raiz_item = item['raiz'] if item['raiz'] is not None else raiz
             if callable(vizinhos):
                 raiz_item = min(raiz_item, n - 1)  # na linha sintética de n qubits, a raiz cabe na linha

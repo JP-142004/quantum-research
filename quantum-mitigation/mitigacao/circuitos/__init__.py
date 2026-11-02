@@ -10,7 +10,11 @@ Cada módulo desta pasta define um circuito com a mesma interface:
   EXEMPLOS      lista de (n, variante); os testes percorrem todas, sem escrever teste novo
 
 Um item de experimento é um dict com as chaves circuito, n, variante, base, fator e,
-opcionalmente, qubits (qubits físicos explícitos) e raiz (qubit físico de partida).
+opcionalmente:
+  qubits   qubits físicos explícitos
+  raiz     qubit físico de partida da busca
+  regiao   lista de qubits físicos onde a busca pode escolher (por exemplo [0, 1, 2, 3, 4])
+  rotulo   texto que distingue dois itens iguais (um controle e uma calibração, por exemplo)
 """
 import importlib
 import pkgutil
@@ -28,7 +32,7 @@ def obter(nome):
 
 def completar(item):
     """Preenche os valores padrão de um item."""
-    completo = dict(variante='padrao', base='Z', fator=1, qubits=None, raiz=None)
+    completo = dict(variante='padrao', base='Z', fator=1, qubits=None, raiz=None, regiao=None, rotulo=None)
     completo.update(item)
     if completo['base'] not in ('Z', 'X'):
         raise ValueError('A base deve ser Z ou X')
@@ -45,6 +49,8 @@ def nome_item(item):
         nome += f"_f{i['fator']}"
     if i['qubits'] is not None:
         nome += '_q' + '-'.join(str(q) for q in i['qubits'])
+    if i['rotulo']:
+        nome += f"_{i['rotulo']}"
     return nome
 
 

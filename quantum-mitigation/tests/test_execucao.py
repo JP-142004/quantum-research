@@ -1,16 +1,20 @@
 """Testes da execução: simulador local e a regra de importar o IBM só quando necessário."""
+import subprocess
 import sys
 import unittest
 from pathlib import Path
 
 from qiskit import QuantumCircuit
+from qiskit.providers.fake_provider import GenericBackendV2
+from qiskit.transpiler import CouplingMap
 from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel, ReadoutError
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from mitigacao.execucao import embaralhar, ibm, ruido, simulador
+from mitigacao.execucao import embaralhar, ibm, info_compilado, ruido, simulador
 from mitigacao.montagem import montar
+from mitigacao.topologia import vizinhos_de
 
 
 def montados(itens):
@@ -19,7 +23,12 @@ def montados(itens):
 
 class ExecucaoTest(unittest.TestCase):
     def test_ibm_nao_importa_o_runtime_ao_ser_carregado(self):
-        self.assertNotIn('qiskit_ibm_runtime', sys.modules)
+        # em processo limpo: dentro de um processo já usado, o próprio Qiskit pode carregar o pacote
+        codigo = ("import sys; import mitigacao.execucao.ibm, mitigacao.sessao, rodar; "
+                  "sys.exit('qiskit_ibm_runtime' in sys.modules)")
+        raiz = Path(__file__).resolve().parents[1]
+        resultado = subprocess.run([sys.executable, '-c', codigo], cwd=raiz, capture_output=True)
+        self.assertEqual(resultado.returncode, 0, resultado.stderr.decode(errors='replace')[-500:])
         self.assertFalse(ibm.INSTANTANEO)
         self.assertEqual(ibm.OPCOES, dict(dd=False, twirling_gates=False, twirling_measure=False, init_qubits=True))
 
@@ -70,6 +79,27 @@ class ExecucaoTest(unittest.TestCase):
         self.assertEqual(conectado, 4)
         self.assertGreater(original, conectado)
         self.assertEqual(job['info']['ghz_5q_conectado_Z']['mapa_medidas'], [(q, q) for q in range(5)])
+
+    def test_compilar_para_um_computador_com_ligacoes_proprias(self):
+        # computador falso do próprio Qiskit, com 20 qubits em linha (sem rede, sem IBM)
+        backend = GenericBackendV2(num_qubits=20, coupling_map=CouplingMap.from_line(20), seed=1)
+        mapa = vizinhos_de(backend.coupling_map.get_edges())
+        itens = [dict(circuito='ghz', n=5, variante=v, regiao=[0, 1, 2, 3, 4]) for v in ('original', 'conectado')]
+        montados_ = montar(itens, mapa)
+        compilados = ibm.compilar(montados_, backend)
+        info = {nome: info_compilado(qc) for nome, qc in compilados.items()}
+        self.assertEqual(info['ghz_5q_conectado_Z']['portas_2q'], 4)
+        self.assertGreater(info['ghz_5q_original_Z']['portas_2q'], 4)
+        self.assertEqual(montados_[0]['qubits_fisicos'], [0, 1, 2, 3, 4])
+
+    def test_conectado_que_exigiria_troca_e_recusado(self):
+        backend = GenericBackendV2(num_qubits=5, coupling_map=CouplingMap.from_line(5), seed=1)
+        montado = montar([dict(circuito='ghz', n=5, variante='conectado', regiao=[0, 1, 2, 3, 4])],
+                         vizinhos_de(backend.coupling_map.get_edges()))[0]
+        montado['circuito'] = montar([dict(circuito='ghz', n=5, variante='original')],
+                                     vizinhos_de(backend.coupling_map.get_edges()))[0]['circuito']
+        with self.assertRaises(RuntimeError):
+            ibm.compilar([montado], backend)   # o original precisa de SWAPs, e a regra é sem troca
 
     def test_ficha_do_job(self):
         job = simulador.enviar(montados([dict(circuito='simples', n=2, variante='01')]), 50, 9, cenario='ideal')
