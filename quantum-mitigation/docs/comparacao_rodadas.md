@@ -24,7 +24,7 @@ Essa análise substitui apenas a comparação derivada; os 300 bootstraps origin
 | 2 | 0.8640 ± 0.0109 | 0.9360 ± 0.0136 | 0.7960 ± 0.0188 | 0.9481 ± 0.0228 |
 | 3 | 0.8950 ± 0.0098 | 0.9648 ± 0.0125 | 0.8060 ± 0.0186 | 0.9702 ± 0.0229 |
 
-![Indicadores e erros padrão](../figuras/comparacao_rodadas.png)
+![Indicadores e erros padrão](../figuras/04_comparacao_rodadas.png)
 
 ## Ganho pareado
 
@@ -39,7 +39,7 @@ Essa análise substitui apenas a comparação derivada; os 300 bootstraps origin
 
 A redução é 1 − |1 − ajustado| / |1 − bruto|, uma comparação descritiva de distância ao ideal; não é a fração de erros físicos eliminados. Todos os intervalos individuais do ganho ficam acima de zero nesta análise. Eles quantificam o efeito do ajuste sob o modelo, não um efeito causal isolado da leitura.
 
-![Ganhos e intervalos de 95%](../figuras/ganho_rodadas.png)
+![Ganhos e intervalos de 95%](../figuras/04_ganho_rodadas.png)
 
 ## Diagnósticos
 

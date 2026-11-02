@@ -4,15 +4,15 @@ Cada gráfico apresenta os três blocos de um cenário. Quadrados vazios mostram
 
 ## Circuitos ideais
 
-![Comparação no cenário ideal](../../imagens/simulacao_ideal.png)
+![Comparação no cenário ideal](../../../figuras/05_simulacao_ideal.png)
 
 ## Erro de leitura
 
-![Comparação com erro de leitura](../../imagens/simulacao_leitura.png)
+![Comparação com erro de leitura](../../../figuras/05_simulacao_leitura.png)
 
 ## Erro de leitura e portas
 
-![Comparação com erro de leitura e portas](../../imagens/simulacao_leitura_e_portas.png)
+![Comparação com erro de leitura e portas](../../../figuras/05_simulacao_leitura_e_portas.png)
 
 Cada circuito foi medido 1.000 vezes. Cada bloco usa sua própria calibração. Os indicadores ajustados podem ultrapassar 1 por flutuação da amostragem.
 

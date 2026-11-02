@@ -19,6 +19,6 @@ Em X, a paridade depende do número de bits 1 em cada sequência. [Resultados aj
 | [GHZ_leitura_dbccri9gv2cc73ea3630.json](GHZ_leitura_dbccri9gv2cc73ea3630.json) | Rodada 2. Mesmos tipos de contagens e metadados. |
 | [rodada_03](rodada_03/README.md) | JSON e QPY da rodada 3. O JSON inclui versões, opções e análise original; o QPY guarda os circuitos enviados. |
 
-![Indicadores das três rodadas antes e depois do ajuste](../../../figuras/comparacao_rodadas.png)
+![Indicadores das três rodadas antes e depois do ajuste](../../../figuras/04_comparacao_rodadas.png)
 
 Os pontos resumem as contagens após o cálculo dos indicadores. As barras são um erro padrão e o eixo vertical é ampliado. As contagens originais estão na tabela e nos arquivos acima.

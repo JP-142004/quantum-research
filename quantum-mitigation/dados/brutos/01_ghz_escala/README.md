@@ -1,6 +1,6 @@
 # Escala GHZ · medidas reais
 
-![População observada em Z por tamanho de circuito](../../imagens/escala_observada.png)
+![População observada em Z por tamanho de circuito](../../../figuras/01_escala_observada.png)
 
 Cada ponto resume 1.000 medidas em Z. A linha liga tamanhos consecutivos. O gráfico descreve a série histórica com seus metadados disponíveis.
 

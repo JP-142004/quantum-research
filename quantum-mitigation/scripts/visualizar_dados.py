@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 BASE = Path(__file__).resolve().parents[1] / 'dados'
-IMAGENS = BASE / 'imagens'
+IMAGENS = Path(__file__).resolve().parents[1] / 'figuras'
 IMAGENS.mkdir(exist_ok=True)
 plt.rcParams.update({'font.size': 10, 'axes.spines.top': False, 'axes.spines.right': False})
 
@@ -31,7 +31,7 @@ ax.invert_yaxis()
 ax.set(xlim=(0, 112), xlabel='Medidas iguais ao estado preparado (%) · 1.000 por circuito',
        title='Controles reais · cada linha é um circuito recuperado da IBM')
 ax.grid(axis='x', alpha=.2)
-salvar(fig, 'controles_reais.png')
+salvar(fig, '02_controles_reais.png')
 
 ghz = ler(BASE / 'processados/03_ghz_conectado/resultados_recuperados.json')
 fig, eixos = plt.subplots(1, 2, figsize=(11, 4), layout='constrained')
@@ -45,7 +45,7 @@ for ax, base in zip(eixos, ['Z', 'X']):
     ax.invert_yaxis()
     ax.set(xlim=(0, 1.12), title='População em Z' if base == 'Z' else 'Correlação em X', xlabel='Indicador bruto')
 fig.suptitle('GHZ no Fez · dados históricos recuperados', fontweight='bold')
-salvar(fig, 'construcoes_reais.png')
+salvar(fig, '03_construcoes_reais.png')
 
 execucao = BASE / 'simulados/validacao_2026_11_01'
 cenarios = [('ideal', 'Ideal'), ('leitura', 'Erro de leitura'), ('leitura_e_portas', 'Leitura e portas')]
@@ -67,7 +67,7 @@ for cenario, titulo in cenarios:
     handles, labels = eixos[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc='lower center', ncol=2, fontsize=9)
     fig.tight_layout(rect=(0, .17, 1, .93))
-    salvar(fig, f'simulacao_{cenario}.png')
+    salvar(fig, f'05_simulacao_{cenario}.png')
 
 fig, eixos = plt.subplots(1, 2, figsize=(10, 4.5), sharey=True)
 for ax, base in zip(eixos, ['Z', 'X']):
@@ -84,7 +84,7 @@ fig.suptitle('ZNE local · fatores após ajuste de leitura e extrapolação', fo
 handles, labels = eixos[0].get_legend_handles_labels()
 fig.legend(handles, labels, loc='lower center', ncol=4)
 fig.tight_layout(rect=(0, .12, 1, .93))
-salvar(fig, 'zne_blocos.png')
+salvar(fig, '06_zne_blocos.png')
 
 arquivos = sorted(execucao.glob('*_analise.json'))
 nomes_controles = ['controle_zeros_Z', 'controle_uns_Z', 'controle_mais_X', 'controle_menos_X']
@@ -99,5 +99,5 @@ for i in range(len(arquivos)):
         ax.text(j, i, f'{desvios[i,j]:+.3f}', ha='center', va='center', fontsize=9)
 fig.colorbar(imagem, ax=ax, label='Indicador ajustado − alvo ideal')
 ax.set_title('Controles locais · desvio em relação ao alvo', fontweight='bold', pad=14)
-salvar(fig, 'controles_simulados.png')
+salvar(fig, '05_controles_simulados.png')
 print('Sete figuras geradas a partir dos JSONs salvos.')

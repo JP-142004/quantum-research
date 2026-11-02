@@ -41,7 +41,7 @@ O experimento 1 não indica se o desvio vem do emaranhamento ou de algo mais bá
 | zeros_separados_juntos | ibm_fez | 2026-10-21 | zeros | `00000` | 942/1000 | 0,942 |
 <!-- /TABELA:controles -->
 
-![Controles de estados conhecidos](../../dados/imagens/controles_reais.png)
+![Controles de estados conhecidos](../../figuras/02_controles_reais.png)
 
 *Figura. Fração das 1.000 medidas iguais ao estado preparado, por teste, backend e circuito.*
 

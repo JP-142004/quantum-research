@@ -11,7 +11,7 @@
 | [verificar_registro_local.py](verificar_registro_local.py) | Caminho de execução concluída | Verifica dados e grava `verificacao.json` | Não |
 | [gerar_tabelas.py](gerar_tabelas.py) | Arquivos de `dados/` | Preenche as tabelas marcadas com `TABELA:nome` nos READMEs. Com `--verificar`, só confere | Não |
 | [verificar_links.py](verificar_links.py) | Arquivos Markdown | Confere links relativos e âncoras | Não |
-| [visualizar_dados.py](visualizar_dados.py) | JSONs processados e simulados | Recria as figuras de `dados/imagens` | Não |
+| [visualizar_dados.py](visualizar_dados.py) | JSONs processados e simulados | Recria as figuras de `figuras` | Não |
 | [recuperar_job.py](recuperar_job.py) | ID histórico fixo no código | Consulta `dbaa20fi0auc7391ncu0` e imprime contagens | Sim; não submete novo job |
 
 ## Parâmetros e ambientes

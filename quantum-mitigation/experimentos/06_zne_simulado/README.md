@@ -38,7 +38,7 @@ O valor 0,9899 é uma **previsão**, não uma medida. Nenhum GHZ com zero portas
 | 0 (extrapolado) | — | **0,9899** | **0,9826** |
 <!-- /TABELA:zne -->
 
-![Referência exata dos fatores e reta extrapolada](../../figuras/zne_fatores.png)
+![Referência exata dos fatores e reta extrapolada](../../figuras/06_zne_fatores.png)
 
 *Figura. Cálculo exato do modelo. Círculos: fatores 1, 3 e 5. Losangos: valor extrapolado no fator 0. A linha tracejada marca o ideal.*
 
@@ -54,7 +54,7 @@ A extrapolação aproximou os dois indicadores de 1, mas **não chegou a 1**: 1 
 | 3 | 0,9763 ± 0,0188 | 1,0065 ± 0,0224 | 0,8914 ± 0,0375 | 0,9283 ± 0,0455 |
 <!-- /TABELA:zne_blocos -->
 
-![Fatores e extrapolação nos três blocos](../../dados/imagens/zne_blocos.png)
+![Fatores e extrapolação nos três blocos](../../figuras/06_zne_blocos.png)
 
 *Figura. Círculos: fatores 1, 3 e 5 após correção de leitura. Losango: extrapolação. Barras: um erro padrão. Linha em 1: ideal.*
 

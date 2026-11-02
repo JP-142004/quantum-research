@@ -60,15 +60,15 @@ Como ler a tabela:
 - **Só leitura.** Antes da leitura, PZ = 1. Depois dela, o modelo dá 0,8366. Corrigir a leitura **com a matriz exata** recuperou a distribuição anterior à leitura, com erro menor que 10⁻¹² no cálculo exato.
 - **Leitura e portas.** O circuito original chega à leitura com PZ = 0,8409, e o conectado com 0,9463. Mesmo com a leitura perfeitamente corrigida, o valor recuperável é 0,8409 ou 0,9463, porque o dano das portas já ocorreu. A calibração compensa só a leitura. A construção conectada, com menos portas, chega melhor à leitura.
 
-![Cenário só com erro de leitura](../../dados/imagens/simulacao_leitura.png)
+![Cenário só com erro de leitura](../../figuras/05_simulacao_leitura.png)
 
 *Figura. Os três blocos do cenário só com leitura. Quadrados vazios: indicadores brutos. Círculos: ajustados. Azul: original. Verde: conectado. Barras: um erro padrão. Linha em 1: ideal.*
 
-![Cenário com erro de leitura e de portas](../../dados/imagens/simulacao_leitura_e_portas.png)
+![Cenário com erro de leitura e de portas](../../figuras/05_simulacao_leitura_e_portas.png)
 
 *Figura. O mesmo gráfico para o cenário com leitura e portas.*
 
-Os gráficos do cenário [ideal](../../dados/imagens/simulacao_ideal.png) e dos [controles](../../dados/imagens/controles_simulados.png) estão em [dados/simulados](../../dados/simulados/README.md).
+Os gráficos do cenário [ideal](../../figuras/05_simulacao_ideal.png) e dos [controles](../../figuras/05_controles_simulados.png) estão em [dados/simulados](../../dados/simulados/README.md).
 
 ## Limites
 

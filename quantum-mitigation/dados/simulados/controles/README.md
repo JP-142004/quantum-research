@@ -1,6 +1,6 @@
 # Controles independentes · todos os blocos
 
-![Desvio dos quatro controles em todos os blocos simulados](../../imagens/controles_simulados.png)
+![Desvio dos quatro controles em todos os blocos simulados](../../../figuras/05_controles_simulados.png)
 
 Cada linha identifica um cenário e um bloco. Cada coluna corresponde a um controle. O número na célula é o indicador ajustado menos seu alvo ideal. Branco indica proximidade de zero, vermelho um desvio positivo e azul um negativo. Os alvos são 1 para zeros, uns e paridade positiva, e −1 para paridade negativa.
 

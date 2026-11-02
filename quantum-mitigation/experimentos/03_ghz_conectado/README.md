@@ -55,7 +55,7 @@ No desenho lógico, ambas têm quatro CX. A diferença aparece **depois de compi
 | conectado_50 | conectado50_Z | 50 | 49 | 56 | PZ = 0,155 | 2026-10-21 | `dbch2kpgv2cc73eabim0` |
 <!-- /TABELA:construcoes -->
 
-![Construções GHZ](../../dados/imagens/construcoes_reais.png)
+![Construções GHZ](../../figuras/03_construcoes_reais.png)
 
 *Figura. À esquerda, PZ; à direita, CX. Cada barra é um circuito real. A linha em 1 marca o ideal.*
 

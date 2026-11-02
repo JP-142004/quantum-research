@@ -36,7 +36,7 @@ O ganho é o valor ajustado menos o bruto. O erro padrão (EP) e o intervalo de 
 | 3 | CX | 0,8060 | 0,0186 | 0,9702 | 0,0229 | 0,1642 | 0,1519 a 0,1775 |
 <!-- /TABELA:rodadas_ganho -->
 
-![Ganho em cada rodada, com intervalo de 95%](../../figuras/ganho_rodadas.png)
+![Ganho em cada rodada, com intervalo de 95%](../../figuras/04_ganho_rodadas.png)
 
 *Figura. Ganho (ajustado menos bruto) e intervalo bootstrap de 95%.*
 

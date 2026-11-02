@@ -67,7 +67,7 @@ Os dois indicadores **não determinam a fidelidade** do estado. Exemplos com con
 
 **3.1 Escala (exp. 1).** PZ caiu de 0,922 (5 qubits) para 0,109 (50 qubits). O experimento não separa o efeito do número de qubits do de portas e roteamento.
 
-![PZ em função do número de qubits](../dados/imagens/escala_observada.png)
+![PZ em função do número de qubits](../figuras/01_escala_observada.png)
 
 *Figura 1. Fração das 1.000 medidas que deram todos zeros ou todos uns.*
 
@@ -99,7 +99,7 @@ A primeira linha é um controle: o mesmo circuito em dois jobs deu valores prati
 | 3 | 0,8950 → 0,9648 | 0,8060 → 0,9702 |
 <!-- /TABELA:rodadas -->
 
-![Indicadores brutos e ajustados nas três rodadas](../figuras/comparacao_rodadas.png)
+![Indicadores brutos e ajustados nas três rodadas](../figuras/04_comparacao_rodadas.png)
 
 *Figura 2. Indicadores brutos e ajustados, com um erro padrão.*
 
@@ -124,7 +124,7 @@ Com erro só na leitura, a calibração recupera PZ = 1. Com erro também nas po
 
 **3.6 ZNE simulada (exp. 6).** A extrapolação aproximou PZ e CX de 1 sem chegar a 1: o ajuste linear tem viés. Com 1.000 shots, o erro padrão aumentou nos três blocos.
 
-![Referência exata dos fatores e extrapolação](../figuras/zne_fatores.png)
+![Referência exata dos fatores e extrapolação](../figuras/06_zne_fatores.png)
 
 *Figura 3. Círculos: fatores 1, 3 e 5. Losangos: extrapolação ao fator 0. Tracejado: ideal.*
 

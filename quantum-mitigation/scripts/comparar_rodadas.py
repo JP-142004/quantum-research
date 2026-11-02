@@ -107,7 +107,7 @@ def graficos(resultados, pasta):
     fig.text(.5, .025, 'Barras: ±1 erro padrão · bootstrap de calibração e GHZ · eixo vertical ampliado', ha='center', fontsize=10)
     fig.tight_layout(rect=(0, .06, 1, .94))
     for extensao in ['png', 'svg']:
-        fig.savefig(pasta / f'comparacao_rodadas.{extensao}', dpi=180)
+        fig.savefig(pasta / f'04_comparacao_rodadas.{extensao}', dpi=180)
     plt.close(fig)
     fig, ax = plt.subplots(figsize=(9, 4.8))
     for nome, offset, cor, rotulo in [('populacao_z', -.08, '#526b91', 'Ganho em PZ'), ('correlacao_x', .08, '#008675', 'Ganho em CX')]:
@@ -123,7 +123,7 @@ def graficos(resultados, pasta):
     fig.text(.5, .025, 'Barras: intervalo percentil de 95% · mesmas contagens reamostradas para bruto e ajustado', ha='center', fontsize=9)
     fig.tight_layout(rect=(0, .06, 1, 1))
     for extensao in ['png', 'svg']:
-        fig.savefig(pasta / f'ganho_rodadas.{extensao}', dpi=180)
+        fig.savefig(pasta / f'04_ganho_rodadas.{extensao}', dpi=180)
     plt.close(fig)
 
 
@@ -155,7 +155,7 @@ Essa análise substitui apenas a comparação derivada; os 300 bootstraps origin
         z, x = r['metricas'].values()
         vals = [f"{m[k]:.4f} ± {m[e]:.4f}" for m in [z, x] for k, e in [('bruto', 'se_bruto'), ('ajustado', 'se_ajustado')]]
         texto += f"| {r['rodada']} | " + ' | '.join(vals) + ' |\n'
-    texto += '\n![Indicadores e erros padrão](../figuras/comparacao_rodadas.png)\n\n## Ganho pareado\n\n| Rodada | Indicador | Ganho | IC percentil 95% | Redução do desvio ao ideal |\n| --- | --- | ---: | --- | ---: |\n'
+    texto += '\n![Indicadores e erros padrão](../figuras/04_comparacao_rodadas.png)\n\n## Ganho pareado\n\n| Rodada | Indicador | Ganho | IC percentil 95% | Redução do desvio ao ideal |\n| --- | --- | ---: | --- | ---: |\n'
     for r in resultados:
         for nome, m in r['metricas'].items():
             lo, hi = m['ic95_ganho_percentil']
@@ -163,7 +163,7 @@ Essa análise substitui apenas a comparação derivada; os 300 bootstraps origin
     texto += '''
 A redução é 1 − |1 − ajustado| / |1 − bruto|, uma comparação descritiva de distância ao ideal; não é a fração de erros físicos eliminados. Todos os intervalos individuais do ganho ficam acima de zero nesta análise. Eles quantificam o efeito do ajuste sob o modelo, não um efeito causal isolado da leitura.
 
-![Ganhos e intervalos de 95%](../figuras/ganho_rodadas.png)
+![Ganhos e intervalos de 95%](../figuras/04_ganho_rodadas.png)
 
 ## Diagnósticos
 

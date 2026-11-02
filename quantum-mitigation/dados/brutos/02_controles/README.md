@@ -1,6 +1,6 @@
 # Controles de estados conhecidos · arquivos da IBM
 
-![Controles de estados conhecidos](../../imagens/controles_reais.png)
+![Controles de estados conhecidos](../../../figuras/02_controles_reais.png)
 
 Cada barra mostra a porcentagem de medidas iguais ao estado preparado, em 1.000 medidas. As linhas identificam teste, backend e circuito. Os controles incluem preparação e leitura.
 

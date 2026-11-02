@@ -1,6 +1,6 @@
 # Construções GHZ · resultados
 
-![Construções GHZ](../../imagens/construcoes_reais.png)
+![Construções GHZ](../../../figuras/03_construcoes_reais.png)
 
 O painel Z mostra PZ e o painel X mostra a correlação. Cada barra corresponde a um circuito real. A linha em 1 marca o ideal. A execução conectada de 50 qubits usa backend e data diferentes da série histórica de escala.
 

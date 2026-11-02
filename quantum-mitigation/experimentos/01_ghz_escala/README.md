@@ -39,7 +39,7 @@ Para cinquenta qubits: (106 + 3) / 1.000 = **0,109**, com 891 resultados diferen
 | 50 | 106 | 3 | 891 | 0,109 |
 <!-- /TABELA:escala -->
 
-![PZ em função do número de qubits](../../dados/imagens/escala_observada.png)
+![PZ em função do número de qubits](../../figuras/01_escala_observada.png)
 
 *Figura. Fração das 1.000 medidas que deram todos zeros ou todos uns, para GHZ de 5 a 50 qubits. Cada ponto é uma execução.*
 

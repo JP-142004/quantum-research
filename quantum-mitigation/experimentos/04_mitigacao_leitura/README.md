@@ -40,7 +40,7 @@ Em `GHZ_X`: 903 sequências com número par de 1 e 97 ímpares. **CX observada**
 | 3 | 0,8950 → 0,9648 | 0,8060 → 0,9702 |
 <!-- /TABELA:rodadas -->
 
-![Indicadores das três rodadas](../../figuras/comparacao_rodadas.png)
+![Indicadores das três rodadas](../../figuras/04_comparacao_rodadas.png)
 
 *Figura. Indicadores brutos e ajustados em cada rodada, com um erro padrão.*
 
