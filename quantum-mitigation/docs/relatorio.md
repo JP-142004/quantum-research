@@ -1,6 +1,6 @@
 # Mitigação de ruído em circuitos quânticos: comparação de técnicas usando o estado GHZ como referência
 
-> **Rascunho do artigo, de 2 de novembro de 2026.** Este arquivo é a base de texto do artigo; o repositório ([visão geral](../README.md)) é a referência que o sustenta. Autoria, orientação e instituição: *a preencher.* Novas técnicas e circuitos entram como experimentos numerados (ver [seção 5](#5-conclusão-e-trabalhos-futuros)).
+> **Relatório em formato de artigo, rascunho de 2 de novembro de 2026.** Este relatório reúne a pesquisa em formato de artigo; o repositório ([visão geral](../README.md)) é a referência que o sustenta. Autoria, orientação e instituição: *a preencher.* Novas técnicas e circuitos entram como experimentos numerados (ver [seção 5](#5-conclusão-e-trabalhos-futuros)).
 > A modelagem de ruído é uma frente separada, de João Paulo, em [quantum-modeling](../../quantum-modeling/README.md).
 
 ## Em uma tela
@@ -59,7 +59,7 @@ Os dois indicadores **não determinam a fidelidade** do estado. Exemplos com con
 
 **Incerteza.** *Bootstrap* com 5.000 réplicas por rodada, refazendo todo o cálculo. Cobre só a variação de amostragem dentro de uma rodada. Entre dois circuitos simples usamos o erro padrão analítico.
 
-**Simulação.** Qiskit Aer, com parâmetros **sintéticos** de ruído, e a referência exata do modelo, sem flutuação de shots. Parâmetros no [experimento 5](../experimentos/05_validacao_simulada/README.md#método).
+**Simulação.** Qiskit Aer, com parâmetros **sintéticos** de ruído, e a referência exata do modelo, sem flutuação de shots. Parâmetros no [experimento 5](../experimentos/05_validacao_simulada/README.md#como-foi-feito).
 
 **Reprodução.** As tabelas são geradas dos dados por `scripts/gerar_tabelas.py`. **Os programas das pastas de experimento 1 a 4 enviam jobs à IBM quando executados.** Comandos seguros: [scripts/README.md](../scripts/README.md).
 
@@ -156,7 +156,7 @@ Com erro só na leitura, a calibração recupera PZ = 1. Com erro também nas po
 
 O GHZ de cinco qubits serviu de referência para três técnicas. A calibração de leitura e a construção com menos portas melhoraram os indicadores medidos na IBM, e a simulação mostrou que elas atuam em fontes de ruído diferentes.
 
-**Próximos passos propostos** (nada foi executado em hardware; detalhes em [plano_experimentos.md](plano_experimentos.md)):
+**Próximos passos propostos** (nada foi executado em hardware; detalhes em [planejamento.md](planejamento.md)):
 
 1. O protocolo do experimento 5 na IBM: três blocos de 40 circuitos, cada um com sua calibração (120.000 medidas). Depende de decisão específica.
 2. Piloto de ZNE na IBM (126.000 medidas).
@@ -176,4 +176,4 @@ Referências completas, com links verificados: [referencias.md](../fundamentos/r
 | [experimentos](../experimentos/README.md) | Um README por experimento e os programas históricos. |
 | [dados](../dados/README.md) | Contagens da IBM, resultados processados e simulados. |
 | [scripts](../scripts/README.md) · [tests](../tests/README.md) · [figuras](../figuras/README.md) | Análise, testes e gráficos. |
-| [docs](README.md) | Relatórios de apoio e [arquivo](arquivo/README.md) de documentos anteriores. |
+| [docs](README.md) | Este relatório, o planejamento e relatórios de apoio. |

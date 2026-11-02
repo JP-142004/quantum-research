@@ -1,6 +1,6 @@
 # Fontes de ruído
 
-Um computador quântico devolve sequências de bits. Cada sequência é um **shot**. Repetindo o circuito muitas vezes, contamos quantas vezes cada sequência apareceu. O **ruído** é tudo o que faz essas contagens diferirem das previstas para o circuito ideal.
+Os termos básicos (qubit, porta, shot) estão em [conceitos.md](conceitos.md). Um computador quântico devolve sequências de bits. Cada sequência é um **shot**. Repetindo o circuito muitas vezes, contamos quantas vezes cada sequência apareceu. O **ruído** é tudo o que faz essas contagens diferirem das previstas para o circuito ideal.
 
 ## Exemplo
 

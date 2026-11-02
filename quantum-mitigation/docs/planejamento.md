@@ -1,4 +1,4 @@
-# Próximos experimentos — protocolo proposto
+# Planejamento — próximos experimentos
 
 Plano de 1 de novembro de 2026, baseado nas três rodadas concluídas. Este arquivo não envia jobs e não representa experimento já executado. O job `dbjnndgnceqs73akbkh0` está encerrado e não deve ser reenviado.
 
@@ -63,4 +63,4 @@ Preservar contagens originais, IDs, timestamps, qubits, shots, ordem de circuito
 
 ## Atualização: validação local realizada
 
-Em 1 de novembro de 2026, a comparação de construções, os controles e um piloto de ZNE foram implementados e executados em simulador local. Consulte o [registro de trabalho](arquivo/registro_trabalho.md) e o [relatório da simulação](../dados/simulados/validacao_2026_11_01/relatorio.md). Os seis testes automatizados e a auditoria dos registros passaram. Isso conclui a validação em mapa e ruídos sintéticos; a compilação específica para um backend real e a execução no hardware continuam como etapas futuras. As contagens simuladas não foram misturadas com as três rodadas reais.
+Em 1 de novembro de 2026, a comparação de construções, os controles e um piloto de ZNE foram implementados e executados em simulador local. Consulte o [relatório da simulação](../dados/simulados/validacao_2026_11_01/relatorio.md) e os [experimentos 5 e 6](../experimentos/README.md). Os seis testes automatizados e a auditoria dos registros passaram. Isso conclui a validação em mapa e ruídos sintéticos; a compilação específica para um backend real e a execução no hardware continuam como etapas futuras. As contagens simuladas não foram misturadas com as três rodadas reais.

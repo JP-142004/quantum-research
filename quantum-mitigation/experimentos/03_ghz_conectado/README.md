@@ -1,18 +1,14 @@
-# 3. Menos portas reduzem o desvio?
+# Experimento 3 · Menos portas reduzem o desvio?
 
-**Situação:** medido na IBM. **Backend:** `ibm_fez`. **Data:** 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados diretamente da conta IBM em 2 de novembro de 2026 ([recuperação](../../docs/recuperacao_etapas_02_03.json)).
+**Onde e quando:** IBM, `ibm_fez`, 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../docs/recuperacao_etapas_02_03.json)).
 
 ## Pergunta
 
-O mesmo GHZ, preparado por um caminho que segue as conexões físicas do equipamento, tem indicadores melhores que o preparado com a construção original?
+O mesmo GHZ, preparado por um caminho que segue as conexões físicas do equipamento, tem indicadores melhores que o da construção original? Porta de dois qubits costuma ter mais erro que a de um qubit ([ruído](../../fundamentos/ruido.md)). Se o compilador precisa inserir operações extras para ligar qubits que não são vizinhos, o circuito executado tem mais portas que o desenhado.
 
-## Por que esta pergunta
+## Como foi feito
 
-Porta de dois qubits costuma ter taxa de erro maior que a de um qubit ([ruído](../../fundamentos/ruido.md)). Se o compilador precisa inserir operações extras para ligar qubits que não são vizinhos, o circuito executado tem mais portas que o desenhado.
-
-## Método
-
-As duas construções produzem o mesmo estado ideal. Cada seta é uma porta CX, da origem (controle) para o destino (alvo). H prepara a superposição na raiz.
+As duas construções produzem o mesmo estado ideal. Cada seta é uma CX, do controle para o alvo, e H cria a superposição no qubit de origem.
 
 | Original | Conectada (5 qubits) |
 | --- | --- |
@@ -38,9 +34,9 @@ flowchart LR
   end
 ```
 
-No desenho lógico, ambas têm quatro CX. A diferença aparece **depois de compilar**: no original, o qubit 0 precisa interagir com qubits que não são seus vizinhos, e o compilador acrescenta operações. O custo é lido do circuito compilado.
+No desenho, ambas têm quatro CX. A diferença aparece **depois de compilar**: no original, o qubit 0 precisa interagir com qubits que não são seus vizinhos, e o compilador acrescenta operações. O custo é lido do circuito compilado.
 
-**Indicadores:** PZ na base Z e CX na base X ([definições](../../fundamentos/indicadores.md)). Não há correção de leitura: os valores são brutos. A técnica avaliada é só a construção.
+**Indicadores:** PZ na base Z e CX na base X ([definições](../../fundamentos/indicadores.md)). Os valores são **brutos**, sem correção de leitura: a única técnica avaliada é a construção.
 
 ## Resultado
 
@@ -57,13 +53,11 @@ No desenho lógico, ambas têm quatro CX. A diferença aparece **depois de compi
 
 ![Construções GHZ](../../figuras/03_construcoes_reais.png)
 
-*Figura. À esquerda, PZ; à direita, CX. Cada barra é um circuito real. A linha em 1 marca o ideal.*
+*À esquerda, PZ; à direita, CX. Cada barra é um circuito real. A linha em 1 marca o ideal.*
 
-**Custo compilado, cinco qubits:** o original ficou com 13 portas de dois qubits, profundidade 35 em Z e 38 em X. O conectado ficou com 4 portas, profundidade 13 em Z e 16 em X. São 9 portas a menos.
+**Custo compilado, cinco qubits:** o original ficou com 13 portas de dois qubits (profundidade 35 em Z e 38 em X) e o conectado com 4 (profundidade 13 em Z e 16 em X): 9 portas a menos.
 
-### A diferença é maior que a flutuação de amostragem?
-
-Cada diferença é comparada ao seu erro padrão analítico, que só considera a amostragem de 1.000 shots (PZ: √(p(1−p)/n); CX: √((1−CX²)/n)).
+**A diferença é maior que a flutuação de amostragem?** Comparamos cada diferença ao seu erro padrão (PZ: √(p(1−p)/n); CX: √((1−CX²)/n), ver [indicadores](../../fundamentos/indicadores.md)).
 
 <!-- TABELA:construcoes_testes -->
 | Comparação | Indicador | Primeiro | Segundo | Diferença | EP da diferença | Diferença em EP |
@@ -73,28 +67,29 @@ Cada diferença é comparada ao seu erro padrão analítico, que só considera a
 | Conectado menos original, base X | CX | 0,566 | 0,774 | 0,208 | 0,033 | 6,3 |
 <!-- /TABELA:construcoes_testes -->
 
-A primeira linha é um controle: o **mesmo circuito original**, em dois jobs diferentes no mesmo dia, deu valores praticamente iguais (0,834 e 0,833). Isso indica que, nesse intervalo, a repetição foi estável. As duas diferenças entre construções ficam acima de 3 erros padrão.
+A primeira linha é um controle: o **mesmo circuito original**, em dois jobs no mesmo dia, deu valores praticamente iguais, o que indica repetição estável nesse intervalo.
 
-## Limites
+## Conclusão
 
-- Os valores são **brutos**, sem correção de leitura.
-- Cada comparação entre construções foi feita em um único job por base. Não houve repetição em outros dias.
-- Essa melhora nos indicadores acompanha a redução de portas, mas o experimento não separa a contribuição das portas, da profundidade e da decoerência.
-- **GHZ conectado de 50 qubits:** PZ = 0,155, com 49 CX e profundidade 56, no Fez, em 21 de outubro. A série do experimento 1 usa outro backend (provavelmente `ibm_kingston`) e outra data. **Não é uma comparação válida** entre construções. O GHZ original de 50 qubits não foi executado no Fez.
+A construção conectada teve indicadores brutos melhores que a original: PZ +0,055 (3,6 erros padrão) e CX +0,208 (6,3 erros padrão), com 9 portas de dois qubits a menos. Isso mostra que reduzir portas ajuda, mas o experimento **não separa** a contribuição das portas, da profundidade e da decoerência, e cada comparação tem um único job, sem repetição em outros dias.
+
+O **GHZ conectado de 50 qubits** (PZ = 0,155, com 49 CX e profundidade 56) foi no Fez, em 21 de outubro; a série do experimento 1 usa outro backend e outra data. **Não é uma comparação válida** entre construções, e o GHZ original de 50 qubits não foi executado no Fez.
+
+## Próximo passo
+
+Além de reduzir as portas, dá para corrigir o erro de leitura? [Experimento 4](../04_mitigacao_leitura/README.md).
 
 ## Arquivos
 
 | Arquivo | Para que serve |
 | --- | --- |
-| [ghz_05_original_fez.py](ghz_05_original_fez.py) | Referência original de cinco qubits no Fez. |
-| [comparar_construcoes.py](comparar_construcoes.py) | Compara a original com árvores conectadas e escolhe a de menos portas de dois qubits. |
-| [comparar_base_x.py](comparar_base_x.py) | Mesma comparação, medindo na base X. |
-| [ghz_50_conectado.py](ghz_50_conectado.py) | GHZ de 50 qubits por busca em largura a partir da raiz física 2. |
-| [brutos/03_ghz_conectado](../../dados/brutos/03_ghz_conectado/README.md) | Contagens e circuitos (JSON e QPY) dos quatro jobs. |
+| `ghz_05_original_fez.py` | Referência original de cinco qubits no Fez. |
+| `comparar_construcoes.py` | Compara a original com árvores conectadas e escolhe a de menos portas de dois qubits. |
+| `comparar_base_x.py` | Mesma comparação, medindo na base X. |
+| `ghz_50_conectado.py` | GHZ de 50 qubits por busca em largura a partir da raiz física 2. |
+| [Contagens e circuitos](../../dados/brutos/README.md#03--construções-do-ghz) | Quatro jobs (JSON e QPY). |
 | [resultados_recuperados.json](../../dados/processados/03_ghz_conectado/resultados_recuperados.json) | Uma linha por circuito. |
 
-**Execução:** os quatro programas **enviam jobs à IBM**. Não são necessários para ler os resultados.
-
-**Próxima pergunta:** além de reduzir portas, como corrigir a leitura? [Experimento 4](../04_mitigacao_leitura/README.md).
+**Execução:** os quatro programas **enviam jobs à IBM**.
 
 [Experimentos](../README.md)

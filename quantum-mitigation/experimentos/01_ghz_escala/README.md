@@ -1,28 +1,20 @@
-# 1. Como o desvio cresce com o tamanho do circuito?
+# Experimento 1 · Como o desvio cresce com o tamanho do circuito?
 
-**Situação:** medido na IBM. **Backend e data:** os programas preservados usam `ibm_kingston` (o de cinco qubits escolhe o backend livre com `least_busy`). O arquivo de contagens não registra backend nem data, então a origem de cada seção não pode ser comprovada. **Shots por circuito:** 1.000.
+**Onde e quando:** IBM. Os programas preservados usam `ibm_kingston`, mas o arquivo de contagens não registra backend nem data, então a origem de cada seção não pode ser comprovada. **Shots por circuito:** 1.000.
 
 ## Pergunta
 
-Se um GHZ ideal produz apenas `00…0` ou `11…1` em Z, que fração das medidas cai nesses dois resultados quando o número de qubits aumenta?
+Um GHZ ideal só produz `00…0` ou `11…1`. Que fração das medidas cai nesses dois resultados quando o número de qubits aumenta? É o ponto de partida: mede o desvio **antes** de qualquer técnica de mitigação.
 
-## Método
+## Como foi feito
 
-- **Circuito de teste:** H no qubit 0 e uma porta CX do qubit 0 para cada um dos outros. Medida em Z. O compilador adapta o circuito às conexões do equipamento.
-- **Tamanhos:** de 5 a 50 qubits, de 5 em 5.
-- **Indicador:** PZ, a fração das medidas todos zeros ou todos uns ([definição](../../fundamentos/indicadores.md)). Valor ideal: 1.
-- **Técnica avaliada:** nenhuma. Este experimento mede o desvio antes de qualquer intervenção.
-
-## Conta passo a passo
-
-Na seção de cinco qubits do [arquivo de contagens](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt):
-
-- `00000` apareceu 477 vezes e `11111` apareceu 445 vezes.
-- PZ = (477 + 445) / 1.000 = **0,922**. Restaram 78 resultados diferentes.
-
-Para cinquenta qubits: (106 + 3) / 1.000 = **0,109**, com 891 resultados diferentes. O programa [resumir_resultados.py](../../scripts/resumir_resultados.py) repete essa conta para os dez tamanhos.
+- **Circuito:** H no qubit 0 e uma CX do qubit 0 para cada um dos outros ([conceitos](../../fundamentos/conceitos.md)), medido em Z. O compilador adapta o circuito às conexões do equipamento.
+- **Tamanhos:** de 5 a 50 qubits, de 5 em 5. Um circuito de cada tamanho.
+- **Indicador:** **PZ**, a fração das medidas que deram todos zeros ou todos uns. Vale 1 no caso ideal ([definição](../../fundamentos/indicadores.md)).
 
 ## Resultado
+
+Conta para 5 qubits, nas contagens originais: `00000` apareceu 477 vezes e `11111`, 445. PZ = (477 + 445) / 1.000 = **0,922**; sobraram 78 resultados diferentes. Para 50 qubits: (106 + 3) / 1.000 = **0,109**.
 
 <!-- TABELA:escala -->
 | Qubits | Todos zeros | Todos uns | Outros | PZ |
@@ -41,27 +33,24 @@ Para cinquenta qubits: (106 + 3) / 1.000 = **0,109**, com 891 resultados diferen
 
 ![PZ em função do número de qubits](../../figuras/01_escala_observada.png)
 
-*Figura. Fração das 1.000 medidas que deram todos zeros ou todos uns, para GHZ de 5 a 50 qubits. Cada ponto é uma execução.*
+*Fração das 1.000 medidas que deram todos zeros ou todos uns, para GHZ de 5 a 50 qubits. Cada ponto é uma execução; o erro padrão de cada um, só por amostragem, é de cerca de 0,01.*
 
-O desvio cresce de forma contínua com o tamanho do circuito nessa série. O erro padrão de cada ponto, só por amostragem, é de cerca de 0,01.
+## Conclusão
 
-## Limites
+Nessa série, o desvio cresce de forma contínua com o tamanho do circuito: PZ cai de 0,922 para 0,109. O experimento **não separa** o efeito do número de qubits do efeito do número de portas e do roteamento, que crescem juntos. É uma única execução por tamanho e não há backend nem data registrados, então a série não deve ser comparada diretamente com outros resultados.
 
-- O tamanho do circuito varia junto com o número de portas, o roteamento e a profundidade. O experimento **não separa** esses fatores.
-- Não há metadados de backend e data no arquivo. Não comparar diretamente com resultados de outros dias ou equipamentos.
-- É uma única execução por tamanho, sem repetição.
+## Próximo passo
+
+Parte desse desvio já aparece ao preparar estados muito simples, sem emaranhamento? [Experimento 2](../02_controles/README.md).
 
 ## Arquivos
 
 | Arquivo | Para que serve |
 | --- | --- |
-| [ghz_05.py](ghz_05.py), [ghz_10.py](ghz_10.py), [ghz_15.py](ghz_15.py), [ghz_20.py](ghz_20.py), [ghz_25.py](ghz_25.py) | Programas para 5 a 25 qubits. |
-| [ghz_30.py](ghz_30.py), [ghz_35.py](ghz_35.py), [ghz_40.py](ghz_40.py), [ghz_45.py](ghz_45.py), [ghz_50.py](ghz_50.py) | Programas para 30 a 50 qubits. |
-| [ghz_05_a_50.txt](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt) | Contagens originais. |
-| [resumo_escala.csv](../../dados/processados/resumo_escala.csv) | Tabela de PZ calculada das contagens. |
+| `ghz_05.py` a `ghz_50.py` (dez programas) | Um programa por tamanho. |
+| [Contagens originais](../../dados/brutos/README.md#01--escala-do-ghz) | Dados brutos. |
+| [resumo_escala.csv](../../dados/processados/resumo_escala.csv) | Tabela de PZ calculada das contagens por [resumir_resultados.py](../../scripts/resumir_resultados.py). |
 
-**Execução:** os programas `ghz_*.py` **enviam novos jobs à IBM**. Para recalcular a tabela sem acessar a IBM, execute `scripts/resumir_resultados.py`.
-
-**Próxima pergunta:** parte desse desvio já aparece ao preparar estados muito simples? [Experimento 2](../02_controles/README.md).
+**Execução:** os programas `ghz_*.py` **enviam novos jobs à IBM**. Para recalcular a tabela sem acessar a IBM, use `scripts/resumir_resultados.py`.
 
 [Experimentos](../README.md)

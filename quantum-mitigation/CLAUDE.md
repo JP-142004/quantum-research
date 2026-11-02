@@ -1,6 +1,16 @@
 # Instruções para o Claude Code neste projeto
 
-Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de ruído em circuitos quânticos**, começando pelo estado GHZ. Este repositório é a **referência** do artigo, não o artigo. O `README.md` desta pasta é a visão geral do que foi feito e do que vem a seguir. O texto do artigo, em português, está em `docs/rascunho_artigo.md`. Leia o README primeiro, depois `experimentos/README.md`.
+Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de ruído em circuitos quânticos**, começando pelo estado GHZ. Este repositório é a **referência** do artigo, não o artigo. Cada pasta tem uma função:
+
+- `README.md` (root): introdução curta, como num repositório normal de GitHub. Sem resultados, tabelas nem regras longas.
+- `fundamentos/`: toda a teoria, explicada do zero (conceitos, ruído, indicadores, técnicas com as contas, referências).
+- `experimentos/`: um mini relatório por experimento, na ordem em que foram feitos, com o código ao lado. Molde fixo em `_modelo`: Pergunta, Como foi feito, Resultado, Conclusão, Próximo passo, Arquivos.
+- `dados/`: só mostra os dados e a origem de cada arquivo, sem análise.
+- `figuras/`: todas as imagens do repositório, com o número do experimento no nome.
+- `docs/`: `relatorio.md` (formato de artigo), `planejamento.md` e relatórios de apoio.
+- `scripts/` e `tests/`: análise, validação e testes, cada arquivo explicado.
+
+Leia o README, depois `experimentos/README.md`.
 
 ## Responsabilidades e escopo
 
@@ -29,7 +39,7 @@ Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de r
 ## Como escrever (preferências do Luiz)
 
 - **Simples e didático.** Uma pergunta por etapa, uma conta real com os números, e a interpretação. Sem historinhas nem analogias longas. Pouca hierarquia. Poucos caminhos concorrentes de leitura.
-- **Resultados em imagens**, com legendas curtas que digam o que cada ponto ou barra mostra. Explique cada arquivo de uma pasta em uma linha.
+- **Resultados em imagens** (arquivos em `figuras/`), com legendas curtas que digam o que cada ponto ou barra mostra. Explique cada arquivo de uma pasta em uma linha.
 - **Sem repetir avisos.** Diga cada limite no lugar onde ele importa. Evite o tom genérico de texto gerado por IA.
 - Cada número de tabela vem dos dados (`scripts/gerar_tabelas.py`), nunca digitado à mão.
 - Sempre distinga **observado**, **ajustado (estimado)** e **simulado**. Informe backend e data.
@@ -51,9 +61,9 @@ Copie `experimentos/_modelo`, defina pergunta, indicador, controle e critério d
 
 ## Estado em 2 de novembro de 2026
 
-- README da pasta reescrito como visão geral (feito, a fazer, mapa de pastas). O artigo continua em `docs/rascunho_artigo.md`; falta preencher **autoria, orientação e instituição** no cabeçalho dele.
+- Repositório reorganizado em 2 de novembro de 2026: root curto, um mini relatório por experimento, imagens em `figuras/`, dados sem análise. O texto em formato de artigo está em `docs/relatorio.md`; falta preencher **autoria, orientação e instituição** no cabeçalho dele.
 - Experimentos 1 a 4 medidos na IBM. Experimentos 5 e 6 simulados no PC.
-- A proposta de 120.000 medidas na IBM (`docs/plano_experimentos.md`) **aguarda decisão do Luiz**. Nada dela foi executado.
-- Ainda falta um leitor que não conhece o trabalho ler só o artigo e dizer o que não entendeu.
+- A proposta de 120.000 medidas na IBM (`docs/planejamento.md`) **aguarda decisão do Luiz**. Nada dela foi executado.
+- Ainda falta um leitor que não conhece o trabalho ler só o root, `fundamentos/` e um experimento e dizer o que não entendeu.
 
 Em caso de dúvida sobre escopo, dados ou envio à IBM, **pergunte ao Luiz antes de agir**.

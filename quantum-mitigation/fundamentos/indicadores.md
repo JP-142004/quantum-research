@@ -34,6 +34,15 @@ Valor ideal: 1. Uma mistura clássica daria 0.
 
 Os dois indicadores verificam propriedades do GHZ, mas não determinam sua **fidelidade** completa. Um estado pode ter PZ e CX próximos de 1 e ainda diferir do GHZ em outras propriedades. Por isso os resultados são descritos como "aproximação dos indicadores do ideal", e não como "estado corrigido".
 
+## Erro padrão só pela amostragem
+
+Com n shots, o indicador flutua de uma execução para outra mesmo sem ruído extra. Para dois circuitos simples usamos as fórmulas:
+
+- PZ = p: erro padrão = √(p (1 − p) / n). Com p = 0,895 e n = 1.000: √(0,895 × 0,105 / 1000) ≈ 0,0097.
+- CX: erro padrão = √((1 − CX²) / n). Com CX = 0,806 e n = 1.000: √((1 − 0,650) / 1000) ≈ 0,0187.
+
+Para saber se duas medidas diferem de verdade, divide-se a diferença pelo erro padrão da diferença (a raiz da soma dos quadrados dos dois erros padrão). Diferenças de poucos erros padrão podem ser só flutuação.
+
 ## Valor bruto, ajustado e simulado
 
 | Palavra | Significado |
