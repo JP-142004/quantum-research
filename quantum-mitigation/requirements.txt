@@ -1,0 +1,11 @@
+# Ambiente do projeto (Python 3.12). Instalar em um ambiente virtual:
+#   python -m venv venv
+#   venv/Scripts/python -m pip install -r quantum-mitigation/requirements.txt
+numpy==2.5.4
+matplotlib==3.11.2
+qiskit==2.6.0
+qiskit-aer==0.17.2
+
+# Só para enviar à IBM com `rodar.py --enviar` ou `--coletar` em um experimento da IBM.
+# Os testes e as simulações não precisam dele.
+# qiskit-ibm-runtime

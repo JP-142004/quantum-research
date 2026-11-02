@@ -50,15 +50,19 @@ Cada coisa nova entra em um lugar só: um circuito é `mitigacao/circuitos/<nome
 ## Fluxo de qualquer mudança
 
 1. Edite.
-2. Rode os testes e a conferência de links e tabelas (os comandos entram aqui quando o código existir).
+2. Rode os testes, a partir da raiz do repositório: `venv/Scripts/python -m unittest discover -s quantum-mitigation/tests`. O ambiente (`venv/`, Python 3.12) se cria com `requirements.txt`; o `venv/` não vai para o Git.
 3. Confira que `experimentos/*/dados/` não mudou (`git status`).
 4. Commit local. Push só se o Luiz pedir.
 
+Comandos do projeto (a partir de `quantum-mitigation/`): `python rodar.py NN --verificar` (local, não envia), `--enviar`, `--coletar --sessao NOME`, `--listar`. Nunca rode `--enviar` em um experimento da IBM sem a aprovação do Luiz.
+
+Um circuito novo precisa declarar `EXEMPLOS` (lista de `(n, variante)`) no módulo dele: os testes o percorrem sozinhos. Arquivos de código ficam com até cerca de 150 linhas.
+
 ## Estado em 2 de novembro de 2026
 
-- **Fase 1 em andamento:** esqueleto, `fundamentos/`, referências e o plano dos experimentos. Ainda não há código nem dados.
+- **Fases 1 e 2 prontas:** esqueleto, `fundamentos/`, plano dos experimentos, e o código em `mitigacao/` com `rodar.py` e 52 testes. Ainda não há dados nem análise (`analisar`), que entram na Fase 3 junto com os experimentos 5 e 6.
 - Plano combinado: experimentos 1 a 4 em **3 sessões na IBM, em 3 dias**, no mesmo computador; experimentos 5 e 6 no simulador. O experimento 3 compara original e conectado em 5, 10 e 20 qubits.
-- Fases seguintes, cada uma com aprovação do Luiz: 2) código e testes; 3) experimentos 5 e 6 no simulador; 4) sessão 1 na IBM; 5) sessões 2 e 3; 6) relatórios finais.
+- Fases seguintes, cada uma com aprovação do Luiz: 3) análise e experimentos 5 e 6 no simulador; 4) sessão 1 na IBM; 5) sessões 2 e 3; 6) relatórios finais.
 - Os critérios de sucesso de `experimentos/README.md` são uma proposta e precisam ser confirmados antes da primeira sessão.
 
 Em caso de dúvida sobre escopo, dados ou envio à IBM, **pergunte ao Luiz antes de agir**.
