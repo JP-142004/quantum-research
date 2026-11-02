@@ -1,21 +1,9 @@
-# 6. Extrapolação a ruído zero no simulador
+# ZNE · extrapolação a ruído zero
 
-Para avaliar o efeito do ruído das portas após a mitigação de leitura, simulamos três versões do GHZ conectado. As versões maiores têm operações extras que, em condições ideais, se desfazem entre si. Todas deveriam dar a mesma resposta. No modelo escolhido, porém, cada porta CX acrescenta ruído. Podemos então observar quanto o resultado muda quando aumentamos deliberadamente essa exposição.
+Simulamos três versões do mesmo circuito com 4, 12 e 20 portas CX. No modelo, a população em Z caiu de **0,946** para **0,849** e **0,764** conforme aumentamos o número de portas.
 
-| Versão | Portas CX | PZ na referência do modelo após descontar a leitura |
-| --- | ---: | ---: |
-| Fator 1 | 4 | 0,946261 |
-| Fator 3 | 12 | 0,848950 |
-| Fator 5 | 20 | 0,763687 |
+![Pontos dos três circuitos simulados e previsão no fator zero](../../../figuras/zne_fatores.png)
 
-Ajustamos uma reta a esses três pontos e a prolongamos até o fator zero. O intercepto vale (13 × 0,946261 + 4 × 0,848950 − 5 × 0,763687)/12 ≈ **0,9899**. Esse ponto zero é uma previsão baseada nas três versões. É daí que vem o nome **extrapolação a ruído zero (ZNE)**.
+Os pontos nos fatores 1, 3 e 5 correspondem aos três circuitos. O losango no fator zero é a previsão da reta. Para Z, essa previsão foi **0,990**, próxima do valor ideal 1.
 
-![Indicadores simulados nos três fatores e previsão no fator zero](../../../figuras/zne_fatores.png)
-
-As linhas representam as retas ajustadas, e os losangos no fator zero são previsões. Para a correlação X, a mesma conta dá **0,9826**. Mesmo conhecendo os valores sem flutuação de shots, a reta deixa uma diferença em relação ao ideal 1. A curva verdadeira do modelo não é exatamente uma reta.
-
-## Resultados com 1.000 medidas por circuito
-
-Em cada bloco, foram 32 calibrações, seis circuitos GHZ (três fatores medidos em Z e X) e quatro controles. Com três blocos, são 42 × 1.000 × 3 = **126.000 shots simulados**. No primeiro bloco, o PZ ajustado do fator 1 foi 0,9639 ± 0,0188. A extrapolação deu 1,0072 ± 0,0226. A estimativa pode ultrapassar 1 porque vem de uma reta ajustada a dados com incerteza. Conservamos esse valor para que o efeito da extrapolação seja visível.
-
-O piloto foi realizado no PC. Seu resultado descreve o modelo testado. Uma execução em hardware faz parte das possibilidades futuras. [Código do dobramento e do ajuste](../../../scripts/protocolo_local.py) · [Dados do primeiro bloco](../validacao_2026_11_01/zne_leitura_e_portas_bloco_01_analise.json) · [Relatório completo](../validacao_2026_11_01/relatorio.md)
+[Relatório com os cálculos e as incertezas](../validacao_2026_11_01/relatorio.md)
