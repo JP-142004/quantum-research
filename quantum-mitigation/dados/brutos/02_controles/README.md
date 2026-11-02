@@ -1,13 +1,20 @@
-# Controles com estados conhecidos · dados recuperados
+# Controles de estados conhecidos · arquivos da IBM
 
-Recuperados da IBM em 2 de novembro de 2026. Os JSONs registram backend, data, índice de cada circuito, contagens e mapeamento.
+![Controles de estados conhecidos](../../imagens/controles_reais.png)
 
-A identificação usa a quantidade e a ordem de circuitos, o mapeamento de medidas, as operações e a distribuição ideal. O nome original do script não é um metadado do serviço. Os rótulos abaixo descrevem a preparação confirmada. As contagens são reais; os testes ideais foram feitos localmente para validar a identificação.
+Cada barra mostra a porcentagem de medidas iguais ao estado preparado, em 1.000 medidas. As linhas identificam teste, backend e circuito. Os controles incluem preparação e leitura.
 
-- [todos_zeros · dbbrrnpgv2cc73e922r0](dbbrrnpgv2cc73e922r0.json) · [Circuitos QPY](dbbrrnpgv2cc73e922r0.qpy)
-- [todos_uns · dbbsd47i0auc73948300](dbbsd47i0auc73948300.json) · [Circuitos QPY](dbbsd47i0auc73948300.qpy)
-- [individuais_kingston · dbcbsopgv2cc73ea1300](dbcbsopgv2cc73ea1300.json) · [Circuitos QPY](dbcbsopgv2cc73ea1300.qpy)
-- [individuais_fez · dbcc4g9gv2cc73ea1j10](dbcc4g9gv2cc73ea1j10.json) · [Circuitos QPY](dbcc4g9gv2cc73ea1j10.qpy)
-- [zeros_separados_juntos · dbcc5ggc77vs7385vfsg](dbcc5ggc77vs7385vfsg.json) · [Circuitos QPY](dbcc5ggc77vs7385vfsg.qpy)
+| Arquivo | Conteúdo |
+| --- | --- |
+| [dbbrrnpgv2cc73e922r0.json](dbbrrnpgv2cc73e922r0.json) | todos zeros, no ibm_kingston. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbbrrnpgv2cc73e922r0.qpy](dbbrrnpgv2cc73e922r0.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbbsd47i0auc73948300.json](dbbsd47i0auc73948300.json) | todos uns, no ibm_kingston. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbbsd47i0auc73948300.qpy](dbbsd47i0auc73948300.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbcbsopgv2cc73ea1300.json](dbcbsopgv2cc73ea1300.json) | individuais kingston, no ibm_kingston. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbcbsopgv2cc73ea1300.qpy](dbcbsopgv2cc73ea1300.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbcc4g9gv2cc73ea1j10.json](dbcc4g9gv2cc73ea1j10.json) | individuais fez, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbcc4g9gv2cc73ea1j10.qpy](dbcc4g9gv2cc73ea1j10.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbcc5ggc77vs7385vfsg.json](dbcc5ggc77vs7385vfsg.json) | zeros separados juntos, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbcc5ggc77vs7385vfsg.qpy](dbcc5ggc77vs7385vfsg.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
 
-[Resultados por circuito](../../processados/02_controles/README.md)
+[Resultados calculados](../../processados/02_controles/README.md). Identificação conferida pelas operações, medidas e distribuição ideal dos circuitos recuperados.

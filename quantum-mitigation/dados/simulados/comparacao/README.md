@@ -1,9 +1,19 @@
-# Comparação do GHZ original e conectado
+# Comparação de circuitos · todos os blocos
 
-Escolha a condição de ruído para ver os três blocos, incluindo os indicadores brutos, ajustados e seus erros padrão.
+Cada gráfico apresenta os três blocos de um cenário. Quadrados vazios mostram os indicadores brutos; círculos preenchidos mostram os ajustados. Azul representa o circuito original, verde o conectado. As barras são um erro padrão e a linha em 1 marca o ideal.
 
-- [Circuitos ideais](ideal/README.md).
-- [Somente erro de leitura](leitura/README.md).
-- [Erro de leitura e de portas](leitura_e_portas/README.md).
+## Circuitos ideais
 
-[Controles dos blocos](../controles/README.md) · [Índice dos simulados](../README.md)
+![Comparação no cenário ideal](../../imagens/simulacao_ideal.png)
+
+## Erro de leitura
+
+![Comparação com erro de leitura](../../imagens/simulacao_leitura.png)
+
+## Erro de leitura e portas
+
+![Comparação com erro de leitura e portas](../../imagens/simulacao_leitura_e_portas.png)
+
+Cada circuito foi medido 1.000 vezes. Cada bloco usa sua própria calibração. Os indicadores ajustados podem ultrapassar 1 por flutuação da amostragem.
+
+[Lista de arquivos e blocos](../validacao_2026_11_01/README.md) · [Modelo de ruído e sementes](../validacao_2026_11_01/manifesto.json)

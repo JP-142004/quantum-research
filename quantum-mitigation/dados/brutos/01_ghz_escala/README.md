@@ -1,18 +1,11 @@
-# Escala GHZ · contagens
+# Escala GHZ · medidas reais
 
-Medidas em Z agrupadas por tamanho. Cada linha reúne 1.000 medidas. [Arquivo original](ghz_05_a_50.txt)
+![População observada em Z por tamanho de circuito](../../imagens/escala_observada.png)
 
-| Qubits | Todos zeros | Todos uns | Outros |
-| --- | --- | --- | --- |
-| 5 | 477 | 445 | 78 |
-| 10 | 407 | 333 | 260 |
-| 15 | 368 | 233 | 399 |
-| 20 | 299 | 178 | 523 |
-| 25 | 310 | 144 | 546 |
-| 30 | 245 | 63 | 692 |
-| 35 | 242 | 43 | 715 |
-| 40 | 194 | 25 | 781 |
-| 45 | 184 | 3 | 813 |
-| 50 | 106 | 3 | 891 |
+Cada ponto resume 1.000 medidas em Z. A linha liga tamanhos consecutivos. O gráfico descreve a série histórica com seus metadados disponíveis.
 
-[Indicadores calculados](../../processados/01_ghz_escala/README.md)
+| Arquivo | Conteúdo |
+| --- | --- |
+| [ghz_05_a_50.txt](ghz_05_a_50.txt) | Contagens por sequência de bits, separadas em dez seções de tamanho. |
+
+[Tabela calculada](../../processados/01_ghz_escala/README.md)

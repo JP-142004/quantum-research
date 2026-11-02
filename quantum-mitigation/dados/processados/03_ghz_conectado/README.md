@@ -1,10 +1,11 @@
-# Resultados da etapa 03
+# Construções GHZ · resultados
 
-Cada pasta abaixo reúne um experimento recuperado da IBM, com resultados e links para contagens e circuitos.
+![Construções GHZ](../../imagens/construcoes_reais.png)
 
-- [GHZ original de cinco qubits no Fez](original_fez/README.md).
-- [Construções original e conectada em Z](comparar_construcoes/README.md).
-- [Construções original e conectada em X](comparar_base_x/README.md).
-- [GHZ conectado de cinquenta qubits](conectado_50/README.md).
+O painel Z mostra PZ e o painel X mostra a correlação. Cada barra corresponde a um circuito real. A linha em 1 marca o ideal. A execução conectada de 50 qubits usa backend e data diferentes da série histórica de escala.
 
-[Todos os valores e IDs](resultados_recuperados.json) · [Índice dos processados](../README.md)
+| Arquivo | Conteúdo |
+| --- | --- |
+| [resultados_recuperados.json](resultados_recuperados.json) | Uma linha por circuito, com job, backend, contagens resumidas, indicadores e custo compilado. |
+
+[Contagens e circuitos de origem](../../brutos/03_ghz_conectado/README.md) · [Voltar](../README.md)

@@ -1,20 +1,11 @@
 # Escala GHZ · população em Z
 
-Somamos as contagens de todos zeros e todos uns e dividimos pelo total de medidas. [Tabela de origem](../resumo_escala.csv)
+![População em Z de 5 a 50 qubits](../../imagens/escala_observada.png)
 
-| Qubits | População em Z |
+Cada ponto corresponde a 1.000 medidas. Calculamos PZ somando todos zeros e todos uns e dividindo pelo total. Nesta série, o valor caiu de 92,2% para 10,9%.
+
+| Arquivo | Conteúdo |
 | --- | --- |
-| 5 | 92,2% |
-| 10 | 74,0% |
-| 15 | 60,1% |
-| 20 | 47,7% |
-| 25 | 45,4% |
-| 30 | 30,8% |
-| 35 | 28,5% |
-| 40 | 21,9% |
-| 45 | 18,7% |
-| 50 | 10,9% |
+| [resumo_escala.csv](../resumo_escala.csv) | Uma linha por tamanho, com shots, zeros, uns, outros e PZ. |
 
-![População em Z por tamanho do circuito](../../imagens/escala_observada.png)
-
-[Contagens do hardware](../../brutos/01_ghz_escala/README.md)
+[Contagens originais](../../brutos/01_ghz_escala/README.md)

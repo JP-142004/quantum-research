@@ -1,12 +1,18 @@
-# Comparação de construções GHZ · dados recuperados
+# Construções GHZ · arquivos da IBM
 
-Recuperados da IBM em 2 de novembro de 2026. Os JSONs registram backend, data, índice de cada circuito, contagens e mapeamento.
+![Construções GHZ](../../imagens/construcoes_reais.png)
 
-A identificação usa a quantidade e a ordem de circuitos, o mapeamento de medidas, as operações e a distribuição ideal. O nome original do script não é um metadado do serviço. Os rótulos abaixo descrevem a preparação confirmada. As contagens são reais; os testes ideais foram feitos localmente para validar a identificação.
+O painel Z mostra PZ e o painel X mostra a correlação. Cada barra corresponde a um circuito real. A linha em 1 marca o ideal. A execução conectada de 50 qubits usa backend e data diferentes da série histórica de escala.
 
-- [original_fez · dbccaqpgv2cc73ea21fg](dbccaqpgv2cc73ea21fg.json) · [Circuitos QPY](dbccaqpgv2cc73ea21fg.qpy)
-- [comparar_construcoes · dbcccpc24mrc73cjb6bg](dbcccpc24mrc73cjb6bg.json) · [Circuitos QPY](dbcccpc24mrc73cjb6bg.qpy)
-- [comparar_base_x · dbcco2fi0auc73dum8i0](dbcco2fi0auc73dum8i0.json) · [Circuitos QPY](dbcco2fi0auc73dum8i0.qpy)
-- [conectado_50 · dbch2kpgv2cc73eabim0](dbch2kpgv2cc73eabim0.json) · [Circuitos QPY](dbch2kpgv2cc73eabim0.qpy)
+| Arquivo | Conteúdo |
+| --- | --- |
+| [dbccaqpgv2cc73ea21fg.json](dbccaqpgv2cc73ea21fg.json) | original fez, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbccaqpgv2cc73ea21fg.qpy](dbccaqpgv2cc73ea21fg.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbcccpc24mrc73cjb6bg.json](dbcccpc24mrc73cjb6bg.json) | comparar construcoes, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbcccpc24mrc73cjb6bg.qpy](dbcccpc24mrc73cjb6bg.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbcco2fi0auc73dum8i0.json](dbcco2fi0auc73dum8i0.json) | comparar base x, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbcco2fi0auc73dum8i0.qpy](dbcco2fi0auc73dum8i0.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
+| [dbch2kpgv2cc73eabim0.json](dbch2kpgv2cc73eabim0.json) | conectado 50, no ibm_fez. Contagens de cada circuito, data, operações e mapeamento das medidas. |
+| [dbch2kpgv2cc73eabim0.qpy](dbch2kpgv2cc73eabim0.qpy) | Circuitos compilados do mesmo job, na ordem dos índices do JSON. |
 
-[Resultados por circuito](../../processados/03_ghz_conectado/README.md)
+[Resultados calculados](../../processados/03_ghz_conectado/README.md). Identificação conferida pelas operações, medidas e distribuição ideal dos circuitos recuperados.

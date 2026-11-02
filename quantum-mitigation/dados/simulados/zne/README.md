@@ -1,15 +1,13 @@
-# ZNE · extrapolação a ruído zero
+# ZNE · fatores e resultados dos três blocos
 
-Simulamos três versões do mesmo circuito com 4, 12 e 20 portas CX. No modelo, a população em Z caiu de **0,946** para **0,849** e **0,764** conforme aumentamos o número de portas.
+Simulamos versões do GHZ com 4, 12 e 20 portas CX. Elas correspondem aos fatores 1, 3 e 5. Os indicadores foram ajustados pela calibração da leitura e usados em uma extrapolação linear ao fator zero.
 
-![Pontos dos três circuitos simulados e previsão no fator zero](../../../figuras/zne_fatores.png)
+![Indicadores dos três fatores e extrapolação em todos os blocos](../../imagens/zne_blocos.png)
 
-Os pontos nos fatores 1, 3 e 5 correspondem aos três circuitos. O losango no fator zero é a previsão da reta. Para Z, essa previsão foi **0,990**, próxima do valor ideal 1.
+Cada grupo de pontos pertence a um bloco. Os círculos mostram os três fatores após mitigação da leitura. O losango é a extrapolação. As barras mostram um erro padrão; a linha em 1 marca o ideal. Estimativas podem ultrapassar 1. A incerteza acompanha a diferença entre blocos.
 
-[Relatório com os cálculos e as incertezas](../validacao_2026_11_01/relatorio.md)
+![Referência exata dos fatores e reta extrapolada](../../../figuras/zne_fatores.png)
 
-## Resultados por bloco
+Esta segunda figura mostra o cálculo do modelo sem flutuação de shots. As previsões no fator zero são aproximadamente 0,9899 em Z e 0,9826 em X. A distância até o ideal indica o erro de aproximar a resposta por uma reta.
 
-- [Bloco 1](bloco_01/README.md).
-- [Bloco 2](bloco_02/README.md).
-- [Bloco 3](bloco_03/README.md).
+[Arquivos de cada bloco e resultados completos](../validacao_2026_11_01/README.md)
