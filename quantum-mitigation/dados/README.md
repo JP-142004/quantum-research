@@ -1,17 +1,9 @@
 # Dados da pesquisa
 
-| Para ver… | Abra |
+| Tipo | Como os dados são obtidos |
 | --- | --- |
-| O que a IBM mediu | [Brutos](brutos/README.md) |
-| O que calculamos com essas medidas | [Processados](processados/README.md) |
-| O que testamos no PC | [Simulados](simulados/README.md) |
+| [Brutos](brutos/README.md) | Circuitos executados no hardware da IBM produzem sequências de bits. As contagens registram quantas vezes cada sequência apareceu. |
+| [Processados](processados/README.md) | Scripts locais leem as contagens reais e calculam indicadores, ajustes de leitura e incertezas. |
+| [Simulados](simulados/README.md) | Um simulador no PC executa os circuitos com um modelo de ruído definido. As contagens e a análise ficam associadas à execução que as gerou. |
 
-## Resultados das três rodadas no IBM Fez
-
-| Rodada | PZ medido | PZ ajustado | Correlação X medida | Correlação X ajustada |
-| --- | ---: | ---: | ---: | ---: |
-| 1 | 87,30% | 94,36% | 0,7960 | 0,9440 |
-| 2 | 86,40% | 93,60% | 0,7960 | 0,9481 |
-| 3 | 89,50% | 96,48% | 0,8060 | 0,9702 |
-
-PZ é a porcentagem de medidas com todos zeros ou todos uns. A correlação X é a diferença entre as frações de resultados pares e ímpares. O valor ideal é 100% para PZ e 1 para a correlação X. [Contagens por rodada](brutos/README.md) · [Gráfico e incertezas](processados/README.md)
+Dentro de cada tipo, escolha o experimento para consultar o método, os resultados e os arquivos de origem. Para incluir outra técnica ou circuito, acrescente uma pasta no tipo correspondente, registre a origem dos dados e liste o experimento no índice dessa categoria.
