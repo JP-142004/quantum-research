@@ -14,11 +14,11 @@ No JSON, `bruto` e `ajustado` são estimativas; `se_*` são erros padrão; `ic95
 
 Esses arquivos podem ser sobrescritos pelos geradores. Para uma análise nova, registre o código e parâmetros usados e preserve os brutos. Consulte o [roteiro de reprodução](../../docs/livro/09-reproducao/README.md).
 
-## O que mudou depois do ajuste?
+## Comparação antes e depois do ajuste
 
 ![Valores brutos e ajustados de PZ e CX nas três rodadas](../../figuras/comparacao_rodadas.png)
 
-Escolha uma rodada no eixo horizontal e compare o ponto bruto com o ajustado no mesmo painel. A linha em 1 marca o valor ideal. Na rodada 3, PZ sobe de 0,895 para 0,9648. As barras mostram **um erro padrão** e o eixo vertical está ampliado. No painel X, leia o número como correlação, não como porcentagem de medidas corretas.
+Em cada rodada no eixo horizontal, os dois pontos mostram o indicador bruto e o ajustado. A linha em 1 marca o valor ideal. Na rodada 3, PZ sobe de 0,895 para 0,9648. As barras mostram **um erro padrão** e o eixo vertical está ampliado. No painel X, leia o número como correlação, não como porcentagem de medidas corretas.
 
 ![Diferenças ajustado menos bruto por rodada e intervalos percentis de 95%](../../figuras/ganho_rodadas.png)
 

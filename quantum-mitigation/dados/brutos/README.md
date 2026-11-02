@@ -18,4 +18,4 @@ As três rodadas possuem 1.000 shots por circuito. O código de análise lê ess
 
 ![População observada em Z de 5 a 50 qubits, caindo de 92,2% para 10,9%](../imagens/escala_observada.png)
 
-Leia da esquerda para a direita. Cada ponto representa 1.000 medidas de um tamanho de circuito. No primeiro ponto, 922 medidas deram todos zeros ou todos uns; no último, 109. A linha liga tamanhos consecutivos para facilitar a leitura. A queda descreve essa série histórica; as contagens sozinhas não separam os efeitos do tamanho, roteamento e calibração. [Contagens originais](01_ghz_escala/ghz_05_a_50.txt) · [Tabela usada na figura](../processados/resumo_escala.csv)
+Cada ponto representa 1.000 medidas de um tamanho de circuito. No primeiro ponto, 922 medidas deram todos zeros ou todos uns; no último, 109. A linha liga tamanhos consecutivos para facilitar a leitura. A queda descreve essa série histórica; as contagens sozinhas não separam os efeitos do tamanho, roteamento e calibração. [Contagens originais](01_ghz_escala/ghz_05_a_50.txt) · [Tabela usada na figura](../processados/resumo_escala.csv)

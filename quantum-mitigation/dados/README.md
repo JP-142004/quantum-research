@@ -1,25 +1,23 @@
-# Dados: origem antes de interpretação
+# Dados experimentais e simulados
 
 [Índice do livro](../README.md) · [Dicionário dos arquivos](../docs/livro/10-codigo-dados/README.md)
 
-## Qual arquivo abrir primeiro?
+## Origem dos dados
 
 ```mermaid
 flowchart TD
-    A["IBM Fez · o que foi medido?"] --> B["brutos · contagens por sequência"]
+    A["IBM Fez · medições"] --> B["brutos · contagens por sequência"]
     B --> C["processados · indicadores e incertezas"]
-    D["PC · o que acontece com um erro conhecido?"] --> E["simulados · contagens e referências do modelo"]
+    D["PC · simulação com ruído conhecido"] --> E["simulados · contagens e referências do modelo"]
 ```
 
-**Acompanhe um resultado.** Na rodada 3, as duas barras azuis somam 454 + 441 = 895 medidas. A barra cinza reúne as outras 105. Dividir 895 por 1.000 dá **89,5% observado**. O ajuste de leitura estimou **96,48%** usando essas mesmas contagens e a calibração.
+Na rodada 3, as duas barras azuis somam 454 + 441 = 895 medidas. A barra cinza reúne as outras 105. Dividir 895 por 1.000 dá **89,5% observado**. O ajuste de leitura estimou **96,48%** usando essas mesmas contagens e a calibração.
 
 ![Contagens da rodada 3 em Z: 454 zeros, 441 uns e 105 outros](imagens/contagens_rodada3.png)
 
 [Ver as contagens no JSON](brutos/04_mitigacao_leitura/repeticoes/rodada_03.json) · [Ver o cálculo e sua incerteza](processados/README.md)
 
 ## Onde encontrar cada tipo de dado
-
-Imagine procurar o número 0,9648 da terceira rodada. Comece nos dados **brutos** para ver as 454 e 441 medidas dos dois extremos. Passe aos **processados** para ver o ajuste calculado a partir delas. Abra os **simulados** quando quiser saber o que o método recupera em um teste com resposta conhecida. Assim você consegue seguir a origem de um número sem abrir todos os JSONs.
 
 | Pasta | Origem e uso |
 | --- | --- |

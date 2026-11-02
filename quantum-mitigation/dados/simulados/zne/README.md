@@ -1,6 +1,6 @@
-# 6. Por que colocar mais operações em um circuito com ruído?
+# 6. Extrapolação a ruído zero no simulador
 
-Queríamos investigar o erro que permanece após ajustar a leitura. Para isso criamos três versões do GHZ conectado. As versões maiores têm operações extras que, em condições ideais, se desfazem entre si. Todas deveriam dar a mesma resposta. No modelo escolhido, porém, cada porta CX acrescenta ruído. Podemos então observar quanto o resultado muda quando aumentamos deliberadamente essa exposição.
+Para avaliar o efeito do ruído das portas após a mitigação de leitura, simulamos três versões do GHZ conectado. As versões maiores têm operações extras que, em condições ideais, se desfazem entre si. Todas deveriam dar a mesma resposta. No modelo escolhido, porém, cada porta CX acrescenta ruído. Podemos então observar quanto o resultado muda quando aumentamos deliberadamente essa exposição.
 
 | Versão | Portas CX | PZ na referência do modelo após descontar a leitura |
 | --- | ---: | ---: |
@@ -14,7 +14,7 @@ Ajustamos uma reta a esses três pontos e a prolongamos até o fator zero. O int
 
 As linhas representam as retas ajustadas, e os losangos no fator zero são previsões. Para a correlação X, a mesma conta dá **0,9826**. Mesmo conhecendo os valores sem flutuação de shots, a reta deixa uma diferença em relação ao ideal 1. A curva verdadeira do modelo não é exatamente uma reta.
 
-## E quando usamos apenas mil medidas?
+## Resultados com 1.000 medidas por circuito
 
 Em cada bloco, foram 32 calibrações, seis circuitos GHZ (três fatores medidos em Z e X) e quatro controles. Com três blocos, são 42 × 1.000 × 3 = **126.000 shots simulados**. No primeiro bloco, o PZ ajustado do fator 1 foi 0,9639 ± 0,0188. A extrapolação deu 1,0072 ± 0,0226. A estimativa pode ultrapassar 1 porque vem de uma reta ajustada a dados com incerteza. Conservamos esse valor para que o efeito da extrapolação seja visível.
 
