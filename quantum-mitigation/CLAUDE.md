@@ -4,7 +4,7 @@ Projeto de PIBIC do Luiz (Engenharia de Computação, PUCPR): **mitigação de r
 
 - `README.md` (root): introdução curta, como num repositório normal de GitHub. Sem resultados, tabelas nem regras longas.
 - `fundamentos/`: toda a teoria, explicada do zero (conceitos, ruído, indicadores, técnicas com as contas, referências).
-- `experimentos/`: um mini relatório por experimento, na ordem em que foram feitos, com o código ao lado. Molde fixo em `_modelo`: Pergunta, Como foi feito, Resultado, Conclusão, Próximo passo, Arquivos.
+- `experimentos/`: um mini relatório por experimento, na ordem em que foram feitos, com o código ao lado. Molde fixo (seção "Molde de um experimento" de `experimentos/README.md`): Pergunta, Como foi feito, Resultado, Conclusão, Próximo passo, Arquivos.
 - `dados/`: só mostra os dados e a origem de cada arquivo, sem análise.
 - `figuras/`: todas as imagens do repositório, com o número do experimento no nome.
 - `docs/`: `relatorio.md` (formato de artigo), `planejamento.md` e relatórios de apoio.
@@ -57,7 +57,7 @@ Leia o README, depois `experimentos/README.md`.
 
 ## Como acrescentar um experimento ou técnica
 
-Copie `experimentos/_modelo`, defina pergunta, indicador, controle e critério de sucesso **antes** de executar, guarde as contagens em `dados/` com o mesmo número, e atualize as tabelas de `experimentos/README.md`, `fundamentos/tecnicas.md` e `dados/README.md`.
+Copie o molde de `experimentos/README.md`, defina pergunta, indicador, controle e critério de sucesso **antes** de executar, guarde as contagens em `dados/` com o mesmo número, e atualize as tabelas de `experimentos/README.md`, `fundamentos/tecnicas.md` e `dados/README.md`.
 
 ## Estado em 2 de novembro de 2026
 

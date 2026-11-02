@@ -164,7 +164,7 @@ O GHZ de cinco qubits serviu de referência para três técnicas. A calibração
 4. Twirling, desacoplamento dinâmico e PEC no GHZ.
 5. Outros circuitos, depois de caracterizar as técnicas no GHZ.
 
-**Como acrescentar uma etapa.** Copie [experimentos/_modelo](../experimentos/_modelo/README.md), defina pergunta, indicador, controle e critério de sucesso antes de executar, guarde as contagens em `dados/` e acrescente uma linha na tabela de experimentos da [seção 2](#2-método) e em [tecnicas.md](../fundamentos/tecnicas.md).
+**Como acrescentar uma etapa.** Copie o [molde de experimento](../experimentos/README.md#molde-de-um-experimento), defina pergunta, indicador, controle e critério de sucesso antes de executar, guarde as contagens em `dados/` e acrescente uma linha na tabela de experimentos da [seção 2](#2-método) e em [tecnicas.md](../fundamentos/tecnicas.md).
 
 ## Referências e mapa
 

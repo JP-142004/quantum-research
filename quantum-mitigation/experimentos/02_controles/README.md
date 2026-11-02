@@ -1,6 +1,6 @@
 # Experimento 2 · O desvio já aparece em estados simples?
 
-**Onde e quando:** IBM, `ibm_kingston` e `ibm_fez`, em 20 e 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../docs/recuperacao_etapas_02_03.json)).
+**Onde e quando:** IBM, `ibm_kingston` e `ibm_fez`, em 20 e 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../dados/registro_origem.json)).
 
 ## Pergunta
 
@@ -61,7 +61,7 @@ O GHZ original, com 13 portas de dois qubits depois de compilado, pode ser prepa
 | Arquivo | Para que serve |
 | --- | --- |
 | `todos_zeros.py`, `todos_uns.py`, `qubits_individuais.py`, `comparar_zeros.py` | Os quatro programas descritos acima. |
-| [Contagens e circuitos](../../dados/brutos/README.md#02--controles-de-estados-conhecidos) | Cinco jobs (JSON e QPY). |
+| [Contagens e circuitos](../../dados/README.md#02--controles-de-estados-conhecidos) | Cinco jobs (JSON e QPY). |
 | [resultados_recuperados.json](../../dados/processados/02_controles/resultados_recuperados.json) | Uma linha por circuito, com job, backend e acertos. |
 
 **Execução:** os quatro programas **enviam jobs à IBM**. Para estudar os resultados, abra os dados.

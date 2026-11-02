@@ -71,7 +71,7 @@ A ZNE se comporta assim no hardware? É um dos [próximos passos do planejamento
 | [protocolo_local.py](../../scripts/protocolo_local.py) | Constrói as versões do circuito e calcula a extrapolação. |
 | [validar_protocolo_local.py](../../scripts/validar_protocolo_local.py) | Executa os blocos. |
 | [zne.qpy](../../dados/simulados/validacao_2026_11_01/zne.qpy) | Circuitos compilados dos fatores. |
-| [Análises dos blocos](../../dados/simulados/README.md) | `zne_leitura_e_portas_bloco_01_analise.json` e os dos blocos 2 e 3. |
+| [Análises dos blocos](../../dados/README.md#dados-simulados) | `zne_leitura_e_portas_bloco_01_analise.json` e os dos blocos 2 e 3. |
 
 **Execução:** locais, sem acesso à IBM.
 

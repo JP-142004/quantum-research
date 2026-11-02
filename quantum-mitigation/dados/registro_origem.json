@@ -1,0 +1,317 @@
+{
+  "inventario_importacao": {
+    "descricao": "Cópias dos arquivos da pasta Mitigaçao de ruido; os originais não foram alterados.",
+    "quantidade_arquivos": 23,
+    "arquivos": [
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZSIM.txt",
+        "destino": "quantum-mitigation/dados/brutos/01_ghz_escala/ghz_05_a_50.txt",
+        "sha256_origem": "cb3fad4f72cb76087bd6d5b35236bc1c788b788aba9eb5f0f3913f64fef809e4",
+        "sha256_destino": "5a222bcb820d49fd6e93a336a981c5e5e5c54edf815749976bf7333914dd0fb9",
+        "ajustes": [
+          "Removido somente o preâmbulo de comandos de configuração, que continha credencial; contagens preservadas."
+        ]
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/GHZ_leitura_dbccq67i0auc73dumdk0.json",
+        "destino": "quantum-mitigation/dados/brutos/04_mitigacao_leitura/GHZ_leitura_dbccq67i0auc73dumdk0.json",
+        "sha256_origem": "efe81b9a4f7dcd26bd991a30857af5fa6c01ca76c17ccd102f9590c0c3fde1b6",
+        "sha256_destino": "efe81b9a4f7dcd26bd991a30857af5fa6c01ca76c17ccd102f9590c0c3fde1b6",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/GHZ_leitura_dbccri9gv2cc73ea3630.json",
+        "destino": "quantum-mitigation/dados/brutos/04_mitigacao_leitura/GHZ_leitura_dbccri9gv2cc73ea3630.json",
+        "sha256_origem": "693c9456ee60ff0264a1bfb6e5c97f74b371590231b3f044c2ca96e9c5406e79",
+        "sha256_destino": "693c9456ee60ff0264a1bfb6e5c97f74b371590231b3f044c2ca96e9c5406e79",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 5qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_05.py",
+        "sha256_origem": "dc0409f9110bd6a1805174de9f5ed425ce69c6a9113180a46c86be94854e47b3",
+        "sha256_destino": "dc0409f9110bd6a1805174de9f5ed425ce69c6a9113180a46c86be94854e47b3",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 10qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_10.py",
+        "sha256_origem": "25ee3b9c6456c370f9f05dd96e0335b782097a64a15a92a2c18d7ae3e070af4d",
+        "sha256_destino": "25ee3b9c6456c370f9f05dd96e0335b782097a64a15a92a2c18d7ae3e070af4d",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 15qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_15.py",
+        "sha256_origem": "1360eeef6590665ee083cd91dc39b0e1696b8170120c946c17e6e71121933bf6",
+        "sha256_destino": "1360eeef6590665ee083cd91dc39b0e1696b8170120c946c17e6e71121933bf6",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 20 qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_20.py",
+        "sha256_origem": "8002b2bdcf20d23fbfa54cc943e5807aab0cf3d53228d448e4c0a80420543222",
+        "sha256_destino": "8002b2bdcf20d23fbfa54cc943e5807aab0cf3d53228d448e4c0a80420543222",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 25qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_25.py",
+        "sha256_origem": "05d223e489e23fb1e9d08077727d782dd7b2bc12719209ee5b6df584e159a943",
+        "sha256_destino": "05d223e489e23fb1e9d08077727d782dd7b2bc12719209ee5b6df584e159a943",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 30 qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_30.py",
+        "sha256_origem": "e4c7ec38fda2297a5978bd6ebc85b1591f7f47918ba55e808178f47c8bf4aa64",
+        "sha256_destino": "e4c7ec38fda2297a5978bd6ebc85b1591f7f47918ba55e808178f47c8bf4aa64",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 35qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_35.py",
+        "sha256_origem": "d326647ccc05c0b23071ea00c906159a8a182733fa954e6e8ca3a4f1095b4da1",
+        "sha256_destino": "d326647ccc05c0b23071ea00c906159a8a182733fa954e6e8ca3a4f1095b4da1",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 40 qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_40.py",
+        "sha256_origem": "3a28e55cd6dcaf94fea0c0b1590d2a888217c841e275a4f8eed55ae19eafa29b",
+        "sha256_destino": "3a28e55cd6dcaf94fea0c0b1590d2a888217c841e275a4f8eed55ae19eafa29b",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 45qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_45.py",
+        "sha256_origem": "63f296bf171bc971db0c59e1b88cbe53ac38760878a6872145d333996b06a476",
+        "sha256_destino": "63f296bf171bc971db0c59e1b88cbe53ac38760878a6872145d333996b06a476",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/GHZ 50 qubits.py",
+        "destino": "quantum-mitigation/experimentos/01_ghz_escala/ghz_50.py",
+        "sha256_origem": "22d4bbf1da741e663f4384ed58c283ec5ffabedff5693154ae1c79af266d1008",
+        "sha256_destino": "22d4bbf1da741e663f4384ed58c283ec5ffabedff5693154ae1c79af266d1008",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/CompararZeros.py",
+        "destino": "quantum-mitigation/experimentos/02_controles/comparar_zeros.py",
+        "sha256_origem": "c731783a90fdd097dabe7ce48bad78e1bdad9df1fd9ee1be644ff4444464bb97",
+        "sha256_destino": "c731783a90fdd097dabe7ce48bad78e1bdad9df1fd9ee1be644ff4444464bb97",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/teste separado.py",
+        "destino": "quantum-mitigation/experimentos/02_controles/qubits_individuais.py",
+        "sha256_origem": "bf2607955393472b36840520209155d42184897acda5b25d1cd8942c709ba22d",
+        "sha256_destino": "bf2607955393472b36840520209155d42184897acda5b25d1cd8942c709ba22d",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/TodosUns.py",
+        "destino": "quantum-mitigation/experimentos/02_controles/todos_uns.py",
+        "sha256_origem": "658e640850ca975b814ec52a1c7135bbe02d9293730f9f8d029edeb11f2e7481",
+        "sha256_destino": "658e640850ca975b814ec52a1c7135bbe02d9293730f9f8d029edeb11f2e7481",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/TodosZeros.py",
+        "destino": "quantum-mitigation/experimentos/02_controles/todos_zeros.py",
+        "sha256_origem": "69326f9c056d95ac2353d2e1ff8cb279c4cecef9339877535847ef99c2202160",
+        "sha256_destino": "69326f9c056d95ac2353d2e1ff8cb279c4cecef9339877535847ef99c2202160",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/GHZ_BaseX_Fez.py",
+        "destino": "quantum-mitigation/experimentos/03_ghz_conectado/comparar_base_x.py",
+        "sha256_origem": "89791c6466a0d9bdf3ce699589babf7b40ec786343be8ea887b492ed4405ea65",
+        "sha256_destino": "89791c6466a0d9bdf3ce699589babf7b40ec786343be8ea887b492ed4405ea65",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/CompararGHZ_Fez.py",
+        "destino": "quantum-mitigation/experimentos/03_ghz_conectado/comparar_construcoes.py",
+        "sha256_origem": "5b89dc1ec6d462021ea103d1c8d17490b9a2f5a1661bc872f3d5a77e6baca990",
+        "sha256_destino": "5b89dc1ec6d462021ea103d1c8d17490b9a2f5a1661bc872f3d5a77e6baca990",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/GHZ5_Fez.py",
+        "destino": "quantum-mitigation/experimentos/03_ghz_conectado/ghz_05_original_fez.py",
+        "sha256_origem": "fda99189adb11da2b9861d350c9d77d32c7ae1cacf96afbcda75434632e5961c",
+        "sha256_destino": "fda99189adb11da2b9861d350c9d77d32c7ae1cacf96afbcda75434632e5961c",
+        "ajustes": []
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/Combinado50.py",
+        "destino": "quantum-mitigation/experimentos/03_ghz_conectado/ghz_50_conectado.py",
+        "sha256_origem": "52fef2004506afffa2ce00f5970420758c5ca083c232a9349c728c638a35932d",
+        "sha256_destino": "ee91c3521a6084ce504db4d4ad2bbe1bbd1322f32f5e112555718cf3dce5d694",
+        "ajustes": [
+          "Saída JSON direcionada para dados/brutos; circuito e análise preservados."
+        ]
+      },
+      {
+        "origem": "OneDrive_2026-10-18/2a rodada/GHZ_MitigacaoLeitura.py",
+        "destino": "quantum-mitigation/experimentos/04_mitigacao_leitura/mitigacao_leitura.py",
+        "sha256_origem": "59722bdc84c11d206b2a4470d7b25456bc382102633cc32e96dd43b8e3251a8c",
+        "sha256_destino": "d956f6fb6695e4e4c45028598dbaad428dde4e5bfaa6af990895cb0473673d47",
+        "ajustes": [
+          "Saída JSON direcionada para dados/brutos; circuito e análise preservados."
+        ]
+      },
+      {
+        "origem": "OneDrive_2026-10-18/Simulações GHZ/from qiskit_ibm_runtime import QiskitRun.py",
+        "destino": "quantum-mitigation/scripts/recuperar_job.py",
+        "sha256_origem": "78a8d109c34f036fc8ec6b0ede2f728a919d1385f5d894e05c980e8fd43ee469",
+        "sha256_destino": "f0fe7a6f68599c5f2a2cad1fdadd30183aea9b558d49b7a4da2847698f7b011b",
+        "ajustes": [
+          "Removido identificador de instância pessoal; usa a conta IBM salva localmente. Job histórico preservado."
+        ]
+      }
+    ]
+  },
+  "recuperacao_etapas_02_03": {
+    "origem": "consulta a jobs concluidos IBM",
+    "jobs": 9,
+    "circuitos_verificados": [
+      {
+        "job_id": "dbbrrnpgv2cc73e922r0",
+        "indice": 0,
+        "identificacao": "zeros",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbbsd47i0auc73948300",
+        "indice": 0,
+        "identificacao": "uns",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcbsopgv2cc73ea1300",
+        "indice": 0,
+        "identificacao": "q0_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcbsopgv2cc73ea1300",
+        "indice": 1,
+        "identificacao": "q0_um",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcbsopgv2cc73ea1300",
+        "indice": 2,
+        "identificacao": "q1_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcbsopgv2cc73ea1300",
+        "indice": 3,
+        "identificacao": "q1_um",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc4g9gv2cc73ea1j10",
+        "indice": 0,
+        "identificacao": "q0_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc4g9gv2cc73ea1j10",
+        "indice": 1,
+        "identificacao": "q0_um",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc4g9gv2cc73ea1j10",
+        "indice": 2,
+        "identificacao": "q1_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc4g9gv2cc73ea1j10",
+        "indice": 3,
+        "identificacao": "q1_um",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc5ggc77vs7385vfsg",
+        "indice": 0,
+        "identificacao": "q0_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc5ggc77vs7385vfsg",
+        "indice": 1,
+        "identificacao": "q1_zero",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcc5ggc77vs7385vfsg",
+        "indice": 2,
+        "identificacao": "zeros",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbccaqpgv2cc73ea21fg",
+        "indice": 0,
+        "identificacao": "original_Z",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcccpc24mrc73cjb6bg",
+        "indice": 0,
+        "identificacao": "original_Z",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcccpc24mrc73cjb6bg",
+        "indice": 1,
+        "identificacao": "conectado_Z",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcco2fi0auc73dum8i0",
+        "indice": 0,
+        "identificacao": "original_X",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbcco2fi0auc73dum8i0",
+        "indice": 1,
+        "identificacao": "conectado_X",
+        "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+      },
+      {
+        "job_id": "dbch2kpgv2cc73eabim0",
+        "indice": 0,
+        "identificacao": "conectado50_Z",
+        "verificacao": "Estrutura conectada de 50 qubits; teste ideal estabilizador de 128 shots produz os dois extremos."
+      }
+    ],
+    "arquivos": {
+      "dados/brutos/02_controles/dbbrrnpgv2cc73e922r0.json": "f22a6143959eb9b681edbdef71e68e62c6563b26aa99f374d1b336147a2f4067",
+      "dados/brutos/02_controles/dbbrrnpgv2cc73e922r0.qpy": "956acf2c04f1e32f3adf3ea1c9551dd75fb384455468d1df584e09598e441fe8",
+      "dados/brutos/02_controles/dbbsd47i0auc73948300.json": "bebddd8cfdf06b51a26609efc840ffecb1807daba6576904dc95aca87c8c9da6",
+      "dados/brutos/02_controles/dbbsd47i0auc73948300.qpy": "c711dcc727b39ebe45a81aa646f8545827b3f3b61e0e1d7f441631b1963e6bad",
+      "dados/brutos/02_controles/dbcbsopgv2cc73ea1300.json": "26940d66494122c8e2b0e5313765f216d55752c4992f433cb725b2123a0ebd26",
+      "dados/brutos/02_controles/dbcbsopgv2cc73ea1300.qpy": "e38c0f2ea5b736f64d9990c3ef22ddd5c9b065845f6ad8db392640e5604b6c35",
+      "dados/brutos/02_controles/dbcc4g9gv2cc73ea1j10.json": "def289374545a8f0a088b867b9c64641a23bde0dcd1451c33c82185ecd50a237",
+      "dados/brutos/02_controles/dbcc4g9gv2cc73ea1j10.qpy": "3c33c831020358647628887f3bd7eb5bf56f3de3daa632ca5aac73b9826355e1",
+      "dados/brutos/02_controles/dbcc5ggc77vs7385vfsg.json": "d0063a9cc788d60a51aaad4cbaf083f61e0c7b8ba8a82452cf0af4389162bab7",
+      "dados/brutos/02_controles/dbcc5ggc77vs7385vfsg.qpy": "9f4bd7c2e9a5c537e502864d9e4c6d504615fed77644efb14ab1f1277cfc76fe",
+      "dados/brutos/03_ghz_conectado/dbccaqpgv2cc73ea21fg.json": "c8fa75cb26ae5b5ab0f4d33cea435ddc8181ac2290bb688bb8aa9a58661f761d",
+      "dados/brutos/03_ghz_conectado/dbccaqpgv2cc73ea21fg.qpy": "48a4645e5ae1446ac319abafc77880e81528a6cbedd69e4c87834dd29e545c3a",
+      "dados/brutos/03_ghz_conectado/dbcccpc24mrc73cjb6bg.json": "ee4d32ce49292fbdb9287d18e356d62a2ee8b5e4458a5572f2f30621da169ec4",
+      "dados/brutos/03_ghz_conectado/dbcccpc24mrc73cjb6bg.qpy": "d3fbeca9a066be673cb59cbd3f6db0cbee39135931e674be5005c56e162d0e82",
+      "dados/brutos/03_ghz_conectado/dbcco2fi0auc73dum8i0.json": "c50164249786c4ee4d7accc2e87f4ee1392139bd48dc70e09b52f2ef32e7b87e",
+      "dados/brutos/03_ghz_conectado/dbcco2fi0auc73dum8i0.qpy": "117760e52245a6e3a95708104c13563ee170d30811d840caeb323e222bfb452d",
+      "dados/brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0.json": "8f77cfb1e7c7fe54ce46226be8c7b368e7dd4d5ca63d4210aacbb77b8d245c38",
+      "dados/brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0.qpy": "c9e16d419d13c802a2c8470c653e3e25e63e91bd3de898b8d5907038cf3d6fd5"
+    }
+  }
+}

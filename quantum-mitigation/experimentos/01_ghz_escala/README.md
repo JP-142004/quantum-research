@@ -48,7 +48,7 @@ Parte desse desvio já aparece ao preparar estados muito simples, sem emaranhame
 | Arquivo | Para que serve |
 | --- | --- |
 | `ghz_05.py` a `ghz_50.py` (dez programas) | Um programa por tamanho. |
-| [Contagens originais](../../dados/brutos/README.md#01--escala-do-ghz) | Dados brutos. |
+| [Contagens originais](../../dados/README.md#01--escala-do-ghz) | Dados brutos. |
 | [resumo_escala.csv](../../dados/processados/01_ghz_escala/resumo_escala.csv) | Tabela de PZ calculada das contagens por [resumir_resultados.py](../../scripts/resumir_resultados.py). |
 
 **Execução:** os programas `ghz_*.py` **enviam novos jobs à IBM**. Para recalcular a tabela sem acessar a IBM, use `scripts/resumir_resultados.py`.

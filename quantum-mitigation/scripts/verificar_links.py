@@ -32,7 +32,7 @@ def main():
     quebrados, total = [], 0
     cache = {}
     for md in sorted(base.rglob('*.md')):
-        if '.git' in md.parts or '_modelo' in md.parts:
+        if '.git' in md.parts:
             continue
         texto = CERCA.sub('', md.read_text(encoding='utf-8'))
         texto = re.sub(r'`[^`\n]*`', '', texto)

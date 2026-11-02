@@ -106,7 +106,7 @@ def graficos(resultados, pasta):
     fig.suptitle('GHZ de 5 qubits · três execuções no ibm_fez', fontweight='bold')
     fig.text(.5, .025, 'Barras: ±1 erro padrão · bootstrap de calibração e GHZ · eixo vertical ampliado', ha='center', fontsize=10)
     fig.tight_layout(rect=(0, .06, 1, .94))
-    for extensao in ['png', 'svg']:
+    for extensao in ['png']:
         fig.savefig(pasta / f'04_comparacao_rodadas.{extensao}', dpi=180)
     plt.close(fig)
     fig, ax = plt.subplots(figsize=(9, 4.8))
@@ -122,7 +122,7 @@ def graficos(resultados, pasta):
     ax.grid(axis='y', alpha=.2)
     fig.text(.5, .025, 'Barras: intervalo percentil de 95% · mesmas contagens reamostradas para bruto e ajustado', ha='center', fontsize=9)
     fig.tight_layout(rect=(0, .06, 1, 1))
-    for extensao in ['png', 'svg']:
+    for extensao in ['png']:
         fig.savefig(pasta / f'04_ganho_rodadas.{extensao}', dpi=180)
     plt.close(fig)
 

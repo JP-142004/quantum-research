@@ -1,6 +1,6 @@
 # Scripts
 
-Programas de análise, validação e geração de tabelas e figuras. Todos rodam no PC, **exceto `recuperar_job.py`**, que consulta a IBM (sem enviar nenhum job novo). Os programas que enviam circuitos à IBM estão nas pastas dos [experimentos](../experimentos/README.md), não aqui.
+Programas de análise, validação e geração de tabelas e figuras. Todos rodam no PC e nenhum acessa a IBM. Os programas que enviam circuitos à IBM estão nas pastas dos [experimentos](../experimentos/README.md), não aqui.
 
 [Visão geral](../README.md)
 
@@ -8,7 +8,7 @@ Programas de análise, validação e geração de tabelas e figuras. Todos rodam
 
 | Script | O que faz | Lê | Grava |
 | --- | --- | --- | --- |
-| `resumir_resultados.py` | Calcula PZ de cada tamanho do experimento 1 e o resumo das três rodadas do experimento 4. | Texto de escala e os JSONs das três rodadas | `01_ghz_escala/resumo_escala.csv`, `04_mitigacao_leitura/resumo_mitigacao.csv` |
+| `resumir_resultados.py` | Calcula PZ de cada tamanho do experimento 1. | Texto de escala | `01_ghz_escala/resumo_escala.csv` |
 | `comparar_rodadas.py` | Ajuste de leitura, bootstrap e comparação das três rodadas do experimento 4. | Três JSONs das rodadas | `04_mitigacao_leitura/comparacao_rodadas.json`, `docs/comparacao_rodadas.md` e figuras 04 |
 
 ## Simulação e validação (experimentos 5 e 6)
@@ -26,7 +26,6 @@ Programas de análise, validação e geração de tabelas e figuras. Todos rodam
 | `gerar_tabelas.py` | Preenche as tabelas marcadas com `TABELA:nome` nos READMEs, a partir dos dados. Com `--verificar`, só confere. |
 | `visualizar_dados.py` | Recria as figuras 02, 03, 05 e 06 em [figuras](../figuras/README.md) a partir dos JSONs. |
 | `verificar_links.py` | Confere os links relativos e as âncoras dos arquivos Markdown. |
-| `recuperar_job.py` | Histórico: consulta o job `dbaa20fi0auc7391ncu0` e imprime as contagens. **Acessa a IBM** (também ao ser importado); não é usado pelos testes. |
 
 ## Como rodar
 
@@ -35,7 +34,7 @@ python scripts/gerar_tabelas.py
 python scripts/verificar_links.py
 ```
 
-Use [requirements-analise.txt](../requirements-analise.txt) para análise e gráficos e [requirements-simulacao.txt](../requirements-simulacao.txt) para a simulação e os testes. O [requirements.txt](../requirements.txt) é a lista histórica que inclui o Runtime da IBM; não é necessário para os programas locais. `comparar_rodadas.py` aceita `--base` e `--bootstrap` (mínimo e padrão: 5.000).
+Use [requirements-analise.txt](../requirements-analise.txt) para análise e gráficos e [requirements-simulacao.txt](../requirements-simulacao.txt) para a simulação e os testes. Os programas dos experimentos 1 a 4 usam também o `qiskit-ibm-runtime`, que não está nessas listas (ver [experimentos](../experimentos/README.md)). `comparar_rodadas.py` aceita `--base` e `--bootstrap` (mínimo e padrão: 5.000).
 
 ## Preservação dos dados
 

@@ -274,7 +274,7 @@ def main():
     args = ap.parse_args()
     total_marcadores, pendentes = 0, 0
     for md in sorted(BASE.rglob('*.md')):
-        if '.git' in md.parts or '_modelo' in md.parts:
+        if '.git' in md.parts:
             continue
         texto = md.read_text(encoding='utf-8')
         if '<!-- TABELA:' not in texto:

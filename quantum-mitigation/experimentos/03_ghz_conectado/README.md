@@ -1,6 +1,6 @@
 # Experimento 3 · Menos portas reduzem o desvio?
 
-**Onde e quando:** IBM, `ibm_fez`, 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../docs/recuperacao_etapas_02_03.json)).
+**Onde e quando:** IBM, `ibm_fez`, 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../dados/registro_origem.json)).
 
 ## Pergunta
 
@@ -87,7 +87,7 @@ Além de reduzir as portas, dá para corrigir o erro de leitura? [Experimento 4]
 | `comparar_construcoes.py` | Compara a original com árvores conectadas e escolhe a de menos portas de dois qubits. |
 | `comparar_base_x.py` | Mesma comparação, medindo na base X. |
 | `ghz_50_conectado.py` | GHZ de 50 qubits por busca em largura a partir da raiz física 2. |
-| [Contagens e circuitos](../../dados/brutos/README.md#03--construções-do-ghz) | Quatro jobs (JSON e QPY). |
+| [Contagens e circuitos](../../dados/README.md#03--construções-do-ghz) | Quatro jobs (JSON e QPY). |
 | [resultados_recuperados.json](../../dados/processados/03_ghz_conectado/resultados_recuperados.json) | Uma linha por circuito. |
 
 **Execução:** os quatro programas **enviam jobs à IBM**.

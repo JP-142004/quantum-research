@@ -17,14 +17,59 @@ Os dados de cada experimento estão em [dados](../dados/README.md) e as figuras 
 
 ## Antes de executar qualquer programa
 
-Os programas Python das pastas 1 a 4 **enviam jobs à IBM** quando executados. Para estudar os resultados não é necessário executá-los: os dados já estão salvos. Os comandos que apenas leem dados, sem acessar a IBM, estão em [scripts](../scripts/README.md). Novos envios à IBM exigem decisão específica do Luiz, com o orçamento de medidas combinado antes.
+Os programas Python das pastas 1 a 4 **enviam jobs à IBM** quando executados. Para estudar os resultados não é necessário executá-los: os dados já estão salvos. Os comandos que apenas leem dados, sem acessar a IBM, estão em [scripts](../scripts/README.md). Novos envios à IBM exigem decisão específica do Luiz, com o orçamento de medidas combinado antes. Para executá-los é preciso ter `qiskit` e `qiskit-ibm-runtime` instalados e as credenciais da IBM salvas; para apenas ler os resultados, nada disso é necessário.
 
 ## Como acrescentar um experimento
 
-1. Copie a pasta [_modelo](_modelo/README.md) para a próxima numeração, por exemplo `07_nome_curto`.
+1. Copie o [molde](#molde-de-um-experimento) abaixo para a próxima numeração, por exemplo `07_nome_curto/README.md`.
 2. Escreva pergunta, indicador, controle, custo e critério de sucesso **antes** de executar.
 3. Guarde as contagens em `dados/` com o mesmo número e calcule os indicadores por script, nunca à mão.
 4. Para tabelas, use os marcadores de [gerar_tabelas.py](../scripts/gerar_tabelas.py), para que o número do texto sempre venha do dado.
 5. Acrescente uma linha na tabela acima, em [dados](../dados/README.md), em [figuras](../figuras/README.md) e, se houver técnica nova, em [tecnicas.md](../fundamentos/tecnicas.md).
+
+## Molde de um experimento
+
+```markdown
+# Experimento N · Título como uma pergunta
+
+> Copie este arquivo para `NN_nome_curto/README.md` e apague as instruções entre colchetes. Escreva para quem não conhece os termos: explique ou aponte para [fundamentos](../../fundamentos/README.md).
+
+**Onde e quando:** [IBM / PC]; backend e data; **shots por circuito:**.
+
+## Pergunta
+
+[O que queremos descobrir? Qual resultado anterior levou a esta pergunta? Qual fonte de ruído está em questão ([ruído](../../fundamentos/ruido.md))?]
+
+## Como foi feito
+
+- **Circuito:** [qual, com que qubits físicos]
+- **Resultado ideal e indicador:** [fórmula e valor ideal; veja [indicadores](../../fundamentos/indicadores.md)]
+- **Técnica avaliada:** [qual, com link para [tecnicas.md](../../fundamentos/tecnicas.md)]
+- **Referência e controle:** [com o que comparamos, e que controle de resposta conhecida detecta falhas]
+- **Custo:** [circuitos × shots = medidas; portas de dois qubits]
+- **Critério de sucesso, definido antes de executar:** [o que contará como melhora]
+
+## Resultado
+
+[Uma conta real, do dado bruto ao indicador, com os números intermediários. Tabela (se vier dos dados, entre marcadores `TABELA:nome` cadastrados em `scripts/gerar_tabelas.py`). Figura de [figuras](../../figuras/README.md) com legenda curta que diz o que cada ponto ou barra mostra.]
+
+## Conclusão
+
+[O que dá para afirmar. O que os dados não mostram. Limites: backend, data, número de repetições, hipóteses do modelo.]
+
+## Próximo passo
+
+[A pergunta que esta conclusão deixa em aberto, com link para o experimento seguinte.]
+
+## Arquivos
+
+| Arquivo | Para que serve |
+| --- | --- |
+| `nome_do_arquivo` | [função em uma linha] |
+
+**Execução:** [diga se algum programa desta pasta envia jobs à IBM.]
+
+[Experimentos](../README.md)
+```
 
 [Visão geral](../README.md)

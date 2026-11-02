@@ -87,7 +87,7 @@ Sobra o erro das portas. Existe uma técnica que o reduza? A extrapolação a ru
 | [validar_protocolo_local.py](../../scripts/validar_protocolo_local.py) | Executa os blocos e salva contagens e análises. |
 | [verificar_registro_local.py](../../scripts/verificar_registro_local.py) | Audita hashes, totais de shots e coerência com o modelo exato. |
 | [test_protocolo_local.py](../../tests/test_protocolo_local.py) | Testes automatizados (roteamento, ordem dos bits, controles, inversão assimétrica). |
-| [Dados simulados](../../dados/simulados/README.md) | Contagens, análises, circuitos, manifesto e relatório. |
+| [Dados simulados](../../dados/README.md#dados-simulados) | Contagens, análises, circuitos, manifesto e relatório. |
 
 **Execução:** todos os programas desta etapa são **locais**. Não acessam a IBM.
 
