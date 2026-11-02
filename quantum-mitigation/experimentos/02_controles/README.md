@@ -1,60 +1,103 @@
-# Experimento 2 · O desvio já aparece em estados simples?
+# Experimento 2 · O computador acerta o que é fácil?
 
-**Onde e quando:** IBM, `ibm_kingston` e `ibm_fez`, em 20 e 21 de outubro de 2026. **Shots por circuito:** 1.000. As contagens e os circuitos foram recuperados da conta IBM em 2 de novembro de 2026 ([registro](../../dados/registro_origem.json)).
+**Onde e quando:** IBM, nos computadores `ibm_kingston` e `ibm_fez`, em 20 e 21 de outubro de 2026. Cada pedido foi repetido 1.000 vezes. As contagens foram recuperadas da conta IBM em 2 de novembro de 2026 ([registro de origem](../../dados/registro_origem.json)).
+
+## Resposta curta
+
+Mesmo nos testes mais fáceis, **o computador erra**, e o tamanho do erro **muda de um computador para outro e de um dia para o outro**. Isso mostra que parte do erro do experimento 1 não vem de o circuito ser complicado.
 
 ## Pergunta
 
-Se preparamos um estado cuja resposta é conhecida (todos zeros, todos uns, um qubit só), o equipamento devolve o que preparamos? O experimento 1 não diz se o desvio vem do emaranhamento ou de algo mais básico. Um **controle** sem emaranhamento isola uma parte do problema. Ele mistura preparação e leitura, e não separa uma da outra.
+Se eu peço ao computador um resultado que já conheço, ele devolve esse resultado? Por exemplo: "deixe os 5 qubits em 0 e me diga o que você vê". A resposta certa é `00000`, sempre. Um pedido desse tipo, em que sabemos a resposta, se chama **controle**. Aqui não tem GHZ: só pedir e ler.
+
+No experimento 1 o erro crescia com o tamanho do circuito, mas não dava para saber se a causa era a complicação do circuito. Se o computador já erra no simples, existe uma parte do erro que é mais básica. Este teste mistura dois passos, **preparar** o qubit e **ler** o resultado, e não diz qual dos dois falhou.
 
 ## Como foi feito
 
-| Programa | O que prepara |
-| --- | --- |
-| `todos_zeros.py` | Cinco qubits em `0` (qubits físicos 0 a 4). |
-| `todos_uns.py` | Porta X nos cinco qubits; esperado `11111`. |
-| `qubits_individuais.py` | `0` e `1` separadamente nos qubits físicos 0 e 1. |
-| `comparar_zeros.py` | Qubit 0 sozinho, qubit 1 sozinho e os cinco juntos. |
+Quatro pedidos. Em todos, contamos quantas vezes, em 1.000, o computador respondeu o que pedimos.
 
-**Indicador:** fração das medidas iguais ao estado preparado. Para o conjunto, qualquer bit diferente conta como desvio.
+| Pedido | O que foi feito | Programa |
+| --- | --- | --- |
+| Cinco qubits em 0 | Não faz nada nos 5 qubits e lê. Resposta certa: `00000`. | `todos_zeros.py` |
+| Cinco qubits em 1 | Inverte os 5 qubits (porta X) e lê. Resposta certa: `11111`. | `todos_uns.py` |
+| Um qubit por vez | Os qubits 0 e 1, cada um pedido em 0 e em 1, um de cada vez. | `qubits_individuais.py` |
+| Sozinhos e juntos | Qubit 0 sozinho, qubit 1 sozinho e os cinco juntos, no mesmo envio. | `comparar_zeros.py` |
 
 ## Resultado
 
-<!-- TABELA:controles -->
-| Experimento | Backend | Data do job | Circuito | Preparado | Medidas iguais ao preparado | Fração |
-| --- | --- | --- | --- | --- | ---: | ---: |
-| todos_zeros | ibm_kingston | 2026-10-20 | zeros | `00000` | 528/1000 | 0,528 |
-| todos_uns | ibm_kingston | 2026-10-20 | uns | `11111` | 768/1000 | 0,768 |
-| individuais_kingston | ibm_kingston | 2026-10-21 | q0_zero | `0` | 249/1000 | 0,249 |
-| individuais_kingston | ibm_kingston | 2026-10-21 | q0_um | `1` | 915/1000 | 0,915 |
-| individuais_kingston | ibm_kingston | 2026-10-21 | q1_zero | `0` | 1000/1000 | 1,000 |
-| individuais_kingston | ibm_kingston | 2026-10-21 | q1_um | `1` | 957/1000 | 0,957 |
-| individuais_fez | ibm_fez | 2026-10-21 | q0_zero | `0` | 992/1000 | 0,992 |
-| individuais_fez | ibm_fez | 2026-10-21 | q0_um | `1` | 973/1000 | 0,973 |
-| individuais_fez | ibm_fez | 2026-10-21 | q1_zero | `0` | 989/1000 | 0,989 |
-| individuais_fez | ibm_fez | 2026-10-21 | q1_um | `1` | 978/1000 | 0,978 |
-| zeros_separados_juntos | ibm_fez | 2026-10-21 | q0_zero | `0` | 991/1000 | 0,991 |
-| zeros_separados_juntos | ibm_fez | 2026-10-21 | q1_zero | `0` | 991/1000 | 0,991 |
-| zeros_separados_juntos | ibm_fez | 2026-10-21 | zeros | `00000` | 942/1000 | 0,942 |
-<!-- /TABELA:controles -->
+### Teste 1: cinco qubits parados
 
-![Controles de estados conhecidos](../../figuras/02_controles_reais.png)
+<!-- TABELA:cinco_parados -->
+| Computador | Dia | O que pedi | Quantas vezes acertou |
+| --- | --- | --- | ---: |
+| ibm_kingston | 20/10/2026 | `00000` | 528 de 1.000 |
+| ibm_kingston | 20/10/2026 | `11111` | 768 de 1.000 |
+| ibm_fez | 21/10/2026 | `00000` | 942 de 1.000 |
+<!-- /TABELA:cinco_parados -->
 
-*Fração das 1.000 medidas iguais ao estado preparado, por teste, backend e circuito.*
+Quanto mais perto de 1.000, melhor. O Kingston acertou pouco, em especial pedindo `00000`; o Fez acertou quase tudo.
 
-**Conta: cinco qubits juntos no Fez.** Mediram-se 942 de 1.000. Se cada qubit acertasse 99,1% das vezes, de forma independente, esperaríamos 0,991⁵ ≈ 0,956, ou seja, cerca de 956. A diferença de 0,014 é de cerca de 1,9 erro padrão (≈ 0,0074).
+### Teste 2: um qubit por vez
+
+<!-- TABELA:um_qubit -->
+| Computador | Dia | Qubit | O que pedi | Quantas vezes acertou |
+| --- | --- | ---: | --- | ---: |
+| ibm_kingston | 21/10/2026 | 0 | `0` | 249 de 1.000 |
+| ibm_kingston | 21/10/2026 | 0 | `1` | 915 de 1.000 |
+| ibm_kingston | 21/10/2026 | 1 | `0` | 1.000 de 1.000 |
+| ibm_kingston | 21/10/2026 | 1 | `1` | 957 de 1.000 |
+| ibm_fez | 21/10/2026 | 0 | `0` | 992 de 1.000 |
+| ibm_fez | 21/10/2026 | 0 | `1` | 973 de 1.000 |
+| ibm_fez | 21/10/2026 | 1 | `0` | 989 de 1.000 |
+| ibm_fez | 21/10/2026 | 1 | `1` | 978 de 1.000 |
+<!-- /TABELA:um_qubit -->
+
+No Fez, todos os pedidos ficam entre 97% e 99% de acerto. No Kingston, o **qubit 0 pedido em 0 acertou menos de 1 vez em cada 4**, enquanto o qubit 1 acertou todas.
+
+![Todos os testes do experimento 2](../../figuras/02_controles_reais.png)
+
+*Cada barra é um teste (computador, qubits e o que foi pedido), e mostra a porcentagem de acertos. Quanto mais longa, melhor.*
+
+### O mesmo computador, em dois dias
+
+No Kingston, olhamos só os qubits 0 e 1 pedidos em 0, e quantas vezes cada um respondeu `1`, o que está errado:
+
+<!-- TABELA:kingston_dias -->
+| Dia | Teste | Qubit 0 respondeu 1 | Qubit 1 respondeu 1 |
+| --- | --- | ---: | ---: |
+| 20/10/2026 | cinco qubits juntos | 318 de 1.000 | 211 de 1.000 |
+| 21/10/2026 | cada qubit sozinho | 751 de 1.000 | 0 de 1.000 |
+<!-- /TABELA:kingston_dias -->
+
+São os mesmos qubits e o comportamento mudou. O qubit 1 passou de errar cerca de 1 vez em cada 5 para não errar nenhuma. Nos testes dos cinco qubits do dia 20, os qubits 2, 3 e 4 quase não erraram; o problema estava concentrado nos dois primeiros.
+
+### Medir cinco qubits juntos piora a leitura? (Fez)
+
+Se medir juntos não atrapalhasse, os cinco juntos deveriam acertar tanto quanto cada qubit sozinho, elevado à quinta potência. Comparamos com o que foi medido:
+
+<!-- TABELA:cinco_conta -->
+| Fez, 21/10/2026 | Quantas vezes acertou |
+| --- | ---: |
+| Qubit 0 medido sozinho | 991 de 1.000 |
+| Qubit 1 medido sozinho | 991 de 1.000 |
+| Esperado para os cinco juntos, se cada qubit acertasse com essa chance sem influenciar os outros | 956 de 1.000 |
+| Medido, cinco juntos | 942 de 1.000 |
+| Diferença | 14 medidas (1,9 erros padrão) |
+<!-- /TABELA:cinco_conta -->
+
+*Erro padrão* é quanto um número oscila só por sorte da amostra ([explicação](../../fundamentos/indicadores.md)). Uma diferença de menos de 2 erros padrão pode ser só sorte.
 
 ## Conclusão
 
-- **No Fez**, os qubits 0 e 1 preparados sozinhos acertam entre 97,3% e 99,2%.
-- **No Kingston**, o qubit 0 preparado em `0` devolveu `0` em apenas 249 de 1.000 medidas, enquanto o qubit 1 devolveu `0` em todas. O mesmo qubit 0 preparado em `1` acertou 915. **Os dados não permitem atribuir uma causa** (leitura, inicialização, estado do equipamento naquele dia ou outra).
-- **Medir cinco qubits juntos** deu 942 contra os 956 esperados. Isso **não é evidência clara** de que medir juntos piora a leitura.
-- Os testes foram feitos em jobs, dias e backends diferentes e cada um tem uma só repetição. **Não compare** o 528/1.000 do Kingston (cinco zeros) com o 249/1.000 do mesmo backend (qubit 0 sozinho): foram jobs distintos, em dias distintos.
-
-Em resumo: o desvio já aparece em estados simples e depende do backend e do dia.
+1. **O computador erra até no teste mais simples**, sem GHZ e sem portas.
+2. **O erro depende do computador e do dia.** O Fez acertou 97% a 99% nos qubits sozinhos. No Kingston, o qubit 0 e o qubit 1 mudaram de comportamento de um dia para o outro.
+3. **Medir cinco juntos não mostrou piora clara** no Fez: a diferença ficou abaixo de 2 erros padrão.
+4. **Não sabemos a causa.** Pode ser a preparação, a leitura, o estado do equipamento naquele dia, ou outra. Os dados não permitem escolher.
+5. **Não compare os testes entre si.** Cada um foi feito uma vez só, em jobs, dias e computadores diferentes. Por exemplo, o resultado dos cinco qubits do Kingston não se compara com o do qubit 0 sozinho.
 
 ## Próximo passo
 
-O GHZ original, com 13 portas de dois qubits depois de compilado, pode ser preparado com menos operações? [Experimento 3](../03_ghz_conectado/README.md).
+O erro existe mesmo no simples, e circuitos com mais passos têm mais chances de erro. Dá para montar o mesmo GHZ com menos passos? [Experimento 3](../03_ghz_conectado/README.md).
 
 ## Arquivos
 
@@ -62,7 +105,7 @@ O GHZ original, com 13 portas de dois qubits depois de compilado, pode ser prepa
 | --- | --- |
 | `todos_zeros.py`, `todos_uns.py`, `qubits_individuais.py`, `comparar_zeros.py` | Os quatro programas descritos acima. |
 | [Contagens e circuitos](../../dados/README.md#02--controles-de-estados-conhecidos) | Cinco jobs (JSON e QPY). |
-| [resultados_recuperados.json](../../dados/processados/02_controles/resultados_recuperados.json) | Uma linha por circuito, com job, backend e acertos. |
+| [resultados_recuperados.json](../../dados/processados/02_controles/resultados_recuperados.json) | Uma linha por circuito, com job, computador e acertos. |
 
 **Execução:** os quatro programas **enviam jobs à IBM**. Para estudar os resultados, abra os dados.
 

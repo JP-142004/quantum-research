@@ -105,14 +105,35 @@ def _linhas(pasta):
     return json.load(open(DADOS / 'processados' / pasta / 'resultados_recuperados.json', encoding='utf-8'))
 
 
-def t_construcoes():
+def _dia(job_id):
+    """Data do job no formato DD/MM/AAAA."""
+    d = _data_job(job_id)
+    return f'{d[8:10]}/{d[5:7]}/{d[:4]}' if d[:1].isdigit() else d
+
+
+def _de(x, n):
+    """'528 de 1.000'."""
+    return f"{x:,} de {n:,}".replace(',', '.')
+
+
+def t_construcao_cinco():
+    """Original contra conectada com 5 qubits: Z vem de um job e X de outro."""
+    por_circ = {(l['job_id'], l['circuito']): l for l in _linhas('03_ghz_conectado')}
     corpo = []
-    for l in _linhas('03_ghz_conectado'):
-        rot = 'PZ' if l['circuito'].endswith('_Z') else 'CX'
-        corpo.append((l['experimento'], l['circuito'], l['bits'], l['portas_duplas'], l['profundidade'],
-                      f"{rot} = {num(l['indicador'], 3)}", _data_job(l['job_id']), f"`{l['job_id']}`"))
-    return tabela(['Experimento', 'Circuito', 'Qubits', 'Portas de 2 qubits', 'Profundidade', 'Indicador',
-                   'Data do job', 'Job'], corpo, (2, 3, 4))
+    for rot, tipo in (('Original', 'original'), ('Conectada', 'conectado')):
+        z = por_circ[('dbcccpc24mrc73cjb6bg', f'{tipo}_Z')]
+        x = por_circ[('dbcco2fi0auc73dum8i0', f'{tipo}_X')]
+        corpo.append((rot, z['portas_duplas'], z['profundidade'], num(z['indicador'], 3),
+                      x['profundidade'], num(x['indicador'], 3)))
+    return tabela(['Construção', 'Portas de 2 qubits', 'Profundidade (medindo em Z)', 'PZ',
+                   'Profundidade (medindo em X)', 'CX'], corpo, range(1, 6))
+
+
+def t_construcao_cinquenta():
+    l = next(l for l in _linhas('03_ghz_conectado') if l['bits'] == 50)
+    return tabela(['Construção', 'Qubits', 'Portas de 2 qubits', 'Profundidade', 'PZ', 'Computador', 'Dia'],
+                  [('Conectada', l['bits'], l['portas_duplas'], l['profundidade'], num(l['indicador'], 3),
+                    l['backend'], _dia(l['job_id']))], range(1, 5))
 
 
 def t_construcoes_testes():
@@ -140,14 +161,52 @@ def t_construcoes_testes():
                    'Diferença em EP'], corpo, range(2, 7))
 
 
-def t_controles():
-    corpo = []
-    for l in _linhas('02_controles'):
-        corpo.append((l['experimento'], l['backend'], _data_job(l['job_id']), l['circuito'],
-                      f"`{l['estado_preparado']}`", f"{l['acertos']}/{l['shots']}",
-                      num(l['acertos'] / l['shots'], 3)))
-    return tabela(['Experimento', 'Backend', 'Data do job', 'Circuito', 'Preparado',
-                   'Medidas iguais ao preparado', 'Fração'], corpo, (5, 6))
+def t_cinco_parados():
+    corpo = [(l['backend'], _dia(l['job_id']), f"`{l['estado_preparado']}`", _de(l['acertos'], l['shots']))
+             for l in _linhas('02_controles') if l['circuito'] in ('zeros', 'uns')]
+    return tabela(['Computador', 'Dia', 'O que pedi', 'Quantas vezes acertou'], corpo, (3,))
+
+
+def t_um_qubit():
+    corpo = [(l['backend'], _dia(l['job_id']), l['circuito'][1], f"`{l['estado_preparado']}`",
+              _de(l['acertos'], l['shots']))
+             for l in _linhas('02_controles') if l['experimento'].startswith('individuais')]
+    return tabela(['Computador', 'Dia', 'Qubit', 'O que pedi', 'Quantas vezes acertou'], corpo, (2, 4))
+
+
+def t_kingston_dias():
+    """Quantas vezes os qubits 0 e 1 responderam 1 quando se pediu 0, no Kingston, em dois dias."""
+    linhas = [l for l in _linhas('02_controles') if l['backend'] == 'ibm_kingston']
+    cinco = next(l for l in linhas if l['circuito'] == 'zeros')
+    bruto = json.load(open(DADOS / 'brutos' / '02_controles' / f"{cinco['job_id']}.json", encoding='utf-8'))
+    contagens = bruto['circuitos'][0]['contagens_por_registro']['c']
+    total = sum(contagens.values())
+    # O bit mais à direita da sequência é o qubit 0.
+    uns = [sum(v for k, v in contagens.items() if k[-1 - q] == '1') for q in range(2)]
+    q0 = next(l for l in linhas if l['circuito'] == 'q0_zero')
+    q1 = next(l for l in linhas if l['circuito'] == 'q1_zero')
+    corpo = [(_dia(cinco['job_id']), 'cinco qubits juntos', _de(uns[0], total), _de(uns[1], total)),
+             (_dia(q0['job_id']), 'cada qubit sozinho', _de(q0['shots'] - q0['acertos'], q0['shots']),
+              _de(q1['shots'] - q1['acertos'], q1['shots']))]
+    return tabela(['Dia', 'Teste', 'Qubit 0 respondeu 1', 'Qubit 1 respondeu 1'], corpo, (2, 3))
+
+
+def t_cinco_conta():
+    """Cinco qubits juntos no Fez contra o esperado se cada qubit errasse sem influenciar os outros."""
+    por = {(l['experimento'], l['circuito']): l for l in _linhas('02_controles')}
+    a, b = por[('zeros_separados_juntos', 'q0_zero')], por[('zeros_separados_juntos', 'q1_zero')]
+    c = por[('zeros_separados_juntos', 'zeros')]
+    n = c['shots']
+    p = (a['acertos'] / n * b['acertos'] / n) ** 0.5
+    esperado, medido = p ** 5, c['acertos'] / n
+    ep = (medido * (1 - medido) / n) ** 0.5
+    corpo = [('Qubit 0 medido sozinho', _de(a['acertos'], n)),
+             ('Qubit 1 medido sozinho', _de(b['acertos'], n)),
+             ('Esperado para os cinco juntos, se cada qubit acertasse com essa chance sem influenciar os outros',
+              _de(round(esperado * n), n)),
+             ('Medido, cinco juntos', _de(c['acertos'], n)),
+             ('Diferença', f"{round((esperado - medido) * n)} medidas ({num((esperado - medido) / ep, 1)} erros padrão)")]
+    return tabela(['Fez, 21/10/2026', 'Quantas vezes acertou'], corpo, (1,))
 
 
 # ------------------------------------------------------------ tabelas simuladas
@@ -243,7 +302,10 @@ def t_parametros():
 
 TABELAS = {
     'escala': t_escala, 'rodadas': t_rodadas, 'rodadas_ganho': t_rodadas_ganho, 'rodadas_jobs': t_rodadas_jobs,
-    'construcoes': t_construcoes, 'construcoes_testes': t_construcoes_testes, 'controles': t_controles, 'cenarios': t_cenarios, 'zne': t_zne, 'zne_blocos': t_zne_blocos,
+    'construcao_cinco': t_construcao_cinco, 'construcao_cinquenta': t_construcao_cinquenta,
+    'construcoes_testes': t_construcoes_testes, 'cinco_parados': t_cinco_parados, 'um_qubit': t_um_qubit,
+    'kingston_dias': t_kingston_dias, 'cinco_conta': t_cinco_conta,
+    'cenarios': t_cenarios, 'zne': t_zne, 'zne_blocos': t_zne_blocos,
     'parametros': t_parametros, 'sintese': t_sintese,
 }
 MARCADOR = re.compile(r'(<!-- TABELA:(\w+) -->)\n(.*?)\n?(<!-- /TABELA:\2 -->)', re.S)
