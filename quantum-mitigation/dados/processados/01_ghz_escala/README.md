@@ -2,7 +2,7 @@
 
 ![População em Z de 5 a 50 qubits](../../imagens/escala_observada.png)
 
-Cada ponto corresponde a 1.000 medidas. Calculamos PZ somando todos zeros e todos uns e dividindo pelo total. Nesta série, o valor caiu de 92,2% para 10,9%.
+Cada ponto corresponde a 1.000 medidas. Calculamos PZ somando todos zeros e todos uns e dividindo pelo total. Resultado e interpretação: [experimento 1](../../../experimentos/01_ghz_escala/README.md).
 
 | Arquivo | Conteúdo |
 | --- | --- |
