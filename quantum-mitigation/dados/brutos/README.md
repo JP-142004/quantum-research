@@ -10,7 +10,7 @@ Contagens medidas em computadores quânticos da IBM, como foram devolvidas. Cada
 | --- | --- |
 | `01_ghz_escala/ghz_05_a_50.txt` | Contagens por sequência de bits, em dez seções (5, 10, … 50 qubits), 1.000 medidas cada. Backend e data não foram registrados. |
 
-Figura: [01_escala_observada](../../figuras/01_escala_observada.png). Tabela calculada: [resumo_escala.csv](../processados/resumo_escala.csv).
+Figura: [01_escala_observada](../../figuras/01_escala_observada.png). Tabela calculada: [resumo_escala.csv](../processados/01_ghz_escala/resumo_escala.csv).
 
 ## 02 · Controles de estados conhecidos
 

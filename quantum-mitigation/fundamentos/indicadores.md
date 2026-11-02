@@ -68,7 +68,7 @@ Para o **ganho** (ajustado menos bruto) usamos, em cada réplica, as mesmas cont
 
 ## Quasiprobabilidades
 
-Inverter a matriz de calibração pode produzir componentes ligeiramente negativas ou indicadores acima de 1. Essas componentes são chamadas quasiprobabilidades. Não as recortamos, porque o recorte introduziria um viés. A menor componente negativa de cada rodada está registrada em [comparacao_rodadas.json](../dados/processados/comparacao_rodadas.json).
+Inverter a matriz de calibração pode produzir componentes ligeiramente negativas ou indicadores acima de 1. Essas componentes são chamadas quasiprobabilidades. Não as recortamos, porque o recorte introduziria um viés. A menor componente negativa de cada rodada está registrada em [comparacao_rodadas.json](../dados/processados/04_mitigacao_leitura/comparacao_rodadas.json).
 
 ## Como incluir um circuito novo
 

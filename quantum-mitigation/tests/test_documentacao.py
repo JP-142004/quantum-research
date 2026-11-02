@@ -31,10 +31,10 @@ class DocumentacaoTest(unittest.TestCase):
 
     def test_numeros_do_texto_vem_dos_dados(self):
         artigo = (BASE / 'docs/relatorio.md').read_text(encoding='utf-8')
-        escala = list(csv.DictReader(open(BASE / 'dados/processados/resumo_escala.csv', encoding='utf-8')))
+        escala = list(csv.DictReader(open(BASE / 'dados/processados/01_ghz_escala/resumo_escala.csv', encoding='utf-8')))
         self.assertEqual(escala[0]['populacao_z'], '0.922')
         self.assertEqual(escala[-1]['populacao_z'], '0.109')
-        rod = json.load(open(BASE / 'dados/processados/comparacao_rodadas.json', encoding='utf-8'))['rodadas']
+        rod = json.load(open(BASE / 'dados/processados/04_mitigacao_leitura/comparacao_rodadas.json', encoding='utf-8'))['rodadas']
         r3 = rod[2]
         z = r3['metricas']['populacao_z']
         self.assertAlmostEqual(z['bruto'], (454 + 441) / 1000)

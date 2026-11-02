@@ -8,8 +8,8 @@ Programas de análise, validação e geração de tabelas e figuras. Todos rodam
 
 | Script | O que faz | Lê | Grava |
 | --- | --- | --- | --- |
-| `resumir_resultados.py` | Calcula PZ de cada tamanho do experimento 1 e o resumo das duas primeiras rodadas. | Texto de escala e dois JSONs históricos | `resumo_escala.csv`, `resumo_mitigacao.csv` |
-| `comparar_rodadas.py` | Ajuste de leitura, bootstrap e comparação das três rodadas do experimento 4. | Três JSONs das rodadas | JSON comparativo, `docs/comparacao_rodadas.md` e figuras 04 |
+| `resumir_resultados.py` | Calcula PZ de cada tamanho do experimento 1 e o resumo das três rodadas do experimento 4. | Texto de escala e os JSONs das três rodadas | `01_ghz_escala/resumo_escala.csv`, `04_mitigacao_leitura/resumo_mitigacao.csv` |
+| `comparar_rodadas.py` | Ajuste de leitura, bootstrap e comparação das três rodadas do experimento 4. | Três JSONs das rodadas | `04_mitigacao_leitura/comparacao_rodadas.json`, `docs/comparacao_rodadas.md` e figuras 04 |
 
 ## Simulação e validação (experimentos 5 e 6)
 

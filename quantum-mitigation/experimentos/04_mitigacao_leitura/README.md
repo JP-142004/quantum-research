@@ -90,7 +90,7 @@ Na IBM só vemos as contagens finais, sem saber quanto do desvio veio da leitura
 | `repetir_mitigacao.py` | Rodada 3, com `--verificar` (local), `--enviar` e `--coletar`. Sem `--enviar`, nada é enviado, e uma rodada já registrada não é reenviada. |
 | [comparar_rodadas.py](../../scripts/comparar_rodadas.py) | Ajustes e bootstrap das três rodadas, sem acessar a IBM. |
 | [Contagens das rodadas](../../dados/brutos/README.md#04--calibração-de-leitura) | JSON das rodadas 1 e 2; JSON e QPY da rodada 3. |
-| [comparacao_rodadas.json](../../dados/processados/comparacao_rodadas.json) | Resultado processado das três rodadas. |
+| [comparacao_rodadas.json](../../dados/processados/04_mitigacao_leitura/comparacao_rodadas.json) | Resultado processado das três rodadas. |
 
 **Execução:** `mitigacao_leitura.py` envia um job à IBM. O job `dbjnndgnceqs73akbkh0` (rodada 3) já foi concluído e não deve ser reenviado.
 

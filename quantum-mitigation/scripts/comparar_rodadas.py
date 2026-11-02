@@ -212,10 +212,10 @@ def main():
     resultados = [analisar(bruto / nome, i, args.bootstrap) for i, nome in enumerate(FONTES, 1)]
     if len({r['job_id'] for r in resultados}) != 3:
         raise ValueError('Jobs duplicados')
-    for pasta in ['dados/processados', 'figuras', 'docs']:
+    for pasta in ['dados/processados/04_mitigacao_leitura', 'figuras', 'docs']:
         (base / pasta).mkdir(parents=True, exist_ok=True)
     saida = dict(bootstrap_repeticoes=args.bootstrap, versoes=dict(python=platform.python_version(), numpy=np.__version__, matplotlib=matplotlib.__version__), rodadas=resultados)
-    (base / 'dados/processados/comparacao_rodadas.json').write_text(json.dumps(saida, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
+    (base / 'dados/processados/04_mitigacao_leitura/comparacao_rodadas.json').write_text(json.dumps(saida, indent=2, ensure_ascii=False)+'\n', encoding='utf-8')
     (base / 'docs/comparacao_rodadas.md').write_text(relatorio(resultados, args.bootstrap), encoding='utf-8')
     graficos(resultados, base / 'figuras')
     print(json.dumps(saida, indent=2, ensure_ascii=False))

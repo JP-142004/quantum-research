@@ -49,7 +49,7 @@ def tabela(cabecalho, linhas, alinhar_direita=()):
 # ---------------------------------------------------------------- tabelas reais
 
 def t_escala():
-    with open(DADOS / 'processados' / 'resumo_escala.csv', encoding='utf-8') as f:
+    with open(DADOS / 'processados' / '01_ghz_escala' / 'resumo_escala.csv', encoding='utf-8') as f:
         linhas = list(csv.DictReader(f))
     corpo = [(l['qubits'], l['todos_zeros'], l['todos_uns'], l['outros'], num(float(l['populacao_z']), 3))
              for l in linhas]
@@ -57,7 +57,7 @@ def t_escala():
 
 
 def _rodadas():
-    return json.load(open(DADOS / 'processados' / 'comparacao_rodadas.json', encoding='utf-8'))['rodadas']
+    return json.load(open(DADOS / 'processados' / '04_mitigacao_leitura' / 'comparacao_rodadas.json', encoding='utf-8'))['rodadas']
 
 
 def t_rodadas():
