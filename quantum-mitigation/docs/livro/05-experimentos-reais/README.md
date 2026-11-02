@@ -39,9 +39,9 @@ As três usam backend registrado `ibm_fez`, qubits físicos 0–4, 32 preparaç�
 | --- | --- | --- |
 | 1 | `dbccq67i0auc73dumdk0` | [JSON histórico 1](../../../dados/brutos/04_mitigacao_leitura/GHZ_leitura_dbccq67i0auc73dumdk0.json) |
 | 2 | `dbccri9gv2cc73ea3630` | [JSON histórico 2](../../../dados/brutos/04_mitigacao_leitura/GHZ_leitura_dbccri9gv2cc73ea3630.json) |
-| 3 | `dbjnndgnceqs73akbkh0` | [JSON da rodada 3](../../../dados/brutos/04_mitigacao_leitura/repeticoes/rodada_03.json) |
+| 3 | `dbjnndgnceqs73akbkh0` | [JSON da rodada 3](../../../dados/brutos/04_mitigacao_leitura/rodada_03/rodada_03.json) |
 
-Os rótulos 1 e 2 identificam os arquivos históricos; não recuperam datas que não foram registradas. A rodada 3 tem envio registrado em 1 de novembro de 2026, versões, opções, metadados e [QPY](../../../dados/brutos/04_mitigacao_leitura/repeticoes/rodada_03.qpy). As primeiras duas não oferecem uma auditoria equivalente dos circuitos compilados.
+Os rótulos 1 e 2 identificam os arquivos históricos; não recuperam datas que não foram registradas. A rodada 3 tem envio registrado em 1 de novembro de 2026, versões, opções, metadados e [QPY](../../../dados/brutos/04_mitigacao_leitura/rodada_03/rodada_03.qpy). As primeiras duas não oferecem uma auditoria equivalente dos circuitos compilados.
 
 | Rodada | PZ bruto | PZ ajustado | CX bruto | CX ajustado |
 | --- | ---: | ---: | ---: | ---: |

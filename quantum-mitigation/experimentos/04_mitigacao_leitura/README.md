@@ -24,7 +24,7 @@ No experimento real, há 32 sequências. Cada preparação conhecida fornece uma
 
 ## Siga uma rodada real
 
-Abra a [rodada 3](../../dados/brutos/04_mitigacao_leitura/repeticoes/rodada_03.json) e procure `contagens.GHZ_Z`. O Fez registrou 454 vezes `00000` e 441 vezes `11111`. As outras sequências apareceram 105 vezes. Logo, **PZ observado = (454 + 441)/1.000 = 0,895**.
+Abra a [rodada 3](../../dados/brutos/04_mitigacao_leitura/rodada_03/rodada_03.json) e procure `contagens.GHZ_Z`. O Fez registrou 454 vezes `00000` e 441 vezes `11111`. As outras sequências apareceram 105 vezes. Logo, **PZ observado = (454 + 441)/1.000 = 0,895**.
 
 No PC, ajustamos todas as 32 frequências com a calibração daquela rodada. A soma dos dois extremos de q foi **0,9648**. Essa é uma estimativa sobre as mesmas medidas. O arquivo bruto continua contendo exatamente 895 resultados esperados.
 

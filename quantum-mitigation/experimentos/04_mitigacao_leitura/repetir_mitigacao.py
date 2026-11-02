@@ -17,7 +17,7 @@ from qiskit import QuantumCircuit, qpy, transpile
 from qiskit_ibm_runtime import QiskitRuntimeService, SamplerV2
 
 BASE = Path(__file__).resolve().parents[2]
-PASTA = BASE / 'dados/brutos/04_mitigacao_leitura/repeticoes'
+PASTA = BASE / 'dados/brutos/04_mitigacao_leitura'
 QUBITS = [0, 1, 2, 3, 4]
 SHOTS = 1000
 
@@ -113,8 +113,15 @@ def main():
         print('34 circuitos conferidos: calibração, população Z ideal e paridade X ideal.')
         return
 
-    PASTA.mkdir(parents=True, exist_ok=True)
-    registro = PASTA / f'rodada_{args.rodada:02d}.json'
+    pasta = PASTA / f'rodada_{args.rodada:02d}'
+    antiga = PASTA / 'repeticoes'
+    nome = f'rodada_{args.rodada:02d}.json'
+    if (antiga / nome).exists():
+        if (pasta / nome).exists():
+            raise RuntimeError('Rodada registrada em duas pastas. Confira os registros.')
+        pasta = antiga
+    pasta.mkdir(parents=True, exist_ok=True)
+    registro = pasta / nome
     if args.enviar and registro.exists():
         raise RuntimeError('Rodada já registrada. Use --coletar para evitar duplicação.')
     if args.coletar and not registro.exists():
@@ -135,7 +142,7 @@ def main():
             compilados.append(qc)
             metadados[nome] = dict(profundidade=qc.depth(), operacoes=dict(qc.count_ops()))
         # QPY registra os circuitos realmente enviados, antes da submissão.
-        with (PASTA / f'rodada_{args.rodada:02d}.qpy').open('wb') as arquivo:
+        with (pasta / f'rodada_{args.rodada:02d}.qpy').open('wb') as arquivo:
             qpy.dump(compilados, arquivo)
         sampler = SamplerV2(mode=backend)
         sampler.options.dynamical_decoupling.enable = False

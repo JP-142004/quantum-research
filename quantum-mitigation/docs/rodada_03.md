@@ -20,4 +20,4 @@ O condicionamento da matriz foi 1,2129. As menores quasiprobabilidades foram −
 
 Assim como nas duas rodadas históricas, o ajuste aproximou os dois indicadores de 1. Isso reforça a observação de repetibilidade nestas três execuções. Não demonstra que os erros das portas foram eliminados, nem mede a fidelidade completa do GHZ.
 
-As contagens originais, versões, parâmetros, ID do job e análise estão em `dados/brutos/04_mitigacao_leitura/repeticoes/rodada_03.json`. Os circuitos compilados enviados foram preservados no arquivo QPY de mesmo nome. Nenhuma credencial foi incluída nesses arquivos.
+As contagens originais, versões, parâmetros, ID do job e análise estão em `dados/brutos/04_mitigacao_leitura/rodada_03/rodada_03.json`. Os circuitos compilados enviados foram preservados no arquivo QPY de mesmo nome. Nenhuma credencial foi incluída nesses arquivos.

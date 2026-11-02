@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 FONTES = [
     'GHZ_leitura_dbccq67i0auc73dumdk0.json',
     'GHZ_leitura_dbccri9gv2cc73ea3630.json',
-    'repeticoes/rodada_03.json',
+    'rodada_03/rodada_03.json',
 ]
 
 

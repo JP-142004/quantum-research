@@ -6,6 +6,6 @@ Em cada rodada, medimos 32 preparações de calibração e o GHZ em Z e X, com 1
 | --- | --- | --- | --- | --- | --- |
 | [1](GHZ_leitura_dbccq67i0auc73dumdk0.json) | 439 | 434 | 127 | 898 | 102 |
 | [2](GHZ_leitura_dbccri9gv2cc73ea3630.json) | 445 | 419 | 136 | 898 | 102 |
-| [3](repeticoes/rodada_03.json) | 454 | 441 | 105 | 903 | 97 |
+| [3](rodada_03/rodada_03.json) | 454 | 441 | 105 | 903 | 97 |
 
 Em X, a paridade depende do número de bits 1 em cada sequência. [Resultados ajustados](../../processados/04_mitigacao_leitura/README.md)
