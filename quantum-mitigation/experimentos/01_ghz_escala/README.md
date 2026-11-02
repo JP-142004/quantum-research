@@ -1,28 +1,67 @@
-# 1. O que muda quando o circuito cresce?
+# 1. Como o desvio cresce com o tamanho do circuito?
 
-## Refazendo a primeira comparação
-
-Na seção de cinco qubits do [texto de contagens](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt), some as frequências dos dois resultados esperados: 477 + 445 = 922. Divida pelos 1.000 shots: PZ = 0,922. Restaram 78 resultados intermediários. Para cinquenta qubits, a mesma conta dá (106 + 3)/1.000 = 0,109, com 891 resultados intermediários. O [programa de resumo](../../scripts/resumir_resultados.py) aplica essa operação a cada tamanho. Aqui observamos o desvio antes de aplicar uma técnica. A pergunta seguinte é se parte dele já aparece ao preparar um estado simples.
-
-[Experimentos](../README.md) · [Teoria de construção e medidas](../../docs/livro/03-circuitos-medidas/README.md)
+**Situação:** medido na IBM. **Backend e data:** os programas preservados usam `ibm_kingston` (o de cinco qubits escolhe o backend livre com `least_busy`). O arquivo de contagens não registra backend nem data, então a origem de cada seção não pode ser comprovada. **Shots por circuito:** 1.000.
 
 ## Pergunta
 
-Como a população nos resultados todos zeros e todos uns muda ao aumentar o tamanho do GHZ? Os circuitos usam H no qubit 0 e CX de 0 para cada outro qubit, depois medem em Z. O compilador adapta essa construção às conexões do backend.
+Se um GHZ ideal produz apenas `00…0` ou `11…1` em Z, que fração das medidas cai nesses dois resultados quando o número de qubits aumenta?
+
+## Método
+
+- **Circuito de teste:** H no qubit 0 e uma porta CX do qubit 0 para cada um dos outros. Medida em Z. O compilador adapta o circuito às conexões do equipamento.
+- **Tamanhos:** de 5 a 50 qubits, de 5 em 5.
+- **Indicador:** PZ, a fração das medidas todos zeros ou todos uns ([definição](../../fundamentos/indicadores.md)). Valor ideal: 1.
+- **Técnica avaliada:** nenhuma. Este experimento mede o desvio antes de qualquer intervenção.
+
+## Conta passo a passo
+
+Na seção de cinco qubits do [arquivo de contagens](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt):
+
+- `00000` apareceu 477 vezes e `11111` apareceu 445 vezes.
+- PZ = (477 + 445) / 1.000 = **0,922**. Restaram 78 resultados diferentes.
+
+Para cinquenta qubits: (106 + 3) / 1.000 = **0,109**, com 891 resultados diferentes. O programa [resumir_resultados.py](../../scripts/resumir_resultados.py) repete essa conta para os dez tamanhos.
+
+## Resultado
+
+<!-- TABELA:escala -->
+| Qubits | Todos zeros | Todos uns | Outros | PZ |
+| ---: | ---: | ---: | ---: | ---: |
+| 5 | 477 | 445 | 78 | 0,922 |
+| 10 | 407 | 333 | 260 | 0,740 |
+| 15 | 368 | 233 | 399 | 0,601 |
+| 20 | 299 | 178 | 523 | 0,477 |
+| 25 | 310 | 144 | 546 | 0,454 |
+| 30 | 245 | 63 | 692 | 0,308 |
+| 35 | 242 | 43 | 715 | 0,285 |
+| 40 | 194 | 25 | 781 | 0,219 |
+| 45 | 184 | 3 | 813 | 0,187 |
+| 50 | 106 | 3 | 891 | 0,109 |
+<!-- /TABELA:escala -->
+
+![PZ em função do número de qubits](../../dados/imagens/escala_observada.png)
+
+*Figura. Fração das 1.000 medidas que deram todos zeros ou todos uns, para GHZ de 5 a 50 qubits. Cada ponto é uma execução.*
+
+O desvio cresce de forma contínua com o tamanho do circuito nessa série. O erro padrão de cada ponto, só por amostragem, é de cerca de 0,01.
+
+## Limites
+
+- O tamanho do circuito varia junto com o número de portas, o roteamento e a profundidade. O experimento **não separa** esses fatores.
+- Não há metadados de backend e data no arquivo. Não comparar diretamente com resultados de outros dias ou equipamentos.
+- É uma única execução por tamanho, sem repetição.
 
 ## Arquivos
 
-| Scripts | Tamanhos |
+| Arquivo | Para que serve |
 | --- | --- |
-| [ghz_05.py](ghz_05.py), [ghz_10.py](ghz_10.py), [ghz_15.py](ghz_15.py), [ghz_20.py](ghz_20.py), [ghz_25.py](ghz_25.py) | 5, 10, 15, 20 e 25 qubits |
-| [ghz_30.py](ghz_30.py), [ghz_35.py](ghz_35.py), [ghz_40.py](ghz_40.py), [ghz_45.py](ghz_45.py), [ghz_50.py](ghz_50.py) | 30, 35, 40, 45 e 50 qubits |
+| [ghz_05.py](ghz_05.py), [ghz_10.py](ghz_10.py), [ghz_15.py](ghz_15.py), [ghz_20.py](ghz_20.py), [ghz_25.py](ghz_25.py) | Programas para 5 a 25 qubits. |
+| [ghz_30.py](ghz_30.py), [ghz_35.py](ghz_35.py), [ghz_40.py](ghz_40.py), [ghz_45.py](ghz_45.py), [ghz_50.py](ghz_50.py) | Programas para 30 a 50 qubits. |
+| [ghz_05_a_50.txt](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt) | Contagens originais. |
+| [resumo_escala.csv](../../dados/processados/resumo_escala.csv) | Tabela de PZ calculada das contagens. |
 
-Todos usam 1.000 shots. O script de cinco qubits seleciona `least_busy`; apesar de conter uma constante com nome de backend, a seleção efetiva é feita por essa chamada. Os demais usam `ibm_kingston` no código preservado. Isso não prova, sozinho, qual backend gerou cada seção do texto histórico: os metadados do arquivo são incompletos.
+**Execução:** os programas `ghz_*.py` **enviam novos jobs à IBM**. Para recalcular a tabela sem acessar a IBM, execute `scripts/resumir_resultados.py`.
 
-## Dados disponíveis
+**Próxima pergunta:** parte desse desvio já aparece ao preparar estados muito simples? [Experimento 2](../02_controles/README.md).
 
-As contagens estão em [ghz_05_a_50.txt](../../dados/brutos/01_ghz_escala/ghz_05_a_50.txt); a tabela derivada está em [resumo_escala.csv](../../dados/processados/resumo_escala.csv). O parser exige dez seções, tamanhos esperados, bitstrings válidas e 1.000 contagens por seção.
-
-PZ cai de 0,922 em cinco qubits para 0,109 em cinquenta nessa série. A interpretação precisa considerar compilação, quantidade de portas, diferenças de execução e ausência de metadados completos. O experimento não separa essas causas.
-
-**Execução:** esses programas submetem novos circuitos reais quando executados. Para recalcular a tabela, execute apenas `scripts/resumir_resultados.py` conforme o guia local; isso não usa a IBM.
+[Experimentos](../README.md)

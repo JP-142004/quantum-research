@@ -1,8 +1,8 @@
 # Testes da implementação local
 
-[Índice do livro](../README.md) · [Reprodução](../docs/livro/09-reproducao/README.md)
+[Artigo](../README.md) · [Scripts](../scripts/README.md)
 
-O arquivo [test_protocolo_local.py](test_protocolo_local.py) usa `unittest`, Qiskit e Aer. Os testes são locais e não requerem conta IBM.
+O arquivo [test_protocolo_local.py](test_protocolo_local.py) usa `unittest`, Qiskit e Aer. Os testes são locais e não requerem conta IBM. O arquivo [test_documentacao.py](test_documentacao.py) não usa Qiskit: confere se as tabelas dos READMEs estão atualizadas em relação aos dados, se os links relativos existem e se alguns números citados no artigo coincidem com os dados.
 
 | Teste | Falha que procura detectar |
 | --- | --- |
@@ -13,7 +13,7 @@ O arquivo [test_protocolo_local.py](test_protocolo_local.py) usa `unittest`, Qis
 | `test_invalido_e_singular` | Aceitação de contagens inválidas ou matriz singular |
 | `test_extrapolacao_linear_e_identidade` | Erro no intercepto linear ou na inversão identidade |
 
-Os seis passaram na execução registrada. O auditor dos resultados é uma verificação adicional: lê os dados salvos, valida QPY e hashes e compara métricas com o modelo exato. Testes não provam a adequação de um modelo à IBM nem equivalem a novos experimentos reais.
+Os seis passaram na execução registrada e novamente em 2 de novembro de 2026, com Qiskit 2.6.0 e Aer 0.17.2. O auditor dos resultados é uma verificação adicional: lê os dados salvos, valida QPY e hashes e compara métricas com o modelo exato. Testes não provam a adequação de um modelo à IBM nem equivalem a novos experimentos reais.
 
 ```powershell
 .\.venv-simulacao\Scripts\python.exe -m unittest discover -s quantum-mitigation/tests -v

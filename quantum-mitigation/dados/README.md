@@ -8,6 +8,21 @@
 
 Dentro de cada tipo, escolha o experimento para consultar o método, os resultados e os arquivos de origem. Para incluir outra técnica ou circuito, acrescente uma pasta no tipo correspondente, registre a origem dos dados e liste o experimento no índice dessa categoria.
 
+## Onde estão os dados de cada experimento
+
+A interpretação, as contas e os limites de cada experimento estão em [experimentos](../experimentos/README.md). Esta tabela só indica onde ficam os arquivos.
+
+| Experimento | Brutos (IBM) | Processados | Simulados |
+| --- | --- | --- | --- |
+| [1. Escala](../experimentos/01_ghz_escala/README.md) | [01_ghz_escala](brutos/01_ghz_escala/README.md) | [01_ghz_escala](processados/01_ghz_escala/README.md) | — |
+| [2. Controles](../experimentos/02_controles/README.md) | [02_controles](brutos/02_controles/README.md) | [02_controles](processados/02_controles/README.md) | — |
+| [3. Construção](../experimentos/03_ghz_conectado/README.md) | [03_ghz_conectado](brutos/03_ghz_conectado/README.md) | [03_ghz_conectado](processados/03_ghz_conectado/README.md) | — |
+| [4. Calibração de leitura](../experimentos/04_mitigacao_leitura/README.md) | [04_mitigacao_leitura](brutos/04_mitigacao_leitura/README.md) | [04_mitigacao_leitura](processados/04_mitigacao_leitura/README.md) | — |
+| [5. Validação simulada](../experimentos/05_validacao_simulada/README.md) | — | — | [validacao_2026_11_01](simulados/validacao_2026_11_01/README.md) |
+| [6. ZNE simulada](../experimentos/06_zne_simulado/README.md) | — | — | [validacao_2026_11_01](simulados/validacao_2026_11_01/README.md) |
+
+**Novo experimento:** crie a pasta de dados com o mesmo número, por exemplo `brutos/07_nome_curto`, e acrescente uma linha nesta tabela.
+
 ## Etapas dos dados brutos e recuperação das pastas 02 e 03
 
 Os números identificam as etapas dos experimentos. Cada rodada é uma nova execução de uma etapa.

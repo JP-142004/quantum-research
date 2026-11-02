@@ -1,6 +1,6 @@
 # Figuras das três rodadas reais
 
-[Índice do livro](../README.md) · [Relatório comparativo](../docs/comparacao_rodadas.md)
+[Artigo](../README.md) · [Relatório comparativo](../docs/comparacao_rodadas.md)
 
 | Figura | O que mostra |
 | --- | --- |
@@ -13,4 +13,4 @@ O eixo vertical do gráfico de comparação é ampliado e não começa em zero; 
 
 ## Gráfico do piloto local
 
-[zne_fatores.png](zne_fatores.png) mostra as referências exatas do modelo simulado nos fatores 1, 3 e 5 e os interceptos extrapolados no fator zero. Sua origem e a conta estão no [README do piloto](../dados/simulados/zne/README.md). As duas figuras anteriores usam resultados reais.
+[zne_fatores.png](zne_fatores.png) mostra as referências exatas do modelo simulado nos fatores 1, 3 e 5 e os interceptos extrapolados no fator zero. Sua origem e a conta estão no [experimento 6](../experimentos/06_zne_simulado/README.md). As duas figuras anteriores usam resultados reais.
