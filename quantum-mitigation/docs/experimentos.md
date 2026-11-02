@@ -1,5 +1,7 @@
 # Sequência dos experimentos
 
+[Livro e estado atual da pesquisa](../README.md). Este documento conserva a sequência histórica; o livro detalha teoria, reprodução e resultados posteriores.
+
 ## 1. GHZ original: de 5 a 50 qubits
 
 Preparamos um GHZ com H no qubit 0 e CNOTs desse qubit para os demais. Medimos diretamente, na base Z. No caso ideal, metade das medidas dá todos zeros e metade dá todos uns. Com um número finito de medidas, não esperamos uma divisão exatamente 50/50.
@@ -64,7 +66,7 @@ Esses números podem ser recalculados dos dois JSONs importados. O script origin
 
 Valores negativos pequenos após o ajuste são quasiprobabilidades produzidas pela inversão; não são frequências negativas observadas. A análise desta etapa continua em desenvolvimento. Ainda não concluímos quanto da melhora permanece em outras rodadas, tamanhos ou calibrações.
 
-Não foi encontrado código ou resultado de ZNE na pasta importada. Essa técnica permanece como possível próximo experimento.
+Não foi encontrado código ou resultado de ZNE na pasta histórica importada. Posteriormente foi implementado e executado um [piloto local de ZNE](livro/08-zne/README.md), com dados simulados. A execução de ZNE no hardware continua sendo uma possibilidade futura.
 
 ## 6. Comparação consolidada de três execuções
 

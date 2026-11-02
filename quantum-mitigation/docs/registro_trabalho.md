@@ -6,7 +6,7 @@
 
 A cópia de trabalho é `C:/Users/luizb/Desktop/PIBIC quantica/quantum-research`, branch `mitigation`. Foram incorporados por fast-forward os commits `d798852`, `958a680` e `daa2b2f` da outra cópia local. As alterações anteriormente preparadas no Desktop eram idênticas ao primeiro commit; seu backup permanece no stash identificado como `Backup Desktop antes de incorporar mitigation 2026-11-01`.
 
-O job real `dbjnndgnceqs73akbkh0` já estava concluído. Seus resultados foram utilizados sem nova consulta ou submissão. Nenhum push foi realizado.
+O job real `dbjnndgnceqs73akbkh0` já estava concluído. Seus resultados foram utilizados sem nova consulta ou submissão. Naquela etapa de organização ainda não havia sido feito push. Posteriormente, após autorização, os seis commits até `8ff5086` foram publicados na branch `mitigation`, sem alterar `main`.
 
 ### Comparação dos dados reais
 
@@ -41,3 +41,12 @@ python quantum-mitigation/scripts/verificar_registro_local.py quantum-mitigation
 ```
 
 O resultado da auditoria usa um limite amplo de seis erros padrão para detectar inconsistências numéricas; isso não é teste confirmatório nem estudo da cobertura dos intervalos. As instruções completas de instalação e simulação estão no relatório local.
+
+
+## 2 de novembro de 2026 — documentação em capítulos
+
+A frente de mitigação recebeu um [índice em formato de livro](../README.md), com 12 capítulos sobre fundamentos, circuitos, leitura, experimentos, estatística, simulação, ZNE, reprodução, código, histórico e referências. READMEs de pasta explicam os scripts e seus efeitos, a origem dos dados, os testes e as figuras. O README da modelagem agora distingue o código existente das pastas reservadas.
+
+Os textos foram conferidos contra scripts e registros, sem alterar contagens, circuitos, resultados numéricos ou o protocolo experimental. A revisão contextualizou a ausência de ZNE na importação histórica e a publicação posterior no GitHub. Os relatórios gerados permanecem como registros das análises que os produziram.
+
+A revisão principal foi registrada no commit `d4f7869`. A verificação documental conferiu 39 arquivos Markdown e 291 links internos, além da consistência estrutural das tabelas e dos blocos de código. As fórmulas nas tabelas foram ajustadas para não quebrar suas colunas no Markdown. A comparação com `8ff5086` confirmou que scripts, requirements, JSONs, CSVs, QPY e figuras permaneceram intactos. Não foi necessário reexecutar experimentos ou simulações para essa mudança documental.
