@@ -1,6 +1,6 @@
 # 07. Validação no computador local
 
-[← Anterior](../06-estatistica/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../08-zne/README.md)
+[← Anterior](../06-estatistica/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../08-zne/README.md)
 
 ## Por que simular antes de usar o hardware
 
@@ -49,7 +49,7 @@ Esses são valores exatos do **modelo sintético**. A construção conectada fic
 
 Foram três blocos por cenário: 9 × 40 × 1.000 = 360.000 shots na comparação. O piloto ZNE adiciona 126.000, totalizando 486.000 shots simulados. Entre blocos de um cenário mudam as sementes, não as propriedades do modelo. Não são três dias diferentes de hardware.
 
-As contagens e análises estão em [dados/simulados](../../../dados/simulados/README.md), com um [relatório completo](../../../dados/simulados/validacao_2026_11_01/relatorio.md). O manifesto registra opções, mapas de medida, portas, sementes, versões e tempo de execução. Duração física de circuitos é `null`, pois não há durações no mapa sintético.
+As contagens e análises estão em [dados/simulados](../../../../dados/simulados/README.md), com um [relatório completo](../../../../dados/simulados/validacao_2026_11_01/relatorio.md). O manifesto registra opções, mapas de medida, portas, sementes, versões e tempo de execução. Duração física de circuitos é `null`, pois não há durações no mapa sintético.
 
 ## Verificações realizadas
 
@@ -59,4 +59,4 @@ O resultado é uma validação operacional e numérica para esses casos. Não é
 
 ---
 
-[← Anterior](../06-estatistica/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../08-zne/README.md)
+[← Anterior](../06-estatistica/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../08-zne/README.md)

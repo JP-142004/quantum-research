@@ -1,6 +1,6 @@
 # Livro da mitigação
 
-[Índice principal e percursos de leitura](../../README.md)
+[Índice principal e percursos de leitura](../../../README.md)
 
 - [01. A pesquisa e o mapa do repositório](01-visao-geral/README.md)
 - [02. Qubits, portas e o estado GHZ](02-fundamentos/README.md)

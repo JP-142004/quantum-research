@@ -10,7 +10,7 @@ O job real `dbjnndgnceqs73akbkh0` já estava concluído. Seus resultados foram u
 
 ### Comparação dos dados reais
 
-Commit local `e2fea3b` — consolida três rodadas, gráficos, análise com 5.000 réplicas bootstrap por rodada, resumo para o orientador e plano experimental. Foram preservados os dados brutos e os resultados históricos. Ver [comparação](comparacao_rodadas.md), [resumo](resumo_orientador.md) e [plano](plano_experimentos.md).
+Commit local `e2fea3b` — consolida três rodadas, gráficos, análise com 5.000 réplicas bootstrap por rodada, resumo para o orientador e plano experimental. Foram preservados os dados brutos e os resultados históricos. Ver [comparação](../comparacao_rodadas.md), [resumo](resumo_orientador.md) e [plano](../plano_experimentos.md).
 
 ### Implementação local
 
@@ -24,7 +24,7 @@ O PC possui Intel Core Ultra 9 275HX, aproximadamente 32 GB de RAM e RTX 5070 Ti
 
 Execução `validacao_2026_11_01`: três blocos em cada cenário ideal, leitura e leitura + portas, mais três blocos de ZNE local. Cada circuito recebe 1.000 shots simulados; cada bloco usa 2.000 réplicas bootstrap. O total é 486.000 shots simulados, sem consumo de QPU da IBM.
 
-O [relatório local completo](../dados/simulados/validacao_2026_11_01/relatorio.md) apresenta os valores brutos/ajustados, diferenças entre construções, controles e extrapolação. O [manifesto](../dados/simulados/validacao_2026_11_01/manifesto.json) registra parâmetros, sementes, versões, tempos, referências exatas e hashes. Os QPY preservam os circuitos compilados; contagens e análises ficam separadas por bloco. A [auditoria](../dados/simulados/validacao_2026_11_01/verificacao.json) confere os hashes, os QPY, os totais e a coerência com o modelo exato.
+O [relatório local completo](../../dados/simulados/validacao_2026_11_01/relatorio.md) apresenta os valores brutos/ajustados, diferenças entre construções, controles e extrapolação. O [manifesto](../../dados/simulados/validacao_2026_11_01/manifesto.json) registra parâmetros, sementes, versões, tempos, referências exatas e hashes. Os QPY preservam os circuitos compilados; contagens e análises ficam separadas por bloco. A [auditoria](../../dados/simulados/validacao_2026_11_01/verificacao.json) confere os hashes, os QPY, os totais e a coerência com o modelo exato.
 
 O programa recusa sobrescrever uma execução existente. Uma nova simulação deve usar outro nome em `--execucao`. Os dados simulados ficam exclusivamente em `dados/simulados/`, separados de `dados/brutos/`, que contém resultados reais.
 
@@ -45,7 +45,7 @@ O resultado da auditoria usa um limite amplo de seis erros padrão para detectar
 
 ## 2 de novembro de 2026 — documentação em capítulos
 
-A frente de mitigação recebeu um [índice em formato de livro](../README.md), com 12 capítulos sobre fundamentos, circuitos, leitura, experimentos, estatística, simulação, ZNE, reprodução, código, histórico e referências. READMEs de pasta explicam os scripts e seus efeitos, a origem dos dados, os testes e as figuras. O README da modelagem agora distingue o código existente das pastas reservadas.
+A frente de mitigação recebeu um [índice em formato de livro](../../README.md), com 12 capítulos sobre fundamentos, circuitos, leitura, experimentos, estatística, simulação, ZNE, reprodução, código, histórico e referências. READMEs de pasta explicam os scripts e seus efeitos, a origem dos dados, os testes e as figuras. O README da modelagem agora distingue o código existente das pastas reservadas.
 
 Os textos foram conferidos contra scripts e registros, sem alterar contagens, circuitos, resultados numéricos ou o protocolo experimental. A revisão contextualizou a ausência de ZNE na importação histórica e a publicação posterior no GitHub. Os relatórios gerados permanecem como registros das análises que os produziram.
 

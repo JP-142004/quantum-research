@@ -1,6 +1,6 @@
 # Sequência dos experimentos
 
-[Livro e estado atual da pesquisa](../README.md). Este documento conserva a sequência histórica; o livro detalha teoria, reprodução e resultados posteriores.
+[Livro e estado atual da pesquisa](../../README.md). Este documento conserva a sequência histórica; o livro detalha teoria, reprodução e resultados posteriores.
 
 ## 1. GHZ original: de 5 a 50 qubits
 
@@ -70,4 +70,4 @@ Não foi encontrado código ou resultado de ZNE na pasta histórica importada. P
 
 ## 6. Comparação consolidada de três execuções
 
-A terceira rodada foi concluída no job `dbjnndgnceqs73akbkh0`. A [comparação das três rodadas](comparacao_rodadas.md) recalcula os indicadores e suas incertezas com 5.000 réplicas bootstrap. Consulte também o [resumo para o orientador](resumo_orientador.md) e o [plano de próximos experimentos](plano_experimentos.md). A tabela da seção 5 permanece como registro das duas execuções históricas; não representa a totalidade dos resultados disponíveis.
+A terceira rodada foi concluída no job `dbjnndgnceqs73akbkh0`. A [comparação das três rodadas](../comparacao_rodadas.md) recalcula os indicadores e suas incertezas com 5.000 réplicas bootstrap. Consulte também o [resumo para o orientador](resumo_orientador.md) e o [plano de próximos experimentos](../plano_experimentos.md). A tabela da seção 5 permanece como registro das duas execuções históricas; não representa a totalidade dos resultados disponíveis.

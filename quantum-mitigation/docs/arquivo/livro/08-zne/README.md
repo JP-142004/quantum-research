@@ -1,6 +1,6 @@
 # 08. Extrapolação a ruído zero
 
-[← Anterior](../07-simulacao-local/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../09-reproducao/README.md)
+[← Anterior](../07-simulacao-local/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../09-reproducao/README.md)
 
 ## A ideia de ZNE
 
@@ -41,12 +41,12 @@ Esses valores vêm do modelo exato após remover a leitura. Mesmo sem flutuaçã
 
 ## Resultados amostrados e limites
 
-No bloco 1, por exemplo, PZ após mitigação de leitura no fator 1 foi 0,9639 ± 0,0188; o ZNE linear foi 1,0072 ± 0,0226. O valor acima de 1 é uma estimativa não restringida com flutuação, não uma probabilidade física maior que 100%. Todos os blocos, inclusive os menos favoráveis, estão no [relatório](../../../dados/simulados/validacao_2026_11_01/relatorio.md).
+No bloco 1, por exemplo, PZ após mitigação de leitura no fator 1 foi 0,9639 ± 0,0188; o ZNE linear foi 1,0072 ± 0,0226. O valor acima de 1 é uma estimativa não restringida com flutuação, não uma probabilidade física maior que 100%. Todos os blocos, inclusive os menos favoráveis, estão no [relatório](../../../../dados/simulados/validacao_2026_11_01/relatorio.md).
 
 Uma parábola em três pontos interpola os três pontos e não deixa graus de liberdade para avaliar o ajuste residual; não seria, por si só, validação de um modelo melhor. O piloto usa a reta pré-definida. Não implementamos busca automática de ajustes favoráveis, nem demonstramos ZNE em hardware.
 
-**O que está pronto:** construção, verificação ideal, simulação e análise do piloto. **O que falta:** avaliar seu protocolo em um backend real, após validar os controles e as condições de execução. O [plano experimental](../../plano_experimentos.md) separa essas etapas.
+**O que está pronto:** construção, verificação ideal, simulação e análise do piloto. **O que falta:** avaliar seu protocolo em um backend real, após validar os controles e as condições de execução. O [plano experimental](../../../plano_experimentos.md) separa essas etapas.
 
 ---
 
-[← Anterior](../07-simulacao-local/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../09-reproducao/README.md)
+[← Anterior](../07-simulacao-local/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../09-reproducao/README.md)

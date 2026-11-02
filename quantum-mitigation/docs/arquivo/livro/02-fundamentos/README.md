@@ -1,6 +1,6 @@
 # 02. Qubits, portas e o estado GHZ
 
-[← Anterior](../01-visao-geral/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../03-circuitos-medidas/README.md)
+[← Anterior](../01-visao-geral/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../03-circuitos-medidas/README.md)
 
 ## Do bit ao qubit
 
@@ -50,4 +50,4 @@ Para um alvo puro GHZ, a fidelidade é $F=\langle GHZ_+|\rho|GHZ_+\rangle$. Ela 
 
 ---
 
-[← Anterior](../01-visao-geral/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../03-circuitos-medidas/README.md)
+[← Anterior](../01-visao-geral/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../03-circuitos-medidas/README.md)

@@ -1,6 +1,6 @@
 # 04. Ruído e mitigação de leitura
 
-[← Anterior](../03-circuitos-medidas/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../05-experimentos-reais/README.md)
+[← Anterior](../03-circuitos-medidas/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../05-experimentos-reais/README.md)
 
 ## Onde aparecem os desvios
 
@@ -47,4 +47,4 @@ Por isso, apresentamos os resultados brutos junto com os ajustados, os diagnóst
 
 ---
 
-[← Anterior](../03-circuitos-medidas/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../05-experimentos-reais/README.md)
+[← Anterior](../03-circuitos-medidas/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../05-experimentos-reais/README.md)

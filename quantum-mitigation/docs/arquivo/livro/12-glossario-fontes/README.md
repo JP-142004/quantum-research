@@ -1,6 +1,6 @@
 # 12. Glossário, perguntas frequentes e referências
 
-[← Anterior](../11-historico-limites/README.md) · [Índice do livro](../../../README.md)
+[← Anterior](../11-historico-limites/README.md) · [Índice do livro](../../../../README.md)
 
 ## Glossário
 
@@ -51,7 +51,7 @@
 
 **Podemos simular 50 qubits porque cinco foi rápido?** Não em geral. Alguns estados e métodos estruturados permitem casos grandes; o custo depende do circuito e do ruído. A modelagem histórica usa MPS para os maiores GHZ, e isso não constitui garantia para circuitos arbitrários.
 
-**Qual arquivo devo ler primeiro para uma reunião?** O [resumo para o orientador](../../resumo_orientador.md), depois o [relatório das três rodadas](../../comparacao_rodadas.md). Para justificar método, use os capítulos 3, 4 e 6.
+**Qual arquivo devo ler primeiro para uma reunião?** O [resumo para o orientador](../../resumo_orientador.md), depois o [relatório das três rodadas](../../../comparacao_rodadas.md). Para justificar método, use os capítulos 3, 4 e 6.
 
 ## Fontes e como foram usadas
 
@@ -72,4 +72,4 @@ As contas de exemplos didáticos são ilustrativas e estão separadas das tabela
 
 ---
 
-[← Anterior](../11-historico-limites/README.md) · [Índice do livro](../../../README.md)
+[← Anterior](../11-historico-limites/README.md) · [Índice do livro](../../../../README.md)

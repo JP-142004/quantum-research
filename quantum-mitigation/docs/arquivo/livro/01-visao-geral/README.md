@@ -1,14 +1,14 @@
 # 01. A pesquisa e o mapa do repositório
 
-> Atualização de 2 de novembro de 2026: as contagens e os circuitos históricos das [etapas 2](../../../dados/brutos/02_controles/README.md) e [3](../../../dados/brutos/03_ghz_conectado/README.md) foram recuperados diretamente da IBM. Referências abaixo à ausência desses arquivos descrevem o estado anterior da importação.
+> Atualização de 2 de novembro de 2026: as contagens e os circuitos históricos das [etapas 2](../../../../dados/brutos/02_controles/README.md) e [3](../../../../dados/brutos/03_ghz_conectado/README.md) foram recuperados diretamente da IBM. Referências abaixo à ausência desses arquivos descrevem o estado anterior da importação.
 
-[Índice do livro](../../../README.md) · [Próximo →](../02-fundamentos/README.md)
+[Índice do livro](../../../../README.md) · [Próximo →](../02-fundamentos/README.md)
 
 ## O que estamos tentando descobrir
 
 O projeto estuda circuitos GHZ, cujo comportamento ideal é conhecido. Eles funcionam como referência para observar desvios do hardware e avaliar duas intervenções: mudar a construção do circuito e ajustar estatisticamente a leitura. A pergunta é: **quanto dos desvios nos indicadores do GHZ diminui com essas intervenções, e com qual incerteza?**
 
-O trabalho tem duas frentes. A mitigação compara construções e estimadores. A [modelagem](../../../../quantum-modeling/README.md) compara resultados reais com distribuições de simuladores ruidosos. Um modelo tenta reproduzir o equipamento; uma mitigação tenta melhorar uma estimativa. As duas atividades podem se ajudar, mas não são a mesma coisa.
+O trabalho tem duas frentes. A mitigação compara construções e estimadores. A [modelagem](../../../../../quantum-modeling/README.md) compara resultados reais com distribuições de simuladores ruidosos. Um modelo tenta reproduzir o equipamento; uma mitigação tenta melhorar uma estimativa. As duas atividades podem se ajudar, mas não são a mesma coisa.
 
 ## O percurso da pesquisa
 
@@ -42,12 +42,12 @@ Essa classificação evita confundir um programa escrito com um experimento conc
 
 | Local | Papel |
 | --- | --- |
-| [experimentos](../../../experimentos/README.md) | Scripts históricos de circuitos e de acesso à IBM |
-| [scripts](../../../scripts/README.md) | Processamento, comparação, simulação e auditoria |
-| [dados](../../../dados/README.md) | Brutos, derivados e simulados separados |
-| [figuras](../../../figuras/README.md) | Gráficos da comparação das três rodadas |
-| [tests](../../../tests/README.md) | Verificações automatizadas da implementação local |
-| [docs](../../README.md) | Livro, relatórios, registros e planejamento |
+| [experimentos](../../../../experimentos/README.md) | Scripts históricos de circuitos e de acesso à IBM |
+| [scripts](../../../../scripts/README.md) | Processamento, comparação, simulação e auditoria |
+| [dados](../../../../dados/README.md) | Brutos, derivados e simulados separados |
+| [figuras](../../../../figuras/README.md) | Gráficos da comparação das três rodadas |
+| [tests](../../../../tests/README.md) | Verificações automatizadas da implementação local |
+| [docs](../../indice_anterior.md) | Livro, relatórios, registros e planejamento |
 
 ## Situação em 2 de novembro de 2026
 
@@ -59,4 +59,4 @@ As duas primeiras rodadas não possuem a mesma riqueza de metadados da terceira.
 
 ---
 
-[Índice do livro](../../../README.md) · [Próximo →](../02-fundamentos/README.md)
+[Índice do livro](../../../../README.md) · [Próximo →](../02-fundamentos/README.md)

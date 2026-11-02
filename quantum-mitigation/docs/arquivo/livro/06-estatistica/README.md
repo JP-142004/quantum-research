@@ -1,6 +1,6 @@
 # 06. Incertezas, bootstrap e interpretação
 
-[← Anterior](../05-experimentos-reais/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../07-simulacao-local/README.md)
+[← Anterior](../05-experimentos-reais/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../07-simulacao-local/README.md)
 
 ## Três fontes de variação diferentes
 
@@ -44,11 +44,11 @@ Nas tabelas principais, `valor ± erro` significa **um erro padrão**. Não é u
 | 2 | 0,9360 ± 0,0136 | 0,9481 ± 0,0228 |
 | 3 | 0,9648 ± 0,0125 | 0,9702 ± 0,0229 |
 
-![Comparação das três rodadas](../../../figuras/comparacao_rodadas.png)
+![Comparação das três rodadas](../../../../figuras/comparacao_rodadas.png)
 
 Os intervalos individuais do ganho ficaram acima de zero nas seis combinações de rodada e indicador. Isso descreve o efeito do ajuste sob o modelo, não uma demonstração independente de que todo esse ganho veio exclusivamente do detector.
 
-![Ganho pareado](../../../figuras/ganho_rodadas.png)
+![Ganho pareado](../../../../figuras/ganho_rodadas.png)
 
 ## Distância ao ideal e custo estatístico
 
@@ -64,8 +64,8 @@ Uma estimativa pode se aproximar do ideal e ficar mais incerta. Isso ocorre aqui
 
 O script verifica nomes, bitstrings, shots, normalização, resíduo da inversão e concordância dos indicadores da rodada 3 com os salvos. Compara EP bruto bootstrap com a fórmula analítica usando tolerância relativa de 6%. Interrompe se uma calibração bootstrap ultrapassar o limite de condição usado; não seleciona silenciosamente réplicas favoráveis.
 
-Não juntamos contagens de calibrações diferentes para fabricar uma única estimativa mais precisa. Não demonstramos tendência temporal com três execuções e datas incompletas. Também não foi realizado um estudo amplo de cobertura dos intervalos bootstrap. Para o código e os resultados completos, veja [comparar_rodadas.py](../../../scripts/comparar_rodadas.py) e [comparacao_rodadas.json](../../../dados/processados/comparacao_rodadas.json).
+Não juntamos contagens de calibrações diferentes para fabricar uma única estimativa mais precisa. Não demonstramos tendência temporal com três execuções e datas incompletas. Também não foi realizado um estudo amplo de cobertura dos intervalos bootstrap. Para o código e os resultados completos, veja [comparar_rodadas.py](../../../../scripts/comparar_rodadas.py) e [comparacao_rodadas.json](../../../../dados/processados/comparacao_rodadas.json).
 
 ---
 
-[← Anterior](../05-experimentos-reais/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../07-simulacao-local/README.md)
+[← Anterior](../05-experimentos-reais/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../07-simulacao-local/README.md)

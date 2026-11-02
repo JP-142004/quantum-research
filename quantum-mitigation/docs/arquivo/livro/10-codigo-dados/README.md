@@ -1,6 +1,6 @@
 # 10. Guia do código e dicionário de dados
 
-[← Anterior](../09-reproducao/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../11-historico-limites/README.md)
+[← Anterior](../09-reproducao/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../11-historico-limites/README.md)
 
 ## Do dado ao relatório
 
@@ -19,15 +19,15 @@ flowchart LR
 
 | Arquivo | Funções principais e responsabilidades |
 | --- | --- |
-| [resumir_resultados.py](../../../scripts/resumir_resultados.py) | `escala()` lê o texto histórico; `mitigacao()` calcula os dois JSONs históricos; `salvar()` escreve CSV |
-| [comparar_rodadas.py](../../../scripts/comparar_rodadas.py) | `carregar()` valida dados; `metricas()` calcula PZ/CX; `analisar()` inverte e reamostra; `graficos()` e `relatorio()` geram derivados |
-| [protocolo_local.py](../../../scripts/protocolo_local.py) | Circuitos, compilação, modelo de ruído, ordenação de bits, inversão e análise compartilhada |
-| [validar_protocolo_local.py](../../../scripts/validar_protocolo_local.py) | Organiza cenários/blocos, executa Aer, salva QPY/JSON, produz referência e relatório |
-| [verificar_registro_local.py](../../../scripts/verificar_registro_local.py) | Confere integridade e coerência dos registros concluídos |
+| [resumir_resultados.py](../../../../scripts/resumir_resultados.py) | `escala()` lê o texto histórico; `mitigacao()` calcula os dois JSONs históricos; `salvar()` escreve CSV |
+| [comparar_rodadas.py](../../../../scripts/comparar_rodadas.py) | `carregar()` valida dados; `metricas()` calcula PZ/CX; `analisar()` inverte e reamostra; `graficos()` e `relatorio()` geram derivados |
+| [protocolo_local.py](../../../../scripts/protocolo_local.py) | Circuitos, compilação, modelo de ruído, ordenação de bits, inversão e análise compartilhada |
+| [validar_protocolo_local.py](../../../../scripts/validar_protocolo_local.py) | Organiza cenários/blocos, executa Aer, salva QPY/JSON, produz referência e relatório |
+| [verificar_registro_local.py](../../../../scripts/verificar_registro_local.py) | Confere integridade e coerência dos registros concluídos |
 
 Em `protocolo_local.py`, `preparacao()` constrói U; `ghz()` acrescenta dobramento e base; `circuitos()` agrega calibração e controles; `compilar()` adapta ao mapa sintético. `medidas()`, `reordenar()` e a permutação dentro de `analisar()` tratam o mapa físico/clássico. `ruido()` define canais; `referencia_exata()` calcula distribuições sem shots; `vetor()` valida contagens; `pesos()` escolhe o observável; `corrigir()` resolve a inversão; `intercepto()` calcula ZNE linear.
 
-Os módulos novos têm proteção `if __name__ == '__main__'` nos pontos de entrada e não importam o cliente IBM. Os programas históricos de hardware não seguem todos essa separação. O [catálogo](../../../experimentos/README.md) explica cada grupo.
+Os módulos novos têm proteção `if __name__ == '__main__'` nos pontos de entrada e não importam o cliente IBM. Os programas históricos de hardware não seguem todos essa separação. O [catálogo](../../../../experimentos/README.md) explica cada grupo.
 
 ## JSON real de mitigação
 
@@ -74,4 +74,4 @@ Um hash SHA-256 permite detectar mudança de bytes em relação ao valor registr
 
 ---
 
-[← Anterior](../09-reproducao/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../11-historico-limites/README.md)
+[← Anterior](../09-reproducao/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../11-historico-limites/README.md)

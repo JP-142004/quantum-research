@@ -1,6 +1,6 @@
 # 03. Construção, compilação e medidas em Z e X
 
-[← Anterior](../02-fundamentos/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../04-mitigacao-leitura/README.md)
+[← Anterior](../02-fundamentos/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../04-mitigacao-leitura/README.md)
 
 ## Dois circuitos para o mesmo alvo
 
@@ -59,8 +59,8 @@ Em `protocolo_local.py`, `medidas()` lê o mapa físico → clássico e `reorden
 
 Na ordem q4...q0, o último controle é `++++−`; o resultado ideal após a rotação de medida é `00001`. Esses controles têm contagens independentes das usadas na calibração. Eles também incluem preparação e mudança de base; no hardware, não são uma medição pura e isolada do erro de leitura.
 
-**Ligação com o código:** a construção está em [protocolo_local.py](../../../scripts/protocolo_local.py), e a versão histórica com escolha de raiz está em [comparar_construcoes.py](../../../experimentos/03_ghz_conectado/comparar_construcoes.py).
+**Ligação com o código:** a construção está em [protocolo_local.py](../../../../scripts/protocolo_local.py), e a versão histórica com escolha de raiz está em [comparar_construcoes.py](../../../../experimentos/03_ghz_conectado/comparar_construcoes.py).
 
 ---
 
-[← Anterior](../02-fundamentos/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../04-mitigacao-leitura/README.md)
+[← Anterior](../02-fundamentos/README.md) · [Índice do livro](../../../../README.md) · [Próximo →](../04-mitigacao-leitura/README.md)
