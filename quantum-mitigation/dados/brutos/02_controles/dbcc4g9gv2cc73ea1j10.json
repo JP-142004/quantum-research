@@ -1,0 +1,99 @@
+{
+  "job_id": "dbcc4g9gv2cc73ea1j10",
+  "backend": "ibm_fez",
+  "status": "DONE",
+  "criado": "2026-10-21 14:46:41.173061+01:00",
+  "recuperado_utc": "2026-11-02T16:25:46.660221+00:00",
+  "circuitos": [
+    {
+      "indice": 0,
+      "nome": "circuit-41",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "0": 992,
+          "1": 8
+        }
+      }
+    },
+    {
+      "indice": 1,
+      "nome": "circuit-43",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 2,
+      "operacoes": {
+        "x": 1,
+        "measure": 1
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "1": 973,
+          "0": 27
+        }
+      }
+    },
+    {
+      "indice": 2,
+      "nome": "circuit-45",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          1,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "0": 989,
+          "1": 11
+        }
+      }
+    },
+    {
+      "indice": 3,
+      "nome": "circuit-47",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 2,
+      "operacoes": {
+        "x": 1,
+        "measure": 1
+      },
+      "medidas": [
+        [
+          1,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "1": 978,
+          "0": 22
+        }
+      }
+    }
+  ]
+}

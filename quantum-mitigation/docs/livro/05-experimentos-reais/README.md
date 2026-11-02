@@ -1,5 +1,7 @@
 # 05. Experimentos e resultados reais
 
+> Atualização de 2 de novembro de 2026: as contagens e os circuitos históricos das [etapas 2](../../../dados/brutos/02_controles/README.md) e [3](../../../dados/brutos/03_ghz_conectado/README.md) foram recuperados diretamente da IBM. Referências abaixo à ausência desses arquivos descrevem o estado anterior da importação.
+
 [← Anterior](../04-mitigacao-leitura/README.md) · [Índice do livro](../../../README.md) · [Próximo →](../06-estatistica/README.md)
 
 ## Importação e preservação

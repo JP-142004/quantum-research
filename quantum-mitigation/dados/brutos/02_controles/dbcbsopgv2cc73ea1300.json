@@ -1,0 +1,98 @@
+{
+  "job_id": "dbcbsopgv2cc73ea1300",
+  "backend": "ibm_kingston",
+  "status": "DONE",
+  "criado": "2026-10-21 14:30:11.988683+01:00",
+  "recuperado_utc": "2026-11-02T16:25:47.503205+00:00",
+  "circuitos": [
+    {
+      "indice": 0,
+      "nome": "circuit-41",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "1": 751,
+          "0": 249
+        }
+      }
+    },
+    {
+      "indice": 1,
+      "nome": "circuit-43",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 2,
+      "operacoes": {
+        "x": 1,
+        "measure": 1
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "1": 915,
+          "0": 85
+        }
+      }
+    },
+    {
+      "indice": 2,
+      "nome": "circuit-45",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          1,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "0": 1000
+        }
+      }
+    },
+    {
+      "indice": 3,
+      "nome": "circuit-47",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 2,
+      "operacoes": {
+        "x": 1,
+        "measure": 1
+      },
+      "medidas": [
+        [
+          1,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "1": 957,
+          "0": 43
+        }
+      }
+    }
+  ]
+}

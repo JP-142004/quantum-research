@@ -1,5 +1,7 @@
 # Avaliação de técnicas de mitigação de ruído em circuitos quânticos
 
+> Atualização de 2 de novembro de 2026: as contagens e os circuitos históricos das [etapas 2](dados/brutos/02_controles/README.md) e [3](dados/brutos/03_ghz_conectado/README.md) foram recuperados diretamente da IBM. Referências abaixo à ausência desses arquivos descrevem o estado anterior da importação.
+
 ## Resumo
 
 Estudamos quanto diferentes técnicas de mitigação aproximam os resultados de um circuito quântico dos valores esperados. A primeira etapa usa o estado GHZ como referência experimental. Em três execuções no IBM Fez, a calibração de leitura aumentou a população nos estados esperados em cerca de sete pontos percentuais por execução. Em simulação, avaliamos também o efeito da construção do circuito e da extrapolação a ruído zero. Esses ensaios estabelecem um protocolo para testar outras técnicas no GHZ antes de estender a comparação a outros circuitos.

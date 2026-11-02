@@ -1,0 +1,140 @@
+{
+  "origem": "consulta a jobs concluidos IBM",
+  "jobs": 9,
+  "circuitos_verificados": [
+    {
+      "job_id": "dbbrrnpgv2cc73e922r0",
+      "indice": 0,
+      "identificacao": "zeros",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbbsd47i0auc73948300",
+      "indice": 0,
+      "identificacao": "uns",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcbsopgv2cc73ea1300",
+      "indice": 0,
+      "identificacao": "q0_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcbsopgv2cc73ea1300",
+      "indice": 1,
+      "identificacao": "q0_um",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcbsopgv2cc73ea1300",
+      "indice": 2,
+      "identificacao": "q1_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcbsopgv2cc73ea1300",
+      "indice": 3,
+      "identificacao": "q1_um",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc4g9gv2cc73ea1j10",
+      "indice": 0,
+      "identificacao": "q0_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc4g9gv2cc73ea1j10",
+      "indice": 1,
+      "identificacao": "q0_um",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc4g9gv2cc73ea1j10",
+      "indice": 2,
+      "identificacao": "q1_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc4g9gv2cc73ea1j10",
+      "indice": 3,
+      "identificacao": "q1_um",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc5ggc77vs7385vfsg",
+      "indice": 0,
+      "identificacao": "q0_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc5ggc77vs7385vfsg",
+      "indice": 1,
+      "identificacao": "q1_zero",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcc5ggc77vs7385vfsg",
+      "indice": 2,
+      "identificacao": "zeros",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbccaqpgv2cc73ea21fg",
+      "indice": 0,
+      "identificacao": "original_Z",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcccpc24mrc73cjb6bg",
+      "indice": 0,
+      "identificacao": "original_Z",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcccpc24mrc73cjb6bg",
+      "indice": 1,
+      "identificacao": "conectado_Z",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcco2fi0auc73dum8i0",
+      "indice": 0,
+      "identificacao": "original_X",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbcco2fi0auc73dum8i0",
+      "indice": 1,
+      "identificacao": "conectado_X",
+      "verificacao": "Distribuição ideal do circuito recuperado coincide com a preparação/base identificada."
+    },
+    {
+      "job_id": "dbch2kpgv2cc73eabim0",
+      "indice": 0,
+      "identificacao": "conectado50_Z",
+      "verificacao": "Estrutura conectada de 50 qubits; teste ideal estabilizador de 128 shots produz os dois extremos."
+    }
+  ],
+  "arquivos": {
+    "dados/brutos/02_controles/dbbrrnpgv2cc73e922r0.json": "f22a6143959eb9b681edbdef71e68e62c6563b26aa99f374d1b336147a2f4067",
+    "dados/brutos/02_controles/dbbrrnpgv2cc73e922r0.qpy": "956acf2c04f1e32f3adf3ea1c9551dd75fb384455468d1df584e09598e441fe8",
+    "dados/brutos/02_controles/dbbsd47i0auc73948300.json": "bebddd8cfdf06b51a26609efc840ffecb1807daba6576904dc95aca87c8c9da6",
+    "dados/brutos/02_controles/dbbsd47i0auc73948300.qpy": "c711dcc727b39ebe45a81aa646f8545827b3f3b61e0e1d7f441631b1963e6bad",
+    "dados/brutos/02_controles/dbcbsopgv2cc73ea1300.json": "26940d66494122c8e2b0e5313765f216d55752c4992f433cb725b2123a0ebd26",
+    "dados/brutos/02_controles/dbcbsopgv2cc73ea1300.qpy": "e38c0f2ea5b736f64d9990c3ef22ddd5c9b065845f6ad8db392640e5604b6c35",
+    "dados/brutos/02_controles/dbcc4g9gv2cc73ea1j10.json": "def289374545a8f0a088b867b9c64641a23bde0dcd1451c33c82185ecd50a237",
+    "dados/brutos/02_controles/dbcc4g9gv2cc73ea1j10.qpy": "3c33c831020358647628887f3bd7eb5bf56f3de3daa632ca5aac73b9826355e1",
+    "dados/brutos/02_controles/dbcc5ggc77vs7385vfsg.json": "d0063a9cc788d60a51aaad4cbaf083f61e0c7b8ba8a82452cf0af4389162bab7",
+    "dados/brutos/02_controles/dbcc5ggc77vs7385vfsg.qpy": "9f4bd7c2e9a5c537e502864d9e4c6d504615fed77644efb14ab1f1277cfc76fe",
+    "dados/brutos/03_ghz_conectado/dbccaqpgv2cc73ea21fg.json": "c8fa75cb26ae5b5ab0f4d33cea435ddc8181ac2290bb688bb8aa9a58661f761d",
+    "dados/brutos/03_ghz_conectado/dbccaqpgv2cc73ea21fg.qpy": "48a4645e5ae1446ac319abafc77880e81528a6cbedd69e4c87834dd29e545c3a",
+    "dados/brutos/03_ghz_conectado/dbcccpc24mrc73cjb6bg.json": "ee4d32ce49292fbdb9287d18e356d62a2ee8b5e4458a5572f2f30621da169ec4",
+    "dados/brutos/03_ghz_conectado/dbcccpc24mrc73cjb6bg.qpy": "d3fbeca9a066be673cb59cbd3f6db0cbee39135931e674be5005c56e162d0e82",
+    "dados/brutos/03_ghz_conectado/dbcco2fi0auc73dum8i0.json": "c50164249786c4ee4d7accc2e87f4ee1392139bd48dc70e09b52f2ef32e7b87e",
+    "dados/brutos/03_ghz_conectado/dbcco2fi0auc73dum8i0.qpy": "117760e52245a6e3a95708104c13563ee170d30811d840caeb323e222bfb452d",
+    "dados/brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0.json": "8f77cfb1e7c7fe54ce46226be8c7b368e7dd4d5ca63d4210aacbb77b8d245c38",
+    "dados/brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0.qpy": "c9e16d419d13c802a2c8470c653e3e25e63e91bd3de898b8d5907038cf3d6fd5"
+  }
+}

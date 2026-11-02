@@ -1,5 +1,7 @@
 # Organização dos arquivos
 
+> Atualização de 2 de novembro de 2026: as contagens e os circuitos históricos das [etapas 2](../dados/brutos/02_controles/README.md) e [3](../dados/brutos/03_ghz_conectado/README.md) foram recuperados diretamente da IBM. Referências abaixo à ausência desses arquivos descrevem o estado anterior da importação.
+
 Foram importados os 23 arquivos encontrados na pasta de origem `Mitigaçao de ruido`, dentro de `OneDrive_2026-10-18`. Os originais foram preservados. Os nomes das cópias foram padronizados para facilitar a navegação e o uso no terminal.
 
 O arquivo `inventario_importacao.json` relaciona cada caminho original ao novo caminho e registra os hashes SHA-256. Dezenove cópias são idênticas aos originais. Quatro receberam ajustes documentados:

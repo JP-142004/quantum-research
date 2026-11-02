@@ -1,5 +1,7 @@
 # 2. O que acontece quando a resposta já é conhecida?
 
+> Atualização: as contagens e os circuitos foram recuperados diretamente da IBM em 2 de novembro de 2026. [Ver resultados recuperados](../../dados/processados/02_controles/README.md). Os trechos sobre arquivos ausentes abaixo descrevem o estado anterior da importação.
+
 ## Como interpretar uma contagem de controle
 
 No teste de zeros, o alvo ideal é `00000`. Para medir o desvio do conjunto, conte tudo que difere de `00000` e divida pelo número de shots. Para medir o desvio do bit 0, some apenas as contagens com o bit da direita igual a 1. Um mesmo shot pode contribuir para o desvio de mais de um bit. O [código da comparação](comparar_zeros.py) faz essa distinção ao medir qubits separados e juntos.

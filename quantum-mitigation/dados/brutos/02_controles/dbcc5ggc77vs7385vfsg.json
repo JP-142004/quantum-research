@@ -1,0 +1,95 @@
+{
+  "job_id": "dbcc5ggc77vs7385vfsg",
+  "backend": "ibm_fez",
+  "status": "DONE",
+  "criado": "2026-10-21 14:48:50.887442+01:00",
+  "recuperado_utc": "2026-11-02T16:25:46.111982+00:00",
+  "circuitos": [
+    {
+      "indice": 0,
+      "nome": "circuit-41",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "0": 991,
+          "1": 9
+        }
+      }
+    },
+    {
+      "indice": 1,
+      "nome": "circuit-43",
+      "qubits_circuito": 156,
+      "bits": 1,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 1
+      },
+      "medidas": [
+        [
+          1,
+          0
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "0": 991,
+          "1": 9
+        }
+      }
+    },
+    {
+      "indice": 2,
+      "nome": "circuit-45",
+      "qubits_circuito": 156,
+      "bits": 5,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 5
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "00000": 942,
+          "00010": 16,
+          "01000": 27,
+          "00001": 9,
+          "00100": 5,
+          "10000": 1
+        }
+      }
+    }
+  ]
+}

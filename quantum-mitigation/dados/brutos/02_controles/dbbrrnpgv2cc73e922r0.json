@@ -1,0 +1,55 @@
+{
+  "job_id": "dbbrrnpgv2cc73e922r0",
+  "backend": "ibm_kingston",
+  "status": "DONE",
+  "criado": "2026-10-20 20:15:43.951666+01:00",
+  "recuperado_utc": "2026-11-02T16:25:48.505016+00:00",
+  "circuitos": [
+    {
+      "indice": 0,
+      "nome": "circuit-46",
+      "qubits_circuito": 156,
+      "bits": 5,
+      "profundidade": 1,
+      "operacoes": {
+        "measure": 5
+      },
+      "medidas": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "contagens_por_registro": {
+        "c": {
+          "00001": 250,
+          "00010": 145,
+          "00000": 528,
+          "00011": 63,
+          "00111": 1,
+          "00100": 3,
+          "10001": 2,
+          "01000": 4,
+          "10000": 2,
+          "10011": 2
+        }
+      }
+    }
+  ]
+}

@@ -8,18 +8,18 @@
 
 Dentro de cada tipo, escolha o experimento para consultar o método, os resultados e os arquivos de origem. Para incluir outra técnica ou circuito, acrescente uma pasta no tipo correspondente, registre a origem dos dados e liste o experimento no índice dessa categoria.
 
-## Por que os dados brutos têm pastas 01 e 04?
+## Etapas dos dados brutos e recuperação das pastas 02 e 03
 
 Os números identificam as etapas dos experimentos. Cada rodada é uma nova execução de uma etapa.
 
 | Etapa | Dados disponíveis |
 | --- | --- |
 | [01 — Escala GHZ](brutos/01_ghz_escala/README.md) | Contagens dos circuitos de 5 a 50 qubits. |
-| [02 — Controles](../experimentos/02_controles/README.md) | Temos os scripts. As contagens históricas separadas não foram recuperadas na importação. |
-| [03 — Construção conectada](../experimentos/03_ghz_conectado/README.md) | Temos os scripts e resultados relatados. As contagens históricas dessas comparações e do circuito conectado de 50 qubits não foram recuperadas. |
+| [02 — Controles](brutos/02_controles/README.md) | Contagens e circuitos históricos recuperados da IBM em 2 de novembro de 2026. |
+| [03 — Construção conectada](brutos/03_ghz_conectado/README.md) | Comparações em Z e X e GHZ conectado de 50 qubits recuperados da IBM. |
 | [04 — Calibração da leitura](brutos/04_mitigacao_leitura/README.md) | Temos as contagens das três rodadas reais. |
 
-As pastas brutas 02 e 03 poderão ser acrescentadas quando houver registros de contagens disponíveis. Os resultados de comparação e ZNE produzidos no PC estão em simulados, identificados por experimento.
+As pastas brutas 02 e 03 foram acrescentadas após recuperar os jobs históricos diretamente da IBM. Os resultados de comparação e ZNE produzidos no PC estão em simulados, identificados por experimento.
 
 ## Onde fica cada rodada da etapa 04?
 

@@ -1,0 +1,80 @@
+[
+  {
+    "job_id": "dbccaqpgv2cc73ea21fg",
+    "experimento": "original_fez",
+    "circuito": "original_Z",
+    "backend": "ibm_fez",
+    "bits": 5,
+    "shots": 1000,
+    "zeros": 439,
+    "uns": 395,
+    "portas_duplas": 13,
+    "profundidade": 35,
+    "indicador": 0.834
+  },
+  {
+    "job_id": "dbcccpc24mrc73cjb6bg",
+    "experimento": "comparar_construcoes",
+    "circuito": "original_Z",
+    "backend": "ibm_fez",
+    "bits": 5,
+    "shots": 1000,
+    "zeros": 457,
+    "uns": 376,
+    "portas_duplas": 13,
+    "profundidade": 35,
+    "indicador": 0.833
+  },
+  {
+    "job_id": "dbcccpc24mrc73cjb6bg",
+    "experimento": "comparar_construcoes",
+    "circuito": "conectado_Z",
+    "backend": "ibm_fez",
+    "bits": 5,
+    "shots": 1000,
+    "zeros": 478,
+    "uns": 410,
+    "portas_duplas": 4,
+    "profundidade": 13,
+    "indicador": 0.888
+  },
+  {
+    "job_id": "dbcco2fi0auc73dum8i0",
+    "experimento": "comparar_base_x",
+    "circuito": "original_X",
+    "backend": "ibm_fez",
+    "bits": 5,
+    "shots": 1000,
+    "zeros": 50,
+    "uns": 14,
+    "portas_duplas": 13,
+    "profundidade": 38,
+    "indicador": 0.566
+  },
+  {
+    "job_id": "dbcco2fi0auc73dum8i0",
+    "experimento": "comparar_base_x",
+    "circuito": "conectado_X",
+    "backend": "ibm_fez",
+    "bits": 5,
+    "shots": 1000,
+    "zeros": 59,
+    "uns": 7,
+    "portas_duplas": 4,
+    "profundidade": 16,
+    "indicador": 0.774
+  },
+  {
+    "job_id": "dbch2kpgv2cc73eabim0",
+    "experimento": "conectado_50",
+    "circuito": "conectado50_Z",
+    "backend": "ibm_fez",
+    "bits": 50,
+    "shots": 1000,
+    "zeros": 132,
+    "uns": 23,
+    "portas_duplas": 49,
+    "profundidade": 56,
+    "indicador": 0.155
+  }
+]

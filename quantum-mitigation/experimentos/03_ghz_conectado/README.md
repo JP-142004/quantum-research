@@ -1,5 +1,7 @@
 # 3. Podemos chegar ao mesmo resultado por um caminho mais curto?
 
+> Atualização: as contagens e os circuitos foram recuperados diretamente da IBM em 2 de novembro de 2026. [Ver resultados recuperados](../../dados/processados/03_ghz_conectado/README.md). Os trechos sobre arquivos ausentes abaixo descrevem o estado anterior da importação.
+
 ## Duas maneiras de espalhar a mesma correlação
 
 Cada seta abaixo representa uma porta controlada, da origem para o alvo. H prepara a superposição na raiz. Leia as setas da esquerda para a direita na ordem indicada.
