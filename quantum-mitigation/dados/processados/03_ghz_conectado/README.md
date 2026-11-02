@@ -1,16 +1,10 @@
-# Comparação de construções GHZ · resultados
+# Resultados da etapa 03
 
-Cada circuito contém 1.000 medidas.
+Cada pasta abaixo reúne um experimento recuperado da IBM, com resultados e links para contagens e circuitos.
 
-| Teste | Circuito | Indicador bruto | Portas de dois qubits | Profundidade |
-| --- | --- | ---: | ---: | ---: |
-| original_fez | original_Z | 0.834 | 13 | 35 |
-| comparar_construcoes | original_Z | 0.833 | 13 | 35 |
-| comparar_construcoes | conectado_Z | 0.888 | 4 | 13 |
-| comparar_base_x | original_X | 0.566 | 13 | 38 |
-| comparar_base_x | conectado_X | 0.774 | 4 | 16 |
-| conectado_50 | conectado50_Z | 0.155 | 49 | 56 |
+- [GHZ original de cinco qubits no Fez](original_fez/README.md).
+- [Construções original e conectada em Z](comparar_construcoes/README.md).
+- [Construções original e conectada em X](comparar_base_x/README.md).
+- [GHZ conectado de cinquenta qubits](conectado_50/README.md).
 
-Nas linhas Z, o indicador é PZ = (zeros + uns)/1.000. Nas linhas X, é CX = (pares − ímpares)/1.000. Em Z, a comparação no mesmo job dá 0,833 para original e 0,888 para conectado. Em X, outro job dá 0,566 e 0,774. O conectado de 50 qubits dá PZ = (132 + 23)/1.000 = 0,155. Não é uma comparação controlada com a série Kingston de 50 qubits, executada em outro backend e data. Estes valores são brutos, sem mitigação de leitura.
-
-[Valores completos e IDs](resultados_recuperados.json) · [Contagens e circuitos](../../brutos/03_ghz_conectado/README.md)
+[Todos os valores e IDs](resultados_recuperados.json) · [Índice dos processados](../README.md)
