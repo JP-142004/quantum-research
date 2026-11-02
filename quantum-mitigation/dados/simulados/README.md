@@ -23,3 +23,9 @@ Uma referência exata e uma estimativa com shots são coisas diferentes. Por exe
 O [protocolo](../../scripts/protocolo_local.py) define circuitos e ruídos; o [executor](../../scripts/validar_protocolo_local.py) produz os blocos. Em cada par de JSONs, `_contagens` contém as frequências e `_analise` contém os cálculos. O [manifesto](validacao_2026_11_01/manifesto.json) guarda sementes, versões e referências exatas. Consulte o [relatório](validacao_2026_11_01/relatorio.md) para ver todos os blocos e a [verificação](validacao_2026_11_01/verificacao.json) para conferir a auditoria. Esses erros foram escolhidos para testar o método no PC.
 
 **Próxima pergunta:** o que podemos tentar quando o erro das operações permanece? O [passo 6, piloto de ZNE](zne/README.md), acrescentou 126.000 shots, totalizando **486.000 shots locais**.
+
+## Como ler o gráfico do piloto local
+
+![Valores exatos em Z e X nos fatores de dobramento 1, 3 e 5 e extrapolações no fator zero](../../figuras/zne_fatores.png)
+
+Acompanhe uma série de cada vez. Para Z, os pontos dos fatores 1, 3 e 5 são 0,9463, 0,8490 e 0,7637. Eles vêm do modelo sem flutuação de amostragem. O losango em zero é a previsão da reta, cerca de 0,9899. A distância entre esse losango e a linha ideal em 1 mostra o desvio que a extrapolação ainda deixa nesse modelo. [Conta do intercepto](zne/README.md) · [Resultados com shots e erros padrão](validacao_2026_11_01/relatorio.md)
