@@ -146,8 +146,7 @@ Com erro só na leitura, a calibração recupera PZ = 1. Com erro também nas po
 
 **Limitações.**
 
-1. **Backends e datas.** Os experimentos 2 a 4 usam equipamentos e dias diferentes. O GHZ conectado de 50 qubits (Fez) **não é comparável** à série de escala (código para Kingston).
-2. **Poucas repetições.** Três rodadas, três blocos simulados, um job por comparação no experimento 3. O bootstrap não inclui deriva do equipamento entre dias.
+1. **Backends e datas.** Os experimentos 2 a 4 usam equipamentos e dias diferentes.2. **Poucas repetições.** Três rodadas, três blocos simulados, um job por comparação no experimento 3. O bootstrap não inclui deriva do equipamento entre dias.
 3. **Quasiprobabilidades.** Estimativas ajustadas podem ter componentes negativas ou indicadores acima de 1. Não as recortamos.
 4. **Modelo sintético.** As magnitudes da simulação não valem para o Fez. A auditoria registra um desvio de até 3,2 erros padrão em relação ao modelo exato, com critério amplo de sanidade, que não é teste de cobertura.
 5. **ZNE.** A extrapolação linear tem viés e amplia a incerteza.

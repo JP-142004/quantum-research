@@ -62,7 +62,7 @@ Recuperados da IBM em 2 de novembro de 2026. Todos no ibm_fez.
 | `brutos/03_ghz_conectado/dbccaqpgv2cc73ea21fg` | GHZ original de 5 qubits |
 | `brutos/03_ghz_conectado/dbcccpc24mrc73cjb6bg` | original e conectado, medidos em Z |
 | `brutos/03_ghz_conectado/dbcco2fi0auc73dum8i0` | original e conectado, medidos em X |
-| `brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0` | GHZ conectado de 50 qubits |
+| `brutos/03_ghz_conectado/dbch2kpgv2cc73eabim0` | GHZ conectado de 50 qubits (guardado como registro; não é usado nos relatórios) |
 
 Figura: [03_construcoes_reais](../figuras/03_construcoes_reais.png).
 

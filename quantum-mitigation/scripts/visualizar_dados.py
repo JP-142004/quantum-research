@@ -36,7 +36,7 @@ salvar(fig, '02_controles_reais.png')
 ghz = ler(BASE / 'processados/03_ghz_conectado/resultados_recuperados.json')
 fig, eixos = plt.subplots(1, 2, figsize=(11, 4), layout='constrained')
 for ax, base in zip(eixos, ['Z', 'X']):
-    dados = [r for r in ghz if r['circuito'].endswith('_' + base)]
+    dados = [r for r in ghz if r['circuito'].endswith('_' + base) and r['bits'] == 5]
     nomes = [r['experimento'].replace('_', ' ') + '\n' + r['circuito'] for r in dados]
     valores = [r['indicador'] for r in dados]
     barras = ax.barh(nomes, valores, color='#287d8e')

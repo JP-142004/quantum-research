@@ -129,13 +129,6 @@ def t_construcao_cinco():
                    'Profundidade (medindo em X)', 'CX'], corpo, range(1, 6))
 
 
-def t_construcao_cinquenta():
-    l = next(l for l in _linhas('03_ghz_conectado') if l['bits'] == 50)
-    return tabela(['Construção', 'Qubits', 'Portas de 2 qubits', 'Profundidade', 'PZ', 'Computador', 'Dia'],
-                  [('Conectada', l['bits'], l['portas_duplas'], l['profundidade'], num(l['indicador'], 3),
-                    l['backend'], _dia(l['job_id']))], range(1, 5))
-
-
 def t_construcoes_testes():
     """Diferenças entre circuitos, em unidades de erro padrão analítico (só amostragem)."""
     por_circ = {(l['job_id'], l['circuito']): l for l in _linhas('03_ghz_conectado')}
@@ -302,7 +295,7 @@ def t_parametros():
 
 TABELAS = {
     'escala': t_escala, 'rodadas': t_rodadas, 'rodadas_ganho': t_rodadas_ganho, 'rodadas_jobs': t_rodadas_jobs,
-    'construcao_cinco': t_construcao_cinco, 'construcao_cinquenta': t_construcao_cinquenta,
+    'construcao_cinco': t_construcao_cinco,
     'construcoes_testes': t_construcoes_testes, 'cinco_parados': t_cinco_parados, 'um_qubit': t_um_qubit,
     'kingston_dias': t_kingston_dias, 'cinco_conta': t_cinco_conta,
     'cenarios': t_cenarios, 'zne': t_zne, 'zne_blocos': t_zne_blocos,

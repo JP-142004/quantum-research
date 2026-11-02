@@ -1,10 +1,10 @@
 # Experimento 3 · Montar o GHZ com menos passos melhora o resultado?
 
-**Onde e quando:** IBM, `ibm_fez`, 21 de outubro de 2026. Cada circuito foi repetido 1.000 vezes. As contagens foram recuperadas da conta IBM em 2 de novembro de 2026 ([registro de origem](../../dados/registro_origem.json)).
+**Onde e quando:** IBM, `ibm_fez`, 21 de outubro de 2026. GHZ de 5 qubits, cada circuito repetido 1.000 vezes. As contagens foram recuperadas da conta IBM em 2 de novembro de 2026 ([registro de origem](../../dados/registro_origem.json)).
 
 ## Resposta curta
 
-**Com 5 qubits, sim.** A construção que segue as ligações do computador usa 4 portas de dois qubits em vez de 13 e tirou notas melhores nas duas medidas (PZ e CX), com diferença bem maior que a oscilação por sorte. **Com 50 qubits só foi feita a construção nova**, sem uma versão original para comparar: esse resultado fica registrado, mas não prova nada.
+**Sim.** A construção que segue as ligações do computador usa 4 portas de dois qubits em vez de 13 e tirou notas melhores nas duas medidas (PZ e CX), com diferença bem maior que a oscilação por sorte.
 
 ## Pergunta
 
@@ -46,8 +46,6 @@ Medimos de duas formas, a mesma que usamos no resto do projeto ([definições](.
 
 ## Resultado
 
-### Parte A: 5 qubits (a comparação)
-
 <!-- TABELA:construcao_cinco -->
 | Construção | Portas de 2 qubits | Profundidade (medindo em Z) | PZ | Profundidade (medindo em X) | CX |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -59,7 +57,7 @@ A conectada tem 9 portas de dois qubits a menos, o que equivale a 3 trocas de lu
 
 ![Circuitos do experimento 3](../../figuras/03_construcoes_reais.png)
 
-*À esquerda, PZ; à direita, CX. Cada barra é um circuito real, e a linha em 1 marca o ideal. A barra de 50 qubits é a conectada, que não tem um original de 50 qubits para comparar.*
+*À esquerda, PZ; à direita, CX. Cada barra é um circuito real, e a linha em 1 marca o ideal.*
 
 **A diferença é maior que a sorte?** Comparamos cada diferença com o seu erro padrão (quanto o número oscila só pela amostra, ver [indicadores](../../fundamentos/indicadores.md)):
 
@@ -73,23 +71,12 @@ A conectada tem 9 portas de dois qubits a menos, o que equivale a 3 trocas de lu
 
 A primeira linha é uma checagem: o **mesmo circuito original**, em dois jobs no mesmo dia, deu valores quase iguais. Isso indica que a repetição é estável nesse intervalo. As duas diferenças entre construções ficam acima de 3 erros padrão.
 
-### Parte B: 50 qubits (só registro, sem comparação)
-
-<!-- TABELA:construcao_cinquenta -->
-| Construção | Qubits | Portas de 2 qubits | Profundidade | PZ | Computador | Dia |
-| --- | ---: | ---: | ---: | ---: | --- | --- |
-| Conectada | 50 | 49 | 56 | 0,155 | ibm_fez | 21/10/2026 |
-<!-- /TABELA:construcao_cinquenta -->
-
-Aqui só rodamos a versão **conectada**. Não rodamos o original de 50 qubits no Fez, então não dá para dizer se a conectada foi melhor. O experimento 1 usou 50 qubits na versão original, mas provavelmente em outro computador e em outra data, então também não serve de comparação. Este número fica como registro de que a construção foi executada com 50 qubits.
-
 ## Conclusão
 
-1. **Com 5 qubits, menos portas deram notas melhores**, no PZ e no CX, com diferenças acima de 3 erros padrão.
+1. **Menos portas deram notas melhores**, no PZ e no CX, com diferenças acima de 3 erros padrão.
 2. **Não sabemos o que explica a melhora.** As portas, a profundidade e o tempo em que os qubits esperam mudam todos juntos. O experimento não separa um do outro.
 3. **Cada comparação foi feita uma vez, em um dia só.** Não repetimos em outros dias.
-4. **Os 50 qubits não entram na conclusão**, pelo motivo da Parte B.
-5. **O que falta para generalizar** (ainda não feito): rodar o original e o conectado em vários tamanhos (por exemplo 10, 20, 30 e 50 qubits), no mesmo computador e no mesmo dia.
+4. **Só testamos 5 qubits.** Para saber se a vantagem se mantém em circuitos maiores, seria preciso rodar o original e o conectado em outros tamanhos, no mesmo computador e no mesmo dia. Isso ainda não foi feito.
 
 ## Próximo passo
 
@@ -102,10 +89,9 @@ Reduzir os passos ajuda. Dá para também corrigir o erro de leitura? [Experimen
 | `ghz_05_original_fez.py` | O GHZ original de 5 qubits no Fez. |
 | `comparar_construcoes.py` | Compara a original com as conectadas (medindo em Z) e escolhe a de menos portas de dois qubits. |
 | `comparar_base_x.py` | A mesma comparação, medindo em X. |
-| `ghz_50_conectado.py` | O GHZ conectado de 50 qubits. |
-| [Contagens e circuitos](../../dados/README.md#03--construções-do-ghz) | Quatro jobs (JSON e QPY). |
+| [Contagens e circuitos](../../dados/README.md#03--construções-do-ghz) | Os jobs de 5 qubits (JSON e QPY). |
 | [resultados_recuperados.json](../../dados/processados/03_ghz_conectado/resultados_recuperados.json) | Uma linha por circuito. |
 
-**Execução:** os quatro programas **enviam jobs à IBM**.
+**Execução:** os três programas **enviam jobs à IBM**.
 
 [Experimentos](../README.md)
