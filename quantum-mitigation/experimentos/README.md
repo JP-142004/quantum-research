@@ -51,7 +51,9 @@ Os comandos partem da pasta `quantum-mitigation`, com o ambiente da raiz do repo
 4. Envie um experimento por vez: `..\venv\Scripts\python rodar.py 04 --enviar --computador ibm_fez`. O programa mostra o que vai sair e só envia depois de você digitar `ENVIAR`.
 5. Quando o job terminar: `..\venv\Scripts\python rodar.py 04 --coletar --sessao AAAA-MM-DD_ibm_fez`. Para ver as sessões: `--listar`.
 
-Uma sessão gravada não é reenviada nem sobrescrita. A análise dos dados e os relatórios de resultado vêm depois.
+Uma sessão gravada não é reenviada nem sobrescrita.
+
+**Depois de coletar**, a análise lê todas as sessões do experimento e gera `resultados/` (números, tabelas e figuras): `..\venv\Scripts\python rodar.py 04 --analisar`. As tabelas dos READMEs, entre marcadores `<!-- TABELA:nome -->`, são preenchidas por ela. Os experimentos 5 e 6 já foram rodados e analisados assim, e servem de exemplo.
 
 ## Como acrescentar um experimento
 

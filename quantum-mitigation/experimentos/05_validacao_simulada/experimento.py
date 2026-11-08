@@ -10,6 +10,7 @@ pergunta = 'O que a calibração recupera quando o erro é conhecido?'
 execucao = 'simulador'
 computador = 'simulador'
 shots = 1000
+tecnicas = ['leitura']   # o que a análise aplica
 
 Q5 = [0, 1, 2, 3, 4]
 

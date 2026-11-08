@@ -33,11 +33,34 @@ def matriz(contagens, n, qubits=None, modelo='completo'):
     return a
 
 
-def _permutacao(mapa_medidas, n):
+def permutacao(mapa_medidas, n):
     """Índice (por qubit físico) -> índice (por bit clássico), para um mapa (qubit, bit)."""
     if len(mapa_medidas) != n or len({q for q, _ in mapa_medidas}) != n or len({c for _, c in mapa_medidas}) != n:
         raise ValueError('Mapa de medidas inválido')
     return np.array([sum(((s >> q) & 1) << c for q, c in mapa_medidas) for s in range(2 ** n)])
+
+
+def _conferir(a):
+    condicionamento = float(np.linalg.cond(a))
+    if not np.isfinite(condicionamento) or condicionamento > LIMITE_CONDICIONAMENTO:
+        raise ValueError(f'Calibração instável (condicionamento {condicionamento:.1f})')
+    return condicionamento
+
+
+def corrigir_varios(a, p, perms):
+    """Corrige várias distribuições de uma vez, com a mesma matriz A.
+
+    p: array (k, 2**n), uma distribuição por linha, na ordem dos bits clássicos.
+    perms: k permutações (ver `permutacao`), uma por distribuição.
+    Devolve Q com a mesma forma e a mesma ordem. Equivale a `corrigir` com o mapa de medidas.
+    """
+    _conferir(a)
+    fisicas = np.stack([p[j][perms[j]] for j in range(len(p))], axis=1)  # ordem dos qubits físicos
+    q_fisico = np.linalg.solve(a, fisicas)
+    q = np.empty_like(p)
+    for j in range(len(p)):
+        q[j][perms[j]] = q_fisico[:, j]
+    return q
 
 
 def corrigir(a, p, mapa_medidas=None):
@@ -49,14 +72,12 @@ def corrigir(a, p, mapa_medidas=None):
     dim = a.shape[0]
     n = dim.bit_length() - 1
     if mapa_medidas is not None:
-        inversa = np.argsort(_permutacao(mapa_medidas, n))
+        inversa = np.argsort(permutacao(mapa_medidas, n))
         a = a[np.ix_(inversa, inversa)]
     vetor = np.zeros(dim)
     for bits, valor in p.items():
         vetor[int(bits, 2)] += valor
-    condicionamento = float(np.linalg.cond(a))
-    if not np.isfinite(condicionamento) or condicionamento > LIMITE_CONDICIONAMENTO:
-        raise ValueError(f'Calibração instável (condicionamento {condicionamento:.1f})')
+    condicionamento = _conferir(a)
     q = np.linalg.solve(a, vetor)
     if not np.allclose(a @ q, vetor) or not np.isclose(q.sum(), vetor.sum()):
         raise ValueError('Falha na inversão')

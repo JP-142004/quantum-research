@@ -1,4 +1,4 @@
-"""Testes da topologia e das técnicas (calibração de leitura e ZNE)."""
+﻿"""Testes da topologia e das técnicas (calibração de leitura e ZNE)."""
 import sys
 import unittest
 from pathlib import Path
@@ -74,7 +74,7 @@ class LeituraTest(unittest.TestCase):
     def test_mapa_de_medidas_com_troca_de_qubits(self):
         a = matriz_produto([0.01, 0.08], [0.02, 0.10])  # índice = estado por qubit físico
         mapa = [(0, 1), (1, 0)]                         # o qubit físico 0 é lido no bit 1 e vice-versa
-        perm = leitura._permutacao(mapa, 2)
+        perm = leitura.permutacao(mapa, 2)
         verdadeira_fisica = np.array([0.1, 0.2, 0.3, 0.4])
         observada_fisica = a @ verdadeira_fisica
         p_cl, q_cl = np.zeros(4), np.zeros(4)
@@ -122,3 +122,4 @@ class RegistroDeTecnicasTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

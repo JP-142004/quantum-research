@@ -1,0 +1,3404 @@
+{
+  "ideal_bloco_01": {
+    "sessao": "ideal_bloco_01",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.0,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 1.4391574309391457e-17,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 2.0292095474345755e-17,
+          "ic95": [
+            0.9999999999999999,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 2.4609481857647604e-17,
+          "ic95": [
+            -1.1102230246251565e-16,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "ideal",
+      "maior_desvio_bruto_em_ep": 0.0,
+      "maior_desvio_ajustado_em_ep": 0.0,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "ideal_bloco_02": {
+    "sessao": "ideal_bloco_02",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.0,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 7.195787154695728e-18,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 1.3416217536330415e-17,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 1.5180276813670977e-17,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "ideal",
+      "maior_desvio_bruto_em_ep": 0.0,
+      "maior_desvio_ajustado_em_ep": 0.0,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "ideal_bloco_03": {
+    "sessao": "ideal_bloco_03",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.0,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 8.882672508669923e-18,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 1.0000000000000004
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 1.4219213908360708e-17,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 1.0000000000000027
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 1.0
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 1.0,
+          "ep": 0.0
+        },
+        "ajustado": {
+          "valor": 1.0,
+          "ep": 0.0,
+          "ic95": [
+            1.0,
+            1.0
+          ]
+        },
+        "ganho": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "menor_quasi": 0.0,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 1.0000000000000044
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 0.0,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.0,
+          "ep": 1.6728869457774028e-17,
+          "ic95": [
+            0.0,
+            0.0
+          ]
+        },
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "ideal",
+      "maior_desvio_bruto_em_ep": 0.0,
+      "maior_desvio_ajustado_em_ep": 0.0,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_bloco_01": {
+    "sessao": "leitura_bloco_01",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.4999722654881256,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.836,
+          "ep": 0.011709141727727102
+        },
+        "ajustado": {
+          "valor": 0.9960067761525198,
+          "ep": 0.017349027057844447,
+          "ic95": [
+            0.9624047652527368,
+            1.030191709089311
+          ]
+        },
+        "ganho": {
+          "valor": 0.1600067761525198,
+          "ep": 0.010310161098668029,
+          "ic95": [
+            0.1409961862946441,
+            0.18137752821471478
+          ]
+        },
+        "menor_quasi": -0.003987243862188463,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.69,
+          "ep": 0.02288886192015671
+        },
+        "ajustado": {
+          "valor": 1.0046849271818186,
+          "ep": 0.03425607033195844,
+          "ic95": [
+            0.9375726404126636,
+            1.0725756733705079
+          ]
+        },
+        "ganho": {
+          "valor": 0.3146849271818186,
+          "ep": 0.013551259785522112,
+          "ic95": [
+            0.28856753036721616,
+            0.3415333691776135
+          ]
+        },
+        "menor_quasi": -0.007876894416174346,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000017
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.8340000000000001,
+          "ep": 0.011766222843376712
+        },
+        "ajustado": {
+          "valor": 0.9929552740402865,
+          "ep": 0.017555767252057795,
+          "ic95": [
+            0.9592805939988872,
+            1.0282941018971918
+          ]
+        },
+        "ganho": {
+          "valor": 0.15895527404028642,
+          "ep": 0.010286627022890963,
+          "ic95": [
+            0.14032941113512334,
+            0.18050516757332663
+          ]
+        },
+        "menor_quasi": -0.00616292035340974,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.734,
+          "ep": 0.021476591908401108
+        },
+        "ajustado": {
+          "valor": 1.0725473856650527,
+          "ep": 0.03201674096193705,
+          "ic95": [
+            1.0089762504260125,
+            1.1350692986085098
+          ]
+        },
+        "ganho": {
+          "valor": 0.3385473856650527,
+          "ep": 0.013217571181462766,
+          "ic95": [
+            0.3134289446658833,
+            0.36512451470188784
+          ]
+        },
+        "menor_quasi": -0.007924433375759791,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000018
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.861,
+          "ep": 0.010939789760319894
+        },
+        "ajustado": {
+          "valor": 1.0137118967563732,
+          "ep": 0.01955991502353068,
+          "ic95": [
+            0.9770124346613352,
+            1.0533854529373947
+          ]
+        },
+        "ganho": {
+          "valor": 0.1527118967563732,
+          "ep": 0.01428244489045295,
+          "ic95": [
+            0.12622481576873745,
+            0.1822746919927426
+          ]
+        },
+        "menor_quasi": -0.010951683214765296,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.799,
+          "ep": 0.01267276607532862
+        },
+        "ajustado": {
+          "valor": 0.9628148973226875,
+          "ep": 0.0214259821005365,
+          "ic95": [
+            0.9206770818070619,
+            1.0053133335638782
+          ]
+        },
+        "ganho": {
+          "valor": 0.1638148973226875,
+          "ep": 0.014499897675263591,
+          "ic95": [
+            0.13625096245221538,
+            0.19414359450028718
+          ]
+        },
+        "menor_quasi": -0.004592071908834312,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.854,
+          "ep": 0.011166198995181844
+        },
+        "ajustado": {
+          "valor": 1.004911620745609,
+          "ep": 0.019103087374628007,
+          "ic95": [
+            0.9689432224342738,
+            1.0437068092297495
+          ]
+        },
+        "ganho": {
+          "valor": 0.15091162074560904,
+          "ep": 0.014096621278033097,
+          "ic95": [
+            0.1248306869251734,
+            0.18057075104300535
+          ]
+        },
+        "menor_quasi": -0.008209093124287149,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.803,
+          "ep": 0.012577400367325513
+        },
+        "ajustado": {
+          "valor": 0.9921581624335705,
+          "ep": 0.022733758370947925,
+          "ic95": [
+            0.948864933348632,
+            1.0374154811839567
+          ]
+        },
+        "ganho": {
+          "valor": 0.18915816243357042,
+          "ep": 0.01627356874418476,
+          "ic95": [
+            0.15918560846256566,
+            0.22165255665513747
+          ]
+        },
+        "menor_quasi": -0.009834565582631391,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": -0.003051502112233262,
+          "ep": 0.020672520595986118,
+          "ic95": [
+            -0.04364783574298864,
+            0.03681268502337929
+          ]
+        },
+        "bruto": {
+          "valor": -0.0019999999999998908,
+          "ep": 0.01659963855028175
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.06786245848323413,
+          "ep": 0.04514783013904376,
+          "ic95": [
+            -0.01954654738568083,
+            0.15491504616336668
+          ]
+        },
+        "bruto": {
+          "valor": 0.04400000000000004,
+          "ep": 0.03138700367986724
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura",
+      "maior_desvio_bruto_em_ep": 1.7838782970500835,
+      "maior_desvio_ajustado_em_ep": 2.2659203743222225,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_bloco_02": {
+    "sessao": "leitura_bloco_02",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.470812902348845,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.848,
+          "ep": 0.011353237423748348
+        },
+        "ajustado": {
+          "valor": 1.0303635349770337,
+          "ep": 0.017975897997352025,
+          "ic95": [
+            0.994528386366951,
+            1.0660146620775681
+          ]
+        },
+        "ganho": {
+          "valor": 0.18236353497703373,
+          "ep": 0.011415831950422574,
+          "ic95": [
+            0.16132928856303255,
+            0.20591455098428826
+          ]
+        },
+        "menor_quasi": -0.010181211907841003,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.72,
+          "ep": 0.021945386758952325
+        },
+        "ajustado": {
+          "valor": 1.0331828944575723,
+          "ep": 0.032200397982938056,
+          "ic95": [
+            0.969260387998298,
+            1.095916089929189
+          ]
+        },
+        "ganho": {
+          "valor": 0.3131828944575723,
+          "ep": 0.01290038711642919,
+          "ic95": [
+            0.28831803849243604,
+            0.33899327383572864
+          ]
+        },
+        "menor_quasi": -0.00504916817352395,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000017
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.8160000000000001,
+          "ep": 0.012253326079069307
+        },
+        "ajustado": {
+          "valor": 0.9898798245988676,
+          "ep": 0.018802801220981855,
+          "ic95": [
+            0.9541535759982562,
+            1.0280048456400808
+          ]
+        },
+        "ganho": {
+          "valor": 0.17387982459886753,
+          "ep": 0.011086961312433757,
+          "ic95": [
+            0.1534882690257197,
+            0.19672765221107058
+          ]
+        },
+        "menor_quasi": -0.009360354359998395,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.67,
+          "ep": 0.023475519163588265
+        },
+        "ajustado": {
+          "valor": 0.9635019437305186,
+          "ep": 0.03453022677114369,
+          "ic95": [
+            0.8967341005463597,
+            1.0307262513481221
+          ]
+        },
+        "ganho": {
+          "valor": 0.29350194373051863,
+          "ep": 0.013123653717385435,
+          "ic95": [
+            0.26821687225964674,
+            0.31988817997597235
+          ]
+        },
+        "menor_quasi": -0.006716534548695286,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000018
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.857,
+          "ep": 0.011070275515993268
+        },
+        "ajustado": {
+          "valor": 1.0184345889348345,
+          "ep": 0.02007765273648895,
+          "ic95": [
+            0.9816635430617682,
+            1.0593659319583735
+          ]
+        },
+        "ganho": {
+          "valor": 0.16143458893483453,
+          "ep": 0.01494166878006127,
+          "ic95": [
+            0.13406886065841836,
+            0.19183470627289478
+          ]
+        },
+        "menor_quasi": -0.010179823715192505,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.81,
+          "ep": 0.012405643876881197
+        },
+        "ajustado": {
+          "valor": 1.0055805166942005,
+          "ep": 0.022401440377967125,
+          "ic95": [
+            0.9614271052443554,
+            1.050199866822876
+          ]
+        },
+        "ganho": {
+          "valor": 0.1955805166942004,
+          "ep": 0.016338869180840935,
+          "ic95": [
+            0.16499087462678796,
+            0.22833508033647107
+          ]
+        },
+        "menor_quasi": -0.013833755688991518,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.852,
+          "ep": 0.011229247525992114
+        },
+        "ajustado": {
+          "valor": 1.0124097136551211,
+          "ep": 0.020230888133247405,
+          "ic95": [
+            0.9735287943828191,
+            1.0530231787127946
+          ]
+        },
+        "ganho": {
+          "valor": 0.16040971365512113,
+          "ep": 0.01482412306599679,
+          "ic95": [
+            0.13286264801942393,
+            0.19071471717889313
+          ]
+        },
+        "menor_quasi": -0.008643954214153121,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.794,
+          "ep": 0.0127892142057282
+        },
+        "ajustado": {
+          "valor": 0.9933798475626135,
+          "ep": 0.02305943479994133,
+          "ic95": [
+            0.9502096642124782,
+            1.038966967040659
+          ]
+        },
+        "ganho": {
+          "valor": 0.1993798475626135,
+          "ep": 0.016390157560376126,
+          "ic95": [
+            0.16890218471561608,
+            0.23424308563721868
+          ]
+        },
+        "menor_quasi": -0.006598761919164698,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": -0.040483710378166116,
+          "ep": 0.0208653412684181,
+          "ic95": [
+            -0.08131788380941052,
+            0.0006225479645084516
+          ]
+        },
+        "bruto": {
+          "valor": -0.03199999999999992,
+          "ep": 0.01670449041425688
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": -0.06968095072705371,
+          "ep": 0.04548061471228018,
+          "ic95": [
+            -0.15564108196327184,
+            0.018310247290978736
+          ]
+        },
+        "bruto": {
+          "valor": -0.04999999999999993,
+          "ep": 0.03213564998564678
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura",
+      "maior_desvio_bruto_em_ep": 1.6815099726428764,
+      "maior_desvio_ajustado_em_ep": 1.6891247926254376,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_bloco_03": {
+    "sessao": "leitura_bloco_03",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.4874293788610686,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.845,
+          "ep": 0.011444430960078356
+        },
+        "ajustado": {
+          "valor": 1.0189556995311297,
+          "ep": 0.018130638922408706,
+          "ic95": [
+            0.9849604946309296,
+            1.0559450635964802
+          ]
+        },
+        "ganho": {
+          "valor": 0.17395569953112977,
+          "ep": 0.011231391062930288,
+          "ic95": [
+            0.1533407878966482,
+            0.19722536592273693
+          ]
+        },
+        "menor_quasi": -0.012638855340210796,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.726,
+          "ep": 0.021746815858879203
+        },
+        "ajustado": {
+          "valor": 1.0321318004239761,
+          "ep": 0.032003061415160794,
+          "ic95": [
+            0.9693094865009514,
+            1.0959152770793625
+          ]
+        },
+        "ganho": {
+          "valor": 0.30613180042397614,
+          "ep": 0.012907961206623832,
+          "ic95": [
+            0.2816787154638926,
+            0.33202240651405285
+          ]
+        },
+        "menor_quasi": -0.0074493012400355645,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000017
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.8300000000000001,
+          "ep": 0.011878552100319297
+        },
+        "ajustado": {
+          "valor": 0.996812107464824,
+          "ep": 0.018112831536259023,
+          "ic95": [
+            0.9608771144699128,
+            1.0324496593855668
+          ]
+        },
+        "ganho": {
+          "valor": 0.1668121074648239,
+          "ep": 0.010801088058383798,
+          "ic95": [
+            0.1468743985144274,
+            0.18866356150498578
+          ]
+        },
+        "menor_quasi": -0.01001925396229514,
+        "referencia": {
+          "antes_leitura": 1.0000000000000004,
+          "observado": 0.8366040900000001
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.674,
+          "ep": 0.02336073628976621
+        },
+        "ajustado": {
+          "valor": 0.96742539363542,
+          "ep": 0.034748647102623396,
+          "ic95": [
+            0.8980556599027347,
+            1.0358872171637488
+          ]
+        },
+        "ganho": {
+          "valor": 0.2934253936354201,
+          "ep": 0.013269369157429491,
+          "ic95": [
+            0.26765586823038334,
+            0.31967308751551793
+          ]
+        },
+        "menor_quasi": -0.005268491297414453,
+        "referencia": {
+          "antes_leitura": 1.0000000000000027,
+          "observado": 0.6956883738000018
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.85,
+          "ep": 0.011291589790636216
+        },
+        "ajustado": {
+          "valor": 0.976182070186103,
+          "ep": 0.018565199882983482,
+          "ic95": [
+            0.9403028797013407,
+            1.0137490998098877
+          ]
+        },
+        "ganho": {
+          "valor": 0.12618207018610306,
+          "ep": 0.012962963800158588,
+          "ic95": [
+            0.10120610510430518,
+            0.15190384670528548
+          ]
+        },
+        "menor_quasi": -0.004708160422199376,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.825,
+          "ep": 0.012015614840697917
+        },
+        "ajustado": {
+          "valor": 1.0414987309104105,
+          "ep": 0.02355468676503444,
+          "ic95": [
+            0.9971967760267668,
+            1.08906894777184
+          ]
+        },
+        "ganho": {
+          "valor": 0.2164987309104105,
+          "ep": 0.018024818971656493,
+          "ic95": [
+            0.1840358383459442,
+            0.25444486984671466
+          ]
+        },
+        "menor_quasi": -0.022452734521260207,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.878,
+          "ep": 0.010349685985574635
+        },
+        "ajustado": {
+          "valor": 1.0091545279079652,
+          "ep": 0.01815580632321478,
+          "ic95": [
+            0.9736241569270492,
+            1.045215508380012
+          ]
+        },
+        "ganho": {
+          "valor": 0.13115452790796522,
+          "ep": 0.013335726593747875,
+          "ic95": [
+            0.10555448459283878,
+            0.15781467785348766
+          ]
+        },
+        "menor_quasi": -0.009430304509440695,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.814,
+          "ep": 0.012304633273690038
+        },
+        "ajustado": {
+          "valor": 1.015171945199211,
+          "ep": 0.02340823189174662,
+          "ic95": [
+            0.9690724713373016,
+            1.0616508506257254
+          ]
+        },
+        "ganho": {
+          "valor": 0.201171945199211,
+          "ep": 0.017055631486281104,
+          "ic95": [
+            0.16904164755593287,
+            0.2354854893601823
+          ]
+        },
+        "menor_quasi": -0.020449614583639652,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": -0.022143592066305784,
+          "ep": 0.02055284978413882,
+          "ic95": [
+            -0.06284454392981048,
+            0.017987665529824014
+          ]
+        },
+        "bruto": {
+          "valor": -0.014999999999999902,
+          "ep": 0.016494696117237202
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": -0.0647064067885561,
+          "ep": 0.04578180646908398,
+          "ic95": [
+            -0.15517884537711774,
+            0.02619577846515994
+          ]
+        },
+        "bruto": {
+          "valor": -0.051999999999999935,
+          "ep": 0.03191626544569399
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura",
+      "maior_desvio_bruto_em_ep": 1.9055913413687413,
+      "maior_desvio_ajustado_em_ep": 1.761803556310199,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_e_portas_bloco_01": {
+    "sessao": "leitura_e_portas_bloco_01",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.5015641172504421,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.7070000000000001,
+          "ep": 0.014392741226048635
+        },
+        "ajustado": {
+          "valor": 0.8501212869313143,
+          "ep": 0.019606374661614155,
+          "ic95": [
+            0.8119291843566795,
+            0.8892100166318702
+          ]
+        },
+        "ganho": {
+          "valor": 0.1431212869313142,
+          "ep": 0.009656634430997657,
+          "ic95": [
+            0.12465398061940883,
+            0.16287600676904487
+          ]
+        },
+        "menor_quasi": -0.002232682178315456,
+        "referencia": {
+          "antes_leitura": 0.840886709832467,
+          "observado": 0.7065243876574241
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.55,
+          "ep": 0.026410225292488515
+        },
+        "ajustado": {
+          "valor": 0.7949880652984849,
+          "ep": 0.03897682507902114,
+          "ic95": [
+            0.7200011694497043,
+            0.8711083399076962
+          ]
+        },
+        "ganho": {
+          "valor": 0.24498806529848483,
+          "ep": 0.014424231425724493,
+          "ic95": [
+            0.21737199281479588,
+            0.2740333221464812
+          ]
+        },
+        "menor_quasi": -0.000295543790631424,
+        "referencia": {
+          "antes_leitura": 0.7690223892601064,
+          "observado": 0.5349999364395532
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.804,
+          "ep": 0.01255324659201754
+        },
+        "ajustado": {
+          "valor": 0.9716724917795281,
+          "ep": 0.01871629247233618,
+          "ic95": [
+            0.9339024624921552,
+            1.0085719613674027
+          ]
+        },
+        "ganho": {
+          "valor": 0.16767249177952803,
+          "ep": 0.010906121642018764,
+          "ic95": [
+            0.14747381667541123,
+            0.19018249589052913
+          ]
+        },
+        "menor_quasi": -0.010848531165950389,
+        "referencia": {
+          "antes_leitura": 0.9462610599999999,
+          "observado": 0.7924237061628725
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.644,
+          "ep": 0.024192230157635324
+        },
+        "ajustado": {
+          "valor": 0.9294590293526104,
+          "ep": 0.035265646556732144,
+          "ic95": [
+            0.860504412230633,
+            1.000709238891138
+          ]
+        },
+        "ganho": {
+          "valor": 0.28545902935261036,
+          "ep": 0.013582661708472048,
+          "ic95": [
+            0.2597582068194392,
+            0.3134163723232144
+          ]
+        },
+        "menor_quasi": -0.003972281571166397,
+        "referencia": {
+          "antes_leitura": 0.9223681600000025,
+          "observado": 0.6416808056246431
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.852,
+          "ep": 0.011229247525992114
+        },
+        "ajustado": {
+          "valor": 0.9829594155634931,
+          "ep": 0.018271990943387165,
+          "ic95": [
+            0.9480368592196531,
+            1.0198921416097722
+          ]
+        },
+        "ganho": {
+          "valor": 0.1309594155634931,
+          "ep": 0.012861701133770718,
+          "ic95": [
+            0.10712015702207385,
+            0.15856144740616607
+          ]
+        },
+        "menor_quasi": -0.004291909218668671,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.813,
+          "ep": 0.012330085157856779
+        },
+        "ajustado": {
+          "valor": 1.0260855834087754,
+          "ep": 0.0235173941772615,
+          "ic95": [
+            0.9804648951766154,
+            1.073450576321206
+          ]
+        },
+        "ganho": {
+          "valor": 0.21308558340877548,
+          "ep": 0.017395926335202778,
+          "ic95": [
+            0.1805507620285883,
+            0.24961918323929194
+          ]
+        },
+        "menor_quasi": -0.01561175686645375,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.854,
+          "ep": 0.011166198995181844
+        },
+        "ajustado": {
+          "valor": 0.9854373029010483,
+          "ep": 0.018421304717092222,
+          "ic95": [
+            0.9502765422627223,
+            1.022554695436555
+          ]
+        },
+        "ganho": {
+          "valor": 0.13143730290104827,
+          "ep": 0.01293379464918327,
+          "ic95": [
+            0.10797452560241792,
+            0.15896225200763825
+          ]
+        },
+        "menor_quasi": -0.004850818218908022,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.819,
+          "ep": 0.012175343937647102
+        },
+        "ajustado": {
+          "valor": 1.0236789492306857,
+          "ep": 0.022653006109435308,
+          "ic95": [
+            0.9800718341190064,
+            1.06988186669708
+          ]
+        },
+        "ganho": {
+          "valor": 0.20467894923068575,
+          "ep": 0.016976063325599623,
+          "ic95": [
+            0.1733782845561312,
+            0.2396923783533561
+          ]
+        },
+        "menor_quasi": -0.011003509611135893,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.1215512048482138,
+          "ep": 0.02360935901450906,
+          "ic95": [
+            0.07584885913250342,
+            0.16654692261412773
+          ]
+        },
+        "bruto": {
+          "valor": 0.09699999999999998,
+          "ep": 0.019098036548294693
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.1344709640541255,
+          "ep": 0.051524175560717686,
+          "ic95": [
+            0.03199648603746297,
+            0.2358634814168104
+          ]
+        },
+        "bruto": {
+          "valor": 0.09399999999999997,
+          "ep": 0.03581569488366797
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura_e_portas",
+      "maior_desvio_bruto_em_ep": 0.9221752916483594,
+      "maior_desvio_ajustado_em_ep": 1.3577171770043586,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_e_portas_bloco_02": {
+    "sessao": "leitura_e_portas_bloco_02",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.5006150396836164,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.706,
+          "ep": 0.014407081592050489
+        },
+        "ajustado": {
+          "valor": 0.836659007778159,
+          "ep": 0.01961927866769588,
+          "ic95": [
+            0.7977459006039374,
+            0.8744694045128318
+          ]
+        },
+        "ganho": {
+          "valor": 0.1306590077781591,
+          "ep": 0.009148586559371638,
+          "ic95": [
+            0.11339771006675908,
+            0.14893417405759674
+          ]
+        },
+        "menor_quasi": -0.0030442648582700836,
+        "referencia": {
+          "antes_leitura": 0.840886709832467,
+          "observado": 0.7065243876574241
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.514,
+          "ep": 0.027125707364048592
+        },
+        "ajustado": {
+          "valor": 0.7532795922774589,
+          "ep": 0.03944329005811295,
+          "ic95": [
+            0.6780393181798152,
+            0.8298291251017027
+          ]
+        },
+        "ganho": {
+          "valor": 0.23927959227745887,
+          "ep": 0.014460676648640921,
+          "ic95": [
+            0.21176229684285183,
+            0.2680599585940611
+          ]
+        },
+        "menor_quasi": -0.0012314388405510136,
+        "referencia": {
+          "antes_leitura": 0.7690223892601064,
+          "observado": 0.5349999364395532
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.784,
+          "ep": 0.013013224043256921
+        },
+        "ajustado": {
+          "valor": 0.9314364942462698,
+          "ep": 0.018363817540215353,
+          "ic95": [
+            0.896386138853214,
+            0.9678478045655885
+          ]
+        },
+        "ganho": {
+          "valor": 0.1474364942462698,
+          "ep": 0.009924876883964994,
+          "ic95": [
+            0.12829748014664533,
+            0.1675516923391933
+          ]
+        },
+        "menor_quasi": -0.005291770985712855,
+        "referencia": {
+          "antes_leitura": 0.9462610599999999,
+          "observado": 0.7924237061628725
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.654,
+          "ep": 0.023922458067681927
+        },
+        "ajustado": {
+          "valor": 0.9617072532439093,
+          "ep": 0.035626119263603005,
+          "ic95": [
+            0.8915753172361118,
+            1.0300115422222347
+          ]
+        },
+        "ganho": {
+          "valor": 0.30770725324390935,
+          "ep": 0.013848062279998182,
+          "ic95": [
+            0.2816073414526642,
+            0.3347151875428751
+          ]
+        },
+        "menor_quasi": -0.003811971474488252,
+        "referencia": {
+          "antes_leitura": 0.9223681600000025,
+          "observado": 0.6416808056246431
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.842,
+          "ep": 0.011534123287012326
+        },
+        "ajustado": {
+          "valor": 0.9838289485693945,
+          "ep": 0.019561658475684064,
+          "ic95": [
+            0.9468277431275377,
+            1.0227846771192155
+          ]
+        },
+        "ganho": {
+          "valor": 0.14182894856939454,
+          "ep": 0.01372726128363533,
+          "ic95": [
+            0.115695342852066,
+            0.1694473335861023
+          ]
+        },
+        "menor_quasi": -0.005855778079509852,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.841,
+          "ep": 0.011563693181678596
+        },
+        "ajustado": {
+          "valor": 1.0207894250771727,
+          "ep": 0.021262445074837603,
+          "ic95": [
+            0.9800366376197227,
+            1.063678762138054
+          ]
+        },
+        "ganho": {
+          "valor": 0.17978942507717277,
+          "ep": 0.01573793962848251,
+          "ic95": [
+            0.15037681916506196,
+            0.21198623814532846
+          ]
+        },
+        "menor_quasi": -0.02211514078957076,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.85,
+          "ep": 0.011291589790636216
+        },
+        "ajustado": {
+          "valor": 0.993767409822355,
+          "ep": 0.019219271993990907,
+          "ic95": [
+            0.9572030157281187,
+            1.0321613393144067
+          ]
+        },
+        "ganho": {
+          "valor": 0.14376740982235503,
+          "ep": 0.013842841514617604,
+          "ic95": [
+            0.11767285919921605,
+            0.17225151178192405
+          ]
+        },
+        "menor_quasi": -0.011045955266236883,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.804,
+          "ep": 0.01255324659201754
+        },
+        "ajustado": {
+          "valor": 1.0119069943878267,
+          "ep": 0.02397878002431629,
+          "ic95": [
+            0.9656470552076936,
+            1.0598602880048993
+          ]
+        },
+        "ganho": {
+          "valor": 0.20790699438782667,
+          "ep": 0.01749498323461774,
+          "ic95": [
+            0.17408190201489415,
+            0.2428440896749119
+          ]
+        },
+        "menor_quasi": -0.015763213974768292,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.0947774864681108,
+          "ep": 0.02377839189327829,
+          "ic95": [
+            0.05006172148705257,
+            0.1417379729497335
+          ]
+        },
+        "bruto": {
+          "valor": 0.07800000000000007,
+          "ep": 0.019414118573862684
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.20842766096645038,
+          "ep": 0.0517878396941713,
+          "ic95": [
+            0.10644884861709235,
+            0.3089871717199348
+          ]
+        },
+        "bruto": {
+          "valor": 0.14,
+          "ep": 0.036167499222368144
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura_e_portas",
+      "maior_desvio_bruto_em_ep": 2.254438230971451,
+      "maior_desvio_ajustado_em_ep": 1.1042205566323646,
+      "limite": 6,
+      "aprovado": true
+    }
+  },
+  "leitura_e_portas_bloco_03": {
+    "sessao": "leitura_e_portas_bloco_03",
+    "experimento": "05_validacao_simulada",
+    "computador": "simulador",
+    "tipo": "simulador",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.4798623421691088,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 17,
+        "bruto": {
+          "valor": 0.6950000000000001,
+          "ep": 0.014559361249725207
+        },
+        "ajustado": {
+          "valor": 0.8295430020416128,
+          "ep": 0.01993684871172795,
+          "ic95": [
+            0.7902393028120214,
+            0.8681809507542039
+          ]
+        },
+        "ganho": {
+          "valor": 0.13454300204161274,
+          "ep": 0.009187204428411167,
+          "ic95": [
+            0.11737920934430844,
+            0.1531325830702438
+          ]
+        },
+        "menor_quasi": -0.0024533717084296337,
+        "referencia": {
+          "antes_leitura": 0.840886709832467,
+          "observado": 0.7065243876574241
+        }
+      },
+      "ghz_5q_original_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 20,
+        "bruto": {
+          "valor": 0.506,
+          "ep": 0.027275703473971118
+        },
+        "ajustado": {
+          "valor": 0.720945562359584,
+          "ep": 0.0393872087846022,
+          "ic95": [
+            0.6436636663651082,
+            0.7987859094955285
+          ]
+        },
+        "ganho": {
+          "valor": 0.21494556235958395,
+          "ep": 0.014108251159706145,
+          "ic95": [
+            0.18853498903262011,
+            0.24365162568680024
+          ]
+        },
+        "menor_quasi": 0.004507721060526798,
+        "referencia": {
+          "antes_leitura": 0.7690223892601064,
+          "observado": 0.5349999364395532
+        }
+      },
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.792,
+          "ep": 0.012834952278836098
+        },
+        "ajustado": {
+          "valor": 0.947889834552992,
+          "ep": 0.01869967633731744,
+          "ic95": [
+            0.9109285249897039,
+            0.9843972925050143
+          ]
+        },
+        "ganho": {
+          "valor": 0.155889834552992,
+          "ep": 0.010212335899939008,
+          "ic95": [
+            0.1369026931770205,
+            0.1765331243461073
+          ]
+        },
+        "menor_quasi": -0.0024658170514747987,
+        "referencia": {
+          "antes_leitura": 0.9462610599999999,
+          "observado": 0.7924237061628725
+        }
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 10,
+        "bruto": {
+          "valor": 0.692,
+          "ep": 0.022828403360725866
+        },
+        "ajustado": {
+          "valor": 0.9813256782977191,
+          "ep": 0.033904482211734005,
+          "ic95": [
+            0.9166847021143946,
+            1.0485242563123536
+          ]
+        },
+        "ganho": {
+          "valor": 0.28932567829771916,
+          "ep": 0.012949584295571423,
+          "ic95": [
+            0.26534058279488737,
+            0.31552092610272114
+          ]
+        },
+        "menor_quasi": -0.008937907161029993,
+        "referencia": {
+          "antes_leitura": 0.9223681600000025,
+          "observado": 0.6416808056246431
+        }
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.847,
+          "ep": 0.011383804285035824
+        },
+        "ajustado": {
+          "valor": 0.9971729913715657,
+          "ep": 0.019571526497724104,
+          "ic95": [
+            0.9594763363882636,
+            1.0366966153335861
+          ]
+        },
+        "ganho": {
+          "valor": 0.1501729913715657,
+          "ep": 0.014000198559132152,
+          "ic95": [
+            0.12359429913553831,
+            0.1799299460976259
+          ]
+        },
+        "menor_quasi": -0.012012296552692023,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8582777279999998
+        }
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.801,
+          "ep": 0.012625331678811452
+        },
+        "ajustado": {
+          "valor": 0.9769645708008112,
+          "ep": 0.021874961207454417,
+          "ic95": [
+            0.9357304045379263,
+            1.0211469764641816
+          ]
+        },
+        "ganho": {
+          "valor": 0.17596457080081118,
+          "ep": 0.015326311714877902,
+          "ic95": [
+            0.14765434694786797,
+            0.2079023850475275
+          ]
+        },
+        "menor_quasi": -0.0037159482424558056,
+        "referencia": {
+          "antes_leitura": 1.0,
+          "observado": 0.8149303679999998
+        }
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.875,
+          "ep": 0.010458250331675944
+        },
+        "ajustado": {
+          "valor": 1.0312419222999465,
+          "ep": 0.01916169145728562,
+          "ic95": [
+            0.9949339111806593,
+            1.06981883070297
+          ]
+        },
+        "ganho": {
+          "valor": 0.1562419222999465,
+          "ep": 0.01446552412587304,
+          "ic95": [
+            0.12907853967667665,
+            0.18646092566704056
+          ]
+        },
+        "menor_quasi": -0.02761690375981325,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8582777280000036
+        }
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.823,
+          "ep": 0.012069424178476786
+        },
+        "ajustado": {
+          "valor": 1.006536531969529,
+          "ep": 0.02151303056651528,
+          "ic95": [
+            0.9636988829120757,
+            1.0487170564246817
+          ]
+        },
+        "ganho": {
+          "valor": 0.18353653196952902,
+          "ep": 0.015824515013901714,
+          "ic95": [
+            0.1528369817148371,
+            0.2153859623983534
+          ]
+        },
+        "menor_quasi": -0.020926028462758463,
+        "referencia": {
+          "antes_leitura": 1.0000000000000044,
+          "observado": 0.8149303680000035
+        }
+      }
+    },
+    "contrastes": [
+      {
+        "n": 5,
+        "base": "Z",
+        "fator": 1,
+        "indicador": "PZ",
+        "ajustado": {
+          "valor": 0.11834683251137923,
+          "ep": 0.024166554909680518,
+          "ic95": [
+            0.07150725812998249,
+            0.16636183018602305
+          ]
+        },
+        "bruto": {
+          "valor": 0.09699999999999998,
+          "ep": 0.019409044283529263
+        }
+      },
+      {
+        "n": 5,
+        "base": "X",
+        "fator": 1,
+        "indicador": "CX",
+        "ajustado": {
+          "valor": 0.26038011593813515,
+          "ep": 0.051134987149073004,
+          "ic95": [
+            0.1580078714564908,
+            0.36096427432437084
+          ]
+        },
+        "bruto": {
+          "valor": 0.18599999999999994,
+          "ep": 0.03556824426366868
+        }
+      }
+    ],
+    "zne": [],
+    "validacao": {
+      "cenario": "leitura_e_portas",
+      "maior_desvio_bruto_em_ep": 2.2042362569222114,
+      "maior_desvio_ajustado_em_ep": 1.7389299128512261,
+      "limite": 6,
+      "aprovado": true
+    }
+  }
+}

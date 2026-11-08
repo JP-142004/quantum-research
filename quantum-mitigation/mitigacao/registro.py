@@ -84,6 +84,12 @@ def ler_sessao(pasta):
     return ficha, contagens
 
 
+def ler_circuitos(pasta):
+    """Os circuitos compilados da sessão, na ordem do campo `ordem` da ficha."""
+    with (Path(pasta) / 'circuitos.qpy').open('rb') as arquivo:
+        return qpy.load(arquivo)
+
+
 def listar_sessoes(pasta_experimento):
     dados = Path(pasta_experimento) / 'dados'
     return sorted(p for p in dados.iterdir() if (p / 'ficha.json').exists()) if dados.exists() else []

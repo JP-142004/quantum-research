@@ -9,6 +9,7 @@ pergunta = 'A extrapolação a ruído zero reduz o erro das portas?'
 execucao = 'simulador'
 computador = 'simulador'
 shots = 1000
+tecnicas = ['leitura', 'zne']   # o que a análise aplica
 
 Q5 = [0, 1, 2, 3, 4]
 

@@ -10,6 +10,7 @@ execucao = 'ibm'
 computador = 'ibm_fez'
 shots = 1000
 repeticoes = 3   # sessões, em dias diferentes
+tecnicas = ['leitura']   # o que a análise aplica
 
 Q5 = [0, 1, 2, 3, 4]
 

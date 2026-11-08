@@ -3,7 +3,7 @@ import platform
 from datetime import date
 
 from mitigacao import registro
-from mitigacao.execucao import ibm, simulador
+from mitigacao.execucao import ibm, info_compilado, simulador
 from mitigacao.montagem import montar, verificar_ideal
 from mitigacao.topologia import vizinhos_linha
 
@@ -46,6 +46,7 @@ def enviar_e_gravar(pasta, pasta_exp, receita, montados, computador, semente, op
                  tipo=receita.execucao, data=f'{date.today():%Y-%m-%d}', enviado_utc=registro.agora(),
                  job_id=job['job_id'], shots=shots, semente=semente, opcoes=job['opcoes'],
                  versoes=registro.versoes(), python=platform.python_version(), ordem=job['ordem'],
+                 tecnicas=list(getattr(receita, 'tecnicas', [])),
                  itens=[dict(nome=m['nome'], item=m['item'], qubits_fisicos=m['qubits_fisicos'],
                              arestas=m['arestas'], roteamento=m['roteamento'], compilado=job['info'][m['nome']])
                         for m in montados])
@@ -53,3 +54,21 @@ def enviar_e_gravar(pasta, pasta_exp, receita, montados, computador, semente, op
     if modulo.INSTANTANEO:
         registro.registrar_coleta(pasta, modulo.coletar(job), shots)
     return job
+
+
+def resumir(montados, shots, sessoes, compilados=None):
+    cabecalho = f'{"item":44} {"n":>3}  {"qubits físicos":28} {"ideal":6}'
+    print(cabecalho + ('  portas2q prof' if compilados else ''))
+    for m in montados:
+        ok = verificar_ideal(m)
+        estado = '-' if ok is None else 'ok' if ok else 'FALHOU'
+        qubits = str(m['qubits_fisicos']) if len(m['qubits_fisicos']) <= 6 else f'{len(m["qubits_fisicos"])} qubits'
+        linha = f'{m["nome"]:44} {m["item"]["n"]:>3}  {qubits:28} {estado:6}'
+        if compilados:
+            info = info_compilado(compilados[m['nome']])
+            linha += f'  {info["portas_2q"]:>8} {info["profundidade"]:>4}'
+        print(linha)
+    medidas = len(montados) * shots
+    print(f'\n{len(montados)} circuitos x {shots} shots = {medidas:,} medidas por sessão'.replace(',', '.'))
+    print(f'{sessoes} sessões previstas = {medidas * sessoes:,} medidas no total'.replace(',', '.'))
+
