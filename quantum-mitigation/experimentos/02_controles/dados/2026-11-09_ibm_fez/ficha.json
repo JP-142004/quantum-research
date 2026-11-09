@@ -1,0 +1,516 @@
+{
+  "experimento": "02_controles",
+  "pergunta": "O computador acerta o que é fácil?",
+  "computador": "ibm_fez",
+  "tipo": "ibm",
+  "data": "2026-11-09",
+  "enviado_utc": "2026-11-09T18:41:45.420991+00:00",
+  "job_id": "dbp17q8ou4as73csru2g",
+  "shots": 1000,
+  "semente": 42,
+  "opcoes": {
+    "dd": false,
+    "twirling_gates": false,
+    "twirling_measure": false,
+    "init_qubits": true,
+    "limite_segundos": null
+  },
+  "versoes": {
+    "numpy": "2.5.4",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.17.2",
+    "qiskit-ibm-runtime": "0.51.0"
+  },
+  "python": "3.12.10",
+  "ordem": [
+    "simples_5q_00000_Z_q0-1-2-3-4",
+    "simples_1q_1_Z_q2",
+    "simples_1q_0_Z_q2",
+    "simples_1q_1_Z_q3",
+    "simples_1q_1_Z_q4",
+    "simples_1q_1_Z_q0",
+    "simples_1q_1_Z_q1",
+    "simples_1q_0_Z_q0",
+    "simples_1q_0_Z_q1",
+    "simples_1q_0_Z_q4",
+    "simples_5q_11111_Z_q0-1-2-3-4",
+    "simples_1q_0_Z_q3"
+  ],
+  "tecnicas": [],
+  "itens": [
+    {
+      "nome": "simples_5q_00000_Z_q0-1-2-3-4",
+      "item": {
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "measure": 5,
+          "barrier": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_5q_11111_Z_q0-1-2-3-4",
+      "item": {
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 5,
+          "measure": 5,
+          "barrier": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_0_Z_q0",
+      "item": {
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          0
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        0
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_1_Z_q0",
+      "item": {
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          0
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        0
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 1,
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_0_Z_q1",
+      "item": {
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          1
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        1
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_1_Z_q1",
+      "item": {
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          1
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        1
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 1,
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_0_Z_q2",
+      "item": {
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          2
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        2
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_1_Z_q2",
+      "item": {
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          2
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        2
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 1,
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            2,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_0_Z_q3",
+      "item": {
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          3
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        3
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            3,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_1_Z_q3",
+      "item": {
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          3
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        3
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 1,
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            3,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_0_Z_q4",
+      "item": {
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          4
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        4
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 1,
+        "operacoes": {
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "simples_1q_1_Z_q4",
+      "item": {
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "qubits": [
+          4
+        ],
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "simples",
+        "n": 1
+      },
+      "qubits_fisicos": [
+        4
+      ],
+      "arestas": null,
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 2,
+        "operacoes": {
+          "x": 1,
+          "barrier": 1,
+          "measure": 1
+        },
+        "portas_2q": 0,
+        "mapa_medidas": [
+          [
+            4,
+            0
+          ]
+        ]
+      }
+    }
+  ]
+}
