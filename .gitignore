@@ -1,4 +1,19 @@
-﻿venv/
-*.token
+# ambiente virtual
+venv/
+.venv/
+
+# cache do Python e do Jupyter
 __pycache__/
-*.ipynb_checkpoints/
+*.pyc
+.ipynb_checkpoints/
+
+# credenciais (a conta IBM fica em ~/.qiskit, fora do repositorio)
+*.token
+.env
+*.env
+qiskit-ibm.json
+
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
