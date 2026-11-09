@@ -1,0 +1,1662 @@
+{
+  "experimento": "03_construcao",
+  "pergunta": "Montar o GHZ com menos passos melhora o resultado?",
+  "computador": "ibm_fez",
+  "tipo": "ibm",
+  "data": "2026-11-08",
+  "enviado_utc": "2026-11-08T20:11:41.147592+00:00",
+  "job_id": "dbodevgqtr0c738cmu60",
+  "shots": 1000,
+  "semente": 42,
+  "opcoes": {
+    "dd": false,
+    "twirling_gates": false,
+    "twirling_measure": false,
+    "init_qubits": true,
+    "limite_segundos": null
+  },
+  "versoes": {
+    "numpy": "2.5.4",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.17.2",
+    "qiskit-ibm-runtime": "0.51.0"
+  },
+  "python": "3.12.10",
+  "ordem": [
+    "ghz_5q_original_Z",
+    "ghz_10q_conectado_X",
+    "ghz_10q_conectado_Z",
+    "ghz_20q_original_X",
+    "ghz_20q_conectado_X",
+    "ghz_5q_conectado_X",
+    "ghz_10q_original_X",
+    "ghz_5q_conectado_Z",
+    "ghz_10q_original_Z",
+    "ghz_20q_conectado_Z",
+    "ghz_5q_original_X",
+    "ghz_20q_original_Z"
+  ],
+  "tecnicas": [],
+  "itens": [
+    {
+      "nome": "ghz_5q_original_Z",
+      "item": {
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 35,
+        "operacoes": {
+          "sx": 24,
+          "rz": 18,
+          "cz": 13,
+          "measure": 5,
+          "barrier": 1
+        },
+        "portas_2q": 13,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_5q_original_X",
+      "item": {
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 38,
+        "operacoes": {
+          "sx": 29,
+          "rz": 28,
+          "cz": 13,
+          "measure": 5,
+          "barrier": 1
+        },
+        "portas_2q": 13,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_5q_conectado_Z",
+      "item": {
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 13,
+        "operacoes": {
+          "rz": 18,
+          "sx": 9,
+          "measure": 5,
+          "cz": 4,
+          "barrier": 1
+        },
+        "portas_2q": 4,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_5q_conectado_X",
+      "item": {
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 5
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 16,
+        "operacoes": {
+          "rz": 28,
+          "sx": 14,
+          "measure": 5,
+          "cz": 4,
+          "barrier": 1
+        },
+        "portas_2q": 4,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_10q_original_Z",
+      "item": {
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 10
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        22,
+        23
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 81,
+        "operacoes": {
+          "sx": 61,
+          "rz": 38,
+          "cz": 33,
+          "measure": 10,
+          "barrier": 1
+        },
+        "portas_2q": 33,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            16,
+            9
+          ],
+          [
+            22,
+            8
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_10q_original_X",
+      "item": {
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 10
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        22,
+        23
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 84,
+        "operacoes": {
+          "sx": 71,
+          "rz": 58,
+          "cz": 33,
+          "measure": 10,
+          "barrier": 1
+        },
+        "portas_2q": 33,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            16,
+            9
+          ],
+          [
+            22,
+            8
+          ],
+          [
+            23,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_10q_conectado_Z",
+      "item": {
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 10
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        22,
+        23
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 22,
+        "operacoes": {
+          "rz": 38,
+          "sx": 19,
+          "measure": 10,
+          "cz": 9,
+          "barrier": 1
+        },
+        "portas_2q": 9,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            16,
+            7
+          ],
+          [
+            22,
+            8
+          ],
+          [
+            23,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_10q_conectado_X",
+      "item": {
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 10
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        16,
+        22,
+        23
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          9,
+          8
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 25,
+        "operacoes": {
+          "rz": 58,
+          "sx": 29,
+          "measure": 10,
+          "cz": 9,
+          "barrier": 1
+        },
+        "portas_2q": 9,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            16,
+            7
+          ],
+          [
+            22,
+            8
+          ],
+          [
+            23,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_20q_original_Z",
+      "item": {
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 20
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        36,
+        37
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 181,
+        "operacoes": {
+          "sx": 181,
+          "cz": 97,
+          "rz": 78,
+          "measure": 20,
+          "barrier": 1
+        },
+        "portas_2q": 97,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            16,
+            14
+          ],
+          [
+            17,
+            8
+          ],
+          [
+            20,
+            11
+          ],
+          [
+            21,
+            13
+          ],
+          [
+            22,
+            15
+          ],
+          [
+            23,
+            18
+          ],
+          [
+            24,
+            17
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            26,
+            16
+          ],
+          [
+            36,
+            12
+          ],
+          [
+            37,
+            19
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_20q_original_X",
+      "item": {
+        "variante": "original",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 20
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        36,
+        37
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "roteamento": null,
+      "compilado": {
+        "profundidade": 184,
+        "operacoes": {
+          "sx": 201,
+          "rz": 118,
+          "cz": 97,
+          "measure": 20,
+          "barrier": 1
+        },
+        "portas_2q": 97,
+        "mapa_medidas": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            9
+          ],
+          [
+            7,
+            10
+          ],
+          [
+            8,
+            7
+          ],
+          [
+            16,
+            14
+          ],
+          [
+            17,
+            8
+          ],
+          [
+            20,
+            11
+          ],
+          [
+            21,
+            13
+          ],
+          [
+            22,
+            15
+          ],
+          [
+            23,
+            18
+          ],
+          [
+            24,
+            17
+          ],
+          [
+            25,
+            0
+          ],
+          [
+            26,
+            16
+          ],
+          [
+            36,
+            12
+          ],
+          [
+            37,
+            19
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_20q_conectado_Z",
+      "item": {
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 20
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        36,
+        37
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 32,
+        "operacoes": {
+          "rz": 78,
+          "sx": 39,
+          "measure": 20,
+          "cz": 19,
+          "barrier": 1
+        },
+        "portas_2q": 19,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            9
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            20,
+            11
+          ],
+          [
+            21,
+            12
+          ],
+          [
+            22,
+            13
+          ],
+          [
+            23,
+            14
+          ],
+          [
+            24,
+            15
+          ],
+          [
+            25,
+            16
+          ],
+          [
+            26,
+            17
+          ],
+          [
+            36,
+            18
+          ],
+          [
+            37,
+            19
+          ]
+        ]
+      }
+    },
+    {
+      "nome": "ghz_20q_conectado_X",
+      "item": {
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "qubits": null,
+        "raiz": null,
+        "regiao": null,
+        "rotulo": null,
+        "circuito": "ghz",
+        "n": 20
+      },
+      "qubits_fisicos": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        16,
+        17,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        36,
+        37
+      ],
+      "arestas": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          18
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          19
+        ]
+      ],
+      "roteamento": "none",
+      "compilado": {
+        "profundidade": 35,
+        "operacoes": {
+          "rz": 118,
+          "sx": 59,
+          "measure": 20,
+          "cz": 19,
+          "barrier": 1
+        },
+        "portas_2q": 19,
+        "mapa_medidas": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            7,
+            7
+          ],
+          [
+            8,
+            8
+          ],
+          [
+            16,
+            9
+          ],
+          [
+            17,
+            10
+          ],
+          [
+            20,
+            11
+          ],
+          [
+            21,
+            12
+          ],
+          [
+            22,
+            13
+          ],
+          [
+            23,
+            14
+          ],
+          [
+            24,
+            15
+          ],
+          [
+            25,
+            16
+          ],
+          [
+            26,
+            17
+          ],
+          [
+            36,
+            18
+          ],
+          [
+            37,
+            19
+          ]
+        ]
+      }
+    }
+  ]
+}

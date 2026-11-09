@@ -1,0 +1,244 @@
+{
+  "2026-11-08_ibm_fez": {
+    "sessao": "2026-11-08_ibm_fez",
+    "experimento": "04_calibracao_leitura",
+    "computador": "ibm_fez",
+    "tipo": "ibm",
+    "data": "2026-11-08",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.2188841968117674,
+    "itens": {
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 13,
+        "bruto": {
+          "valor": 0.867,
+          "ep": 0.010738295954200556
+        },
+        "ajustado": {
+          "valor": 0.9525977025090085,
+          "ep": 0.01383521865158816,
+          "ic95": [
+            0.9255412644596805,
+            0.9793944307214453
+          ]
+        },
+        "ganho": {
+          "valor": 0.08559770250900856,
+          "ep": 0.007095880786407681,
+          "ic95": [
+            0.07223077772462688,
+            0.09991820008838093
+          ]
+        },
+        "menor_quasi": -0.005027648102731186,
+        "referencia": null
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 16,
+        "bruto": {
+          "valor": 0.8,
+          "ep": 0.018973665961010272
+        },
+        "ajustado": {
+          "valor": 0.9620620751647561,
+          "ep": 0.023461691283924176,
+          "ic95": [
+            0.9164783239813074,
+            1.0081731032161414
+          ]
+        },
+        "ganho": {
+          "valor": 0.16206207516475601,
+          "ep": 0.006581025816806794,
+          "ic95": [
+            0.14948721936448048,
+            0.17519567220599272
+          ]
+        },
+        "menor_quasi": -0.002667718315498652,
+        "referencia": null
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.931,
+          "ep": 0.008014923580421711
+        },
+        "ajustado": {
+          "valor": 1.004387180283419,
+          "ep": 0.013011772336355708,
+          "ic95": [
+            0.9796638333789394,
+            1.030664974909726
+          ]
+        },
+        "ganho": {
+          "valor": 0.07338718028341895,
+          "ep": 0.009213337273297205,
+          "ic95": [
+            0.056601536732490965,
+            0.09295389311671558
+          ]
+        },
+        "menor_quasi": -0.004385531245468641,
+        "referencia": null
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.894,
+          "ep": 0.009734680272099335
+        },
+        "ajustado": {
+          "valor": 0.9995969392578188,
+          "ep": 0.0161226581806031,
+          "ic95": [
+            0.9686433065099803,
+            1.0316017009439853
+          ]
+        },
+        "ganho": {
+          "valor": 0.10559693925781877,
+          "ep": 0.011427101000997699,
+          "ic95": [
+            0.08448291947089433,
+            0.128765388555115
+          ]
+        },
+        "menor_quasi": -0.005342493248408746,
+        "referencia": null
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.937,
+          "ep": 0.007683163410991592
+        },
+        "ajustado": {
+          "valor": 1.0111441039838303,
+          "ep": 0.012611173753022944,
+          "ic95": [
+            0.9868467905633448,
+            1.0364687127552035
+          ]
+        },
+        "ganho": {
+          "valor": 0.0741441039838302,
+          "ep": 0.009259975677371005,
+          "ic95": [
+            0.0571678018372998,
+            0.093479010806431
+          ]
+        },
+        "menor_quasi": -0.00705291698367416,
+        "referencia": null
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.909,
+          "ep": 0.009094998625618366
+        },
+        "ajustado": {
+          "valor": 0.993254486335087,
+          "ep": 0.014353413874338047,
+          "ic95": [
+            0.9656313332822601,
+            1.0225963179691595
+          ]
+        },
+        "ganho": {
+          "valor": 0.08425448633508692,
+          "ep": 0.00994346986020097,
+          "ic95": [
+            0.06595121373957506,
+            0.10489947158643037
+          ]
+        },
+        "menor_quasi": -0.0033011339714186763,
+        "referencia": null
+      }
+    },
+    "contrastes": [],
+    "zne": []
+  }
+}
