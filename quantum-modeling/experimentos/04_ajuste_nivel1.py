@@ -5,9 +5,14 @@ distancia de Hellinger entre simulacao local e hardware real.
 
 Treino: GHZ-5, 10, 15 (rapidos de simular, usados para o ajuste em si)
 Validacao: GHZ-20 a 50 (nunca vistos pelo otimizador, provam generalizacao)
+
+Usa como linha de base a execucao mais recente de 02_nivel0.py.
+Pendente (PR 2): leitura assimetrica, calibracao do dia do job, seed fixa,
+remover rz do ruido, opcao --rapido.
 """
 
 import os
+import sys
 import json
 import numpy as np
 from scipy.optimize import differential_evolution
@@ -16,18 +21,14 @@ from qiskit_aer import AerSimulator
 from qiskit_aer.noise import NoiseModel, depolarizing_error, thermal_relaxation_error, ReadoutError
 from qiskit.quantum_info import hellinger_distance
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-CAMINHO_BASELINE = os.path.join(BASE_DIR, "..", "resultados", "resultados_ghz_nivel0.json")
-CAMINHO_SAIDA = os.path.join(BASE_DIR, "..", "resultados", "resultados_ghz_ajustado.json")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from nucleo import registro
+from nucleo.simulacao import escolher_metodo
+
+CAMINHO_BASELINE = os.path.join(registro.ultima_pasta_execucao("nivel0"), "resultados.json")
 
 TREINO = [5, 10, 15]
 VALIDACAO = [20, 25, 30, 35, 40, 45, 50]
-
-
-def escolher_metodo(n_qubits):
-    if n_qubits <= 20:
-        return "statevector"
-    return "matrix_product_state"
 
 
 def carregar_baseline():
@@ -197,7 +198,7 @@ def main():
         "calibracao_base": calib,
         "comparacao": comparacao,
     }
-    os.makedirs(os.path.dirname(CAMINHO_SAIDA), exist_ok=True)
+    CAMINHO_SAIDA = os.path.join(registro.nova_pasta_execucao("ajuste_nivel1"), "resultados.json")
     with open(CAMINHO_SAIDA, "w") as f:
         json.dump(saida, f, indent=2)
 
