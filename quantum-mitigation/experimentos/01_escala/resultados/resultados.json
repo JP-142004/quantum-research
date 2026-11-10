@@ -426,5 +426,219 @@
     },
     "contrastes": [],
     "zne": []
+  },
+  "2026-11-10_ibm_fez": {
+    "sessao": "2026-11-10_ibm_fez",
+    "experimento": "01_escala",
+    "computador": "ibm_fez",
+    "tipo": "ibm",
+    "data": "2026-11-10",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": null,
+    "itens": {
+      "ghz_5q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 13,
+        "profundidade": 35,
+        "bruto": {
+          "valor": 0.827,
+          "ep": 0.011961229033840963
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_10q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 10,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 33,
+        "profundidade": 81,
+        "bruto": {
+          "valor": 0.646,
+          "ep": 0.015122301412152848
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_15q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 15,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 59,
+        "profundidade": 139,
+        "bruto": {
+          "valor": 0.501,
+          "ep": 0.015811356678033673
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_20q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 20,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 97,
+        "profundidade": 181,
+        "bruto": {
+          "valor": 0.276,
+          "ep": 0.014135911714495106
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_25q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 25,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 132,
+        "profundidade": 222,
+        "bruto": {
+          "valor": 0.11599999999999999,
+          "ep": 0.010126401137620413
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_30q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 30,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 158,
+        "profundidade": 294,
+        "bruto": {
+          "valor": 0.029,
+          "ep": 0.005306505441436953
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_35q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 35,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 190,
+        "profundidade": 355,
+        "bruto": {
+          "valor": 0.016,
+          "ep": 0.003967870965643918
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_40q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 40,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 237,
+        "profundidade": 409,
+        "bruto": {
+          "valor": 0.007,
+          "ep": 0.0026364749192814255
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_45q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 45,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 269,
+        "profundidade": 453,
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "ghz_50q_original_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 50,
+        "variante": "original",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 304,
+        "profundidade": 521,
+        "bruto": {
+          "valor": 0.0,
+          "ep": 0.0
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      }
+    },
+    "contrastes": [],
+    "zne": []
   }
 }

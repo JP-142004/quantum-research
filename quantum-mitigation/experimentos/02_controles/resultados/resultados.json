@@ -570,5 +570,291 @@
     },
     "contrastes": [],
     "zne": []
+  },
+  "2026-11-10_ibm_fez": {
+    "sessao": "2026-11-10_ibm_fez",
+    "experimento": "02_controles",
+    "computador": "ibm_fez",
+    "tipo": "ibm",
+    "data": "2026-11-10",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": null,
+    "itens": {
+      "simples_5q_00000_Z_q0-1-2-3-4": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.936,
+          "ep": 0.007739767438366605
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.882,
+          "ep": 0.01020176455325254
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_0_Z_q0": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          0
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.99,
+          "ep": 0.003146426544510456
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_1_Z_q0": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          0
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.97,
+          "ep": 0.0053944415837044735
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_0_Z_q1": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          1
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.985,
+          "ep": 0.0038438262187565153
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_1_Z_q1": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          1
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.974,
+          "ep": 0.005032295698784007
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_0_Z_q2": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          2
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.998,
+          "ep": 0.0014127986409959495
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_1_Z_q2": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          2
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.99,
+          "ep": 0.003146426544510456
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_0_Z_q3": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          3
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.97,
+          "ep": 0.0053944415837044735
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_1_Z_q3": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          3
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.969,
+          "ep": 0.005480784615363026
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_0_Z_q4": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "0",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.997,
+          "ep": 0.0017294507798720387
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      },
+      "simples_1q_1_Z_q4": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 1,
+        "variante": "1",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": [
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.986,
+          "ep": 0.0037153734670958734
+        },
+        "ajustado": null,
+        "ganho": null,
+        "menor_quasi": null,
+        "referencia": null
+      }
+    },
+    "contrastes": [],
+    "zne": []
   }
 }

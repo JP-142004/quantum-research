@@ -482,5 +482,247 @@
     },
     "contrastes": [],
     "zne": []
+  },
+  "2026-11-10_ibm_fez": {
+    "sessao": "2026-11-10_ibm_fez",
+    "experimento": "04_calibracao_leitura",
+    "computador": "ibm_fez",
+    "tipo": "ibm",
+    "data": "2026-11-10",
+    "shots": 1000,
+    "repeticoes_bootstrap": 5000,
+    "condicionamento": 1.2148046931539673,
+    "itens": {
+      "ghz_5q_conectado_Z": {
+        "indicador": "PZ",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 13,
+        "bruto": {
+          "valor": 0.8640000000000001,
+          "ep": 0.010839926199010762
+        },
+        "ajustado": {
+          "valor": 0.9525700377208507,
+          "ep": 0.014094204403589813,
+          "ic95": [
+            0.9250029532515803,
+            0.9803447680517041
+          ]
+        },
+        "ganho": {
+          "valor": 0.08857003772085059,
+          "ep": 0.007102977439756348,
+          "ic95": [
+            0.07513128152630151,
+            0.10289446338625143
+          ]
+        },
+        "menor_quasi": -0.011661678237639916,
+        "referencia": null
+      },
+      "ghz_5q_conectado_X": {
+        "indicador": "CX",
+        "circuito": "ghz",
+        "n": 5,
+        "variante": "conectado",
+        "base": "X",
+        "fator": 1,
+        "rotulo": null,
+        "qubits": null,
+        "portas_2q": 4,
+        "profundidade": 16,
+        "bruto": {
+          "valor": 0.812,
+          "ep": 0.018456868640156703
+        },
+        "ajustado": {
+          "valor": 0.9690575641871979,
+          "ep": 0.022697153689947822,
+          "ic95": [
+            0.9220709275033455,
+            1.0123664699647947
+          ]
+        },
+        "ganho": {
+          "valor": 0.15705756418719785,
+          "ep": 0.006450105062273607,
+          "ic95": [
+            0.14482979115401762,
+            0.17007308235659277
+          ]
+        },
+        "menor_quasi": -0.005344118686113696,
+        "referencia": null
+      },
+      "simples_5q_00000_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "00000",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 1,
+        "bruto": {
+          "valor": 0.943,
+          "ep": 0.007331507348424336
+        },
+        "ajustado": {
+          "valor": 1.0166410996903759,
+          "ep": 0.012373580094784717,
+          "ic95": [
+            0.992498746145041,
+            1.041301208005976
+          ]
+        },
+        "ganho": {
+          "valor": 0.07364109969037591,
+          "ep": 0.009312446835742562,
+          "ic95": [
+            0.056258170505247326,
+            0.09299589048992798
+          ]
+        },
+        "menor_quasi": -0.014381984954175246,
+        "referencia": null
+      },
+      "simples_5q_11111_Z_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "11111",
+        "base": "Z",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 2,
+        "bruto": {
+          "valor": 0.888,
+          "ep": 0.00997276290703835
+        },
+        "ajustado": {
+          "valor": 1.0045884932215159,
+          "ep": 0.01636323243093215,
+          "ic95": [
+            0.9726342174334126,
+            1.0366341651801894
+          ]
+        },
+        "ganho": {
+          "valor": 0.11658849322151588,
+          "ep": 0.01170966509502802,
+          "ic95": [
+            0.09452545050749418,
+            0.14005081294739818
+          ]
+        },
+        "menor_quasi": -0.009112681086356116,
+        "referencia": null
+      },
+      "simples_5q_+++++_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "+++++",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.946,
+          "ep": 0.0071473071852271785
+        },
+        "ajustado": {
+          "valor": 1.0198636071617107,
+          "ep": 0.012322903759506005,
+          "ic95": [
+            0.9967821688658974,
+            1.0443781863676371
+          ]
+        },
+        "ganho": {
+          "valor": 0.0738636071617107,
+          "ep": 0.009340443692615653,
+          "ic95": [
+            0.05624866915492934,
+            0.09337679960998299
+          ]
+        },
+        "menor_quasi": -0.013136906310761136,
+        "referencia": null
+      },
+      "simples_5q_++++-_X_q0-1-2-3-4_controle": {
+        "indicador": "sucesso",
+        "circuito": "simples",
+        "n": 5,
+        "variante": "++++-",
+        "base": "X",
+        "fator": 1,
+        "rotulo": "controle",
+        "qubits": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "portas_2q": 0,
+        "profundidade": 7,
+        "bruto": {
+          "valor": 0.923,
+          "ep": 0.008430361795320529
+        },
+        "ajustado": {
+          "valor": 1.0224359880322795,
+          "ep": 0.01453924373896747,
+          "ic95": [
+            0.9947449542031135,
+            1.0506197121330554
+          ]
+        },
+        "ganho": {
+          "valor": 0.09943598803227949,
+          "ep": 0.010930554269660381,
+          "ic95": [
+            0.0791808948085755,
+            0.12221453224914507
+          ]
+        },
+        "menor_quasi": -0.009266260385126672,
+        "referencia": null
+      }
+    },
+    "contrastes": [],
+    "zne": []
   }
 }
