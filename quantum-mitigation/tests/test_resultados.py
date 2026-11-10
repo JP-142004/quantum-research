@@ -2,6 +2,7 @@
 import contextlib
 import io
 import json
+import shutil
 import sys
 import tempfile
 import unittest
@@ -84,6 +85,25 @@ class AnalisarTest(unittest.TestCase):
             codigo = rodar.main()
         self.assertEqual(codigo, 0)
         self.assertIn('2 sessões analisadas', saida.getvalue())
+
+    def test_figuras_e_tabelas_dos_experimentos_da_ibm(self):
+        """Roda a análise sobre cópias dos dados reais (se existirem) e confere figura e tabelas de cada tipo."""
+        raiz = Path(__file__).resolve().parents[1] / 'experimentos'
+        esperado = {'01_escala': ('escala.png', set()), '02_controles': ('controles.png', set()),
+                    '03_construcao': ('construcao.png', {'portas', 'contrastes'}),
+                    '04_calibracao_leitura': ('calibracao.png', {'ganhos', 'controles'})}
+        for nome, (figura, tabs) in esperado.items():
+            origem = raiz / nome
+            if not (origem / 'dados').exists():
+                continue
+            copia = Path(self.tmp.name) / nome
+            shutil.copytree(origem / 'dados', copia / 'dados')
+            tecnicas = ['leitura'] if nome.startswith('04') else []
+            with self.subTest(nome):
+                saida = silencioso(resultados.gerar, copia, tecnicas, 50)
+                self.assertEqual(saida['figuras'], [figura])
+                self.assertTrue((copia / 'resultados' / figura).exists())
+                self.assertTrue(tabs <= set(saida['tabelas']), saida['tabelas'])
 
     def test_sem_sessoes_coletadas(self):
         vazio = Path(self.tmp.name) / 'experimentos' / '98_vazio'

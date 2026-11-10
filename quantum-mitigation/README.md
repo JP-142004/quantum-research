@@ -6,7 +6,7 @@ Os computadores quânticos atuais cometem erros: o resultado de um circuito se a
 
 ## Estado atual
 
-Esta é a **segunda versão**, reconstruída do zero para ser mais simples e para crescer. A primeira versão ficou guardada na marca `mitigation-antiga` do Git. Os experimentos 5 e 6, em simulação, **já foram executados e analisados**. Os experimentos 1 a 4, na IBM, **ainda não foram executados**.
+Esta é a **segunda versão**, reconstruída do zero para ser mais simples e para crescer. A primeira versão ficou guardada na marca `mitigation-antiga` do Git. Todos os seis experimentos **já foram executados e analisados**: os quatro da IBM (`ibm_fez`), em 3 sessões nos dias 8, 9 e 10 de novembro de 2026, e os dois de simulação.
 
 O circuito de teste é o **estado GHZ**, porque sua resposta ideal é conhecida. Seguem-se seis experimentos, quatro em computadores da IBM e dois em simulação, com três técnicas: circuito com menos portas, calibração de leitura e extrapolação a ruído zero. Depois entram outras técnicas (twirling, desacoplamento dinâmico, PEC) e outros circuitos.
 

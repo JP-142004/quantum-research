@@ -58,14 +58,12 @@ Comandos do projeto (a partir de `quantum-mitigation/`): `python rodar.py NN --v
 
 Um circuito novo precisa declarar `EXEMPLOS` (lista de `(n, variante)`) no módulo dele: os testes o percorrem sozinhos. Arquivos de código ficam com até cerca de 150 linhas.
 
-## Estado em 2 de novembro de 2026
+## Estado em 10 de novembro de 2026
 
-- **Fases 1 e 2 prontas, e as receitas dos 6 experimentos também:** `fundamentos/`, o código em `mitigacao/` com `rodar.py` e os testes, e `experimentos/01_escala` a `06_zne_simulado`, cada um com `experimento.py` e um README de pré-registro (pergunta, método, custo e critérios). O roteiro para rodar está em `experimentos/README.md`.
-- **Fase 3 pronta (8 de novembro de 2026):** os experimentos 5 (9 sessões) e 6 (3 sessões) foram **rodados no simulador e analisados**, e seus relatórios têm Resultado e Conclusão. A análise (`rodar.py NN --analisar`, módulos `analise`, `validacao`, `tabelas`, `graficos`, `resultados`) foi validada contra a referência exata do modelo: maior desvio de cerca de 2,3 erros padrão, com limite de 6, e a correção recupera o estado exato com erro menor que 10⁻¹⁰.
-- **Ainda não existe:** nenhum dado da IBM. Os experimentos 1 a 4 só têm receita e pré-registro. A análise deles está pronta (bruto, ajustado, contrastes e sinais entre sessões), mas nunca viu dados reais.
-- O envio real à IBM **nunca foi testado contra o serviço**, só com computadores falsos. O primeiro `--verificar --online` e o primeiro `--enviar` são o teste de verdade.
-- Plano combinado: experimentos 1 a 4 em **3 sessões na IBM, em 3 dias**, no mesmo computador; experimentos 5 e 6 no simulador. O experimento 3 compara original e conectado em 5, 10 e 20 qubits.
-- Fases seguintes, cada uma com aprovação do Luiz: 3) análise e experimentos 5 e 6 no simulador; 4) sessão 1 na IBM; 5) sessões 2 e 3; 6) relatórios finais.
-- Os critérios de sucesso de `experimentos/README.md` são uma proposta e precisam ser confirmados antes da primeira sessão.
+- **Todas as fases de execução estão prontas.** Os experimentos 1 a 4 rodaram na IBM (`ibm_fez`) em **3 sessões, nos dias 8, 9 e 10 de novembro**, e os experimentos 5 e 6 rodaram no simulador. Todos têm dados em `dados/`, resultados gerados em `resultados/` e relatório com Resultado, Conclusão e Próximo passo.
+- **Critérios de sucesso** (confirmados pelo Luiz antes da primeira sessão): experimento 3, mesmo sinal nas 3 sessões; experimento 4, ajustado mais perto de 1 nas 3 sessões com o intervalo do ganho acima de zero. Ambos foram cumpridos.
+- A análise (`rodar.py NN --analisar`, módulos `analise`, `validacao`, `tabelas`, `graficos`, `graficos_ibm`, `resultados`) foi validada contra a referência exata do simulador e depois usada nos dados reais da IBM.
+- Cada sessão fica registrada com job, hora, qubits e opções na `ficha.json`. O compilador gerou os mesmos circuitos nas 3 sessões dos experimentos 1, 3 e 4.
+- **Pendências:** revisão final dos relatórios pelo Luiz, a reunião com os professores e decidir se vale um experimento novo (por exemplo, GHZ conectado em tamanhos maiores, ou ZNE na IBM). `fatorizado` (modelo de leitura por qubit) não foi implementado.
 
 Em caso de dúvida sobre escopo, dados ou envio à IBM, **pergunte ao Luiz antes de agir**.

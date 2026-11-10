@@ -32,6 +32,8 @@ def gerar(pasta_exp, tecnicas=(), repeticoes=analise.REPETICOES):
 
 def _figuras(res, saida):
     feitas = []
+    if all(r['tipo'] == 'ibm' for r in res.values()):
+        return _figuras_ibm(res, saida)
     if any(r['tipo'] == 'simulador' and r['contrastes'] for r in res.values()):
         for cenario in sorted({r['validacao']['cenario'] for r in res.values()}):
             graficos.comparacao(res, cenario, saida / f'comparacao_{cenario}.png')
@@ -41,3 +43,20 @@ def _figuras(res, saida):
         graficos.zne_fatores(res, saida / 'zne_fatores.png')
         feitas += ['zne_blocos.png', 'zne_fatores.png']
     return feitas
+
+
+def _figuras_ibm(res, saida):
+    """Uma figura por experimento da IBM, escolhida pelo conteúdo: circuitos simples (2), GHZ com
+    calibração (4), original e conectado (3) ou só original (1). Cada sessão aparece separada."""
+    from mitigacao import graficos_ibm
+    itens = [d for d in next(iter(res.values()))['itens'].values()]
+    if all(d['circuito'] == 'simples' for d in itens):
+        f, nome = graficos_ibm.controles, 'controles.png'
+    elif any(d['ajustado'] for d in itens):
+        f, nome = graficos_ibm.calibracao, 'calibracao.png'
+    elif {d['variante'] for d in itens} == {'original', 'conectado'}:
+        f, nome = graficos_ibm.construcao, 'construcao.png'
+    else:
+        f, nome = graficos_ibm.escala, 'escala.png'
+    f(res, saida / nome)
+    return [nome]

@@ -73,6 +73,26 @@ def t_controles(res):
     return tabela(['Sessão', *nomes], linhas, range(1, 5))
 
 
+def t_portas(res):
+    """Portas de dois qubits depois de compilar, por tamanho e construção (valores distintos entre sessões, se houver)."""
+    ghz = [d for r in res.values() for d in r['itens'].values() if d['circuito'] == 'ghz' and d['base'] == 'Z']
+    linhas = []
+    for n in sorted({d['n'] for d in ghz}):
+        cel = [' / '.join(str(p) for p in sorted({d['portas_2q'] for d in ghz if d['n'] == n and d['variante'] == v}))
+               for v in ('original', 'conectado')]
+        linhas.append((n, *cel))
+    return tabela(['Qubits', 'Portas de 2 qubits, original', 'Portas de 2 qubits, conectado'], linhas, range(3))
+
+
+def t_ganhos(res):
+    """Ganho (ajustado menos observado) do GHZ, com o intervalo de 95% do bootstrap, por sessão."""
+    nomes = list(res)
+    base = [(n, d) for n, d in res[nomes[0]]['itens'].items() if d['circuito'] == 'ghz' and d['ganho']]
+    linhas = [(d['indicador'], *[f"{fmt(g['valor'], 3)} [{fmt(g['ic95'][0], 3)}; {fmt(g['ic95'][1], 3)}]"
+                                 for g in (res[s]['itens'][n]['ganho'] for s in nomes)]) for n, d in base]
+    return tabela(['Indicador', *nomes], linhas, range(1, 1 + len(nomes)))
+
+
 def por_cenario(res):
     """No simulador com vários cenários, um grupo por cenário; nos demais casos, um grupo só."""
     grupos = {}
@@ -94,6 +114,11 @@ def gerar(res):
             t['contrastes' + sufixo] = t_contrastes(sub, cenario)
     if any(d['rotulo'] == 'controle' for d in primeira['itens'].values()):
         t['controles'] = t_controles(res)
+    if primeira['tipo'] == 'ibm':
+        if primeira['contrastes']:
+            t['portas'] = t_portas(res)
+        if any(d['ganho'] and d['circuito'] == 'ghz' for d in primeira['itens'].values()):
+            t['ganhos'] = t_ganhos(res)
     if primeira['tipo'] == 'simulador':
         t['validacao'] = sim.t_validacao(res)
         if primeira['contrastes']:

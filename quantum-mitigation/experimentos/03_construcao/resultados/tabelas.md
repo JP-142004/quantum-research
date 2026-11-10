@@ -27,3 +27,11 @@
 | CX, 10 qubits | 0,628 ± 0,039 | 0,546 ± 0,038 | 0,528 ± 0,038 | positivo em todas |
 | PZ, 20 qubits | 0,473 ± 0,019 | 0,542 ± 0,018 | 0,289 ± 0,021 | positivo em todas |
 | CX, 20 qubits | 0,514 ± 0,041 | 0,604 ± 0,041 | 0,376 ± 0,042 | positivo em todas |
+
+## portas
+
+| Qubits | Portas de 2 qubits, original | Portas de 2 qubits, conectado |
+| ---: | ---: | ---: |
+| 5 | 13 | 4 |
+| 10 | 33 | 9 |
+| 20 | 97 | 19 |

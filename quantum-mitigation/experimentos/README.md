@@ -17,7 +17,7 @@ Os experimentos 1 a 4 rodam em **3 sessões, em 3 dias diferentes**. Em cada ses
 
 Opções fixas em todos os envios: desacoplamento dinâmico desligado, twirling desligado, `init_qubits` ligado, compilação nível 1, semente 42 e 1.000 shots por circuito.
 
-## Critérios de sucesso (proposta, a confirmar antes da primeira sessão)
+## Critérios de sucesso (confirmados antes da primeira sessão)
 
 Definidos antes de rodar, para não escolher o resultado depois:
 
