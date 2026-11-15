@@ -138,9 +138,9 @@ def id_calibracao(propriedades):
     return f"{propriedades.backend_name}_{data.strftime('%Y%m%dT%H%M%S%z')}"
 
 
-def salvar_calibracao(propriedades, origem):
+def salvar_calibracao(propriedades, origem, pasta=None):
     cid = id_calibracao(propriedades)
-    caminho = os.path.join(caminhos.CALIBRACAO, f"{cid}.json")
+    caminho = os.path.join(pasta or caminhos.CALIBRACAO, f"{cid}.json")
     if not os.path.exists(caminho):
         salvar_json(caminho, {
             "id": cid,
@@ -152,21 +152,21 @@ def salvar_calibracao(propriedades, origem):
     return cid
 
 
-def salvar_configuracao(backend):
+def salvar_configuracao(backend, pasta=None):
     """Configuracao fixa do backend (portas, acoplamento, dt). Junto com a
     calibracao, permite reconstruir o Target sem acessar a IBM."""
-    caminho = os.path.join(caminhos.CALIBRACAO, f"{backend.name}_configuracao.json")
+    caminho = os.path.join(pasta or caminhos.CALIBRACAO, f"{backend.name}_configuracao.json")
     if not os.path.exists(caminho):
         salvar_json(caminho, backend.configuration().to_dict())
 
 
-def carregar_configuracao(backend_name):
-    dados = ler_json(os.path.join(caminhos.CALIBRACAO, f"{backend_name}_configuracao.json"))
+def carregar_configuracao(backend_name, pasta=None):
+    dados = ler_json(os.path.join(pasta or caminhos.CALIBRACAO, f"{backend_name}_configuracao.json"))
     return QasmBackendConfiguration.from_dict(dados)
 
 
-def carregar_calibracao(cid):
-    dados = ler_json(os.path.join(caminhos.CALIBRACAO, f"{cid}.json"))
+def carregar_calibracao(cid, pasta=None):
+    dados = ler_json(os.path.join(pasta or caminhos.CALIBRACAO, f"{cid}.json"))
     return BackendProperties.from_dict(dados["propriedades"]), dados
 
 

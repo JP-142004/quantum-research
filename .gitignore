@@ -17,3 +17,7 @@ qiskit-ibm.json
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# testes locais dos lotes (FakeKingston)
+quantum-modeling/dados/*_teste/
+quantum-modeling/resultados/*_teste_*/
