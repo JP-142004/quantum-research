@@ -10,13 +10,24 @@ OPCOES_MPS = {
 }
 
 
-def escolher_metodo(n_qubits):
+LIMITE_STATEVECTOR = 20
+
+
+def seed_independente(seed, k):
+    """k-esima seed independente a partir de uma seed base.
+    O Aer usa seed + i no shot i, entao seeds vizinhas (1234 e 1235) repetem
+    quase todos os shots e dao simulacoes praticamente iguais."""
+    return seed + k * 10_000_019
+
+
+def escolher_metodo(n_qubits, limite=None):
     """
     density_matrix cresce em 4^n (estourou a RAM no GHZ-15). Nao usar.
     statevector com ruido (trajetorias) e viavel ate ~20 qubits.
     matrix_product_state escala bem para GHZ maiores.
     """
-    return "statevector" if n_qubits <= 20 else "matrix_product_state"
+    limite = LIMITE_STATEVECTOR if limite is None else limite
+    return "statevector" if n_qubits <= limite else "matrix_product_state"
 
 
 def criar_simulador(metodo, modelo_ruido):
