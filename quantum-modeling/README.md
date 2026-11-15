@@ -10,13 +10,17 @@ depois de ajustado (algoritmo evolutivo), quanto ele melhora em circuitos que fi
 
 ```
 quantum-modeling/
-├── dados/            ENTRADAS — baixadas uma vez, nunca sobrescritas
+├── circuitos/        O QUE ENVIAR à IBM: README dos circuitos + arquivo de cada lote (lote01.json)
+├── dados/            O QUE VOLTOU da IBM — baixado uma vez, nunca sobrescrito
 │   ├── jobs_ghz.json     lista única dos jobs usados
 │   ├── hardware/         por job: circuito ISA (.qpy), contagens reais e info.json (procedência)
-│   └── calibracao/       snapshot de calibração de cada job + configuração do backend
+│   ├── calibracao/       snapshot de calibração de cada job + configuração do backend
+│   └── lote01/           envio.json (job_ids), circuitos.qpy, saidas.json (só as contagens) e calibracao/
 ├── nucleo/           código reaproveitado (só funções; nada aqui roda sozinho)
 │   ├── dados_jobs.py     baixa da IBM e lê do disco
-│   ├── modelos_ruido.py  Nível 0 (padrão IBM)
+│   ├── circuitos.py      leitura, GHZ e paridade usados nos lotes
+│   ├── lotes.py          montar, transpilar, enviar e baixar lotes
+│   ├── modelos_ruido.py  Nível 0 (padrão IBM) e Nível 1 (6 variáveis ajustáveis)
 │   ├── simulacao.py      escolha do método e simulação com seed
 │   ├── metricas.py       Hellinger, massa GHZ, P(0…0), P(1…1), peso de Hamming
 │   └── registro.py       pasta por execução, versões, commit
@@ -34,7 +38,13 @@ pip install -r quantum-modeling/requirements.txt        # só na primeira vez
 
 python quantum-modeling/experimentos/01_baixar_dados.py  # precisa de internet e da conta IBM
 python quantum-modeling/experimentos/02_nivel0.py        # roda offline
-python quantum-modeling/experimentos/04_ajuste_nivel1.py # roda online (será revisado no próximo PR)
+python quantum-modeling/experimentos/04_ajuste_nivel1.py # roda online (versão antiga do ajuste)
+
+# Lote novo de circuitos (detalhes em circuitos/README.md)
+python quantum-modeling/experimentos/05_enviar_lote.py --lote lote01            # só mostra e estima
+python quantum-modeling/experimentos/05_enviar_lote.py --lote lote01 --enviar   # envia (gasta cota)
+python quantum-modeling/experimentos/06_baixar_saidas_lote.py --lote lote01
+python quantum-modeling/experimentos/07_analisar_lote.py --lote lote01
 ```
 
 | Passo | O que faz | Saída |
@@ -42,6 +52,9 @@ python quantum-modeling/experimentos/04_ajuste_nivel1.py # roda online (será re
 | `01_baixar_dados.py` | Baixa circuito ISA, contagens, opções do job e a calibração do momento do job. Confere se circuito, registrador e bits batem. Pula o que já foi baixado (`--sobrescrever` para refazer). | `dados/hardware/`, `dados/calibracao/` |
 | `02_nivel0.py` | Simula cada circuito com o modelo padrão da IBM montado com a calibração do dia do job e compara com o hardware. Salva após cada job; `--continuar <pasta>` retoma uma execução interrompida. Opções: `--seed`, `--tamanhos 5 10`. | `resultados/<data>_nivel0/` |
 | `03_...` | *(próximo PR)* Variabilidade: simulação × simulação com várias seeds; statevector × MPS em GHZ-15 e 20. | |
+| `05_enviar_lote.py` | Monta os circuitos de `circuitos/<lote>.json` numa cadeia fixa de qubits, mostra profundidade, nº de CZ e tempo de QPU estimado. Só envia com `--enviar` + confirmação (uma repetição por job, num `Batch`). `--teste-local` simula o hardware com o `FakeKingston`. | `dados/<lote>/envio.json`, `circuitos.qpy` |
+| `06_baixar_saidas_lote.py` | Baixa os jobs que já terminaram e grava só as saídas (contagens por circuito) e a calibração de cada job. Pode rodar várias vezes. | `dados/<lote>/saidas.json` |
+| `07_analisar_lote.py` | Ajusta as 6 variáveis do Nível 1 (erro 1Q, erro 2Q, leitura 1\|0, leitura 0\|1, T1, T2) no circuito de ajuste e aplica a todos os outros circuitos e repetições, comparando com o Nível 0. Mostra também a variação simulação × simulação e hardware × hardware. `--rapido` para teste. | `resultados/<data>_<lote>_analise/` |
 | `04_ajuste_nivel1.py` | Evolução diferencial sobre 5 multiplicadores da calibração (erro 1Q, erro 2Q, leitura, T1, T2). Treino GHZ-5/10/15, validação GHZ-20 a 50. | `resultados/<data>_ajuste_nivel1/` |
 
 Cada pasta de resultados tem:
@@ -62,6 +75,11 @@ Nunca coloque token ou CRN em arquivos deste repositório.
 - **Método de simulação:** `statevector` (trajetórias) até 20 qubits; `matrix_product_state`
   acima disso. `density_matrix` cresce em 4^n e estourou 16 GB no GHZ-15.
 - **Seed fixa** no simulador (padrão 1234): a mesma configuração sempre dá o mesmo resultado.
+  Atenção: o Aer usa `seed + i` no shot `i`, então seeds vizinhas repetem quase todos os shots.
+  Para amostras independentes use `simulacao.seed_independente`.
+- **Nível 1** (`nucleo/modelos_ruido.py`): erro uniforme em todos os qubits, a partir da média
+  da calibração **só dos qubits usados**, com leitura assimétrica (P(1|0) ≠ P(0|1)), sem erro
+  no `rz` (virtual no hardware) e erro de 2 qubits só no `cz`.
 
 ## Resultados até agora
 
