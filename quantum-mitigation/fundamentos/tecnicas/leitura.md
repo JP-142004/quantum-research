@@ -23,7 +23,7 @@ Há 2⁵ = 32 preparações possíveis (de `00000` a `11111`), então **A** é 3
 
 ## O que acontece com mais qubits
 
-Com n qubits são necessárias 2ⁿ calibrações, e a matriz cresce como 2ⁿ × 2ⁿ. Isso limita este modelo, chamado `completo`, a uns 10 qubits. O projeto prevê um segundo modelo, `fatorizado`, em que cada qubit tem a sua matriz 2 × 2 (o custo cresce com n, e não com 2ⁿ). Ele só vale se a leitura de um qubit não influencia a dos outros. Bravyi et al. (2021) descrevem modelos assim. **Ainda não está implementado.**
+Com n qubits são necessárias 2ⁿ calibrações, e a matriz cresce como 2ⁿ × 2ⁿ. Isso limita este modelo, chamado `completo`, a uns 10 qubits. Existe um segundo tipo de modelo, `fatorizado`, em que cada qubit tem a sua matriz 2 × 2 (o custo cresce com n, e não com 2ⁿ) e a matriz de n qubits é o produto de Kronecker das n matrizes. Ele só vale se a leitura de um qubit não influencia a dos outros. Bravyi et al. (2021) descrevem modelos assim. Está implementado em `mitigacao/tecnicas/leitura.py` em duas versões: `fatorizado` (a), que monta cada tabela com as medidas de todas as 32 calibrações, e `fatorizado_dois` (b), que usa só as calibrações `00000` e `11111`. O [experimento 7](../../experimentos/07_leitura_fatorizada/README.md) compara os três modelos com os dados reais do experimento 4.
 
 ## Limites
 
