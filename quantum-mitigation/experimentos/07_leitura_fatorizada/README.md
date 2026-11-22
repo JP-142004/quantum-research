@@ -29,7 +29,7 @@ Esta pergunta não explica por que o PZ ajustado ficou em 0,953. Os três métod
 **Comparações.** Principais: (a) contra o completo, que isola o efeito da simplificação do modelo (mesmos dados de calibração), e (b) contra o completo, que avalia o pacote "modelo simplificado + calibração barata". Secundária: (a) contra (b), que mostra a sensibilidade à quantidade de dados: em (a), cada condição de um qubit reúne 16.000 medidas (16 estados × 1.000), e em (b), 1.000. Em (b), o contexto dos outros qubits é sempre "todos em 0" ou "todos em 1", e isso pode não representar bem o GHZ se a resposta de um qubit depender dos vizinhos. Por isso (b) é apresentado como teste de redução de custo, com a diferença de precisão informada junto (a largura do intervalo em cada método).
 
 - **Indicadores:** PZ (base Z) e CX (base X) do GHZ conectado, cada sessão separada ([indicadores](../../fundamentos/indicadores.md)).
-- **Incerteza:** bootstrap compartilhado. Em cada réplica, a calibração e o GHZ são reamostrados **uma vez** e a mesma réplica entra nos três ajustes. Assim a diferença entre métodos tem a incerteza certa, e não a soma das incertezas separadas.
+- **Incerteza:** bootstrap com 5.000 réplicas e semente 2026, como no experimento 4, compartilhado. Em cada réplica, a calibração e o GHZ são reamostrados **uma vez** e a mesma réplica entra nos três ajustes. Assim a diferença entre métodos tem a incerteza certa, e não a soma das incertezas separadas.
 - **Valores negativos:** os ajustados podem passar de 1 ou ficar abaixo de 0 em alguma probabilidade (quasiprobabilidades). Não recortamos nem renormalizamos, como no experimento 4. Registramos a menor quasiprobabilidade e o condicionamento de cada matriz. Réplicas que falharem são contadas e informadas, nunca descartadas em silêncio.
 - **Ordem dos bits:** a conversão entre qubit físico e bit da resposta usa `leitura.permutacao`, como no experimento 4. Em 5 qubits, aplicar as 5 tabelas uma a uma deve dar o mesmo que o produto explícito das 5 (teste automático).
 - **Custo:** nenhuma medida nova na IBM.
@@ -57,15 +57,36 @@ Para cada sessão e cada indicador, olhamos a diferença **fatorizado menos comp
 
 ## Resultado
 
-*Tabelas geradas dos dados, a preencher depois da análise.*
+Computador `ibm_fez`; sessões de 8, 9 e 10 de novembro de 2026 (dados do experimento 4). **Observado** é a contagem direta; **ajustado** é a estimativa depois da calibração, com o método indicado. As tabelas saem dos dados por `analisar.py`.
+
+Figura [comparacao_leitura.png](resultados/comparacao_leitura.png): em cima, PZ e CX de cada método em cada sessão (marca vazada: observado; marcas cheias: ajustados, com erro padrão do bootstrap); embaixo, a diferença entre ajustados com o intervalo de 95%, e a faixa cinza é a margem de ±0,02.
+
+![Comparação dos métodos de calibração](resultados/comparacao_leitura.png)
+
+**GHZ conectado de 5 qubits: observado e ajustado pelos três métodos.**
 
 <!-- TABELA:metodos -->
-*Por sessão: observado, ajustado completo, ajustado (a) e ajustado (b), com incerteza.*
 <!-- /TABELA:metodos -->
 
+**Diferença entre ajustados, com o intervalo de 95% e a decisão pelo critério acima.**
+
 <!-- TABELA:diferencas -->
-*Diferença em relação ao completo, intervalo de 95%, decisão, condicionamento e menor quasiprobabilidade.*
 <!-- /TABELA:diferencas -->
+
+**Controles independentes (ajustado menos o ideal, que é 1).** Colunas: `00000` e `11111` em Z; `+++++` e `++++-` em X.
+
+<!-- TABELA:controles -->
+<!-- /TABELA:controles -->
+
+**Previsão da calibração.** Distância média (e máxima) entre a distribuição prevista por cada método, montado com metade das medidas, e a medida na outra metade, nos 32 estados. A distância é a metade da soma de |previsto − medido|; 0 seria uma previsão perfeita.
+
+<!-- TABELA:previsao -->
+<!-- /TABELA:previsao -->
+
+**Diagnóstico numérico.** Condicionamento da matriz e menor quasiprobabilidade do GHZ, na ordem completo / fatorizado (a) / fatorizado (b); réplicas do bootstrap com calibração instável (descartadas e contadas).
+
+<!-- TABELA:diagnostico -->
+<!-- /TABELA:diagnostico -->
 
 ## Conclusão
 
@@ -89,9 +110,11 @@ Para cada sessão e cada indicador, olhamos a diferença **fatorizado menos comp
 
 | Arquivo | Para que serve |
 | --- | --- |
-| `analisar.py` | O programa que lê as contagens do experimento 4 e compara os três métodos. *(a escrever)* |
-| `resultados/` | Tabelas, `resultados.json` e figura, geradas dos dados. Podem ser refeitas. *(a gerar)* |
+| `analisar.py` | Lê as sessões do experimento 4, compara os três métodos e grava `resultados/` e as tabelas deste relatório. |
+| `resultados/resultados.json` | Todos os números, por sessão e por item. Gerado dos dados. |
+| `resultados/tabelas.md` | As tabelas deste relatório em um arquivo só. |
+| `resultados/comparacao_leitura.png` | A figura do resultado. |
 
-Este experimento **não tem pasta `dados/` própria** e não envia nada à IBM: lê `../04_calibracao_leitura/dados/`, que não se edita.
+Este experimento **não tem pasta `dados/` própria** e não envia nada à IBM: lê `../04_calibracao_leitura/dados/`, que não se edita. O código da conta está em `mitigacao/leitura_comparacao.py` e o das tabelas e da figura, em `mitigacao/leitura_saida.py`.
 
 [Experimentos](../README.md)
