@@ -1,10 +1,11 @@
 """Simulador local (Qiskit Aer, matriz densidade, CPU). Não acessa a IBM."""
+import numpy as np
 from qiskit import transpile
 from qiskit.transpiler import CouplingMap
 from qiskit_aer import AerSimulator
 
 from mitigacao.execucao import conferir_sem_troca, embaralhar, info_compilado
-from mitigacao.execucao.ruido import modelo_ruido
+from mitigacao.execucao.ruido import CORRELACIONADO, aplicar_leitura, modelo_ruido
 from mitigacao.topologia import vizinhos_linha
 
 INSTANTANEO = True
@@ -51,6 +52,10 @@ def enviar(montados, shots, semente, computador='simulador', cenario='leitura_e_
     if not resultado.success:
         raise RuntimeError('O simulador não concluiu')
     contagens = {nome: resultado.get_counts(i) for i, nome in enumerate(ordem)}
+    if cenario == CORRELACIONADO:   # leitura entre pares de qubits: aplicada às contagens (ver ruido.py)
+        rng = np.random.default_rng(semente)
+        contagens = {nome: aplicar_leitura(c, info_compilado(compilados[nome])['mapa_medidas'], cenario, rng)
+                     for nome, c in contagens.items()}
     return dict(job_id=f'simulador-{semente}', ordem=ordem, compilados=compilados, contagens=contagens,
                 opcoes=dict(cenario=cenario, metodo='density_matrix'),
                 info={nome: info_compilado(qc) for nome, qc in compilados.items()})

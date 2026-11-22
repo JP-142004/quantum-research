@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Comando único do projeto. O argumento é o número do experimento.
 
+  python rodar.py 08a --verificar                    a parte a de um experimento dividido em partes (08)
   python rodar.py 03 --verificar                     mostra o que seria enviado; não envia nada
   python rodar.py 03 --verificar --online            idem, mas consulta o computador real da IBM
                                                      e compila os circuitos nele (também não envia)
@@ -14,6 +15,7 @@ Uma sessão já registrada nunca é sobrescrita nem reenviada.
 """
 import argparse
 import importlib.util
+import re
 import sys
 from pathlib import Path
 
@@ -24,11 +26,21 @@ from mitigacao.montagem import verificar_ideal
 RAIZ = Path(__file__).resolve().parent
 
 
-def achar_experimento(numero):
+def achar_experimento(texto):
+    """'03' é a pasta do experimento; '08a' é a parte a_* dentro da pasta do 08."""
+    achado = re.fullmatch(r'(\d+)([a-z]?)', texto)
+    if not achado:
+        sys.exit(f'Experimento {texto}: use o número (03) ou o número e a letra da parte (08a)')
+    numero, parte = achado.groups()
     achados = sorted((RAIZ / 'experimentos').glob(f'{int(numero):02d}_*'))
     if len(achados) != 1:
-        sys.exit(f'Experimento {numero}: encontrei {len(achados)} pastas em experimentos/')
-    return achados[0]
+        sys.exit(f'Experimento {texto}: encontrei {len(achados)} pastas em experimentos/')
+    if not parte:
+        return achados[0]
+    partes = sorted(achados[0].glob(f'{parte}_*'))
+    if len(partes) != 1:
+        sys.exit(f'Experimento {texto}: encontrei {len(partes)} partes em {achados[0].name}/')
+    return partes[0]
 
 
 def carregar_receita(pasta):

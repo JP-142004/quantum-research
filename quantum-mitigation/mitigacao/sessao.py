@@ -42,7 +42,8 @@ def enviar_e_gravar(pasta, pasta_exp, receita, montados, computador, semente, op
     shots = getattr(receita, 'shots', 1000)
     job = modulo.enviar(montados, shots, semente, computador, **opcoes_envio)
     print(f'Job: {job["job_id"]}', flush=True)  # antes de gravar: se algo falhar, o id não se perde
-    ficha = dict(experimento=pasta_exp.name, pergunta=receita.pergunta, computador=computador,
+    nome_exp = pasta_exp.name if pasta_exp.parent.name == 'experimentos' else f'{pasta_exp.parent.name}/{pasta_exp.name}'
+    ficha = dict(experimento=nome_exp, pergunta=receita.pergunta, computador=computador,
                  tipo=receita.execucao, data=f'{date.today():%Y-%m-%d}', enviado_utc=registro.agora(),
                  job_id=job['job_id'], shots=shots, semente=semente, opcoes=job['opcoes'],
                  versoes=registro.versoes(), python=platform.python_version(), ordem=job['ordem'],

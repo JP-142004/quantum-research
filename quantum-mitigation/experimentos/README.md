@@ -13,6 +13,7 @@ Cada pasta numerada é um experimento completo: o relatório (`README.md`), a re
 | 5 | `05_validacao_simulada` | O que a calibração recupera quando o erro é conhecido? | GHZ original e conectado | leitura | simulador | 5 |
 | 6 | `06_zne_simulado` | A extrapolação a ruído zero reduz o erro das portas? | GHZ conectado | ZNE e leitura | simulador | 5 |
 | 7 | `07_leitura_fatorizada` | Uma tabela por qubit substitui a matriz completa de leitura? | GHZ conectado e controles | leitura (3 modelos) | análise local dos dados do 4 | 5 |
+| 8 | `08_leitura_escala` | A calibração por qubit funciona em circuitos maiores? | GHZ conectado e controles | leitura (3 modelos) | A: simulador; B: IBM (só plano) | 10 (A); 10 e 20 (B) |
 
 Os experimentos 1 a 4 rodam em **3 sessões, em 3 dias diferentes**. Em cada sessão, os quatro rodam no mesmo computador, com as mesmas opções, e cada sessão tem a sua pasta de dados. Isso permite comparar os experimentos entre si e ver o quanto o computador muda de um dia para o outro. A estimativa é de cerca de 72 mil medidas por sessão. O número de medidas não é o tempo de uso da IBM.
 

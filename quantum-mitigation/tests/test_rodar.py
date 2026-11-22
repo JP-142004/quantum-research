@@ -2,6 +2,7 @@
 o envio à IBM é substituído por um falso que usa o simulador."""
 import contextlib
 import io
+import json
 import sys
 import tempfile
 import unittest
@@ -130,6 +131,25 @@ class RodarTest(unittest.TestCase):
             self.assertTrue((sessao / 'contagens.json').exists())
             codigo, _ = self.rodar('05', '--coletar', '--sessao', 's')
             self.assertIn('já foi coletada', str(codigo))
+
+    def test_experimento_dividido_em_partes(self):
+        raiz_exp = self.raiz / 'experimentos' / '09_dividido'
+        for letra, nome in (('a', 'a_simulador'), ('b', 'b_outra')):
+            pasta = raiz_exp / nome
+            pasta.mkdir(parents=True)
+            (pasta / 'experimento.py').write_text(
+                RECEITA.format(execucao='simulador', computador='simulador', opcoes="dict(cenario='ideal')"),
+                encoding='utf-8')
+        codigo, _ = self.rodar('09a', '--enviar', '--sessao', 's1')
+        self.assertEqual(codigo, 0)
+        self.assertTrue((raiz_exp / 'a_simulador' / 'dados' / 's1' / 'contagens.json').exists())
+        self.assertFalse((raiz_exp / 'b_outra' / 'dados').exists())
+        ficha = json.loads((raiz_exp / 'a_simulador' / 'dados' / 's1' / 'ficha.json').read_text(encoding='utf-8'))
+        self.assertEqual(ficha['experimento'], '09_dividido/a_simulador')
+        codigo, _ = self.rodar('09c', '--listar')
+        self.assertNotEqual(codigo, 0)
+        codigo, _ = self.rodar('09', '--listar')
+        self.assertEqual(codigo, 0)   # a pasta do 09 em si não é uma receita, mas listar não carrega receita
 
     def test_experimento_inexistente(self):
         (self.raiz / 'experimentos').mkdir()

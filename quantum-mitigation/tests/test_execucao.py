@@ -4,6 +4,8 @@ import sys
 import unittest
 from pathlib import Path
 
+import numpy as np
+
 from qiskit import QuantumCircuit
 from qiskit.providers.fake_provider import GenericBackendV2
 from qiskit.transpiler import CouplingMap
@@ -14,7 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from mitigacao.execucao import embaralhar, ibm, info_compilado, ruido, simulador
 from mitigacao.montagem import montar
-from mitigacao.topologia import vizinhos_de
+from mitigacao.topologia import vizinhos_de, vizinhos_linha
 
 
 def montados(itens):
@@ -110,3 +112,42 @@ class ExecucaoTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class LeituraCorrelacionadaTest(unittest.TestCase):
+    """Erro de leitura entre pares de qubits (experimento 8, parte A)."""
+    MAPA = [(q, q) for q in range(5)]
+
+    def test_colunas_somam_1_e_o_cenario_independente_e_o_produto_dos_qubits(self):
+        for cenario in ('leitura', ruido.CORRELACIONADO):
+            self.assertTrue(np.allclose(ruido.matriz_leitura(self.MAPA, cenario).sum(axis=0), 1))
+        a = ruido.matriz_leitura(self.MAPA, 'leitura')
+        produto = np.ones((1, 1))
+        for q in reversed(range(5)):
+            produto = np.kron(produto, ruido._tabela(q))
+        self.assertTrue(np.allclose(a, produto))
+
+    def test_a_correlacao_so_muda_o_que_liga_o_par(self):
+        indep, corr = (ruido.matriz_leitura(self.MAPA, c) for c in ('leitura', ruido.CORRELACIONADO))
+        # 00000 lido como 00011 (os dois qubits do par (0,1) trocam juntos): mais provável com correlação
+        self.assertGreater(corr[0b00011, 0], indep[0b00011, 0])
+        par = [(0, 0), (1, 1)]   # só o par: um qubit sozinho que erra não recebe a parte conjunta
+        i2, c2 = (ruido.matriz_leitura(par, c) for c in ('leitura', ruido.CORRELACIONADO))
+        self.assertAlmostEqual(c2[0b01, 0], (1 - ruido.CORRELACAO) * i2[0b01, 0])
+
+    def test_o_simulador_reproduz_a_matriz_exata(self):
+        n = 4
+        calibracao = [dict(circuito='simples', n=n, variante=f'{i:04b}', base='Z', qubits=list(range(n))) for i in range(2 ** n)]
+        montados = montar(calibracao, lambda m: vizinhos_linha(m))
+        for cenario in ('leitura', ruido.CORRELACIONADO):
+            job = simulador.enviar(montados, 20000, 3, 'simulador', cenario)
+            a = ruido.matriz_leitura(job['info'][job['ordem'][0]]['mapa_medidas'], cenario)
+            for m in montados:
+                coluna = np.zeros(2 ** n)
+                for bits, vezes in job['contagens'][m['nome']].items():
+                    coluna[int(bits, 2)] = vezes / 20000
+                self.assertLess(np.abs(coluna - a[:, int(m['item']['variante'], 2)]).max(), 0.02, cenario)
+
+    def test_cenario_desconhecido(self):
+        with self.assertRaises(ValueError):
+            ruido.modelo_ruido('outro', 3)
