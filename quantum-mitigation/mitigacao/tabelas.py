@@ -131,10 +131,13 @@ def gerar(res):
 MARCADOR = re.compile(r'(<!-- TABELA:(\w+) -->)\n(.*?)\n?(<!-- /TABELA:\2 -->)', re.S)
 
 
-def preencher(texto, tabelas):
-    """Troca o miolo de cada marcador pela tabela de mesmo nome. Marcador sem tabela vira erro."""
+def preencher(texto, tabelas, parcial=False):
+    """Troca o miolo de cada marcador pela tabela de mesmo nome. Marcador sem tabela vira erro,
+    a não ser que parcial=True (um README com tabelas de programas diferentes): aí fica como está."""
     def troca(m):
         if m.group(2) not in tabelas:
+            if parcial:
+                return m.group(0)
             raise KeyError(f'Não há tabela "{m.group(2)}" para este experimento')
         return f'{m.group(1)}\n{tabelas[m.group(2)]}\n{m.group(4)}'
     return MARCADOR.sub(troca, texto)

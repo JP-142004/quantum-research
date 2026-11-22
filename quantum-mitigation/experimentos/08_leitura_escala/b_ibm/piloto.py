@@ -54,7 +54,7 @@ def main():
         '# Teste prévio da verificação de independência (gerado dos dados; não editar à mão)\n\n' + tabela + '\n', encoding='utf-8')
     readme = pasta / 'README.md'
     texto = readme.read_text(encoding='utf-8')
-    novo = tabelas.preencher(texto, dict(piloto=tabela))
+    novo = tabelas.preencher(texto, dict(piloto=tabela), parcial=True)   # as outras vêm do analisar.py
     if novo != texto:
         readme.write_text(novo, encoding='utf-8')
     return tabela

@@ -1,6 +1,6 @@
 # Experimento 8, parte B · Na IBM, em 10 e 20 qubits, a calibração por qubit leva os indicadores perto do ideal?
 
-**Estado em 22 de novembro de 2026:** plano, receita, verificação de independência e teste prévio com dados existentes. **Nada foi enviado à IBM.** O envio exige a aprovação do Luiz para aquele envio específico, depois de ele conferir o saldo de tempo do plano. Faltam: confirmar os critérios abaixo e escrever o código de análise dos dados da IBM, os dois **antes** do envio.
+**Estado em 22 de novembro de 2026:** plano, critérios, receita e código de análise prontos e testados com o simulador. **Nada foi enviado à IBM**: a máquina onde o código foi escrito não tem a conta IBM, então o envio é feito pelo Luiz (ver *Como executar*). Cada envio precisa da confirmação dele (`ENVIAR`) depois de conferir o saldo de tempo do plano.
 
 ## Resposta curta
 
@@ -20,7 +20,9 @@ Em 20 qubits a matriz completa de calibração não existe (seriam 2²⁰ calibr
 - **Limite já conhecido:** em 20 qubits não há a matriz completa como referência. A conferência é só pelos controles e pelas verificações de independência, que é mais fraca que a do experimento 7. A verificação (1) ainda não foi testada em simulador: o simulador não tem erro que dependa do estado dos vizinhos.
 - **Antes de qualquer envio:** `python rodar.py 08b --verificar --online` para conferir que o GHZ, as calibrações e os controles de cada tamanho usam os **mesmos qubits físicos** e quantas portas de dois qubits cada circuito tem. A verificação local já confere que todos os circuitos dão o resultado ideal declarado.
 
-### Proposta de critérios (a confirmar pelo Luiz antes do envio)
+### Critérios, definidos antes do envio
+
+Propostos em 22/11/2026 e adotados quando o Luiz pediu para seguir. Se ele quiser mudar algum, tem que ser **antes** da primeira sessão.
 
 | O quê | Regra proposta |
 | --- | --- |
@@ -60,15 +62,58 @@ Tabela gerada por `piloto.py` com dados que já existem: as sessões da parte A 
 
 **O que o teste mostra.** No simulador com erro conjunto, os 6 casos deram p = 0,001 e T de 0,21 a 0,30, com um par vizinho no topo: a verificação detecta uma correlação de 0,03. Sem erro conjunto, os p-valores foram de 0,011 a 0,741 (um valor baixo em 6, o que o acaso explica). Nas 3 sessões reais do experimento 4, de 0,29 a 0,98: **nenhum sinal de erros conjuntos em 5 qubits**. Limite: as taxas de erro reais são pequenas (0,9% a 2,4% por qubit, contra 3% a 7% no simulador), então o teste detecta correlações grandes e não garante a ausência de correlações pequenas.
 
-## Resultado, Conclusão e Próximo passo
+## Como executar
 
-*Não há dados.*
+Na máquina do Luiz, a partir de `quantum-mitigation/` (com a conta IBM salva):
+
+1. `python rodar.py 08b --verificar --online`: consulta o `ibm_fez`, mostra os qubits físicos e as portas de dois qubits de cada circuito. **Não envia nada.** Conferir que, em cada tamanho, os circuitos usam os mesmos qubits.
+2. `python rodar.py 08b --enviar --computador ibm_fez`: mostra os 20 circuitos (20.000 medidas) e só envia depois de digitar `ENVIAR`. Cria a pasta `dados/AAAA-MM-DD_ibm_fez/` com a ficha (o job fica registrado).
+3. `python rodar.py 08b --coletar --sessao AAAA-MM-DD_ibm_fez`: grava as contagens quando o job terminar.
+4. Repetir os passos 1 a 3 **em mais dois dias diferentes** (3 sessões, como no experimento 4).
+5. `python experimentos/08_leitura_escala/b_ibm/analisar.py`: gera `resultados/` e preenche as tabelas abaixo. Com menos de 3 sessões, a tabela de critérios avisa.
+
+A análise para se calibrações e circuitos de um tamanho usarem qubits diferentes. Ela foi testada com sessões do simulador de 5 e 10 qubits (o simulador não faz 20), incluindo o cenário com erro conjunto: com erro independente, a verificação 2 não rejeita e o GHZ de 10 qubits chega a 1; com erro conjunto, rejeita e o ajuste passa de 1, como na [parte A](../a_simulador/README.md).
+
+## Resultado
+
+*Ainda não há sessões da IBM. As tabelas abaixo são geradas por `analisar.py` quando houver dados e ficam vazias até lá.*
+
+**Erros conjuntos (verificação 2).**
+
+<!-- TABELA:independencia -->
+<!-- /TABELA:independencia -->
+
+**Dependência do estado dos vizinhos (verificação 1).**
+
+<!-- TABELA:contexto -->
+<!-- /TABELA:contexto -->
+
+**GHZ conectado: observado e ajustado.** Ganho = |observado − 1| − |ajustado − 1| (positivo é melhora).
+
+<!-- TABELA:ghz -->
+<!-- /TABELA:ghz -->
+
+**Controles independentes.**
+
+<!-- TABELA:controles -->
+<!-- /TABELA:controles -->
+
+**Critérios, por sessão (na ordem das sessões).**
+
+<!-- TABELA:criterios -->
+<!-- /TABELA:criterios -->
+
+## Conclusão e Próximo passo
+
+*Depois dos dados.*
 
 ## Arquivos
 
 | Arquivo | Para que serve |
 | --- | --- |
 | `experimento.py` | A receita, pronta para `python rodar.py 08b --verificar` (local, não envia). |
+| `analisar.py` | Analisa as sessões da IBM (10 e 20 qubits) e gera `resultados/` e as tabelas deste relatório. Código em `mitigacao/leitura_ibm.py` e `leitura_ibm_saida.py`. |
+| `dados/AAAA-MM-DD_ibm_fez/` | Uma pasta por sessão (ainda não existem). **Não se edita.** |
 | `piloto.py` | Teste prévio da verificação de independência com dados que já existem. Gera `resultados/piloto_independencia.md` e `.json`. |
 | `resultados/` | Saída do `piloto.py`. Ainda não há resultados da IBM. |
 
