@@ -26,6 +26,8 @@ Esta pergunta não explica por que o PZ ajustado ficou em 0,953. Os três métod
 | Fatorizado (a) | 5 de 2 × 2, com as marginais das 32 calibrações | as 32 | Só a simplificação do modelo |
 | Fatorizado (b) | 5 de 2 × 2, com só `00000` e `11111` | 2 | A simplificação mais o corte de custo |
 
+**Comparações.** Principais: (a) contra o completo, que isola o efeito da simplificação do modelo (mesmos dados de calibração), e (b) contra o completo, que avalia o pacote "modelo simplificado + calibração barata". Secundária: (a) contra (b), que mostra a sensibilidade à quantidade de dados: em (a), cada condição de um qubit reúne 16.000 medidas (16 estados × 1.000), e em (b), 1.000. Em (b), o contexto dos outros qubits é sempre "todos em 0" ou "todos em 1", e isso pode não representar bem o GHZ se a resposta de um qubit depender dos vizinhos. Por isso (b) é apresentado como teste de redução de custo, com a diferença de precisão informada junto (a largura do intervalo em cada método).
+
 - **Indicadores:** PZ (base Z) e CX (base X) do GHZ conectado, cada sessão separada ([indicadores](../../fundamentos/indicadores.md)).
 - **Incerteza:** bootstrap compartilhado. Em cada réplica, a calibração e o GHZ são reamostrados **uma vez** e a mesma réplica entra nos três ajustes. Assim a diferença entre métodos tem a incerteza certa, e não a soma das incertezas separadas.
 - **Valores negativos:** os ajustados podem passar de 1 ou ficar abaixo de 0 em alguma probabilidade (quasiprobabilidades). Não recortamos nem renormalizamos, como no experimento 4. Registramos a menor quasiprobabilidade e o condicionamento de cada matriz. Réplicas que falharem são contadas e informadas, nunca descartadas em silêncio.
