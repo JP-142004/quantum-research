@@ -1,0 +1,240 @@
+{
+  "A · simulador, 10 qubits": {
+    "leitura_bloco_01 · zeros": {
+      "T": 0.01529599999999992,
+      "nulo_media": 0.00043199999999998177,
+      "nulo_dp": 0.011735650983222002,
+      "p_valor": 0.12987012987012986,
+      "taxa_de_erro": 0.0293,
+      "par": [
+        5,
+        7
+      ],
+      "juntos_observados": 4,
+      "juntos_esperados": 1.302
+    },
+    "leitura_bloco_01 · uns": {
+      "T": -0.009164000000000005,
+      "nulo_media": 0.0002839999999999943,
+      "nulo_dp": 0.015758911637546547,
+      "p_valor": 0.7412587412587412,
+      "taxa_de_erro": 0.0396,
+      "par": [
+        3,
+        7
+      ],
+      "juntos_observados": 5,
+      "juntos_esperados": 1.8550000000000002
+    },
+    "leitura_bloco_02 · zeros": {
+      "T": 0.03398800000000002,
+      "nulo_media": 0.00039600000000002323,
+      "nulo_dp": 0.011868004718570014,
+      "p_valor": 0.01098901098901099,
+      "taxa_de_erro": 0.0296,
+      "par": [
+        2,
+        6
+      ],
+      "juntos_observados": 5,
+      "juntos_esperados": 1.12
+    },
+    "leitura_bloco_02 · uns": {
+      "T": -0.00381999999999999,
+      "nulo_media": -0.00038599999999994753,
+      "nulo_dp": 0.015255544696929038,
+      "p_valor": 0.6053946053946054,
+      "taxa_de_erro": 0.0376,
+      "par": [
+        3,
+        9
+      ],
+      "juntos_observados": 5,
+      "juntos_esperados": 2.496
+    },
+    "leitura_bloco_03 · zeros": {
+      "T": 0.014816000000000051,
+      "nulo_media": 7.60000000000785e-05,
+      "nulo_dp": 0.012005182214360591,
+      "p_valor": 0.13386613386613386,
+      "taxa_de_erro": 0.0305,
+      "par": [
+        0,
+        6
+      ],
+      "juntos_observados": 5,
+      "juntos_esperados": 2.2800000000000002
+    },
+    "leitura_bloco_03 · uns": {
+      "T": -0.0038939999999998975,
+      "nulo_media": -0.0006439999999998722,
+      "nulo_dp": 0.015530920771158417,
+      "p_valor": 0.6083916083916084,
+      "taxa_de_erro": 0.0392,
+      "par": [
+        4,
+        9
+      ],
+      "juntos_observados": 8,
+      "juntos_esperados": 3.366
+    },
+    "leitura_correlacionada_bloco_01 · zeros": {
+      "T": 0.29380000000000006,
+      "nulo_media": 0.0013539999999999202,
+      "nulo_dp": 0.023351340090024823,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.0576,
+      "par": [
+        8,
+        9
+      ],
+      "juntos_observados": 34,
+      "juntos_esperados": 2.262
+    },
+    "leitura_correlacionada_bloco_01 · uns": {
+      "T": 0.20867199999999997,
+      "nulo_media": 0.0007620000000000926,
+      "nulo_dp": 0.024394013609900286,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.0638,
+      "par": [
+        8,
+        9
+      ],
+      "juntos_observados": 38,
+      "juntos_esperados": 7.359999999999999
+    },
+    "leitura_correlacionada_bloco_02 · zeros": {
+      "T": 0.29436000000000007,
+      "nulo_media": 0.0006360000000000956,
+      "nulo_dp": 0.023203875193596415,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.0586,
+      "par": [
+        8,
+        9
+      ],
+      "juntos_observados": 37,
+      "juntos_esperados": 2.537
+    },
+    "leitura_correlacionada_bloco_02 · uns": {
+      "T": 0.27076200000000006,
+      "nulo_media": 0.0016720000000000615,
+      "nulo_dp": 0.02647111444575012,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.0674,
+      "par": [
+        6,
+        7
+      ],
+      "juntos_observados": 37,
+      "juntos_esperados": 5.0840000000000005
+    },
+    "leitura_correlacionada_bloco_03 · zeros": {
+      "T": 0.2859220000000001,
+      "nulo_media": 0.0007519999999999429,
+      "nulo_dp": 0.024264111358135467,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.058,
+      "par": [
+        2,
+        3
+      ],
+      "juntos_observados": 37,
+      "juntos_esperados": 3.75
+    },
+    "leitura_correlacionada_bloco_03 · uns": {
+      "T": 0.29647999999999985,
+      "nulo_media": 0.0003599999999999528,
+      "nulo_dp": 0.025626111683203126,
+      "p_valor": 0.000999000999000999,
+      "taxa_de_erro": 0.0655,
+      "par": [
+        8,
+        9
+      ],
+      "juntos_observados": 35,
+      "juntos_esperados": 6.941999999999999
+    }
+  },
+  "Experimento 4 · IBM, 5 qubits": {
+    "2026-11-08_ibm_fez · zeros": {
+      "T": -0.0011259999999999881,
+      "nulo_media": -7.999999999976096e-06,
+      "nulo_dp": 0.002398765515843511,
+      "p_valor": 0.8061938061938062,
+      "taxa_de_erro": 0.0148,
+      "par": [
+        1,
+        3
+      ],
+      "juntos_observados": 1,
+      "juntos_esperados": 0.6749999999999999
+    },
+    "2026-11-08_ibm_fez · uns": {
+      "T": 0.0030559999999999893,
+      "nulo_media": -8.19999999999769e-05,
+      "nulo_dp": 0.0042186438579240116,
+      "p_valor": 0.2887112887112887,
+      "taxa_de_erro": 0.0224,
+      "par": [
+        1,
+        3
+      ],
+      "juntos_observados": 3,
+      "juntos_esperados": 1.026
+    },
+    "2026-11-09_ibm_fez · zeros": {
+      "T": -0.0012940000000000035,
+      "nulo_media": -1.6000000000002825e-05,
+      "nulo_dp": 0.0015500696758533152,
+      "p_valor": 0.9790209790209791,
+      "taxa_de_erro": 0.0092,
+      "par": [
+        0,
+        2
+      ],
+      "juntos_observados": 0,
+      "juntos_esperados": 0.002
+    },
+    "2026-11-09_ibm_fez · uns": {
+      "T": -0.006619999999999987,
+      "nulo_media": 0.00011200000000000321,
+      "nulo_dp": 0.004054648690084011,
+      "p_valor": 0.9470529470529471,
+      "taxa_de_erro": 0.0218,
+      "par": [
+        1,
+        3
+      ],
+      "juntos_observados": 1,
+      "juntos_esperados": 0.6599999999999999
+    },
+    "2026-11-10_ibm_fez · zeros": {
+      "T": 0.0006420000000000037,
+      "nulo_media": 5.800000000001382e-05,
+      "nulo_dp": 0.0025913208986923985,
+      "p_valor": 0.5014985014985015,
+      "taxa_de_erro": 0.0148,
+      "par": [
+        0,
+        1
+      ],
+      "juntos_observados": 1,
+      "juntos_esperados": 0.11399999999999999
+    },
+    "2026-11-10_ibm_fez · uns": {
+      "T": 0.0008320000000000133,
+      "nulo_media": -2.800000000000638e-05,
+      "nulo_dp": 0.00441411372757885,
+      "p_valor": 0.3516483516483517,
+      "taxa_de_erro": 0.0244,
+      "par": [
+        0,
+        2
+      ],
+      "juntos_observados": 1,
+      "juntos_esperados": 0.121
+    }
+  }
+}
