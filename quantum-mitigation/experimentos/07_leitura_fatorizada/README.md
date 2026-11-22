@@ -1,6 +1,6 @@
 # Experimento 7 · Uma tabela por qubit substitui a matriz completa de leitura?
 
-**Estado:** planejado. **Nenhum cálculo foi feito ainda.** Este arquivo registra as regras **antes** de olhar o resultado, como nos outros experimentos. As decisões marcadas com ⚠ precisam de aprovação do autor e dos orientadores.
+**Estado:** critérios definidos em 22 de novembro de 2026. **Nenhum cálculo foi feito ainda.** Este arquivo registra as regras **antes** de olhar o resultado, como nos outros experimentos. Quem decidiu: o autor, aceitando as propostas abaixo. A justificativa científica da margem ainda será escrita com os orientadores (ver a seção do critério).
 
 **Onde e quando:** análise local, sem acesso à IBM. Usa as contagens já gravadas no [experimento 4](../04_calibracao_leitura/README.md) (`ibm_fez`, sessões de 8, 9 e 10 de novembro de 2026, 1.000 medidas por circuito). Não há dados novos.
 
@@ -38,7 +38,7 @@ Esta pergunta não explica por que o PZ ajustado ficou em 0,953. Os três métod
 
 PZ e CX resumem muita coisa em dois números, e dois modelos podem coincidir neles sem serem equivalentes.
 
-1. **Previsão da calibração.** As 1.000 medidas de cada circuito de calibração são divididas ao acaso em duas metades (semente fixa, escolhida antes de calcular). Cada método é montado com a primeira metade e avaliado na segunda: compara-se a distribuição que ele prevê, para cada um dos 32 estados, com a medida. A métrica é a distância de variação total média, fixada agora.
+1. **Previsão da calibração.** As 1.000 medidas de cada circuito de calibração são divididas ao acaso em duas metades (semente fixa: **20261122**, escolhida antes de calcular). Cada método é montado com a primeira metade e avaliado na segunda: compara-se a distribuição que ele prevê, para cada um dos 32 estados, com a medida. A métrica é a distância de variação total média, fixada agora.
 2. **Controles independentes.** Os 4 controles do experimento 4 (`00000` e `11111` em Z; `+++++` e `++++-` em X) seguem como avaliação separada.
 
 ### Critério de equivalência, definido antes de calcular
@@ -51,7 +51,7 @@ Para cada sessão e cada indicador, olhamos a diferença **fatorizado menos comp
 | **Diferente** | O intervalo de 95% inteiro está fora da margem, de um lado só. |
 | **Inconclusivo** | O intervalo cruza a margem. |
 
-- ⚠ **Margem proposta: ±0,02** para PZ e para CX. Falta a justificativa científica: por que 0,02 preserva as conclusões do projeto? Para comparação, o resíduo do PZ ajustado é de cerca de 0,047 (1 − 0,953), então 0,02 é cerca de 43% dele. Pode ser melhor usar margens diferentes em PZ e CX.
+- **Margem adotada: ±0,02** para PZ e para CX, por decisão do autor em 22/11/2026. A justificativa científica de por que 0,02 preserva as conclusões do projeto **ainda não foi escrita**; ela será discutida com os orientadores antes de o resultado ser divulgado. Para comparação, o resíduo do PZ ajustado é de cerca de 0,047 (1 − 0,953), então 0,02 é cerca de 43% dele. Se os orientadores pedirem outra margem, a análise é refeita e o novo valor é registrado aqui, com a data e o motivo.
 - Este critério (intervalo de 95% dentro da margem) é mais exigente que o TOST de 90%, e não deve ser chamado de TOST sem especificar o procedimento.
 - Cada sessão aparece separada. A conclusão geral só vale se o resultado for o mesmo nas 3.
 
