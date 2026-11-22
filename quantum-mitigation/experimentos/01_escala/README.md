@@ -4,7 +4,7 @@
 
 ## Resposta curta
 
-O GHZ original **some entre 15 e 25 qubits**. Com 5 qubits, de 83% a 85% das medidas dão `00000` ou `11111`. Com 20, de 12% a 28%. De 40 qubits em diante, quase nenhuma. O padrão se repetiu nos três dias, mas **o tamanho do estrago muda de um dia para o outro**.
+Entre 15 e 25 qubits, **a população nos dois estados esperados do GHZ original fica baixa**. Com 5 qubits, de 83% a 85% das medidas dão `00000` ou `11111`. Com 20, de 12% a 28%. De 40 qubits em diante, quase nenhuma. O padrão se repetiu nos três dias, mas **o tamanho do estrago muda de um dia para o outro**.
 
 ## Pergunta
 

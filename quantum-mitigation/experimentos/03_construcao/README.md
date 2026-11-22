@@ -4,7 +4,7 @@
 
 ## Resposta curta
 
-**Sim, nos 6 casos e nas 3 sessões.** O GHZ conectado, com menos portas de dois qubits, ficou acima do original em PZ e em CX, em 5, 10 e 20 qubits, em todos os dias. Pelo critério definido antes de rodar (mesmo sinal nas 3 sessões), a conectada conta como melhor. A diferença é pequena em PZ com 5 qubits e grande nos demais casos.
+**Sim, nos 6 casos e nas 3 sessões.** O GHZ conectado, com menos portas de dois qubits, ficou acima do original em PZ e em CX, em 5, 10 e 20 qubits, em todos os dias. Pelo critério definido antes de rodar (mesmo sinal nas 3 sessões), a conectada conta como melhor. A diferença é pequena em PZ com 5 qubits e grande nos demais casos. A comparação é entre dois circuitos inteiros (portas, profundidade e ordem das operações mudam juntas), então o experimento não prova que a redução de portas é a causa.
 
 ## Pergunta
 
@@ -81,7 +81,7 @@ O conectado usa uma porta de dois qubits a menos que o número de qubits (n − 
 **Limites.**
 - Os valores são observados, sem correção de leitura. Parte do erro vem da leitura e se soma ao das portas.
 - Um computador, três dias seguidos, só 5, 10 e 20 qubits.
-- O experimento mostra que menos portas coincide com melhor resultado. Ele não separa quanto vem das portas e quanto de outras diferenças entre os dois circuitos, como a profundidade.
+- A comparação é entre dois circuitos inteiros: número de portas de dois qubits, profundidade e ordem das operações mudam juntos. O experimento mostra que o conectado, que tem menos portas, deu resultado melhor, mas **não prova que a redução de portas é a causa**.
 - Para tamanhos maiores, a comparação com o [experimento 1](../01_escala/README.md) ainda não foi feita.
 
 ## Próximo passo

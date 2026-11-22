@@ -66,9 +66,9 @@ Cada sessão tem 38 circuitos de cinco qubits, enviados no mesmo job:
 ## Conclusão
 
 1. **A calibração ajudou, pelo critério combinado.** Nas 3 sessões o ajustado ficou mais perto de 1 que o observado, em PZ e em CX, e o intervalo de 95% do ganho ficou acima de zero.
-2. **Os controles confirmam que a melhora vem da leitura.** Nos quatro controles, que não entraram na calibração, o observado ficou entre 0,89 e 0,95 e o ajustado entre 0,99 e 1,02. Nenhum desvio passa de 2 erros padrão.
+2. **Os controles ficaram compatíveis com o alvo depois do ajuste.** Nos quatro controles, que não entraram na calibração, o observado ficou entre 0,89 e 0,95 e o ajustado entre 0,99 e 1,02. Nenhum desvio passa de 2 erros padrão.
 3. **Há um padrão na sessão 3 que vale acompanhar.** Os quatro controles ficaram acima de 1 (de +0,005 a +0,022; três deles entre 1,3 e 1,6 erros padrão). Nas sessões 1 e 2 os sinais se misturam. O critério pede investigar desvios do mesmo sinal **em sessões diferentes**, e isso não aconteceu. A sessão 3 não pede ação, e o padrão fica registrado.
-4. **O PZ do GHZ ajustado ficou em 0,953 nas três sessões** (0,953 ± 0,014), e o intervalo de 95% de cada sessão não inclui 1. O que sobra não é erro de leitura. Os dados deste experimento não dizem de onde vem. No [experimento 5](../05_validacao_simulada/README.md), no simulador, o erro das portas fica depois da calibração do mesmo jeito, mas aqui não medimos o erro das portas separadamente.
+4. **O PZ do GHZ ajustado ficou em 0,953 nas três sessões** (0,953 ± 0,014), e o intervalo de 95% de cada sessão não inclui 1. A composição do que sobra não foi identificada. Os dados deste experimento não dizem de onde vem. No [experimento 5](../05_validacao_simulada/README.md), no simulador, o erro das portas fica depois da calibração do mesmo jeito, mas aqui não medimos o erro das portas separadamente.
 5. **O CX do GHZ ajustado ficou entre 0,962 e 0,979**, com erro padrão de 0,02 a 0,024: nas três sessões o intervalo de 95% inclui 1.
 
 **Limites.**

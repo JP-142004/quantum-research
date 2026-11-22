@@ -1,12 +1,12 @@
 # Experimento 7 · Uma tabela por qubit substitui a matriz completa de leitura?
 
-**Estado:** critérios definidos em 22 de novembro de 2026, **antes** de qualquer cálculo (o código foi commitado antes de rodar). A análise já foi rodada e os números estão na seção Resultado; **Resposta curta e Conclusão ainda não foram escritas**, para serem feitas depois de o autor olhar os números. Quem decidiu: o autor, aceitando as propostas abaixo. A justificativa científica da margem ainda será escrita com os orientadores (ver a seção do critério).
+**Estado:** critérios definidos em 22 de novembro de 2026, **antes** de qualquer cálculo (o código foi commitado antes de rodar). Análise rodada e relatório escrito no mesmo dia. **Pendente:** a justificativa científica da margem de ±0,02, a ser feita com os orientadores. Quem decidiu: o autor, aceitando as propostas abaixo. A justificativa científica da margem ainda será escrita com os orientadores (ver a seção do critério).
 
 **Onde e quando:** análise local, sem acesso à IBM. Usa as contagens já gravadas no [experimento 4](../04_calibracao_leitura/README.md) (`ibm_fez`, sessões de 8, 9 e 10 de novembro de 2026, 1.000 medidas por circuito). Não há dados novos.
 
 ## Resposta curta
 
-*A escrever depois da análise.*
+**Quase, mas pelo critério definido antes não dá para declarar equivalência.** Das 18 comparações (3 sessões × PZ e CX × 3 pares de métodos), nenhuma deu "diferente". O fatorizado (a) (5 tabelas 2 × 2, com as 32 calibrações) ficou equivalente ao completo em 5 dos 6 casos principais; a exceção é o PZ da sessão 10 (diferença −0,011, intervalo de 95% de −0,025 a 0,001, inconclusivo). O fatorizado (b) (só `00000` e `11111`) foi equivalente no PZ nas 3 sessões, mas inconclusivo no CX nas 3, porque usa 2.000 medidas de calibração e o intervalo fica largo. Como o critério pede o mesmo resultado nas 3 sessões, a conclusão geral é **inconclusiva**. O PZ ajustado do GHZ continua entre 0,941 e 0,953 em todos os métodos.
 
 ## Pergunta
 
@@ -139,11 +139,13 @@ Figura [comparacao_leitura.png](resultados/comparacao_leitura.png): em cima, PZ 
 
 ## Conclusão
 
-*A escrever depois da análise. O que cada resultado permitirá dizer:*
-
-- **Equivalente:** "Nestas 3 sessões e dentro da margem, trocar a matriz completa pelo modelo fatorizado não alterou materialmente PZ e CX ajustados."
-- **Diferente:** "Os indicadores são sensíveis ao modelo ou ao protocolo de calibração." Dizer que a causa é correlação de leitura entre qubits exigiria examinar os padrões conjuntos das contagens.
-- **Inconclusivo:** dizer que estes dados não permitem decidir.
+1. **Nenhuma das 18 comparações deu "diferente".** Em todas, o intervalo de 95% da diferença cruza a margem ou fica dentro dela.
+2. **Fatorizado (a) contra completo:** equivalente em PZ nas sessões 8 e 9 e em CX nas 3 sessões; **inconclusivo no PZ da sessão 10** (−0,011, [−0,025; 0,001]). Como o critério exige o mesmo resultado nas 3 sessões, a equivalência não está estabelecida para o PZ.
+3. **Fatorizado (b) contra completo:** equivalente em PZ nas 3 sessões, **inconclusivo em CX nas 3** (intervalos de largura 0,05 a 0,06). Os dados não permitem decidir se a calibração de só 2 estados basta para o CX.
+4. **Controles independentes.** Nas sessões 8 e 9, todos os métodos ficam a no máximo 0,014 de 1. Na sessão 10, o completo e o fatorizado (b) deixam os quatro controles entre 0,005 e 0,022 acima de 1, e o fatorizado (a) fica a menos de 0,007. A tabela mostra só valores, sem incerteza, e não identificamos a causa dessa diferença na sessão 10.
+5. **Previsão da calibração.** Com metade das medidas, o fatorizado (a) previu a outra metade com distância média de 0,016 a 0,019, contra 0,022 a 0,023 do completo e 0,022 a 0,027 do (b). Isso vale para uma divisão só (semente fixa) e não separa duas coisas: o modelo (a) estima bem menos números com as mesmas medidas, e a leitura dos qubits ser de fato independente.
+6. **Diagnóstico numérico sem problema.** Condicionamento perto de 1,2, menor quasiprobabilidade do GHZ entre −0,005 e −0,012 e nenhuma réplica do bootstrap descartada.
+7. **O resíduo do PZ continua.** Nenhum modelo de leitura o removeu, então os dados não ligam esse resíduo à forma de modelar a leitura.
 
 **Limites já conhecidos.**
 - Um computador e três dias seguidos.
@@ -153,7 +155,9 @@ Figura [comparacao_leitura.png](resultados/comparacao_leitura.png): em cima, PZ 
 
 ## Próximo passo
 
-*Depende do resultado. Se os modelos forem equivalentes, a análise com um modelo por qubit abre caminho para tamanhos maiores. A investigação da origem do resíduo de 0,953 é uma pergunta separada.*
+- Escrever com os orientadores a justificativa da margem de ±0,02. Mudar a margem agora, depois de ver os números, só vale se for declarado como decisão posterior aos dados; o resultado desta página vale para a margem combinada antes.
+- Se o interesse for o fatorizado (b), que corta o custo de calibração, o intervalo largo no CX pede mais medidas de calibração. Isso seria um experimento novo na IBM, só com a sua aprovação.
+- A origem do resíduo de 0,953 no PZ é uma pergunta separada.
 
 ## Arquivos
 
