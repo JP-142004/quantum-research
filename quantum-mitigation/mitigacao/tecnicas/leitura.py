@@ -16,17 +16,57 @@ def itens_calibracao(n, qubits=None, raiz=None):
     return [_item(n, f'{i:0{n}b}', qubits, raiz) for i in range(2 ** n)]
 
 
+MODELOS = ('completo', 'fatorizado', 'fatorizado_dois')
+
+
+def _contagens_do_estado(contagens, n, j, qubits):
+    return contagens[nome_item(_item(n, f'{j:0{n}b}', qubits))]
+
+
+def tabelas_por_qubit(contagens, n, qubits=None, modelo='fatorizado'):
+    """Uma tabela 2 x 2 por bit, T[lido, preparado], com T[:, x] somando 1. O índice k é o bit k (o último da sequência é o 0).
+
+    'fatorizado': junta, para cada bit, todos os estados de calibração (as marginais das 2**n).
+    'fatorizado_dois': usa só a sequência de zeros e a de uns.
+    """
+    if modelo == 'fatorizado':
+        estados = range(2 ** n)
+    elif modelo == 'fatorizado_dois':
+        estados = (0, 2 ** n - 1)
+    else:
+        raise ValueError(f'Modelo fatorizado desconhecido: {modelo!r}')
+    tabelas = []
+    for k in range(n):
+        conta = np.zeros((2, 2))
+        for j in estados:
+            preparado = (j >> k) & 1
+            for bits, vezes in _contagens_do_estado(contagens, n, j, qubits).items():
+                conta[(int(bits, 2) >> k) & 1, preparado] += vezes
+        totais = conta.sum(axis=0)
+        if np.any(totais == 0):
+            raise ValueError(f'Sem medidas para uma condição do bit {k}')
+        tabelas.append(conta / totais)
+    return tabelas
+
+
 def matriz(contagens, n, qubits=None, modelo='completo'):
     """A[observado, preparado]: cada coluna são as frações registradas para uma preparação.
 
     contagens: {nome do item: {bits: vezes}}, incluindo os itens de itens_calibracao.
+    modelo: 'completo' (matriz medida), 'fatorizado' ou 'fatorizado_dois' (ver `tabelas_por_qubit`).
+    Os modelos fatorizados devolvem o produto de Kronecker das tabelas, na mesma ordem de índices da completa.
     """
+    if modelo in ('fatorizado', 'fatorizado_dois'):
+        a = np.ones((1, 1))
+        for tabela in reversed(tabelas_por_qubit(contagens, n, qubits, modelo)):
+            a = np.kron(a, tabela)
+        return a
     if modelo != 'completo':
-        raise NotImplementedError("Só o modelo 'completo' está implementado; o 'fatorizado' ainda não")
+        raise ValueError(f'Modelo desconhecido: {modelo!r}; use um de {MODELOS}')
     dim = 2 ** n
     a = np.zeros((dim, dim))
     for j in range(dim):
-        c = contagens[nome_item(_item(n, f'{j:0{n}b}', qubits))]
+        c = _contagens_do_estado(contagens, n, j, qubits)
         total = sum(c.values())
         for bits, vezes in c.items():
             a[int(bits, 2), j] = vezes / total

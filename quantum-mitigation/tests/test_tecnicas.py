@@ -83,16 +83,83 @@ class LeituraTest(unittest.TestCase):
         q, _ = leitura.corrigir(a, {f'{i:02b}': float(v) for i, v in enumerate(p_cl)}, mapa)
         np.testing.assert_allclose([q[f'{i:02b}'] for i in range(4)], q_cl, atol=1e-12)
 
-    def test_calibracao_instavel_e_modelo_nao_implementado(self):
+    def test_calibracao_instavel_e_modelo_desconhecido(self):
         with self.assertRaises(ValueError):
             leitura.corrigir(np.ones((4, 4)) / 4, {'00': 1.0})
-        with self.assertRaises(NotImplementedError):
-            leitura.matriz({}, 2, modelo='fatorizado')
+        with self.assertRaises(ValueError):
+            leitura.matriz({}, 2, modelo='inventado')
 
     def test_itens_de_calibracao(self):
         itens = leitura.itens_calibracao(5)
         self.assertEqual(len(itens), 32)
         self.assertEqual(len({nome_item(i) for i in itens}), 32)
+
+
+def contagens_de(a, n):
+    """Contagens (fracionárias, sem amostragem) de calibração a partir de uma matriz A[observado, preparado]."""
+    return {nome_item(leitura._item(n, f'{j:0{n}b}')): {f'{i:0{n}b}': float(a[i, j])
+                                                       for i in range(2 ** n) if a[i, j] > 0}
+            for j in range(2 ** n)}
+
+
+class LeituraFatorizadaTest(unittest.TestCase):
+    E01, E10 = [0.01, 0.05, 0.02], [0.04, 0.01, 0.08]
+
+    def test_colunas_somam_um(self):
+        contagens = contagens_de(matriz_produto(self.E01, self.E10), 3)
+        for modelo in ('fatorizado', 'fatorizado_dois'):
+            for tabela in leitura.tabelas_por_qubit(contagens, 3, modelo=modelo):
+                np.testing.assert_allclose(tabela.sum(axis=0), [1, 1], atol=1e-12)
+            np.testing.assert_allclose(leitura.matriz(contagens, 3, modelo=modelo).sum(axis=0), np.ones(8), atol=1e-12)
+
+    def test_com_ruido_independente_os_tres_modelos_coincidem(self):
+        analitica = matriz_produto(self.E01, self.E10)
+        contagens = contagens_de(analitica, 3)
+        for modelo in ('completo', 'fatorizado', 'fatorizado_dois'):
+            np.testing.assert_allclose(leitura.matriz(contagens, 3, modelo=modelo), analitica, atol=1e-12)
+
+    def test_ordem_dos_bits(self):
+        analitica = matriz_produto([0.0, 0.1, 0.0], [0.0, 0.0, 0.0])  # só o bit 1 erra, 0 lido como 1
+        a = leitura.matriz(contagens_de(analitica, 3), 3, modelo='fatorizado')
+        self.assertAlmostEqual(a[0b010, 0b000], 0.1)
+        self.assertAlmostEqual(a[0b000, 0b000], 0.9)
+        self.assertAlmostEqual(a[0b001, 0b000], 0.0)
+        self.assertAlmostEqual(a[0b100, 0b000], 0.0)
+
+    def test_igual_ao_produto_explicito_das_tabelas(self):
+        contagens = contagens_de(matriz_produto(self.E01, self.E10), 3)
+        t = leitura.tabelas_por_qubit(contagens, 3, modelo='fatorizado')
+        esperado = np.kron(t[2], np.kron(t[1], t[0]))
+        np.testing.assert_allclose(leitura.matriz(contagens, 3, modelo='fatorizado'), esperado, atol=1e-12)
+
+    def test_ruido_correlacionado_separa_o_fatorizado_do_completo(self):
+        a = np.zeros((4, 4))
+        for j in range(4):
+            a[j, j] += 1.0
+            if j & 1:  # o bit 1 vira se o bit 0 foi preparado em 1
+                a[j, j], a[j ^ 0b10, j] = 0.8, 0.2
+        contagens = contagens_de(a, 2)
+        np.testing.assert_allclose(leitura.matriz(contagens, 2, modelo='completo'), a, atol=1e-12)
+        diferenca = np.abs(leitura.matriz(contagens, 2, modelo='fatorizado') - a).max()
+        self.assertGreater(diferenca, 0.05)
+
+    def test_fatorizado_dois_precisa_so_de_dois_estados(self):
+        analitica = matriz_produto(self.E01, self.E10)
+        contagens = contagens_de(analitica, 3)
+        so_dois = {k: v for k, v in contagens.items()
+                   if k in (nome_item(leitura._item(3, '000')), nome_item(leitura._item(3, '111')))}
+        np.testing.assert_allclose(leitura.matriz(so_dois, 3, modelo='fatorizado_dois'), analitica, atol=1e-12)
+        with self.assertRaises(KeyError):
+            leitura.matriz(so_dois, 3, modelo='fatorizado')
+        with self.assertRaises(ValueError):
+            leitura.tabelas_por_qubit(contagens, 3, modelo='outro')
+
+    def test_corrigir_com_o_modelo_fatorizado(self):
+        analitica = matriz_produto(self.E01, self.E10)
+        a = leitura.matriz(contagens_de(analitica, 3), 3, modelo='fatorizado')
+        verdadeira = np.array([0.4, 0.05, 0.05, 0.0, 0.0, 0.05, 0.05, 0.4])
+        q, _ = leitura.corrigir(a, {f'{i:03b}': float(v) for i, v in enumerate(analitica @ verdadeira)})
+        np.testing.assert_allclose([q[f'{i:03b}'] for i in range(8)], verdadeira, atol=1e-12)
 
 
 class ZneTest(unittest.TestCase):
