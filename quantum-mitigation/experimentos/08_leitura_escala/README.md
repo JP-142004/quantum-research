@@ -1,6 +1,6 @@
 # Experimento 8 · A calibração por qubit funciona em circuitos maiores?
 
-**Estado em 22 de novembro de 2026:** plano e critérios da parte A escritos **antes** de rodar; parte B só planejada (nada foi enviado à IBM).
+**Estado em 22 de novembro de 2026:** parte A rodada e analisada (critérios escritos antes); parte B só planejada (nada foi enviado à IBM).
 
 ## Por que este experimento
 
@@ -10,7 +10,7 @@ O [experimento 7](../07_leitura_fatorizada/README.md) comparou, em 5 qubits, a c
 
 | Parte | Onde | Pergunta | Estado |
 | --- | --- | --- | --- |
-| [A · simulador](a_simulador/README.md) | simulador, 10 qubits | Com erro de leitura conhecido, a tabela por qubit reproduz a correção da matriz completa? E se os qubits de um par erram juntos? | plano escrito; ver o arquivo para o andamento |
+| [A · simulador](a_simulador/README.md) | simulador, 10 qubits | Com erro de leitura conhecido, a tabela por qubit reproduz a correção da matriz completa? E se os qubits de um par erram juntos? | **feita**: o modelo por qubit acompanha o completo com erro independente e falha com erro conjunto nos pares |
 | [B · IBM](b_ibm/README.md) | `ibm_fez`, 10 e 20 qubits | Os indicadores do GHZ chegam perto do ideal só com a calibração por qubit? | **só plano**; nenhum envio sem a aprovação do Luiz |
 
 A parte A vem primeiro: no simulador o erro é conhecido, então dá para saber o que esperar antes de gastar tempo da IBM.

@@ -36,11 +36,11 @@ def t_diferencas(res):
     return tabelas.tabela(['Sessão', 'Indicador', 'Diferença', 'Valor', 'Intervalo de 95%', 'Decisão'], linhas, (3,))
 
 
-def t_controles(res):
+def t_controles(res, nomes=CONTROLES):
     """Controles independentes: ajustado menos o ideal (que é 1), por método."""
     linhas = [(s, NOME[m], *[tabelas.fmt(d['ajustado'][m]['valor'] - 1, 3) for d in r['itens'] if d['rotulo'] == 'controle'])
               for s, r in res.items() for m in MODELOS]
-    return tabelas.tabela(['Sessão', 'Método', *CONTROLES], linhas, range(2, 6))
+    return tabelas.tabela(['Sessão', 'Método', *nomes], linhas, range(2, 6))
 
 
 def t_previsao(res):
@@ -60,7 +60,7 @@ def t_diagnostico(res):
                           linhas, range(1, 4))
 
 
-def figura(res, caminho):
+def figura(res, caminho, rotulo=_dia):
     """Em cima, o indicador por método; embaixo, as diferenças com o intervalo de 95% e a faixa da margem."""
     fig, eixos = plt.subplots(2, 2, figsize=(10, 7.5))
     x = np.arange(len(res))
@@ -75,7 +75,7 @@ def figura(res, caminho):
                         yerr=[d['ajustado'][m]['ep'] for d in itens], fmt='o', color=cor[m], capsize=3,
                         label=f'ajustado, {NOME[m]}')
         ax.axhline(1, color='gray', ls='--', lw=1)
-        ax.set(title=indicador, ylabel='Indicador (ideal = 1)', xticks=x, xticklabels=[_dia(s) for s in res])
+        ax.set(title=indicador, ylabel='Indicador (ideal = 1)', xticks=x, xticklabels=[rotulo(s) for s in res])
         ax = eixos[1, col]
         ax.axhspan(-MARGEM, MARGEM, color='#dddddd', label=f'margem ±{MARGEM}')
         ax.axhline(0, color='gray', lw=1)
@@ -84,7 +84,7 @@ def figura(res, caminho):
             ax.errorbar(x - 0.16 + 0.16 * k, [e['valor'] for e in v],
                         yerr=[[e['valor'] - e['ic95'][0] for e in v], [e['ic95'][1] - e['valor'] for e in v]],
                         fmt='o', capsize=3, label=f'{NOME[a]} − {NOME[b]}')
-        ax.set(ylabel='Diferença entre ajustados', xticks=x, xticklabels=[_dia(s) for s in res])
+        ax.set(ylabel='Diferença entre ajustados', xticks=x, xticklabels=[rotulo(s) for s in res])
     for linha in eixos:
         h, l = linha[0].get_legend_handles_labels()
         linha[0].legend(h, l, fontsize=7, loc='lower center', bbox_to_anchor=(1.1, -0.38), ncol=3, frameon=False)
