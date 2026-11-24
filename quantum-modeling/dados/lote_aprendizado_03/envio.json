@@ -1,0 +1,258 @@
+{
+  "lote": "lote_aprendizado_03",
+  "config": {
+    "nome": "lote_aprendizado_03",
+    "descricao": "GHZ de 5, 10, 15, 20, 25 e 30 qubits no ibm_marrakesh, repetidos 3 vezes (cada repeticao e um job; todos no mesmo Batch). A repeticao 1 do GHZ-5 serve para o ajuste; todo o resto e validacao (generalizacao para tamanhos maiores).",
+    "backend": "ibm_marrakesh",
+    "shots": 1000,
+    "repeticoes": 3,
+    "qubits_fisicos": null,
+    "tamanhos_ghz": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30
+    ],
+    "leitura": false,
+    "paridade": null,
+    "circuito_de_ajuste": {
+      "circuitos": [
+        "ghz_n05"
+      ],
+      "repeticao": 1
+    }
+  },
+  "backend": "ibm_marrakesh",
+  "cadeia_qubits_fisicos": [
+    140,
+    141,
+    142,
+    143,
+    136,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    118,
+    109,
+    108,
+    107,
+    97,
+    87,
+    86,
+    85,
+    77,
+    65,
+    66,
+    67,
+    57,
+    47,
+    46,
+    45,
+    44,
+    43
+  ],
+  "circuitos": [
+    {
+      "nome": "ghz_n05",
+      "tipo": "ghz",
+      "n": 5,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136
+      ],
+      "profundidade": 20,
+      "portas_2q": 4,
+      "duracao_estimada_s": 3.136e-06
+    },
+    {
+      "nome": "ghz_n10",
+      "tipo": "ghz",
+      "n": 10,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "profundidade": 40,
+      "portas_2q": 9,
+      "duracao_estimada_s": 3.6560000000000002e-06
+    },
+    {
+      "nome": "ghz_n15",
+      "tipo": "ghz",
+      "n": 15,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        118,
+        109,
+        108
+      ],
+      "profundidade": 60,
+      "portas_2q": 14,
+      "duracao_estimada_s": 4.176e-06
+    },
+    {
+      "nome": "ghz_n20",
+      "tipo": "ghz",
+      "n": 20,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        118,
+        109,
+        108,
+        107,
+        97,
+        87,
+        86,
+        85
+      ],
+      "profundidade": 80,
+      "portas_2q": 19,
+      "duracao_estimada_s": 4.6960000000000004e-06
+    },
+    {
+      "nome": "ghz_n25",
+      "tipo": "ghz",
+      "n": 25,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        118,
+        109,
+        108,
+        107,
+        97,
+        87,
+        86,
+        85,
+        77,
+        65,
+        66,
+        67,
+        57
+      ],
+      "profundidade": 100,
+      "portas_2q": 24,
+      "duracao_estimada_s": 5.2160000000000005e-06
+    },
+    {
+      "nome": "ghz_n30",
+      "tipo": "ghz",
+      "n": 30,
+      "qubits_fisicos": [
+        140,
+        141,
+        142,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        118,
+        109,
+        108,
+        107,
+        97,
+        87,
+        86,
+        85,
+        77,
+        65,
+        66,
+        67,
+        57,
+        47,
+        46,
+        45,
+        44,
+        43
+      ],
+      "profundidade": 120,
+      "portas_2q": 29,
+      "duracao_estimada_s": 5.736000000000002e-06
+    }
+  ],
+  "tempo_qpu_estimado_s": 4.579848,
+  "enviado_em": "2026-11-24T23:50:45.297423+00:00",
+  "commit_git": "b2157de-com-alteracoes-locais",
+  "versoes": {
+    "python": "3.13.7",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.18.0",
+    "qiskit-ibm-runtime": "0.50.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "opcoes_sampler": {
+    "dynamical_decoupling": false,
+    "twirling_portas": false,
+    "twirling_medidas": false
+  },
+  "jobs": [
+    {
+      "job_id": "dc325lmq4uuc73a66140",
+      "repeticao": 1
+    },
+    {
+      "job_id": "dc325luq4uuc73a66160",
+      "repeticao": 2
+    },
+    {
+      "job_id": "dc325manj2vs73dhi4e0",
+      "repeticao": 3
+    }
+  ],
+  "batch_id": "568acfff-8c27-47eb-bfe9-b534eafefd12"
+}

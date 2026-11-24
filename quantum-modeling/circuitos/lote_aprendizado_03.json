@@ -1,0 +1,12 @@
+{
+  "nome": "lote_aprendizado_03",
+  "descricao": "GHZ de 5, 10, 15, 20, 25 e 30 qubits no ibm_marrakesh, repetidos 3 vezes (cada repeticao e um job; todos no mesmo Batch). A repeticao 1 do GHZ-5 serve para o ajuste; todo o resto e validacao (generalizacao para tamanhos maiores).",
+  "backend": "ibm_marrakesh",
+  "shots": 1000,
+  "repeticoes": 3,
+  "qubits_fisicos": null,
+  "tamanhos_ghz": [5, 10, 15, 20, 25, 30],
+  "leitura": false,
+  "paridade": null,
+  "circuito_de_ajuste": {"circuitos": ["ghz_n05"], "repeticao": 1}
+}
