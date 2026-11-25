@@ -1,0 +1,15 @@
+{
+  "nome": "lote_aprendizado",
+  "descricao": "Primeiro lote: so GHZ 5, 20 e 40.",
+  "backend": "ibm_marrakesh",
+  "shots": 1000,
+  "repeticoes": 1,
+  "qubits_fisicos": null,
+  "tamanhos_ghz": [5, 20, 40],
+  "leitura": false,
+  "paridade": null,
+  "circuito_de_ajuste": {
+    "circuitos": ["ghz_n05"],
+    "repeticao": 1
+  }
+}

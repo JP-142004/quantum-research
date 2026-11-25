@@ -1,0 +1,12 @@
+{
+  "nome": "lote_ghz02",
+  "descricao": "GHZ de 5, 20 e 40 qubits na mesma cadeia de qubits fisicos. Cada repeticao e um job; todos no mesmo Batch. Substitui o lote_ghz01 (Kingston), cancelado por causa da fila.",
+  "backend": "ibm_marrakesh",
+  "shots": 1000,
+  "repeticoes": 3,
+  "qubits_fisicos": null,
+  "tamanhos_ghz": [5, 20, 40],
+  "leitura": false,
+  "paridade": null,
+  "circuito_de_ajuste": {"circuitos": ["ghz_n05"], "repeticao": 1}
+}

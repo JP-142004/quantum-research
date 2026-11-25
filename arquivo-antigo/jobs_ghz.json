@@ -1,0 +1,15 @@
+{
+  "descricao": "Jobs de GHZ usados no projeto: um por tamanho, todos no ibm_kingston (06-07/10/2026). Fonte unica da lista para todos os scripts.",
+  "jobs": [
+    {"tamanho_ghz": 5,  "job_id": "db2fmk47f06c73apoos0"},
+    {"tamanho_ghz": 10, "job_id": "db2g70e8v0ts73c2pdf0"},
+    {"tamanho_ghz": 15, "job_id": "db2g86vr11fs7396mt00"},
+    {"tamanho_ghz": 20, "job_id": "db2g9jk2ljfc73d4ecs0"},
+    {"tamanho_ghz": 25, "job_id": "db2gbrnr11fs7396n3e0"},
+    {"tamanho_ghz": 30, "job_id": "db344rc7f06c73aqstag"},
+    {"tamanho_ghz": 35, "job_id": "db346rm8v0ts73c3sb3g"},
+    {"tamanho_ghz": 40, "job_id": "db37spqqfgmc73d0a850"},
+    {"tamanho_ghz": 45, "job_id": "db37v1j9kq9s73atb000"},
+    {"tamanho_ghz": 50, "job_id": "db37vg9lb5cs73fhee7g"}
+  ]
+}

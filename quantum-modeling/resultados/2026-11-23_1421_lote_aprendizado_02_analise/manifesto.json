@@ -1,0 +1,88 @@
+{
+  "lote": "lote_aprendizado_02",
+  "inicio": "2026-11-23T14:21:22.578553+00:00",
+  "commit_git": "b2157de-com-alteracoes-locais",
+  "versoes": {
+    "python": "3.13.7",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.18.0",
+    "qiskit-ibm-runtime": "0.50.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "seed_simulador": 1234,
+  "modo_ajuste": "completo",
+  "limite_statevector": 20,
+  "config_evolucao_diferencial": {
+    "maxiter": 20,
+    "popsize": 10,
+    "polish": true
+  },
+  "circuito_de_ajuste": {
+    "circuitos": [
+      "ghz_n05"
+    ],
+    "repeticao": 1
+  },
+  "genes": [
+    "erro_1q",
+    "erro_2q",
+    "leitura_1_dado_0",
+    "leitura_0_dado_1",
+    "t1",
+    "t2"
+  ],
+  "limites": [
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.2,
+      3.0
+    ],
+    [
+      0.2,
+      3.0
+    ]
+  ],
+  "escalas_ajustadas": {
+    "erro_1q": 1.4594510635838251,
+    "erro_2q": 4.786147964886496,
+    "leitura_1_dado_0": 0.22519135355855324,
+    "leitura_0_dado_1": 0.628754568622288,
+    "t1": 1.204859167940727,
+    "t2": 1.456127434074457
+  },
+  "hellinger_no_ajuste": 0.10550475988536062,
+  "avaliacoes": 1267,
+  "tempo_ajuste_s": 162.55892169999788,
+  "calibracao_media_do_ajuste": {
+    "erro_1q": 0.0004312116510326893,
+    "erro_2q": 0.003475262395949198,
+    "leitura_1_dado_0": 0.008782958984375,
+    "leitura_0_dado_1": 0.019158935546875,
+    "t1": 0.00019384560134098682,
+    "t2": 9.711174616348626e-05,
+    "duracao_1q": 3.6000000000000005e-08,
+    "duracao_2q": 6.861538461538462e-08
+  },
+  "hellinger_hardware_x_hardware": {
+    "ghz_n05": 0.08906419819819927,
+    "ghz_n20": 0.3334085841703787,
+    "ghz_n40": 0.6478870669074964
+  },
+  "fim": "2026-11-23T14:39:16.542320+00:00"
+}

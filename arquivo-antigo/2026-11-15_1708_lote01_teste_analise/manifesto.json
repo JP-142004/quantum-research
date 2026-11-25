@@ -1,0 +1,98 @@
+{
+  "lote": "lote01_teste",
+  "inicio": "2026-11-15T17:08:22.164608+00:00",
+  "commit_git": "2c95b6e-com-alteracoes-locais",
+  "versoes": {
+    "python": "3.13.7",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.18.0",
+    "qiskit-ibm-runtime": "0.50.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "seed_simulador": 1234,
+  "modo_ajuste": "rapido",
+  "limite_statevector": 10,
+  "config_evolucao_diferencial": {
+    "maxiter": 2,
+    "popsize": 4,
+    "polish": false
+  },
+  "circuito_de_ajuste": {
+    "circuitos": [
+      "ghz_n05"
+    ],
+    "repeticao": 1
+  },
+  "genes": [
+    "erro_1q",
+    "erro_2q",
+    "leitura_1_dado_0",
+    "leitura_0_dado_1",
+    "t1",
+    "t2"
+  ],
+  "limites": [
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.1,
+      5.0
+    ],
+    [
+      0.2,
+      3.0
+    ],
+    [
+      0.2,
+      3.0
+    ]
+  ],
+  "escalas_ajustadas": {
+    "erro_1q": 4.554511348042508,
+    "erro_2q": 3.0247249282471267,
+    "leitura_1_dado_0": 0.9574333971906648,
+    "leitura_0_dado_1": 0.4487314846333592,
+    "t1": 1.9368414866339045,
+    "t2": 2.1409145479807745
+  },
+  "hellinger_no_ajuste": 0.06603215866084139,
+  "avaliacoes": 72,
+  "tempo_ajuste_s": 8.732890699990094,
+  "calibracao_media_do_ajuste": {
+    "erro_1q": 0.0002835020112212024,
+    "erro_2q": 0.002591349211819578,
+    "leitura_1_dado_0": 0.009686279296875,
+    "leitura_0_dado_1": 0.0122314453125,
+    "t1": 0.0002743912274548733,
+    "t2": 0.0001482426357798189,
+    "duracao_1q": 3.2e-08,
+    "duracao_2q": 6.830769230769231e-08
+  },
+  "hellinger_hardware_x_hardware": {
+    "leitura0_n40": 0.2741265902764069,
+    "leitura1_n40": 0.286133737748256,
+    "ghz_n05": 0.08159968553053017,
+    "ghz_n20": 0.22050962352628453,
+    "ghz_n40": 0.3908771128993766,
+    "paridade_n05_f0": 0.08613221899154762,
+    "paridade_n05_f1": 0.08115581381288624,
+    "paridade_n05_f2": 0.07579981720732472,
+    "paridade_n05_f3": 0.08403521105629365,
+    "paridade_n05_f4": 0.08047274087884655,
+    "paridade_n05_f5": 0.08461692807906755,
+    "paridade_n05_f6": 0.07635079740222983,
+    "paridade_n05_f7": 0.08175486623026575
+  },
+  "fim": "2026-11-15T17:12:20.580772+00:00"
+}

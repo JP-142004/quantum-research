@@ -1,0 +1,12 @@
+{
+  "nome": "lote01",
+  "descricao": "Leitura de 0 e de 1, GHZ em 3 tamanhos com cadeia fixa de qubits e paridade no GHZ-5. Cada repeticao e um job; todos no mesmo Batch.",
+  "backend": "ibm_kingston",
+  "shots": 1000,
+  "repeticoes": 3,
+  "qubits_fisicos": null,
+  "tamanhos_ghz": [5, 20, 40],
+  "leitura": true,
+  "paridade": {"tamanhos": [5], "n_fases": 8},
+  "circuito_de_ajuste": {"circuitos": ["ghz_n05"], "repeticao": 1}
+}

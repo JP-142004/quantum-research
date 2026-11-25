@@ -1,0 +1,195 @@
+{
+  "lote": "lote_ghz02",
+  "config": {
+    "nome": "lote_ghz02",
+    "descricao": "GHZ de 5, 20 e 40 qubits na mesma cadeia de qubits fisicos. Cada repeticao e um job; todos no mesmo Batch. Substitui o lote_ghz01 (Kingston), cancelado por causa da fila.",
+    "backend": "ibm_marrakesh",
+    "shots": 1000,
+    "repeticoes": 3,
+    "qubits_fisicos": null,
+    "tamanhos_ghz": [
+      5,
+      20,
+      40
+    ],
+    "leitura": false,
+    "paridade": null,
+    "circuito_de_ajuste": {
+      "circuitos": [
+        "ghz_n05"
+      ],
+      "repeticao": 1
+    }
+  },
+  "backend": "ibm_marrakesh",
+  "cadeia_qubits_fisicos": [
+    134,
+    135,
+    139,
+    155,
+    154,
+    153,
+    152,
+    151,
+    150,
+    149,
+    148,
+    147,
+    146,
+    145,
+    144,
+    143,
+    136,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    118,
+    109,
+    110,
+    111,
+    98,
+    91,
+    90,
+    89,
+    78,
+    69,
+    68,
+    67,
+    57,
+    47,
+    46,
+    45
+  ],
+  "circuitos": [
+    {
+      "nome": "ghz_n05",
+      "tipo": "ghz",
+      "n": 5,
+      "qubits_fisicos": [
+        134,
+        135,
+        139,
+        155,
+        154
+      ],
+      "profundidade": 20,
+      "portas_2q": 4,
+      "duracao_estimada_s": 3.148e-06
+    },
+    {
+      "nome": "ghz_n20",
+      "tipo": "ghz",
+      "n": 20,
+      "qubits_fisicos": [
+        134,
+        135,
+        139,
+        155,
+        154,
+        153,
+        152,
+        151,
+        150,
+        149,
+        148,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136,
+        123,
+        124,
+        125
+      ],
+      "profundidade": 80,
+      "portas_2q": 19,
+      "duracao_estimada_s": 4.708e-06
+    },
+    {
+      "nome": "ghz_n40",
+      "tipo": "ghz",
+      "n": 40,
+      "qubits_fisicos": [
+        134,
+        135,
+        139,
+        155,
+        154,
+        153,
+        152,
+        151,
+        150,
+        149,
+        148,
+        147,
+        146,
+        145,
+        144,
+        143,
+        136,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        118,
+        109,
+        110,
+        111,
+        98,
+        91,
+        90,
+        89,
+        78,
+        69,
+        68,
+        67,
+        57,
+        47,
+        46,
+        45
+      ],
+      "profundidade": 160,
+      "portas_2q": 39,
+      "duracao_estimada_s": 6.8000000000000035e-06
+    }
+  ],
+  "tempo_qpu_estimado_s": 2.2939680000000005,
+  "enviado_em": "2026-11-16T18:35:56.809578+00:00",
+  "commit_git": "b2157de-com-alteracoes-locais",
+  "versoes": {
+    "python": "3.13.7",
+    "qiskit": "2.6.0",
+    "qiskit-aer": "0.18.0",
+    "qiskit-ibm-runtime": "0.50.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "opcoes_sampler": {
+    "dynamical_decoupling": false,
+    "twirling_portas": false,
+    "twirling_medidas": false
+  },
+  "jobs": [
+    {
+      "job_id": "dbtkq5ehrjis73e7cqf0",
+      "repeticao": 1
+    },
+    {
+      "job_id": "dbtkq5mhrjis73e7cqfg",
+      "repeticao": 2
+    },
+    {
+      "job_id": "dbtkq5r2kf8s73c99meg",
+      "repeticao": 3
+    }
+  ],
+  "batch_id": "350145a4-ed52-46dc-a310-5d255e45ebeb"
+}
