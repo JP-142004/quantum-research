@@ -158,31 +158,59 @@ def main():
     manifesto["fim"] = datetime.now().astimezone()
     salvar()
 
-    # ------------------------------------------------------------ resumo
-    print(f"\n{'circuito':<20}{'H Nivel0':>10}{'H Nivel1':>10}{'sim x sim':>11}{'hw x hw':>9}  extra")
-    for d in descricoes:
-        ls = [l for l in linhas if l["circuito"] == d["nome"]]
-        m = lambda f: np.mean([f(l) for l in ls])
-        h0, h1 = m(lambda l: l["nivel0"]["hellinger"]), m(lambda l: l["nivel1"]["hellinger"])
-        ss = m(lambda l: l["hellinger_sim_x_sim"])
-        hw = f"{variab[d['nome']]:.3f}" if variab[d["nome"]] is not None else "-"
-        if d["tipo"] == "leitura":
-            extra = (f"erro real {m(lambda l: l['nivel0']['erro_medio_real']):.4f} | "
-                     f"N0 {m(lambda l: l['nivel0']['erro_medio_simulado']):.4f} | "
-                     f"N1 {m(lambda l: l['nivel1']['erro_medio_simulado']):.4f}")
-        elif d["tipo"] == "paridade":
-            extra = (f"paridade ideal {d['paridade_ideal']:+.2f} | real {m(lambda l: l['nivel0']['paridade_real']):+.3f} | "
-                     f"N0 {m(lambda l: l['nivel0']['paridade_simulada']):+.3f} | "
-                     f"N1 {m(lambda l: l['nivel1']['paridade_simulada']):+.3f}")
-        else:
-            extra = (f"massa GHZ real {m(lambda l: l['nivel0']['real']['massa_ghz']):.1%} | "
-                     f"N0 {m(lambda l: l['nivel0']['simulado']['massa_ghz']):.1%} | "
-                     f"N1 {m(lambda l: l['nivel1']['simulado']['massa_ghz']):.1%}")
-        marca = " *" if d["nome"] in ajuste["circuitos"] else ""
-        print(f"{d['nome'] + marca:<20}{h0:>10.3f}{h1:>10.3f}{ss:>11.3f}{hw:>9}  {extra}")
-    print("\n* circuito de ajuste (nas outras repeticoes, ele tambem serve de validacao)")
+# ------------------------------------------------------------ resumo
+    ghz = [d for d in descricoes if d["tipo"] == "ghz"]
+    outros = [d for d in descricoes if d["tipo"] != "ghz"]
+
+    def media(nome, f):
+        return float(np.mean([f(l) for l in linhas if l["circuito"] == nome]))
+
+    def rotulo(d):
+        return f"GHZ-{d['n']}" + (" *" if d["nome"] in ajuste["circuitos"] else "")
+
+    if ghz:
+        print("\nBLOCO 1 - O simulador acerta quanto ruido existe?")
+        print("(massa GHZ = % dos shots que saiu 00..0 ou 11..1; ideal = 100%)")
+        print(f"{'circuito':<10}{'Real':>8}{'N0':>8}{'N1':>8}{'Erro N0':>10}{'Erro N1':>10}  Resultado")
+        for d in ghz:
+            n = d["nome"]
+            real = media(n, lambda l: l["nivel0"]["real"]["massa_ghz"])
+            m0 = media(n, lambda l: l["nivel0"]["simulado"]["massa_ghz"])
+            m1 = media(n, lambda l: l["nivel1"]["simulado"]["massa_ghz"])
+            e0 = media(n, lambda l: abs(l["nivel0"]["simulado"]["massa_ghz"] - l["nivel0"]["real"]["massa_ghz"])) * 100
+            e1 = media(n, lambda l: abs(l["nivel1"]["simulado"]["massa_ghz"] - l["nivel1"]["real"]["massa_ghz"])) * 100
+            res = "melhorou" if e1 < e0 else "piorou"
+            print(f"{rotulo(d):<10}{real:>8.1%}{m0:>8.1%}{m1:>8.1%}{e0:>8.1f}pp{e1:>8.1f}pp  {res}")
+        print("Real = hardware da IBM | N0 = simulacao com a calibracao | N1 = simulacao ajustada")
+        print("Erro = diferenca para o Real em pontos percentuais (menor e melhor). Incerteza com 1000 shots: ~1,5 pp.")
+
+        print("\nBLOCO 2 - A distribuicao inteira esta parecida? (distancia de Hellinger, menor e melhor)")
+        print(f"{'circuito':<10}{'H N0':>8}{'H N1':>8}{'Piso':>8}{'Var. hw':>9}")
+        for d in ghz:
+            n = d["nome"]
+            h0 = media(n, lambda l: l["nivel0"]["hellinger"])
+            h1 = media(n, lambda l: l["nivel1"]["hellinger"])
+            piso = media(n, lambda l: l["hellinger_sim_x_sim"])
+            hw = f"{variab[n]:.3f}" if variab[n] is not None else "-"
+            print(f"{rotulo(d):<10}{h0:>8.3f}{h1:>8.3f}{piso:>8.3f}{hw:>9}")
+        print("Piso = menor valor possivel so pelo sorteio de 1000 shots. O que importa e a distancia ate ele.")
+        print("Var. hw = diferenca entre dois jobs reais do mesmo circuito ('-' se houver so 1 repeticao).")
+
+    print("\nBLOCO 3 - O que o ajuste mudou? (multiplicador sobre a calibracao da IBM; 1.00 = sem mudanca)")
+    for g, v, (lo, hi) in zip(modelos_ruido.GENES, escalas, modelos_ruido.LIMITES):
+        aviso = "   <- no limite permitido" if (v <= lo * 1.02 or v >= hi * 0.98) else ""
+        print(f"  {g:<20} x {v:.2f}{aviso}")
+
+    if outros:
+        print("\nOUTROS CIRCUITOS (leitura / paridade)")
+        for d in outros:
+            n = d["nome"]
+            h0 = media(n, lambda l: l["nivel0"]["hellinger"])
+            h1 = media(n, lambda l: l["nivel1"]["hellinger"])
+            print(f"  {n:<22} H N0 {h0:.3f} | H N1 {h1:.3f}")
+
+    print("\n* circuito usado no ajuste (nas outras repeticoes ele tambem serve de validacao)")
     print(f"Medias sobre {len(saidas['jobs'])} repeticao(oes). Salvo em {pasta}")
-
-
+    
 if __name__ == "__main__":
     main()
